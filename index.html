@@ -419,30 +419,14 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 }
 .global-sub{font-size:clamp(1.125rem,1.5vw,1.5rem);color:rgba(255,255,255,.6);line-height:2;font-weight:400;max-width:600px}
 
-.gl-list{margin-bottom:72px}
-.gl-item{
-  display:flex;align-items:baseline;gap:28px;
-  padding:24px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-.gl-list .gl-item:first-child{border-top:1px solid rgba(255,255,255,.06)}
-.gl-flag{font-size:1.6rem;line-height:1;flex-shrink:0;margin-top:2px}
-.gl-country{
-  font-family:var(--en);font-size:clamp(1.125rem,1.5vw,1.4rem);font-weight:400;
-  color:#fff;letter-spacing:.06em;flex-shrink:0;min-width:160px;
-}
-.gl-badge2{
-  flex-shrink:0;
-  font-family:var(--sans);font-size:.78rem;letter-spacing:.08em;
-  background:rgba(184,135,58,.15);border:1px solid rgba(184,135,58,.25);
-  color:var(--gilt);border-radius:2px;padding:3px 9px;
-}
-.gl-year2{
-  font-family:var(--sans);font-size:.82rem;letter-spacing:.1em;
-  color:rgba(255,255,255,.45);flex-shrink:0;
-}
-.gl-desc2{font-size:clamp(1.125rem,1.5vw,1.5rem);color:rgba(255,255,255,.65);line-height:1.85;font-weight:400;flex:1}
-@media(max-width:680px){.gl-item{flex-wrap:wrap;gap:10px}.gl-country{min-width:auto}}
+.gl-slide{position:relative}
+.gl-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 22px 22px;background:linear-gradient(transparent,rgba(8,14,26,.88))}
+.gl-cap-hd{display:flex;align-items:center;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.gl-cap-flag{font-size:1.3rem;line-height:1}
+.gl-cap-country{font-family:var(--en);font-size:1.25rem;letter-spacing:.08em;color:#fff;font-weight:400}
+.gl-cap-badge{font-size:.68rem;letter-spacing:.06em;border:1px solid rgba(226,192,104,.45);color:var(--gilt);padding:2px 8px;border-radius:2px}
+.gl-cap-year{font-size:.76rem;color:rgba(255,255,255,.48);letter-spacing:.08em}
+.gl-cap-desc{font-family:var(--sans);font-size:.88rem;color:rgba(255,255,255,.75);line-height:1.75}
 
 .g-stats{display:flex;gap:60px;margin:56px 0;flex-wrap:wrap}
 .gst-num{font-family:var(--en);font-size:4rem;font-weight:200;color:var(--gilt);line-height:1}
@@ -882,51 +866,43 @@ footer{}
       <p class="global-sub">日本国大使館での展示から始まり、世界5カ国の外交拠点でFOMUSは信頼を証明してきた。</p>
     </div>
 
-    <div class="gl-list rv d1">
-      <div class="gl-item">
-        <span class="gl-flag">🇮🇪</span>
-        <span class="gl-country">Ireland</span>
-        <span class="gl-badge2">日本国大使館 展示</span>
-        <span class="gl-year2">2024–2025</span>
-        <p class="gl-desc2">アイルランド日本国大使館での枡の展示・提供。シャールビル城に欧州拠点を設立。</p>
-      </div>
-      <div class="gl-item">
-        <span class="gl-flag">🇧🇭</span>
-        <span class="gl-country">Bahrain</span>
-        <span class="gl-badge2">日本国大使館 展示</span>
-        <span class="gl-year2">2025</span>
-        <p class="gl-desc2">バーレーン日本国大使館での展示活動。中東での日本文化発信の拠点。</p>
-      </div>
-      <div class="gl-item">
-        <span class="gl-flag">🇸🇦</span>
-        <span class="gl-country">Saudi Arabia</span>
-        <span class="gl-badge2">日本国大使館 展示</span>
-        <span class="gl-year2">2025</span>
-        <p class="gl-desc2">サウジアラビア日本国大使館での展示・交流活動。中東最大市場でのネットワーク構築。</p>
-      </div>
-      <div class="gl-item">
-        <span class="gl-flag">🇦🇪</span>
-        <span class="gl-country">Dubai / UAE</span>
-        <span class="gl-badge2">法人設立 · 展示</span>
-        <span class="gl-year2">2025</span>
-        <p class="gl-desc2">ドバイに海外法人設立。中東ハブとして展示・事業活動を本格展開。</p>
-      </div>
-      <div class="gl-item">
-        <span class="gl-flag">🌍</span>
-        <span class="gl-country">40+ Countries</span>
-        <span class="gl-badge2">活動実績</span>
-        <span class="gl-year2">2021–</span>
-        <p class="gl-desc2">世界40カ国以上で活動。各地の文化・人・場所と繋がりながら、日本文化の新しい可能性を探求。</p>
-      </div>
-    </div>
-
     <div class="gl-slideshow" id="glSS">
       <div class="gl-track" id="glTrack">
-        <div class="gl-slide"><img src="slideshow/1.0.JPG" alt="FOMUS Global 1" loading="eager" fetchpriority="high"></div>
-        <div class="gl-slide"><img src="slideshow/2.jpg" alt="FOMUS Global 2" loading="eager"></div>
-        <div class="gl-slide"><img src="slideshow/3.jpg" alt="FOMUS Global 3" loading="eager"></div>
-        <div class="gl-slide"><img src="slideshow/4.jpg" alt="FOMUS Global 4" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/5.jpg" alt="FOMUS Global 5" loading="lazy"></div>
+        <div class="gl-slide">
+          <img src="slideshow/1.0.JPG" alt="FOMUS Global 1" loading="eager" fetchpriority="high">
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇮🇪</span><span class="gl-cap-country">Ireland</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2024–2025</span></div>
+            <p class="gl-cap-desc">アイルランド日本国大使館での枡の展示・提供。シャールビル城に欧州拠点を設立。</p>
+          </div>
+        </div>
+        <div class="gl-slide">
+          <img src="slideshow/2.jpg" alt="FOMUS Global 2" loading="eager">
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇧🇭</span><span class="gl-cap-country">Bahrain</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2025</span></div>
+            <p class="gl-cap-desc">バーレーン日本国大使館での展示活動。中東での日本文化発信の拠点。</p>
+          </div>
+        </div>
+        <div class="gl-slide">
+          <img src="slideshow/3.jpg" alt="FOMUS Global 3" loading="eager">
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇸🇦</span><span class="gl-cap-country">Saudi Arabia</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2025</span></div>
+            <p class="gl-cap-desc">サウジアラビア日本国大使館での展示・交流活動。中東最大市場でのネットワーク構築。</p>
+          </div>
+        </div>
+        <div class="gl-slide">
+          <img src="slideshow/4.jpg" alt="FOMUS Global 4" loading="lazy">
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇦🇪</span><span class="gl-cap-country">Dubai / UAE</span><span class="gl-cap-badge">法人設立 · 展示</span><span class="gl-cap-year">2025</span></div>
+            <p class="gl-cap-desc">ドバイに海外法人設立。中東ハブとして展示・事業活動を本格展開。</p>
+          </div>
+        </div>
+        <div class="gl-slide">
+          <img src="slideshow/5.jpg" alt="FOMUS Global 5" loading="lazy">
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🌍</span><span class="gl-cap-country">40+ Countries</span><span class="gl-cap-badge">活動実績</span><span class="gl-cap-year">2021–</span></div>
+            <p class="gl-cap-desc">世界40カ国以上で活動。各地の文化・人・場所と繋がりながら、日本文化の新しい可能性を探求。</p>
+          </div>
+        </div>
         <div class="gl-slide"><img src="slideshow/6.jpg" alt="FOMUS Global 6" loading="lazy"></div>
         <div class="gl-slide"><img src="slideshow/7.jpg" alt="FOMUS Global 7" loading="lazy"></div>
         <div class="gl-slide"><img src="slideshow/8.jpg" alt="FOMUS Global 8" loading="lazy"></div>
