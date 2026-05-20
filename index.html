@@ -287,12 +287,12 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 ══════════════════════════════════════ */
 #domains{background:var(--ink);padding:0}
 .dom-lead{
-  text-align:center;padding:72px 48px 64px;
+  background:var(--warm);text-align:center;padding:72px 48px 64px;
 }
 .dom-lead p{
   font-family:var(--sans);
   font-size:clamp(1.125rem,1.5vw,1.5rem);
-  font-weight:400;color:rgba(255,255,255,.75);
+  font-weight:400;color:var(--ink);
   line-height:2;letter-spacing:.04em;
 }
 @media(max-width:600px){.dom-lead{padding:52px 24px 44px}.dom-lead br{display:none}}
@@ -446,13 +446,13 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 .gst-num{font-family:var(--en);font-size:4rem;font-weight:200;color:var(--gilt);line-height:1}
 .gst-lbl{font-size:.74rem;color:rgba(255,255,255,.32);letter-spacing:.1em;margin-top:7px}
 
-.gl-photos{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:10px}
-.gl-ph{border-radius:4px;overflow:hidden;aspect-ratio:4/3}
-.gl-ph:first-child{aspect-ratio:auto;grid-row:span 2}
-.gl-ph img{width:100%;height:100%;object-fit:cover;opacity:.72;filter:grayscale(.15);transition:opacity .4s,filter .4s}
-.gl-ph:hover img{opacity:1;filter:grayscale(0)}
-@media(max-width:880px){.gl-photos{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gl-ph:first-child{grid-row:span 1;grid-column:span 2;aspect-ratio:16/9}}
-@media(max-width:480px){.gl-photos{grid-template-columns:1fr 1fr}}
+.gl-slideshow{position:relative;width:100%;height:clamp(280px,45vw,560px);overflow:hidden;margin-top:56px}
+.gl-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s cubic-bezier(.4,0,.2,1)}
+.gl-slide.act{opacity:1}
+.gl-slide img{width:100%;height:100%;object-fit:cover}
+.gl-ss-dots{display:flex;gap:6px;justify-content:center;margin-top:20px;padding-bottom:8px}
+.gl-ss-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.22);border:none;padding:0;cursor:pointer;transition:all .3s}
+.gl-ss-dot.act{background:var(--gilt);width:20px;border-radius:3px}
 
 /* ══════════════════════════════════════
    §06  FOUNDER  — compact
@@ -916,15 +916,20 @@ footer{}
       </div>
     </div>
 
-    <div class="gl-photos rv d2">
-      <div class="gl-ph"><img src="FOMUSイベント風景.png" alt="Ireland Embassy"></div>
-      <div class="gl-ph"><img src="オンラインコミュニティ.JPG" alt="Experience Japan"></div>
-      <div class="gl-ph"><img src="縁起物・祝い.jpg" alt="Spain"></div>
-      <div class="gl-ph"><img src="枡フォト.png" alt="USA"></div>
-      <div class="gl-ph"><img src="金箔.jpg" alt="Baltics"></div>
-      <div class="gl-ph"><img src="MASUKAME.jpg" alt="Charleville Castle"></div>
-      <div class="gl-ph"><img src="FOMUS PARURE.png" alt="Malta"></div>
+    <div class="gl-slideshow rv d2" id="glSS">
+      <div class="gl-slide act"><img src="スライドショー/1.png" alt="FOMUS Global 1"></div>
+      <div class="gl-slide"><img src="スライドショー/2.png" alt="FOMUS Global 2"></div>
+      <div class="gl-slide"><img src="スライドショー/3.png" alt="FOMUS Global 3"></div>
+      <div class="gl-slide"><img src="スライドショー/4.png" alt="FOMUS Global 4"></div>
+      <div class="gl-slide"><img src="スライドショー/5.png" alt="FOMUS Global 5"></div>
+      <div class="gl-slide"><img src="スライドショー/6.png" alt="FOMUS Global 6"></div>
+      <div class="gl-slide"><img src="スライドショー/7.png" alt="FOMUS Global 7"></div>
+      <div class="gl-slide"><img src="スライドショー/8.png" alt="FOMUS Global 8"></div>
+      <div class="gl-slide"><img src="スライドショー/9.png" alt="FOMUS Global 9"></div>
+      <div class="gl-slide"><img src="スライドショー/10.png" alt="FOMUS Global 10"></div>
+      <div class="gl-slide"><img src="スライドショー/11.png" alt="FOMUS Global 11"></div>
     </div>
+    <div class="gl-ss-dots" id="glDots"></div>
   </div>
 </section>
 
@@ -1160,6 +1165,30 @@ document.querySelectorAll('.clbl input').forEach(inp => {
     tabs.forEach(t => { t.classList.remove('bg-amber-200','border-amber-200'); t.classList.add('text-white/80'); });
   }
   tabs.forEach(t => t.addEventListener('click', () => active === t.dataset.footerTab ? clear() : set(t.dataset.footerTab)));
+})();
+
+/* ── Global slideshow ── */
+(function(){
+  const slides = document.querySelectorAll('#glSS .gl-slide');
+  const dotWrap = document.getElementById('glDots');
+  if(!slides.length) return;
+  let idx = 0;
+  slides.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'gl-ss-dot' + (i===0?' act':'');
+    d.setAttribute('aria-label','slide '+(i+1));
+    d.onclick = () => go(i);
+    dotWrap.appendChild(d);
+  });
+  const dots = dotWrap.querySelectorAll('.gl-ss-dot');
+  function go(n){
+    slides[idx].classList.remove('act');
+    dots[idx].classList.remove('act');
+    idx = n;
+    slides[idx].classList.add('act');
+    dots[idx].classList.add('act');
+  }
+  setInterval(() => go((idx+1) % slides.length), 4000);
 })();
 </script>
 </body>
