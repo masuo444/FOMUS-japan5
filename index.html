@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<title>FOMUS — 枡から、日本文化の未来を。</title>
+<meta name="description" content="FOMUSは、日本の伝統工芸「枡」を起点に、工芸・AI・IP・コミュニティを通じて、日本文化の価値を世界へ届ける文化クリエイティブカンパニーです。">
+<link rel="canonical" href="https://www.fomus.jp/">
+<meta property="og:title" content="FOMUS — 枡から、日本文化の未来を。">
+<meta property="og:description" content="日本文化 × 工芸 × AI × エンターテインメント。FOMUSは日本文化の価値を世界へ届けます。">
+<meta property="og:image" content="https://www.fomus.jp/ogp.png">
+<meta property="og:url" content="https://www.fomus.jp/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400;500;700&family=Noto+Sans+JP:wght@200;300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
+.en-serif{font-family:'Cormorant Garamond',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:   #0A1222;
+  --ink2:  #0F1E36;
+  --gold:  #B8873A;
+  --gold2: #C9993E;
+  --gilt:  #E2C068;
+  --cream: #FAF8F3;
+  --warm:  #F3EDE0;
+  --dust:  #E8E0D0;
+  --mid:   #888;
+  --serif: 'Noto Serif JP',serif;
+  --sans:  'Noto Sans JP',sans-serif;
+  --en:    'Cormorant Garamond',serif;
+}
+body{
+  font-family:var(--sans);font-weight:300;
+  background:#fff;color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;background:none;border:none}
+
+.W{max-width:1240px;margin:0 auto;padding:0 48px}
+@media(max-width:600px){.W{padding:0 24px}}
+
+.lbl{
+  font-family:var(--en);font-size:.66rem;
+  letter-spacing:.44em;text-transform:uppercase;color:var(--gold);
+}
+.bar{width:32px;height:1px;background:var(--gold);margin:18px 0}
+
+/* ── Scroll reveal ── */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-44px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.rv-l.in{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(44px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.rv-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}
+.d4{transition-delay:.38s}.d5{transition-delay:.48s}.d6{transition-delay:.58s}
+
+/* ══════════════════════════════════════
+   HEADER
+══════════════════════════════════════ */
+#H{position:fixed;inset:0 0 auto;z-index:900;transition:background .5s,box-shadow .5s}
+#H.s{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.hi{max-width:1320px;margin:0 auto;padding:0 44px;height:74px;display:flex;align-items:center;justify-content:space-between}
+.hl img{height:30px;width:auto;transition:filter .4s}
+#H:not(.s) .hl img{filter:brightness(0) invert(1)}
+.hn{display:flex;align-items:center;gap:34px}
+.hn a{font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;color:rgba(255,255,255,.8);transition:color .2s}
+#H.s .hn a{color:var(--ink)}
+.hn a:hover{color:var(--gilt)!important}
+.hcta{
+  font-family:var(--en);font-size:.78rem;letter-spacing:.1em;
+  border:1px solid rgba(255,255,255,.4);border-radius:2px;
+  padding:8px 22px;color:#fff;transition:all .25s;
+}
+#H.s .hcta{border-color:var(--ink);color:var(--ink)}
+.hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.hbg{display:none;flex-direction:column;gap:5px;padding:6px}
+.hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .4s}
+#H.s .hbg span{background:var(--ink)}
+@media(max-width:900px){.hn,.hcta{display:none}.hbg{display:flex}}
+
+#MN{
+  display:none;position:fixed;inset:0;
+  background:var(--ink);z-index:899;
+  flex-direction:column;align-items:center;justify-content:center;gap:40px;
+}
+#MN.open{display:flex}
+#MN a{font-family:var(--en);font-size:1.8rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+#MN a:hover{color:var(--gilt)}
+.mnx{position:absolute;top:28px;right:36px;font-family:var(--en);font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.4)}
+
+/* ══════════════════════════════════════
+   §01  HERO  — CINEMATIC
+══════════════════════════════════════ */
+#hero{position:relative;height:100dvh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:96px}
+
+.h-video{position:absolute;inset:0;background:var(--ink)}
+.h-video video{width:100%;height:100%;object-fit:cover;opacity:.72}
+
+.h-film{position:absolute;inset:0}
+.h-frame{position:absolute;inset:0;opacity:0;transition:opacity 1.8s cubic-bezier(.4,0,.2,1)}
+.h-frame.act{opacity:1}
+.h-frame img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.h-frame:nth-child(1) img{animation:kb-in  9s ease-in-out both}
+.h-frame:nth-child(2) img{animation:kb-pan 9s ease-in-out both}
+.h-frame:nth-child(3) img{animation:kb-out 9s ease-in-out both}
+.h-frame:nth-child(4) img{animation:kb-up  9s ease-in-out both}
+.h-frame:nth-child(odd)  img{animation:kb-in  9s ease-in-out both}
+.h-frame:nth-child(even) img{animation:kb-pan 9s ease-in-out both}
+@keyframes kb-in {0%{transform:scale(1)translate(0,0)}100%{transform:scale(1.14)translate(-2%,-1%)}}
+@keyframes kb-pan{0%{transform:scale(1.1)translate(1%,0)}100%{transform:scale(1)translate(-1%,1%)}}
+@keyframes kb-out{0%{transform:scale(1.08)translate(-1%,1%)}100%{transform:scale(1)translate(2%,-1%)}}
+@keyframes kb-up {0%{transform:scale(1)translate(0,2%)}100%{transform:scale(1.1)translate(0,-1%)}}
+
+.h-ov{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 70% 50%,transparent 40%,rgba(8,14,26,.65) 100%),
+    linear-gradient(to bottom,rgba(8,14,26,.08) 0%,rgba(8,14,26,.28) 40%,rgba(8,14,26,.88) 88%,rgba(8,14,26,.96) 100%),
+    linear-gradient(100deg,rgba(8,14,26,.52) 0%,transparent 55%);
+}
+.h-grain{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='.04'/%3E%3C/svg%3E");
+  background-size:300px;opacity:.5;mix-blend-mode:overlay;
+}
+
+.h-chapters{position:absolute;top:50%;left:48px;transform:translateY(-50%);z-index:2}
+.h-ch{
+  position:absolute;top:0;left:0;
+  font-family:var(--en);font-size:.64rem;letter-spacing:.45em;
+  text-transform:uppercase;color:rgba(255,255,255,.42);
+  opacity:0;transition:opacity .8s;white-space:nowrap;
+}
+.h-ch.act{opacity:1}
+
+.h-copy{position:relative;z-index:2;width:100%}
+.h-ey{
+  font-family:var(--en);font-size:.67rem;letter-spacing:.48em;
+  text-transform:uppercase;color:var(--gilt);margin-bottom:24px;opacity:.9;
+}
+.h-h1{
+  font-family:var(--serif);
+  font-size:clamp(3rem,7.5vw,6.4rem);
+  font-weight:200;color:#fff;
+  line-height:1.18;letter-spacing:-.02em;
+  margin-bottom:28px;
+}
+.h-h1 em{font-style:normal;color:var(--gilt);font-weight:300}
+.h-sub{
+  font-size:clamp(.86rem,1.3vw,.98rem);
+  font-weight:300;color:rgba(255,255,255,.66);
+  max-width:500px;line-height:2.1;margin-bottom:48px;
+}
+.h-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+
+.cp{
+  display:inline-flex;align-items:center;
+  background:var(--gold);color:#fff;
+  font-size:.78rem;font-weight:400;letter-spacing:.14em;
+  padding:16px 36px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.cp:hover{background:#9A6E2A;transform:translateY(-1px)}
+.cs{
+  display:inline-flex;align-items:center;
+  border:1px solid rgba(255,255,255,.38);color:#fff;
+  font-size:.78rem;font-weight:400;letter-spacing:.14em;
+  padding:16px 28px;border-radius:2px;
+  transition:all .25s;backdrop-filter:blur(6px);background:rgba(255,255,255,.06);
+}
+.cs:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.65)}
+.cg{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--en);font-size:.82rem;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.52);
+  padding:16px 8px;transition:color .2s;
+}
+.cg:hover{color:#fff}
+.cg::after{content:'→';transition:transform .2s;display:inline-block}
+.cg:hover::after{transform:translateX(4px)}
+
+.h-sc{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px}
+.h-sc span{font-family:var(--en);font-size:.57rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.scl{width:1px;height:44px;background:rgba(255,255,255,.15);overflow:hidden;position:relative}
+.scl::after{content:'';position:absolute;top:-100%;width:100%;height:100%;background:var(--gilt);animation:scr 2.2s ease-in-out infinite}
+@keyframes scr{0%{top:-100%}100%{top:200%}}
+
+.h-dots{position:absolute;bottom:36px;right:44px;z-index:2;display:flex;gap:6px}
+.h-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.25);padding:0;transition:all .35s}
+.h-dot.act{background:var(--gilt);width:22px;border-radius:3px}
+@media(max-width:600px){.h-copy .W{padding:0 24px}.h-h1{font-size:2.6rem}.h-dots{right:20px}.h-chapters{left:20px}}
+
+/* ══════════════════════════════════════
+   §02  WHAT IS FOMUS
+══════════════════════════════════════ */
+#what{background:#fff;padding:168px 0 144px}
+.wif-inner{
+  max-width:800px;margin:0 auto;text-align:center;
+  padding:0 40px;
+}
+.wif-h{
+  font-family:var(--en);
+  font-size:clamp(3rem,7vw,5.6rem);
+  font-weight:300;color:var(--ink);
+  line-height:1.06;letter-spacing:.01em;
+  margin-bottom:60px;
+}
+.wif-vbar{
+  width:1px;height:64px;background:var(--gold);
+  margin:0 auto 60px;
+}
+.wif-body{
+  font-family:var(--serif);
+  font-size:clamp(1.05rem,2vw,1.28rem);
+  font-weight:400;color:var(--ink);
+  line-height:2.3;margin-bottom:32px;
+}
+.wif-body strong{font-weight:600}
+.wif-lead{
+  font-size:1.02rem;color:#666;
+  letter-spacing:.06em;font-weight:300;
+  margin-bottom:52px;
+}
+.wif-arrow{
+  display:flex;justify-content:center;align-items:center;
+  font-family:var(--en);font-size:.64rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);gap:10px;
+}
+.wif-arrow::after{
+  content:'↓';
+  animation:bob 2s ease-in-out infinite;display:inline-block;
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.wif-logo{width:90px;height:90px;margin:0 auto 52px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.wif-logo img{width:90px;height:90px;object-fit:contain}
+@media(max-width:600px){#what{padding:100px 0 80px}.wif-inner{padding:0 24px}.wif-h{font-size:2.8rem}}
+
+/* ══════════════════════════════════════
+   §02.5  枡とは
+══════════════════════════════════════ */
+#masu-intro{background:var(--warm);padding:120px 0 0}
+.mi-inner{max-width:720px;margin:0 auto;text-align:center;padding:0 40px}
+.mi-ttl{
+  font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);
+  font-weight:300;color:var(--ink);letter-spacing:.12em;
+  margin-bottom:44px;
+}
+.mi-bar{width:40px;height:1px;background:var(--gold);margin:0 auto 44px}
+.mi-body{
+  font-family:var(--serif);
+  font-size:clamp(1rem,1.8vw,1.18rem);
+  font-weight:300;color:var(--ink);
+  line-height:2.5;margin-bottom:0;
+}
+.mi-body + .mi-body{margin-top:28px}
+.mi-img{width:100%;margin-top:80px;overflow:hidden;line-height:0}
+.mi-img img{width:100%;height:clamp(320px,55vw,680px);object-fit:cover;object-position:center 40%}
+@media(max-width:600px){#masu-intro{padding:80px 0 0}.mi-inner{padding:0 24px}.mi-img{margin-top:56px}}
+
+/* ══════════════════════════════════════
+   §03  FOMUS DOMAINS
+══════════════════════════════════════ */
+#domains{background:var(--ink);padding:0}
+.dom-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  background:rgba(255,255,255,.06);
+}
+.dom-card{
+  position:relative;min-height:58vh;
+  overflow:hidden;cursor:pointer;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.dom-img{position:absolute;inset:0}
+.dom-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1.4s cubic-bezier(.16,1,.3,1);
+  filter:brightness(.5) saturate(1.1);
+}
+.dom-card:hover .dom-img img{transform:scale(1.06);filter:brightness(.62)}
+.dom-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,14,26,.94) 0%,rgba(8,14,26,.36) 45%,rgba(8,14,26,.06) 75%,transparent 100%);
+  transition:background .5s;
+}
+.dom-card:hover .dom-ov{background:linear-gradient(to top,rgba(8,14,26,.96) 0%,rgba(8,14,26,.48) 50%,rgba(8,14,26,.14) 80%,transparent 100%)}
+.dom-body{position:relative;z-index:2;padding:52px 48px}
+.dom-num{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.38em;
+  color:var(--gilt);margin-bottom:16px;opacity:.8;
+}
+.dom-name{
+  font-family:var(--en);
+  font-size:clamp(2rem,3.6vw,3.2rem);
+  font-weight:200;color:#fff;
+  letter-spacing:.04em;line-height:1;
+  margin-bottom:12px;
+}
+.dom-tag{
+  font-family:var(--serif);font-size:.92rem;font-weight:300;
+  color:rgba(255,255,255,.5);margin-bottom:22px;line-height:1.55;
+}
+.dom-items{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.dom-item{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.16em;
+  color:rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;padding:3px 13px;
+  transition:all .3s;
+}
+.dom-card:hover .dom-item{color:rgba(255,255,255,.62);border-color:rgba(255,255,255,.3)}
+.dom-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--en);font-size:.7rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gilt);
+  transition:gap .3s;
+}
+.dom-cta::after{content:'→'}
+.dom-card:hover .dom-cta{gap:14px}
+@media(max-width:768px){
+  .dom-grid{grid-template-columns:1fr}
+  .dom-card{min-height:64vw}
+  .dom-body{padding:36px 28px}
+  .dom-name{font-size:2rem}
+}
+
+/* ══════════════════════════════════════
+   §04  FEATURED PROJECTS
+══════════════════════════════════════ */
+#projects{background:var(--cream);padding:130px 0}
+.fp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fp-card{
+  background:#fff;border-radius:4px;overflow:hidden;
+  border:1px solid rgba(10,18,34,.06);
+  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;
+  display:flex;flex-direction:column;position:relative;
+}
+.fp-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(0,0,0,.1)}
+.fp-thumb{aspect-ratio:1/1;overflow:hidden}
+.fp-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.fp-card:hover .fp-thumb img{transform:scale(1.06)}
+.fp-body{padding:22px 24px 28px;flex:1;display:flex;flex-direction:column}
+.fp-cat{font-family:var(--en);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.fp-name{font-family:var(--serif);font-size:1.12rem;font-weight:400;color:var(--ink);margin-bottom:9px}
+.fp-desc{font-size:.95rem;color:var(--mid);line-height:1.85;flex:1}
+.fp-link{
+  margin-top:16px;font-family:var(--en);font-size:.68rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);display:inline-flex;align-items:center;gap:6px;transition:gap .2s;
+}
+.fp-link::after{content:'→';display:inline-block}
+.fp-card:hover .fp-link{gap:11px}
+.live-badge{
+  position:absolute;top:14px;left:14px;
+  display:flex;align-items:center;gap:5px;
+  background:rgba(10,18,34,.8);border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;padding:3px 10px;
+  font-family:var(--en);font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;color:#fff;backdrop-filter:blur(8px);
+}
+.live-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#34D399;animation:pl 2s infinite}
+@keyframes pl{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(52,211,153,.4)}50%{opacity:.5;box-shadow:0 0 0 4px rgba(52,211,153,0)}}
+@media(max-width:920px){.fp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.fp-grid{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════════
+   §05  GLOBAL TRUST
+══════════════════════════════════════ */
+#global{background:var(--ink);padding:144px 0;position:relative;overflow:hidden}
+#global::after{
+  content:'WORLD';position:absolute;right:-60px;top:50%;transform:translateY(-50%);
+  font-family:var(--en);font-size:22vw;font-weight:200;
+  color:rgba(255,255,255,.014);pointer-events:none;white-space:nowrap;
+}
+#global .lbl{color:var(--gilt)}
+#global .bar{background:rgba(255,255,255,.2)}
+.global-hero-txt{max-width:680px;margin-bottom:84px}
+.global-h2{
+  font-family:var(--en);font-size:clamp(2.4rem,6vw,4.8rem);
+  font-weight:200;color:#fff;line-height:1.12;letter-spacing:.01em;margin-bottom:22px;
+}
+.global-sub{font-size:1.02rem;color:rgba(255,255,255,.45);line-height:2;font-weight:200;max-width:540px}
+
+.gl-list{margin-bottom:72px}
+.gl-item{
+  display:flex;align-items:baseline;gap:28px;
+  padding:24px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.gl-list .gl-item:first-child{border-top:1px solid rgba(255,255,255,.06)}
+.gl-flag{font-size:1.6rem;line-height:1;flex-shrink:0;margin-top:2px}
+.gl-country{
+  font-family:var(--en);font-size:1.15rem;font-weight:300;
+  color:#fff;letter-spacing:.06em;flex-shrink:0;min-width:160px;
+}
+.gl-badge2{
+  flex-shrink:0;
+  font-family:var(--en);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  background:rgba(184,135,58,.15);border:1px solid rgba(184,135,58,.25);
+  color:var(--gilt);border-radius:2px;padding:3px 9px;
+}
+.gl-year2{
+  font-family:var(--en);font-size:.72rem;letter-spacing:.18em;
+  color:rgba(255,255,255,.35);flex-shrink:0;
+}
+.gl-desc2{font-size:1rem;color:rgba(255,255,255,.42);line-height:1.85;font-weight:200;flex:1}
+@media(max-width:680px){.gl-item{flex-wrap:wrap;gap:10px}.gl-country{min-width:auto}}
+
+.g-stats{display:flex;gap:60px;margin:56px 0;flex-wrap:wrap}
+.gst-num{font-family:var(--en);font-size:4rem;font-weight:200;color:var(--gilt);line-height:1}
+.gst-lbl{font-size:.74rem;color:rgba(255,255,255,.32);letter-spacing:.1em;margin-top:7px}
+
+.gl-photos{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:10px}
+.gl-ph{border-radius:4px;overflow:hidden;aspect-ratio:4/3}
+.gl-ph:first-child{aspect-ratio:auto;grid-row:span 2}
+.gl-ph img{width:100%;height:100%;object-fit:cover;opacity:.72;filter:grayscale(.15);transition:opacity .4s,filter .4s}
+.gl-ph:hover img{opacity:1;filter:grayscale(0)}
+@media(max-width:880px){.gl-photos{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gl-ph:first-child{grid-row:span 1;grid-column:span 2;aspect-ratio:16/9}}
+@media(max-width:480px){.gl-photos{grid-template-columns:1fr 1fr}}
+
+/* ══════════════════════════════════════
+   §06  FOUNDER  — compact
+══════════════════════════════════════ */
+#founder{background:var(--warm);padding:100px 0}
+.fd-layout{
+  display:grid;grid-template-columns:340px 1fr;gap:0;
+  border:1px solid rgba(10,18,34,.08);border-radius:6px;overflow:hidden;
+  max-height:520px;
+}
+.fd-vis{position:relative;overflow:hidden;flex-shrink:0}
+.fd-vis img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.fd-layout:hover .fd-vis img{transform:scale(1.03)}
+.fd-vis-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,34,.88) 0%,transparent 45%)}
+.fd-vis-txt{position:absolute;bottom:28px;left:28px;right:28px}
+.fd-vis-name{font-family:var(--en);font-size:2rem;font-weight:200;color:#fff;letter-spacing:.02em;line-height:1}
+.fd-vis-role{font-family:var(--en);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gilt);margin-top:6px}
+
+.fd-txt{padding:48px 52px;background:#fff;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.fd-tagline{
+  font-family:var(--en);font-size:clamp(1.3rem,2.4vw,2rem);
+  font-weight:300;color:var(--ink);line-height:1.35;
+  margin-bottom:22px;letter-spacing:.01em;
+}
+.fd-bio{font-size:1rem;line-height:2;color:#3A3A3A;margin-bottom:14px;font-weight:300}
+.fd-bio strong{color:var(--ink);font-weight:500}
+
+.fd-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.ftag{font-size:.7rem;padding:4px 13px;background:var(--cream);border:1px solid rgba(10,18,34,.1);border-radius:999px;color:var(--ink)}
+.fd-sns{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:.86rem;letter-spacing:.14em;color:var(--gold);transition:opacity .2s;margin-bottom:20px}
+.fd-sns:hover{opacity:.7}
+.fd-more{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  font-family:var(--en);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink);border:1px solid rgba(10,18,34,.22);border-radius:2px;
+  padding:10px 24px;transition:all .2s;
+}
+.fd-more:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fd-more::after{content:'→';margin-left:2px;transition:transform .2s;display:inline-block}
+.fd-more:hover::after{transform:translateX(3px)}
+
+@media(max-width:860px){
+  .fd-layout{grid-template-columns:1fr;max-height:none}
+  .fd-vis img{min-height:320px;max-height:380px}
+  .fd-txt{padding:36px 28px}
+}
+
+
+/* ══════════════════════════════════════
+   §08  CONTACT
+══════════════════════════════════════ */
+#contact{background:var(--cream);padding:130px 0}
+.co-grid{display:grid;grid-template-columns:400px 1fr;gap:80px;align-items:start}
+.co-h{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:var(--ink);line-height:1.55;margin-bottom:18px}
+.co-l p{font-size:.98rem;color:var(--mid);line-height:2;margin-bottom:28px}
+.co-cats{list-style:none}
+.co-cats li{margin-bottom:8px}
+.clbl{display:flex;align-items:center;gap:14px;font-size:.95rem;color:var(--ink);padding:13px 18px;border-radius:3px;border:1px solid rgba(10,18,34,.09);background:#fff;cursor:pointer;transition:all .2s;user-select:none}
+.clbl:hover{border-color:var(--gold);background:rgba(184,135,58,.04)}
+.clbl input{display:none}
+.crdio{width:17px;height:17px;border-radius:50%;border:1.5px solid rgba(10,18,34,.18);flex-shrink:0;position:relative;transition:border-color .2s}
+.crdio::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--gold);opacity:0;transition:opacity .2s}
+.clbl:has(input:checked){border-color:var(--gold)}
+.clbl:has(input:checked) .crdio{border-color:var(--gold)}
+.clbl:has(input:checked) .crdio::after{opacity:1}
+
+.co-form{background:#fff;padding:52px 48px;border-radius:4px;border:1px solid rgba(10,18,34,.07)}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:.82rem;letter-spacing:.04em;color:var(--mid);margin-bottom:6px}
+.req{color:var(--gold);margin-left:2px}
+.fc{width:100%;border:1px solid rgba(10,18,34,.12);border-radius:3px;padding:14px 16px;font-family:var(--sans);font-weight:300;font-size:.98rem;color:var(--ink);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
+.fc:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,135,58,.1)}
+textarea.fc{resize:vertical;min-height:120px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cck{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:var(--mid);margin-bottom:20px;cursor:pointer}
+.cck input{margin-top:3px;accent-color:var(--gold)}
+.fsub{width:100%;background:var(--ink);color:#fff;border:none;padding:16px;font-family:var(--sans);font-weight:300;font-size:.96rem;letter-spacing:.12em;border-radius:3px;cursor:pointer;transition:background .2s}
+.fsub:hover{background:var(--gold)}
+@media(max-width:860px){.co-grid{grid-template-columns:1fr;gap:44px}.co-form{padding:36px 24px}.fr{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer{}
+.ft{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:56px;flex-wrap:wrap;gap:44px}
+.fb img{height:24px;width:auto;margin-bottom:10px}
+.fbt{font-family:var(--en);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.fns{display:flex;gap:52px;flex-wrap:wrap}
+.fng h4{font-family:var(--en);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:14px}
+.fng ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fng li a{font-size:.88rem;color:rgba(255,255,255,.38);transition:color .2s}
+.fng li a:hover{color:var(--gilt)}
+.lr{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.lb{background:transparent;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.38);cursor:pointer;padding:5px 14px;border-radius:999px;font-family:var(--sans);font-weight:200;font-size:.7rem;letter-spacing:.06em;transition:all .2s}
+.lb:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.7)}
+.lp{display:none;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:24px 28px;font-size:.86rem;line-height:1.95;margin-bottom:12px}
+.lp.open{display:block}
+.lp h4{color:#fff;font-size:.84rem;margin-bottom:12px}
+.lp ul{list-style:none}.lp li{padding:2px 0}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.fcp{font-family:var(--en);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
+.fsnsl{display:flex;gap:16px}
+.fsnsl a{color:rgba(255,255,255,.28);transition:color .2s}
+.fsnsl a:hover{color:var(--gilt)}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header id="H">
+  <div class="hi">
+    <a href="index.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
+    <nav class="hn">
+      <a href="#what">ABOUT</a>
+      <a href="#domains">DOMAINS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#global">GLOBAL</a>
+      <a href="#founder">FOUNDER</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <a href="#contact" class="hcta">相談する</a>
+    <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav id="MN">
+  <button class="mnx" id="mnx">CLOSE ✕</button>
+  <a href="#what"     onclick="cNav()">ABOUT</a>
+  <a href="#domains"  onclick="cNav()">DOMAINS</a>
+  <a href="#projects" onclick="cNav()">PROJECTS</a>
+  <a href="#global"   onclick="cNav()">GLOBAL</a>
+  <a href="#founder"  onclick="cNav()">FOUNDER</a>
+  <a href="#contact"  onclick="cNav()">CONTACT</a>
+</nav>
+
+
+<!-- ══════════════ §01 HERO ══════════════ -->
+<section id="hero">
+  <!-- 動画: hero.mp4 を同フォルダに置くだけで自動適用 -->
+  <div class="h-video" id="hVid" style="display:none">
+    <video id="heroVid" src="hero.mp4" autoplay muted loop playsinline></video>
+  </div>
+
+  <!-- Cinematic image sequence -->
+  <div class="h-film" id="hFilm">
+    <div class="h-frame act"><img src="FOMUS枡.png"  alt="工芸"></div>
+    <div class="h-frame"><img src="FOMUSイベント風景.png"      alt="海外"></div>
+    <div class="h-frame"><img src="KUKU.jpg"   alt="KUKU"></div>
+    <div class="h-frame"><img src="オンラインコミュニティ.JPG"      alt="つながり"></div>
+    <div class="h-frame"><img src="枡フォト.png"      alt="FOMUS"></div>
+    <div class="h-frame"><img src="縁起物・祝い.jpg"      alt="FOMUS"></div>
+    <div class="h-frame"><img src="金箔.jpg"      alt="FOMUS"></div>
+    <div class="h-frame"><img src="SILVA.png"     alt="FOMUS"></div>
+  </div>
+
+  <div class="h-ov"></div>
+  <div class="h-grain"></div>
+
+  <!-- Chapter labels -->
+  <div class="h-chapters" id="hChapters">
+    <div class="h-ch act">— 工芸 / Craft</div>
+    <div class="h-ch">— 世界 / Global</div>
+    <div class="h-ch">— 物語 / Story</div>
+    <div class="h-ch">— 人 / People</div>
+    <div class="h-ch">— 枡 / Masu</div>
+    <div class="h-ch">— 文化 / Culture</div>
+    <div class="h-ch">— AI / Future</div>
+    <div class="h-ch">— FOMUS</div>
+  </div>
+
+  <div class="h-copy">
+    <div class="W">
+      <p class="h-ey">Cultural Creative Company — Since 2021</p>
+      <h1 class="h-h1"><em>枡</em>から、<br>日本文化の<br>未来を。</h1>
+      <p class="h-sub">
+        FOMUSは、日本の伝統工芸「枡」を起点に、<br>
+        工芸・テクノロジー・物語・コミュニティを通じて、<br>
+        日本文化の価値を世界へ届ける文化クリエイティブカンパニーです。
+      </p>
+      <div class="h-ctas">
+        <a href="#what"     class="cp">FOMUSとは</a>
+        <a href="#projects" class="cs">プロジェクトを見る</a>
+        <a href="#contact"  class="cg">相談する</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-sc"><span>scroll</span><div class="scl"></div></div>
+  <div class="h-dots" id="hDots"></div>
+</section>
+
+
+<!-- ══════════════ §02 WHAT IS FOMUS ══════════════ -->
+<section id="what">
+  <div class="wif-inner rv">
+    <div class="wif-logo">
+      <img src="FOMUSlogo_edited.png" alt="FOMUS Logo">
+    </div>
+    <span class="lbl" style="display:block;margin-bottom:40px;">What is FOMUS</span>
+    <h2 class="wif-h">What is<br>FOMUS?</h2>
+    <div class="wif-vbar"></div>
+    <p class="wif-body">
+      FOMUSは、日本の伝統工芸「枡」を起点に、<br>
+      <strong>工芸・テクノロジー・物語・コミュニティ</strong>を通じて、<br>
+      日本文化の価値を世界へ届ける<strong>文化クリエイティブカンパニー</strong>です。
+    </p>
+    <p class="wif-lead">現在、4つの領域で事業を展開しています。</p>
+    <div class="wif-arrow">4 Domains</div>
+  </div>
+</section>
+
+
+<!-- ══════════════ §02.5 枡とは ══════════════ -->
+<section id="masu-intro">
+  <div class="mi-inner rv">
+    <h2 class="mi-ttl">枡とは</h2>
+    <div class="mi-bar"></div>
+    <p class="mi-body">枡（ます）は、奈良時代から続く日本の伝統的な計量器です。<br>ヒノキや吉野杉などの国産木材を、釘を一切使わず組み上げた<br>職人の技と、木の香りが宿る器。</p>
+    <p class="mi-body">もともとは米や酒を量る道具でしたが、<br>やがて縁起物・祝いの器として、<br>日本人の暮らしと節目に深く寄り添ってきました。</p>
+    <p class="mi-body">FOMUSは、その枡が持つ意味を、<br>テクノロジーとコミュニティの力で<br>文化と世界をつなぐ「コミュニケーションツール」へと<br>進化させています。</p>
+  </div>
+  <div class="mi-img rv">
+    <img src="枡とは.png" alt="FOMUSの枡 — 国産ヒノキ">
+  </div>
+</section>
+
+
+<!-- ══════════════ §03 FOMUS DOMAINS ══════════════ -->
+<section id="domains">
+  <div class="dom-grid">
+
+    <!-- 01 CRAFT -->
+    <a href="masu.html" class="dom-card rv">
+      <div class="dom-img"><img src="FOMUS枡.png" alt="CRAFT"></div>
+      <div class="dom-ov"></div>
+      <div class="dom-body">
+        <div class="dom-num">01 — CRAFT</div>
+        <div class="dom-name">Craft</div>
+        <div class="dom-tag">工芸・空間・プロダクト</div>
+        <div class="dom-items">
+          <span class="dom-item">FOMUS MASU</span>
+          <span class="dom-item">KUMIKI</span>
+          <span class="dom-item">MASUKAME</span>
+        </div>
+        <span class="dom-cta">詳しく見る</span>
+      </div>
+    </a>
+
+    <!-- 02 BUSINESS -->
+    <a href="https://studio.fomus.jp/" target="_blank" rel="noopener" class="dom-card rv d1">
+      <div class="dom-img"><img src="FOMUSイベント風景.png" alt="BUSINESS"></div>
+      <div class="dom-ov"></div>
+      <div class="dom-body">
+        <div class="dom-num">02 — BUSINESS</div>
+        <div class="dom-name">Business</div>
+        <div class="dom-tag">AI・Web・地域DX</div>
+        <div class="dom-items">
+          <span class="dom-item">TerroirHub</span>
+          <span class="dom-item">KANADE AI</span>
+          <span class="dom-item">AI Consulting</span>
+        </div>
+        <span class="dom-cta">詳しく見る</span>
+      </div>
+    </a>
+
+    <!-- 03 ENTERTAINMENT -->
+    <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="dom-card rv d2">
+      <div class="dom-img"><img src="KUKU.jpg" alt="ENTERTAINMENT"></div>
+      <div class="dom-ov"></div>
+      <div class="dom-body">
+        <div class="dom-num">03 — ENTERTAINMENT</div>
+        <div class="dom-name">Entertainment</div>
+        <div class="dom-tag">物語・IP・ゲーム</div>
+        <div class="dom-items">
+          <span class="dom-item">KUKU</span>
+          <span class="dom-item">SILVA</span>
+          <span class="dom-item">Music</span>
+        </div>
+        <span class="dom-cta">詳しく見る</span>
+      </div>
+    </a>
+
+    <!-- 04 COMMUNITY -->
+    <a href="community.html" class="dom-card rv d3">
+      <div class="dom-img"><img src="オンラインコミュニティ.JPG" alt="COMMUNITY"></div>
+      <div class="dom-ov"></div>
+      <div class="dom-body">
+        <div class="dom-num">04 — COMMUNITY</div>
+        <div class="dom-name">Community</div>
+        <div class="dom-tag">共創・コミュニティ</div>
+        <div class="dom-items">
+          <span class="dom-item">FOMUS GUILD</span>
+          <span class="dom-item">Masu Photo</span>
+          <span class="dom-item">Events</span>
+        </div>
+        <span class="dom-cta">詳しく見る</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ══════════════ §04 FEATURED PROJECTS ══════════════ -->
+<section id="projects">
+  <div class="W">
+    <div class="rv" style="margin-bottom:52px;">
+      <span class="lbl">Featured Projects</span>
+      <div class="bar"></div>
+    </div>
+
+    <div class="fp-grid">
+
+      <!-- 1 枡 -->
+      <a href="masu.html" class="fp-card rv d1">
+        <div class="live-badge">LIVE</div>
+        <div class="fp-thumb"><img src="FOMUS枡.png" alt="枡"></div>
+        <div class="fp-body">
+          <div class="fp-cat">CRAFT</div>
+          <div class="fp-name">枡</div>
+          <p class="fp-desc">国産ヒノキの枡。ギフト・名入れ・企業贈答。FOMUSの原点となる工芸プロダクト。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 2 枡フォト -->
+      <a href="#contact" class="fp-card rv d2">
+        <div class="live-badge">LIVE</div>
+        <div class="fp-thumb"><img src="枡フォト.png" alt="枡フォト"></div>
+        <div class="fp-body">
+          <div class="fp-cat">CRAFT</div>
+          <div class="fp-name">枡フォト</div>
+          <p class="fp-desc">枡に写真を閉じ込める。記念品・ギフト・企業向けノベルティとして展開。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 3 KUMIKI -->
+      <a href="https://parure.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d3">
+        <div class="fp-thumb"><img src="589ABBB5-915D-46DB-9283-FD9F4EC68260_1_201_a.jpeg" alt="KUMIKI"></div>
+        <div class="fp-body">
+          <div class="fp-cat">CRAFT</div>
+          <div class="fp-name">KUMIKI</div>
+          <p class="fp-desc">1300年の歴史を持つ日本の枡を、世界最小のジュエリーへと昇華させたブランド。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 4 KUKU -->
+      <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d1">
+        <div class="live-badge">LIVE</div>
+        <div class="fp-thumb"><img src="KUKU.jpg" alt="KUKU"></div>
+        <div class="fp-body">
+          <div class="fp-cat">ENTERTAINMENT</div>
+          <div class="fp-name">KUKU</div>
+          <p class="fp-desc">世界へ届ける日本発ファンタジーIP。絵本・アニメ・グッズ展開中。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 5 SILVA -->
+      <a href="https://silva.fomus.jp/" target="_blank" rel="noopener" class="fp-card rv d2">
+        <div class="fp-thumb"><img src="SILVA.png" alt="SILVA"></div>
+        <div class="fp-body">
+          <div class="fp-cat">ENTERTAINMENT</div>
+          <div class="fp-name">SILVA</div>
+          <p class="fp-desc">音楽・映像・ストーリーが交差するFOMUSのエンターテインメントプロジェクト。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 6 FOMUS CREATIVE STUDIO -->
+      <a href="https://studio.fomus.jp/" target="_blank" rel="noopener" class="fp-card rv d3">
+        <div class="live-badge">LIVE</div>
+        <div class="fp-thumb"><img src="8AE2240A-69B4-45F2-B4AC-DC520ECE060D_1_201_a.jpeg" alt="FOMUS CREATIVE STUDIO"></div>
+        <div class="fp-body">
+          <div class="fp-cat">BUSINESS</div>
+          <div class="fp-name">FOMUS CREATIVE STUDIO</div>
+          <p class="fp-desc">写真・映像・Web・デザイン。クリエイティブを軸に企業・ブランドの表現を支援。</p>
+          <span class="fp-link">相談する</span>
+        </div>
+      </a>
+
+      <!-- 7 TerroirHUB -->
+      <a href="https://terroirhub.com/" target="_blank" rel="noopener" class="fp-card rv d1">
+        <div class="fp-thumb"><img src="22E8DEB1-4913-4ECD-9553-A64A7BA2CCF3_1_201_a.jpeg" alt="TerroirHUB"></div>
+        <div class="fp-body">
+          <div class="fp-cat">BUSINESS</div>
+          <div class="fp-name">TerroirHUB</div>
+          <p class="fp-desc">ワイン・農業・観光の地域DXプラットフォーム。産地の物語を世界へ。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 8 KANADE AI -->
+      <a href="https://kanade-ai.com/" target="_blank" rel="noopener" class="fp-card rv d2">
+        <div class="live-badge">LIVE</div>
+        <div class="fp-thumb"><img src="KANADE アイコン.png" alt="KANADE AI"></div>
+        <div class="fp-body">
+          <div class="fp-cat">BUSINESS</div>
+          <div class="fp-name">KANADE AI</div>
+          <p class="fp-desc">日本文化×AI。多言語サイト制作・AI導入で企業のグローバル展開を支援。</p>
+          <span class="fp-link">相談する</span>
+        </div>
+      </a>
+
+      <!-- 9 FOMUS GUILD -->
+      <a href="https://guild.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d3">
+        <div class="fp-thumb"><img src="オンラインコミュニティ.JPG" alt="FOMUS GUILD"></div>
+        <div class="fp-body">
+          <div class="fp-cat">COMMUNITY</div>
+          <div class="fp-name">FOMUS GUILD</div>
+          <p class="fp-desc">日本文化に共感する人々が集う共創コミュニティ。国内外のメンバーと共に動く。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ §05 GLOBAL TRUST ══════════════ -->
+<section id="global">
+  <div class="W">
+    <div class="global-hero-txt rv">
+      <span style="font-family:var(--serif);font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:200;color:rgba(255,255,255,.55);display:block;margin-bottom:16px;letter-spacing:.02em;">海外展開</span>
+      <span class="lbl">Global Activities</span>
+      <div class="bar"></div>
+      <p class="global-sub">日本国大使館での展示から始まり、世界5カ国の外交拠点でFOMUSは信頼を証明してきた。</p>
+    </div>
+
+    <div class="gl-list rv d1">
+      <div class="gl-item">
+        <span class="gl-flag">🇮🇪</span>
+        <span class="gl-country">Ireland</span>
+        <span class="gl-badge2">日本国大使館 展示</span>
+        <span class="gl-year2">2024–2025</span>
+        <p class="gl-desc2">アイルランド日本国大使館での枡の展示・提供。シャールビル城に欧州拠点を設立。</p>
+      </div>
+      <div class="gl-item">
+        <span class="gl-flag">🇧🇭</span>
+        <span class="gl-country">Bahrain</span>
+        <span class="gl-badge2">日本国大使館 展示</span>
+        <span class="gl-year2">2025</span>
+        <p class="gl-desc2">バーレーン日本国大使館での展示活動。中東での日本文化発信の拠点。</p>
+      </div>
+      <div class="gl-item">
+        <span class="gl-flag">🇸🇦</span>
+        <span class="gl-country">Saudi Arabia</span>
+        <span class="gl-badge2">日本国大使館 展示</span>
+        <span class="gl-year2">2025</span>
+        <p class="gl-desc2">サウジアラビア日本国大使館での展示・交流活動。中東最大市場でのネットワーク構築。</p>
+      </div>
+      <div class="gl-item">
+        <span class="gl-flag">🇦🇪</span>
+        <span class="gl-country">Dubai / UAE</span>
+        <span class="gl-badge2">法人設立 · 展示</span>
+        <span class="gl-year2">2025</span>
+        <p class="gl-desc2">ドバイに海外法人設立。中東ハブとして展示・事業活動を本格展開。</p>
+      </div>
+      <div class="gl-item">
+        <span class="gl-flag">🌍</span>
+        <span class="gl-country">40+ Countries</span>
+        <span class="gl-badge2">活動実績</span>
+        <span class="gl-year2">2021–</span>
+        <p class="gl-desc2">世界40カ国以上で活動。各地の文化・人・場所と繋がりながら、日本文化の新しい可能性を探求。</p>
+      </div>
+    </div>
+
+    <div class="gl-photos rv d2">
+      <div class="gl-ph"><img src="FOMUSイベント風景.png" alt="Ireland Embassy"></div>
+      <div class="gl-ph"><img src="オンラインコミュニティ.JPG" alt="Experience Japan"></div>
+      <div class="gl-ph"><img src="縁起物・祝い.jpg" alt="Spain"></div>
+      <div class="gl-ph"><img src="枡フォト.png" alt="USA"></div>
+      <div class="gl-ph"><img src="金箔.jpg" alt="Baltics"></div>
+      <div class="gl-ph"><img src="MASUKAME.jpg" alt="Charleville Castle"></div>
+      <div class="gl-ph"><img src="FOMUS PARURE.png" alt="Malta"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ §06 FOUNDER ══════════════ -->
+<section id="founder">
+  <div class="W">
+    <div class="rv" style="margin-bottom:52px;">
+      <span class="lbl">Founder</span>
+      <div class="bar"></div>
+    </div>
+    <div class="fd-layout">
+      <div class="fd-vis rv-l">
+        <img src="プロフィール.png" alt="増尾圭亮 / MaSU">
+        <div class="fd-vis-ov"></div>
+        <div class="fd-vis-txt">
+          <div class="fd-vis-name">Keisuke Masuo</div>
+          <div class="fd-vis-role">MaSU — Founder &amp; Creative Director</div>
+        </div>
+      </div>
+      <div class="fd-txt rv-r">
+        <span class="lbl" style="display:block;margin-bottom:18px;">増尾 圭亮 / MaSU</span>
+        <p class="fd-bio">FOMUS 代表。世界40カ国以上で活動。海外日本国大使館での展示・文化発信、国際的なコミュニティ形成、海外イベント企画などを通じて、日本文化の新しい可能性を世界で探求。</p>
+        <p class="fd-bio">文化事業に加え、企業向けAI導入コンサルティング、AI研修、Web・クリエイティブ支援を展開し、中小企業や地域事業者のDX・業務効率化を支援している。</p>
+        <p class="fd-bio">フォトグラファーとしての経験を基盤に、写真・映像・デザイン・ストーリーテリングまで一貫して手がけ、文化・テクノロジー・地域を横断するプロジェクトを推進。現在は、日本文化を次の時代へつなぐための挑戦を国内外で続けている。</p>
+        <a href="https://www.instagram.com/masumasumasuo7/" target="_blank" rel="noopener" class="fd-sns">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+          @masumasumasuo7
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ══════════════ §08 CONTACT ══════════════ -->
+<section id="contact">
+  <div class="W">
+    <div class="rv" style="text-align:center;margin-bottom:72px;">
+      <span class="lbl" style="display:block;text-align:center;">Contact</span>
+      <div class="bar" style="margin:18px auto;"></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:var(--ink);line-height:1.6;text-align:center;">お問い合わせ</h2>
+    </div>
+    <div class="co-grid">
+      <div class="rv-l">
+        <h2 class="co-h">何でも<br>ご相談ください</h2>
+        <p>FOMUSへのご依頼・ご相談は、カテゴリをお選びください。すべてのメッセージに目を通し、必ずお返事します。</p>
+        <ul class="co-cats">
+          <li><label class="clbl"><input type="radio" name="csel" value="gift"><span class="crdio"></span>商品・ギフト（枡・名入れ・企業贈答）</label></li>
+          <li><label class="clbl"><input type="radio" name="csel" value="ai"><span class="crdio"></span>AI・Web制作</label></li>
+          <li><label class="clbl"><input type="radio" name="csel" value="global"><span class="crdio"></span>海外展開相談</label></li>
+          <li><label class="clbl"><input type="radio" name="csel" value="lecture"><span class="crdio"></span>講演・研修</label></li>
+          <li><label class="clbl"><input type="radio" name="csel" value="kuku"><span class="crdio"></span>KUKU / IP関連</label></li>
+          <li><label class="clbl"><input type="radio" name="csel" value="other"><span class="crdio"></span>その他</label></li>
+        </ul>
+      </div>
+      <div class="rv-r">
+        <form class="co-form" action="mailto:fomus.official@gmail.com" method="POST" enctype="text/plain">
+          <div class="fg">
+            <label>お問い合わせカテゴリ <span class="req">*</span></label>
+            <select name="category" class="fc" required>
+              <option value="">選択してください</option>
+              <option value="gift">商品・ギフト</option>
+              <option value="ai">AI・Web制作</option>
+              <option value="global">海外展開相談</option>
+              <option value="lecture">講演・研修</option>
+              <option value="kuku">KUKU / IP関連</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          <div class="fr">
+            <div class="fg"><label>お名前 <span class="req">*</span></label><input type="text" name="name" class="fc" placeholder="山田 太郎" required></div>
+            <div class="fg"><label>会社名 / 団体名</label><input type="text" name="company" class="fc" placeholder="任意"></div>
+          </div>
+          <div class="fg"><label>メールアドレス <span class="req">*</span></label><input type="email" name="email" class="fc" placeholder="example@email.com" required></div>
+          <div class="fg"><label>メッセージ <span class="req">*</span></label><textarea name="message" class="fc" placeholder="ご相談内容・ご質問をお書きください" required></textarea></div>
+          <label class="cck"><input type="checkbox" name="consent" required><span>プライバシーポリシーに同意のうえ送信します。</span></label>
+          <button type="submit" class="fsub">メッセージを送る</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="bg-[#1a2a3a] text-white py-16">
+  <div class="max-w-7xl mx-auto px-6 space-y-8">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+      <div class="space-y-3">
+        <div class="text-3xl font-bold en-serif tracking-tighter">FOMUS</div>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button type="button" data-footer-tab="company" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">会社概要</button>
+        <button type="button" data-footer-tab="tokusho" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">特商法表記</button>
+        <button type="button" data-footer-tab="privacy" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">プライバシーポリシー</button>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <div data-footer-panel="company" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
+        <h3 class="text-base font-semibold mb-3">会社概要</h3>
+        <ul class="space-y-1 text-white/80">
+          <li>会社名：合同会社FOMUS</li>
+          <li>所在地：日本</li>
+          <li>代表者：増尾圭亮</li>
+        </ul>
+      </div>
+      <div data-footer-panel="tokusho" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
+        <h3 class="text-base font-semibold mb-3">特定商取引法に基づく表記</h3>
+        <ul class="space-y-1 text-white/80">
+          <li>販売事業者：合同会社FOMUS</li>
+          <li>代表者：増尾圭亮</li>
+          <li>所在地：日本</li>
+          <li>連絡先：fomus.official@gmail.com（お問い合わせフォームよりご連絡ください）</li>
+          <li>販売価格：各商品・サービスのページに記載</li>
+          <li>商品代金以外の必要料金：該当する場合は各ページに記載</li>
+          <li>お支払い方法：クレジットカード / 銀行振込 ほか（各ページに記載）</li>
+          <li>お支払い時期：ご注文時またはサービス申込時</li>
+          <li>引き渡し時期：各商品・サービスのページに記載</li>
+          <li>返品・キャンセル：商品特性に応じ各ページに記載</li>
+        </ul>
+      </div>
+      <div data-footer-panel="privacy" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
+        <h3 class="text-base font-semibold mb-3">プライバシーポリシー</h3>
+        <div class="space-y-2 text-white/80">
+          <p>合同会社FOMUS（以下「当社」）は、お問い合わせ等で取得する個人情報を、以下の目的の範囲で適切に取り扱います。</p>
+          <ul class="space-y-1">
+            <li>お問い合わせ対応およびご連絡</li>
+            <li>サービス提供・運営に関するご案内</li>
+            <li>品質向上のための分析・改善</li>
+            <li>新サービス・イベント等のご案内（希望者のみ）</li>
+          </ul>
+          <p>取得した個人情報は、法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+          <p>業務委託先に取り扱いを委託する場合は、適切な監督のもとで取り扱います。</p>
+          <p>個人情報の開示・訂正・削除・利用停止をご希望の場合は、fomus.official@gmail.com までご連絡ください。</p>
+          <p>本方針は、必要に応じて見直し・改定することがあります。</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-[10px] opacity-40 tracking-widest uppercase">&copy; 2021–2026 FOMUS. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- ══════════════ JS ══════════════ -->
+<script>
+/* ── Video detection ── */
+(function(){
+  var v = document.getElementById('heroVid');
+  if(!v) return;
+  v.addEventListener('canplay', function(){
+    document.getElementById('hVid').style.display  = 'block';
+    document.getElementById('hFilm').style.display = 'none';
+  });
+})();
+
+/* ── Header scroll ── */
+const H = document.getElementById('H');
+addEventListener('scroll', () => H.classList.toggle('s', scrollY > 60), {passive:true});
+
+/* ── Mobile nav ── */
+document.getElementById('hbg').onclick = () => document.getElementById('MN').classList.add('open');
+document.getElementById('mnx').onclick = cNav;
+function cNav(){ document.getElementById('MN').classList.remove('open'); }
+
+/* ── Cinematic slideshow ── */
+(function(){
+  const frames   = document.querySelectorAll('.h-frame');
+  const chapters = document.querySelectorAll('.h-ch');
+  const dotWrap  = document.getElementById('hDots');
+  let idx = 0;
+
+  frames.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'h-dot' + (i === 0 ? ' act' : '');
+    d.setAttribute('aria-label', 'frame ' + (i+1));
+    d.onclick = () => go(i);
+    dotWrap.appendChild(d);
+  });
+  const dots = dotWrap.querySelectorAll('.h-dot');
+
+  function go(n){
+    frames[idx].classList.remove('act');
+    dots[idx].classList.remove('act');
+    if(chapters[idx]) chapters[idx].classList.remove('act');
+    const img = frames[n].querySelector('img');
+    img.style.animation = 'none';
+    img.offsetHeight;
+    img.style.animation = '';
+    idx = n;
+    frames[idx].classList.add('act');
+    dots[idx].classList.add('act');
+    if(chapters[idx]) chapters[idx].classList.add('act');
+  }
+  setInterval(() => go((idx+1) % frames.length), 5500);
+})();
+
+/* ── Scroll reveal ── */
+(function(){
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold: .06, rootMargin: '0px 0px -28px 0px'});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el => io.observe(el));
+})();
+
+/* ── Sync radio → hidden select ── */
+document.querySelectorAll('.clbl input').forEach(inp => {
+  inp.onchange = () => {
+    const sel = document.querySelector('select[name="category"]');
+    if(sel) sel.value = inp.value;
+  };
+});
+
+/* ── Footer tab switcher ── */
+(function(){
+  const tabs   = document.querySelectorAll('[data-footer-tab]');
+  const panels = document.querySelectorAll('[data-footer-panel]');
+  let active = null;
+  function set(name){
+    active = name;
+    panels.forEach(p => p.classList.toggle('hidden', p.dataset.footerPanel !== name));
+    tabs.forEach(t => {
+      const on = t.dataset.footerTab === name;
+      t.classList.toggle('bg-amber-200', on);
+      t.classList.toggle('border-amber-200', on);
+      t.classList.toggle('text-white/80', !on);
+    });
+  }
+  function clear(){
+    active = null;
+    panels.forEach(p => p.classList.add('hidden'));
+    tabs.forEach(t => { t.classList.remove('bg-amber-200','border-amber-200'); t.classList.add('text-white/80'); });
+  }
+  tabs.forEach(t => t.addEventListener('click', () => active === t.dataset.footerTab ? clear() : set(t.dataset.footerTab)));
+})();
+</script>
+</body>
+</html>

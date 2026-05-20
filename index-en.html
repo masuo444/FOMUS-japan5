@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <title>FOMUS (FORMAS) Official Site</title>
+  <meta name="description" content="FOMUS is a creative brand rooted in the Japanese masu, blending art, storytelling, and technology (AI), with gift, personalization, and business-ready offerings.">
+  <meta name="keywords" content="masu,personalized masu,gift,corporate gift,novelty,honoki masu,waterproof masu,custom made,business use,sake,AI,traditional craft">
+  <link rel="canonical" href="https://www.fomus.jp/index-en.html">
+  <meta property="og:title" content="FOMUS (FORMAS) Official Site">
+  <meta property="og:description" content="A creative brand rooted in masu, blending art, storytelling, and technology (AI), for gifts, personalization, and business use.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.fomus.jp/index-en.html">
+  <meta property="og:image" content="https://www.fomus.jp/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FOMUS Masu">
+  <meta property="og:site_name" content="FOMUS">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FOMUS (FORMAS) Official Site">
+  <meta name="twitter:description" content="A creative brand rooted in masu, blending art, storytelling, and technology (AI), for gifts, personalization, and business use.">
+  <meta name="twitter:image" content="https://www.fomus.jp/ogp.png">
+  <meta name="twitter:image:alt" content="FOMUS Masu">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FOMUS",
+    "legalName": "FOMUS LLC",
+    "url": "https://www.fomus.jp/",
+    "logo": "https://www.fomus.jp/FOMUSlogo_edited.png",
+    "email": "fomus.official@gmail.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Keisuke Masuo (MaSU)"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "JP"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "fomus.official@gmail.com",
+        "areaServed": "JP",
+    "availableLanguage": ["en", "ja"]
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/masumasumasuo7/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FOMUS Official Site",
+    "url": "https://www.fomus.jp/",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FOMUS"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "FOMUS Official Site",
+    "url": "https://www.fomus.jp/index-en.html",
+    "inLanguage": "en",
+    "description": "A creative brand rooted in masu, blending art, storytelling, and technology. Gifts, personalization, and business use supported."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "FOMUS Masu",
+    "brand": {
+      "@type": "Brand",
+      "name": "FOMUS"
+    },
+    "image": "https://www.fomus.jp/assets/media/asset-d1ddae445a56.png",
+    "description": "Premium hinoki masu for gifts, personalization, and business use.",
+    "material": "Hinoki"
+  }
+  </script>
+    <!-- フォントの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-gold: #d4af37;
+            --color-navy: #1a2a3a;
+            --color-cream: #fdf7ef;
+            --color-charcoal: #333333;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--color-cream);
+            color: var(--color-charcoal);
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, .serif { font-family: 'Noto Serif JP', serif; }
+        .en-serif { font-family: 'Cormorant Garamond', serif; }
+
+        /* ヘッダー */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(253, 247, 239, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        /* 刷新されたファーストビュー */
+        .hero-new {
+            padding-top: 120px;
+            padding-bottom: 40px;
+            background: white;
+        }
+
+        .hero-slideshow {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 16px 36px rgba(0,0,0,0.1);
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 14px;
+        }
+
+        .hero-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .hero-dot.active {
+            background: var(--color-gold);
+            width: 16px;
+        }
+
+        .declaration-box {
+            max-width: 900px;
+            margin: 3.5rem auto 2rem;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        .declaration-title {
+            font-size: clamp(1.5rem, 4vw, 2.4rem);
+            line-height: 1.7;
+            color: var(--color-navy);
+            margin-bottom: 2.5rem;
+        }
+
+        .declaration-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 300;
+            color: var(--color-gold);
+            letter-spacing: 0.1em;
+        }
+
+        /* プロジェクトグリッド：PC版2カラム */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .project-card {
+            min-height: 460px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-image {
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            border-color: var(--color-gold);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        /* E-books セクション */
+        .ebook-scroll-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ebook-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .activity-scroll {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 0 1rem 1.5rem;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .activity-scroll::-webkit-scrollbar { display: none; }
+
+        .activity-card {
+            width: min(25vw, 280px);
+            min-width: 240px;
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            scroll-snap-align: center;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .activity-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+        }
+        .activity-body {
+            flex: 1;
+            padding: 1rem 1.1rem 1.2rem;
+            color: var(--color-charcoal);
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            justify-content: flex-start;
+        }
+        .activity-body h3 {
+            font-size: 1.05rem;
+            line-height: 1.35;
+        }
+        .activity-body p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+        @media (min-width: 768px) {
+            .activity-card {
+                width: min(23vw, 280px);
+                min-width: 240px;
+            }
+            .activity-body h3 {
+                font-size: 1.2rem;
+            }
+            .activity-body p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .year-filter {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .year-btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            color: var(--color-navy);
+            background: white;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            transition: all 0.2s ease;
+        }
+        .year-btn.active {
+            background: var(--color-gold);
+            color: white;
+            border-color: var(--color-gold);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        /* ボタン */
+        .btn-gold {
+            background: var(--color-gold);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: var(--color-gold);
+            color: white;
+        }
+
+        /* アニメーション */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index-en.html" class="logo">
+                <img src="FOMUSlogo_edited.png" alt="FOMUS" class="h-8 w-auto bg-transparent">
+            </a>
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex gap-8 text-sm tracking-widest font-medium">
+                    <a href="#about" class="hover:text-amber-600">ABOUT</a>
+                    <a href="#projects" class="hover:text-amber-600">PROJECTS</a>
+                    <a href="#founder" class="hover:text-amber-600">FOUNDER</a>
+                    <a href="#online-community" class="hover:text-amber-600">COMMUNITY</a>
+                </nav>
+                <div class="text-xs border border-amber-600/60 rounded-full px-3 py-1 text-amber-700 font-bold">
+                    <a href="index.html" class="hover:text-amber-900">JP</a> /
+                    <a href="index-en.html" class="hover:text-amber-900">EN</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ① 刷新版ファーストビュー：活動ギャラリー ＆ 宣言文 -->
+    <section class="hero-new">
+        <!-- 16:9 スライドショー -->
+        <div class="hero-slideshow reveal">
+            <div class="hero-slide active">
+                <img src="assets/hero-slideshow/1.png" alt="slide 1">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/2.png" alt="slide 2">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/3.png" alt="slide 3">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/4.png" alt="slide 4">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/5.png" alt="slide 5">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/6.png" alt="slide 6">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/7.png" alt="slide 7">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/8.png" alt="slide 8">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/9.png" alt="slide 9">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/hero-slideshow/10.png" alt="slide 10">
+            </div>
+        </div>
+        <div class="hero-dots reveal">
+            <span class="hero-dot active"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+            <span class="hero-dot"></span>
+        </div>
+
+        <!-- 思想の宣言 -->
+        <div class="declaration-box reveal active">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+                <h1 class="declaration-title serif text-xl md:text-2xl text-center md:text-left" style="margin-bottom: 0;">
+                FOMUS is a creative brand rooted in the Japanese craft of masu,<br class="hidden md:block">
+                blending art, storytelling, and technology,<br class="hidden md:block">
+                to create new cultural expression and value.
+                </h1>
+                <img src="FOMUSlogo_edited.png" alt="FOMUS logo" class="w-32 md:w-40 lg:w-44 h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- ② What is Masu -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+            <div class="reveal text-left">
+                <h2 class="text-3xl md:text-4xl mb-10 serif tracking-tight">What is Masu?</h2>
+                <div class="text-lg md:text-xl leading-relaxed space-y-8 font-light text-gray-700">
+                    <p>Masu began as a measuring tool and evolved into an auspicious vessel for celebrations, woven into everyday life and milestones in Japan.</p>
+                    <p>FOMUS reimagines the meaning of masu through technology and community, transforming it into a communication tool that connects culture and the world.</p>
+                </div>
+            </div>
+            <div class="reveal relative">
+                <div class="absolute -inset-4 bg-amber-100/40 blur-3xl rounded-3xl -z-10"></div>
+                <div class="rounded-2xl overflow-hidden shadow-2xl max-w-sm mx-auto">
+                    <img src="assets/media/asset-ac103f4313e7.jpeg" alt="What is Masu" class="w-full h-full object-cover aspect-square">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ③ Culture Rooted in Masu -->
+    <section id="origin" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-3xl serif mb-4">Culture Rooted in Masu</h2>
+                <p class="text-amber-700 font-medium tracking-widest">An object that evolved with time</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="reveal text-center">
+                    <img src="assets/media/asset-bfecb8f15832.jpg" alt="Masu as a measuring tool" class="rounded-2xl mb-6 shadow-sm aspect-square object-cover">
+                    <h3 class="text-xl font-bold mb-3 serif">Measuring Tool</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed px-4">Originally used to measure rice and sake, a foundation of fairness in Japan.</p>
+                </div>
+                <div class="reveal text-center" style="transition-delay: 0.1s">
+                    <img src="assets/media/asset-30065071853a.jpg" alt="Auspicious masu" class="rounded-2xl mb-6 shadow-sm aspect-square object-cover">
+                    <h3 class="text-xl font-bold mb-3 serif">Auspicious & Celebratory</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed px-4">Symbolizing growth and prosperity, it brings good fortune to celebrations.</p>
+                </div>
+                <div class="reveal text-center" style="transition-delay: 0.2s">
+                    <img src="assets/media/asset-7d57829add40.jpg" alt="Masu as a sake vessel" class="rounded-2xl mb-6 shadow-sm aspect-square object-cover">
+                    <h3 class="text-xl font-bold mb-3 serif">Sake Vessel</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed px-4">With the aroma of hinoki, it deepens conversation and connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑥ Projects -->
+    <section id="projects" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-3xl md:text-4xl serif mb-4">FOMUS Projects</h2>
+                <p class="text-gray-400 en-serif tracking-[0.4em] uppercase text-xs">A Way to Participate</p>
+            </div>
+            
+            <div class="projects-grid">
+                <a href="masu-en.html" class="project-card reveal">
+                    <div class="project-image"><img src="assets/media/asset-d1ddae445a56.png" alt="Masu"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">Masu</h3>
+                        <p class="text-gray-600 leading-relaxed">The origin of FOMUS. Premium hinoki masu made in Japan.</p>
+                    </div>
+                </a>
+                <a href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay: 0.05s">
+                    <div class="project-image"><img src="assets/media/asset-c2787e151fa8.png" alt="Masu Photo"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">Masu Photo</h3>
+                        <p class="text-gray-600 leading-relaxed">An art project of “photos with masu” across the world (15 countries as of Dec 2025), connecting people and culture.</p>
+                    </div>
+                </a>
+                <a href="https://parure.fomus.jp/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay: 0.1s">
+                    <div class="project-image"><img src="assets/project-images/FOMUS PARURE.png" alt="FOMUS PARURE"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">FOMUS PARURE</h3>
+                        <p class="text-gray-600 leading-relaxed">A jewelry brand using the world’s smallest masu.</p>
+                    </div>
+                </a>
+                <div class="project-card reveal" style="transition-delay: 0.15s">
+                    <div class="project-image"><img src="assets/project-images/MASUKAME.jpg" alt="MASUKAME"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">MASUKAME</h3>
+                        <p class="text-gray-600 leading-relaxed">A one-of-a-kind artwork combining masu (growth) and turtle (longevity).</p>
+                    </div>
+                </div>
+                <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay: 0.2s">
+                    <div class="project-image"><img src="assets/project-images/KUKU.jpg" alt="KUKU"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">KUKU</h3>
+                        <p class="text-gray-600 leading-relaxed">A long-form story about spirits and a tree god, expanding into picture books, novels, animation, and goods. In production.</p>
+                    </div>
+                </a>
+                <a href="https://silva.fomus.jp/" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay: 0.25s">
+                    <div class="project-image"><img src="assets/project-images/SILVA.png" alt="SILVA"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">SILVA</h3>
+                        <p class="text-gray-600 leading-relaxed">The world’s first card game playable with masu, for all ages.</p>
+                    </div>
+                </a>
+                <a href="https://manga.line.me/indies/product/detail?id=20129" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay: 0.3s">
+                    <div class="project-image"><img src="assets/project-images/MANGAX.jpeg" alt="MangaX"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">MangaX</h3>
+                        <p class="text-gray-600 leading-relaxed">A visual story that fuses manga expression with masu culture, shared globally.</p>
+                    </div>
+                </a>
+                <div class="project-card reveal" style="transition-delay: 0.35s">
+                    <div class="project-image"><img src="assets/project-images/FOMUSlogo_edited.png" alt="Consulting / Creative Studio"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">Consulting / Creative Studio</h3>
+                        <p class="text-gray-600 leading-relaxed">Partnering in culture, tradition, and brand building—from story design to execution.</p>
+                    </div>
+                </div>
+                <a href="https://sagishimagallery.fomus.jp" target="_blank" rel="noopener" class="project-card reveal" style="transition-delay: 0.4s">
+                    <div class="project-image"><img src="assets/media/asset-5bc786fe6d22.png" alt="Sagishima Art Gallery (Masu Wall)"></div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-bold mb-3 serif">Sagishima Art Gallery (Masu Wall)</h3>
+                        <p class="text-gray-600 leading-relaxed">Produced the “Masu Wall” and “Masu Frames” for the Sagishima art gallery in Hiroshima. Custom production available.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Record & Activity Log -->
+    <section id="activities" class="py-28 bg-cream/40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl serif mb-4">Track Record & Activity Log</h2>
+                <p class="text-gray-400 en-serif tracking-[0.4em] uppercase text-xs">Trust & Activities</p>
+            </div>
+            <div class="year-filter">
+                <button class="year-btn active" data-year="2021">2021</button>
+                <button class="year-btn" data-year="2022">2022</button>
+                <button class="year-btn" data-year="2023">2023</button>
+                <button class="year-btn" data-year="2024">2024</button>
+                <button class="year-btn" data-year="2025">2025</button>
+            </div>
+            <div id="activity-gallery" class="activity-scroll"></div>
+        </div>
+    </section>
+
+    <!-- 💬 FOMUS Online Community -->
+    <section id="online-community" class="py-32 bg-cream/50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Text content -->
+                <div class="reveal">
+                    <h2 class="text-amber-700 font-bold tracking-[0.2em] mb-4 uppercase text-sm">FOMUS ONLINE COMMUNITY</h2>
+                    <h3 class="text-3xl md:text-4xl serif mb-8 text-navy-900 leading-tight">FOMUS ONLINE COMMUNITY</h3>
+                    <div class="text-lg md:text-xl font-light text-gray-600 mb-10 leading-relaxed">
+                        <p>The FOMUS online community is a place where people connect naturally—<br>sharing the latest AI insights and behind-the-scenes of FOMUS projects.</p>
+                        <p class="mt-4">It’s not about learning the “right” answers, but thinking, testing, and growing together.</p>
+                    </div>
+                    
+                    <!-- Highlights -->
+                    <ul class="space-y-4 mb-12">
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-600 mt-1">✦</span>
+                            <span class="text-gray-700">Sharing the latest <strong>AI & technology</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-600 mt-1">✦</span>
+                            <span class="text-gray-700">Sharing <strong>production, global activity, and new initiatives</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-600 mt-1">✦</span>
+                            <span class="text-gray-700"><strong>Connection, collaboration, and conversation</strong> among members</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-6">
+                        <a href="community-en.html" class="btn-gold px-10 py-4 shadow-xl">Learn more about the community</a>
+                    </div>
+                </div>
+
+                <!-- ビジュアルコンテンツ -->
+                <div class="reveal relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+                        <img src="assets/media/asset-16e2c54a31d6.jpg" alt="FOMUS community" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent"></div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-amber-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Founder -->
+    <section id="founder" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+            <div class="md:w-2/5 reveal active">
+                <div class="relative">
+                    <img src="assets/media/asset-c9c108c48917.png" alt="Keisuke Masuo (MaSU) / Founder" class="rounded-full w-64 h-64 md:w-80 md:h-80 mx-auto object-cover border-4 border-white shadow-2xl relative z-10">
+                </div>
+                <a href="https://www.instagram.com/masumasumasuo7/" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-amber-700 text-sm font-bold hover:text-amber-800 transition-all">
+                    <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.5"></rect>
+                        <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.5"></circle>
+                        <circle cx="17.2" cy="6.8" r="1" fill="currentColor"></circle>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+            <div class="md:w-3/5 reveal active text-center md:text-left">
+                <h2 class="text-2xl md:text-4xl serif mb-10 text-navy-900">Keisuke Masuo (MaSU) / Founder</h2>
+                <div class="text-lg md:text-xl font-light space-y-4 md:space-y-6 text-gray-700 leading-relaxed">
+                    <p>We build a globally relevant brand by fusing art, technology, and community—rooted in the Japanese craft of masu.</p>
+                    <p>Based in Japan, Ireland, and Dubai, we lead projects that cross disciplines and borders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑨ Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="bg-cream/60 border border-amber-100 rounded-2xl shadow-md p-8">
+                <h3 class="text-xl font-bold serif mb-4 text-navy-900">Contact</h3>
+                <p class="text-sm text-gray-600 mb-6">We value conversation over formality. Please feel free to reach out.</p>
+                <form action="mailto:fomus.official@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Inquiry Type</label>
+                        <select name="type" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                            <option value="">Select</option>
+                            <option value="product">Masu / Products</option>
+                            <option value="collaboration">Collaboration / Project</option>
+                            <option value="community">Community</option>
+                            <option value="media">Press / Media</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">Company / Organization</label>
+                            <input type="text" name="company" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" placeholder="Optional">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-500 mb-1">Name</label>
+                            <input type="text" name="name" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Email</label>
+                        <input type="email" name="email" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Phone</label>
+                        <input type="tel" name="phone" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" placeholder="Optional">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-gray-500 mb-1">Message</label>
+                        <textarea name="message" rows="4" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400" placeholder="Tell us about your inquiry" required></textarea>
+                    </div>
+                    <label class="flex items-start gap-2 text-xs text-gray-500">
+                        <input type="checkbox" name="consent" required class="mt-0.5">
+                        <span>I confirm the details above before sending.</span>
+                    </label>
+                    <button type="submit" class="btn-outline text-sm px-8 py-3 w-full md:w-auto">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#1a2a3a] text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+                <div class="space-y-3">
+                    <div class="text-3xl font-bold en-serif tracking-tighter">FOMUS</div>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button type="button" data-footer-tab="company" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">Company</button>
+                    <button type="button" data-footer-tab="tokusho" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">Commercial Terms</button>
+                    <button type="button" data-footer-tab="privacy" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">Privacy</button>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div data-footer-panel="company" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
+                    <h3 class="text-base font-semibold mb-3">Company</h3>
+                    <ul class="space-y-1 text-white/80">
+                        <li>Company: FOMUS LLC</li>
+                        <li>Location: Japan</li>
+                        <li>Representative: Keisuke Masuo</li>
+                    </ul>
+                </div>
+                <div data-footer-panel="tokusho" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
+                    <h3 class="text-base font-semibold mb-3">Commercial Terms (Japan)</h3>
+                    <ul class="space-y-1 text-white/80">
+                        <li>Seller: FOMUS LLC</li>
+                        <li>Representative: Keisuke Masuo</li>
+                        <li>Location: Japan</li>
+                        <li>Contact: fomus.official@gmail.com (please use the contact form)</li>
+                        <li>Prices: Listed on each product/service page</li>
+                        <li>Additional fees: Listed on each page if applicable</li>
+                        <li>Payment: Credit card / bank transfer, etc. (see each page)</li>
+                        <li>Payment timing: At order or application</li>
+                        <li>Delivery: Listed on each product/service page</li>
+                        <li>Returns/Cancellations: Listed per product/service</li>
+                    </ul>
+                </div>
+                <div data-footer-panel="privacy" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
+                    <h3 class="text-base font-semibold mb-3">Privacy Policy</h3>
+                    <div class="space-y-2 text-white/80">
+                        <p>FOMUS LLC (“we”) handles personal information obtained through inquiries for the purposes below.</p>
+                        <ul class="space-y-1">
+                            <li>Responding to inquiries and communication</li>
+                            <li>Service delivery and operational updates</li>
+                            <li>Analysis and improvement of quality</li>
+                            <li>New services/events (for those who opt in)</li>
+                        </ul>
+                        <p>We do not provide personal information to third parties without consent, except as required by law.</p>
+                        <p>When processing is outsourced, we provide appropriate supervision.</p>
+                        <p>For disclosure, correction, deletion, or suspension of use, contact fomus.official@gmail.com.</p>
+                        <p>This policy may be reviewed and updated as needed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-[10px] opacity-40 tracking-widest uppercase">&copy; 2024 FOMUS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Footer tab switcher
+        const footerTabs = document.querySelectorAll('[data-footer-tab]');
+        const footerPanels = document.querySelectorAll('[data-footer-panel]');
+        let activeFooterTab = null;
+        function setFooterTab(name) {
+            activeFooterTab = name;
+            footerPanels.forEach(panel => {
+                panel.classList.toggle('hidden', panel.dataset.footerPanel !== name);
+            });
+            footerTabs.forEach(tab => {
+                const isActive = tab.dataset.footerTab === name;
+                tab.classList.toggle('bg-amber-200', isActive);
+                tab.classList.toggle('text-navy-900', isActive);
+                tab.classList.toggle('border-amber-200', isActive);
+                tab.classList.toggle('text-white/80', !isActive);
+            });
+        }
+        function clearFooterTabs() {
+            activeFooterTab = null;
+            footerPanels.forEach(panel => panel.classList.add('hidden'));
+            footerTabs.forEach(tab => {
+                tab.classList.remove('bg-amber-200', 'text-navy-900', 'border-amber-200');
+                tab.classList.add('text-white/80');
+            });
+        }
+        footerTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const name = tab.dataset.footerTab;
+                if (activeFooterTab === name) {
+                    clearFooterTabs();
+                } else {
+                    setFooterTab(name);
+                }
+            });
+        });
+
+        // スクロールアニメーション (IntersectionObserver) — 一部セクションは常時表示のため対象外に
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        // exclude community/contact, founder from reveal
+        const excludeIds = ['contact', 'founder'];
+        document.querySelectorAll('.reveal').forEach(el => {
+            const parentSection = el.closest('section');
+            if (parentSection && excludeIds.includes(parentSection.id)) {
+                el.classList.add('active');
+            } else {
+                observer.observe(el);
+            }
+        });
+
+        // Activity log: year switcher
+        const activitiesData = {
+            "2025": [
+                { src: "assets/media/asset-191480fa5e0f.png", title: "Sagishima Art Gallery Completed", desc: "Masu Wall installed on Sagishima, a community-grown art space." },
+                { src: "assets/media/asset-e3895a24e277.jpg", title: "Ireland: Experience Japan", desc: "Presented masu culture at a local event and expanded international exchange." },
+                { src: "assets/media/asset-2e5f2c38c383.jpg", title: "Baltics Trip (Latvia & Lithuania)", desc: "Brought masu and stories to Northern Europe, opening new exhibitions and networks." },
+                { src: "assets/media/asset-2f84cc10b4bc.jpg", title: "Moved to Charleville Castle, Ireland", desc: "Launched cultural projects from the castle, exploring links between history and today." }
+            ],
+            "2024": [
+                { src: "assets/media/asset-86401043610c.jpg", title: "Noto Earthquake Recovery Support", desc: "Expanded support through masu and helped recovery efforts." },
+                { src: "assets/media/asset-b2fcdd61b881.jpg", title: "Kyoto Petit Charelle Collaboration", desc: "Proposed new pairings with masu × cheese." },
+                { src: "assets/media/asset-a871fdffa0d6.jpg", title: "Cafe Chocotty Collaboration", desc: "Shared masu stories with a local cafe." },
+                { src: "assets/media/asset-222a5713079e.jpg", title: "Stay in Cebu, Philippines", desc: "Introduced masu culture in Southeast Asia and expanded connections." },
+                { src: "assets/media/asset-36e119c83750.jpg", title: "Crowdfunding ¥1.5M Achieved", desc: "Raised support for new developments and grew the community." },
+                { src: "assets/media/asset-21378f37616f.jpg", title: "FOMUS Digital Art Exhibition", desc: "Held a show blending masu and digital expression." },
+                { src: "assets/media/asset-d47ab2c454e2.jpg", title: "FOMUS 3rd Anniversary in Hakone", desc: "Hosted a community event to celebrate three years." },
+                { src: "assets/media/asset-f7b6e582b7d7.jpg", title: "Sagishima Art Gallery Concept Begins", desc: "Started a project to turn the entire island into a gallery." },
+                { src: "assets/media/asset-1f77504df484.png", title: "U.S. Trip (LA / Las Vegas / NY)", desc: "Introduced masu stories and products across the U.S." },
+                { src: "assets/media/asset-14454b4a0b2a.jpg", title: "Spain Trip (Madrid / Barcelona)", desc: "Conducted exhibitions and networking in Europe." },
+                { src: "assets/media/asset-396ed570c5c0.jpg", title: "Ireland Exchange Community Founded", desc: "Promoted cultural exchange with the local community." },
+                { src: "assets/media/asset-4a8ee5688aa7.jpg", title: "Medoc Marathon, France", desc: "Experimented with storytelling that blends sports and culture." },
+                { src: "assets/media/asset-fc20f5839e1a.jpg", title: "Estonia Trip", desc: "Explored intersections between Northern European digital culture and masu." },
+                { src: "assets/media/asset-ee9bb195ddf6.jpg", title: "Malta / Greece / Cyprus Trip", desc: "Introduced masu culture and explored collaborations in the Mediterranean." },
+                { src: "assets/media/asset-8583e5118ed2.jpg", title: "Provided Masu to Japan Embassy in Ireland", desc: "Donated masu to support cultural outreach." }
+            ],
+            "2023": [
+                { src: "assets/media/asset-875a84e0b04d.jpg", title: "SILVA Card Game Created", desc: "Expressed the masu world through a card game." },
+                { src: "assets/media/asset-820da9dd1d15.jpg", title: "Taiwan Around-the-Island Project", desc: "First overseas expansion, touring Taiwan with masu." },
+                { src: "assets/media/asset-1fc0133af631.jpg", title: "Kyoto Masugata Shopping Street Collab", desc: "Shared the appeal of masu with a local shopping arcade." },
+                { src: "assets/media/asset-5c463d9e0319.jpg", title: "SAKE SPRING Kyoto", desc: "Proposed new ways to enjoy sake with masu." },
+                { src: "assets/media/asset-1421b78e2acf.jpg", title: "BAR guild Collaboration", desc: "Shared new ways to use masu with a bar." },
+                { src: "assets/media/asset-bb89b16db1a3.jpg", title: "Takenami Brewery Collaboration", desc: "Promoted aroma and taste through a brewery collaboration." },
+                { src: "assets/media/asset-4b520f9e98c0.jpg", title: "Event Launch Activities", desc: "Launched and expanded events with the community." },
+                { src: "assets/media/asset-46fedae8a122.jpg", title: "Food Truck Artist Collaboration", desc: "A mobile experiment delivering masu experiences." },
+                { src: "assets/media/asset-0ecfaeb1c1e9.jpg", title: "Expansion into Malaysia", desc: "Scaled expansion in Southeast Asia." },
+                { src: "assets/media/asset-7f4377fda1c2.jpg", title: "FOMUS PARURE Launch", desc: "Released the world’s smallest masu jewelry." },
+                { src: "assets/media/asset-6bb4fb28fb86.jpg", title: "TERUAKI TAKAHASHI Collaboration", desc: "A collaboration between jewelry and art." }
+            ],
+            "2022": [
+                { src: "assets/media/asset-8e809a590147.png", title: "First Photo Book Produced", desc: "Created the first photo book of Masu Photo." },
+                { src: "assets/media/asset-0f6729809a1c.jpg", title: "Nagoya NFT Event & AI Initiative", desc: "Participated in an NFT event and launched an AI initiative." },
+                { src: "assets/media/asset-122362db911a.jpg", title: "Incorporation", desc: "Incorporated FOMUS to strengthen operations." },
+                { src: "assets/media/asset-450519f94e7b.jpg", title: "Ginza Crypto Bar P2P Collab", desc: "Held a collaboration event with crypto culture in Ginza." }
+            ],
+            "2021": [
+                { src: "assets/media/asset-934ae0bbd51a.jpg", title: "FOMUS Brand Launch", desc: "Launched the brand and began exploring new possibilities for masu." },
+                { src: "assets/media/asset-df116ca1757a.jpg", title: "Masu Photo Full Launch", desc: "Started the photo project capturing the world through masu." },
+                { src: "assets/media/asset-8f003d3b30f6.jpg", title: "Masu Turtle Project", desc: "Experimented with stories combining masu and living creatures." },
+                { src: "assets/media/asset-0fdc18a57234.png", title: "NFT CryptoSpirit Start", desc: "Explored digital expression of masu through NFTs." }
+            ]
+        };
+
+        const galleryEl = document.getElementById('activity-gallery');
+        const yearButtons = document.querySelectorAll('.year-btn');
+
+        function renderActivities(year) {
+            galleryEl.innerHTML = '';
+            const items = activitiesData[year] || [];
+            items.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'activity-card active';
+            card.innerHTML = `
+                    <img src="${item.src}" alt="${item.title}">
+                    <div class="activity-body">
+                        <h3 class="serif font-bold">${item.title}</h3>
+                        <p>${item.desc}</p>
+                    </div>
+                `;
+            galleryEl.appendChild(card);
+            });
+        }
+
+        yearButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                yearButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderActivities(btn.dataset.year);
+            });
+        });
+
+        renderActivities('2021');
+
+        // ヒーロースライドショー
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.querySelectorAll('.hero-dot');
+        let heroIndex = 0;
+
+        function setHeroSlide(idx) {
+            heroSlides.forEach((s, i) => s.classList.toggle('active', i === idx));
+            heroDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+
+        heroDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                heroIndex = i;
+                setHeroSlide(heroIndex);
+            });
+        });
+
+        setInterval(() => {
+            heroIndex = (heroIndex + 1) % heroSlides.length;
+            setHeroSlide(heroIndex);
+        }, 4500);
+    </script>
+</body>
+</html>
