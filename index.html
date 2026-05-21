@@ -111,6 +111,18 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 
 .h-video{position:absolute;inset:0;background:var(--ink)}
 .h-video video{width:100%;height:100%;object-fit:cover;opacity:1}
+/* hero controls */
+.h-ctrl{position:absolute;bottom:32px;right:40px;z-index:10;display:flex;gap:12px;align-items:center}
+.h-btn{
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .25s;
+}
+.h-btn:hover{background:rgba(255,255,255,.24)}
+.h-replay{display:none}
+.h-replay.show{display:flex}
 
 .h-film{position:absolute;inset:0}
 .h-frame{position:absolute;inset:0;opacity:0;transition:opacity 1.8s cubic-bezier(.4,0,.2,1)}
@@ -590,10 +602,12 @@ footer{}
 <!-- ══════════════ §01 HERO ══════════════ -->
 <section id="hero">
   <div class="h-video">
-    <video src="hero.mp4" autoplay muted loop playsinline></video>
+    <video id="heroVid" src="hero.mp4" autoplay muted playsinline></video>
   </div>
-  <div class="h-ov"></div>
-  <div class="h-grain"></div>
+  <div class="h-ctrl">
+    <button class="h-btn h-replay" id="hReplay" aria-label="最初から再生">↺</button>
+    <button class="h-btn" id="hMute" aria-label="ミュート切替">🔇</button>
+  </div>
 </section>
 
 
@@ -1155,6 +1169,30 @@ document.querySelectorAll('.clbl input').forEach(inp => {
     if(caps[idx]) caps[idx].classList.add('act');
   }
   setInterval(() => go((idx+1) % slides.length), 4000);
+})();
+
+/* ── Hero video controls ── */
+(function(){
+  const vid = document.getElementById('heroVid');
+  const muteBtn = document.getElementById('hMute');
+  const replayBtn = document.getElementById('hReplay');
+  if(!vid) return;
+
+  muteBtn.onclick = () => {
+    vid.muted = !vid.muted;
+    if(!vid.muted && vid.paused) vid.play();
+    muteBtn.textContent = vid.muted ? '🔇' : '🔊';
+  };
+
+  replayBtn.onclick = () => {
+    vid.currentTime = 0;
+    vid.play();
+    replayBtn.classList.remove('show');
+  };
+
+  vid.addEventListener('ended', () => {
+    replayBtn.classList.add('show');
+  });
 })();
 </script>
 </body>
