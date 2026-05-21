@@ -228,11 +228,12 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
   padding:0 40px;
 }
 .wif-h{
-  font-family:var(--en);
-  font-size:clamp(3rem,7vw,5.6rem);
+  font-family:var(--serif);
+  font-size:clamp(1.4rem,2.4vw,2.2rem);
   font-weight:300;color:var(--ink);
-  line-height:1.06;letter-spacing:.01em;
-  margin-bottom:60px;
+  line-height:1.3;letter-spacing:.06em;
+  white-space:nowrap;
+  margin-bottom:48px;
 }
 .wif-vbar{
   width:1px;height:64px;background:var(--gold);
@@ -263,7 +264,7 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 .wif-logo{width:90px;height:90px;margin:0 auto 52px;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .wif-logo img{width:90px;height:90px;object-fit:contain}
-@media(max-width:600px){#what{padding:100px 0 80px}.wif-inner{padding:0 24px}.wif-h{font-size:2.8rem}}
+@media(max-width:600px){#what{padding:100px 0 80px}.wif-inner{padding:0 24px}.wif-h{font-size:1rem;white-space:normal;letter-spacing:.04em}}
 
 /* ══════════════════════════════════════
    §02.5  枡とは
@@ -680,8 +681,8 @@ footer{}
 /* Stage */
 .fw3-stage{
   position:relative;
-  width:min(1160px,calc(100vw - 48px));
-  height:700px;
+  width:min(1280px,calc(100vw - 48px));
+  height:800px;
   margin:0 auto;
   z-index:2;
 }
@@ -709,32 +710,31 @@ footer{}
   text-align:center;padding:14px;
   z-index:4;
 }
-.fw3-hub strong{font-family:'Cormorant Garamond',serif;font-size:1.38rem;font-weight:300;letter-spacing:.18em;color:#E2C068;line-height:1;}
-.fw3-hub span{font-size:.62rem;line-height:1.65;color:rgba(255,255,255,.6);letter-spacing:.06em;margin-top:8px;}
+.fw3-hub img{width:86%;height:86%;object-fit:contain;}
 /* Node */
 .fw3-node{
   position:absolute;
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:22px;
   text-decoration:none;
   color:#fff;
-  width:490px;
+  width:560px;
   z-index:3;
   transition:transform .45s cubic-bezier(.16,1,.3,1);
 }
 .fw3-node:hover{transform:translateY(-4px);}
-.fw3-node.craft   {left:0;  top:60px;}
-.fw3-node.business{right:0; top:60px;}
-.fw3-node.entertainment{right:0;bottom:60px;}
-.fw3-node.community{left:0; bottom:60px;}
+.fw3-node.craft   {left:0;  top:70px;}
+.fw3-node.business{right:0; top:70px;}
+.fw3-node.entertainment{right:0;bottom:70px;}
+.fw3-node.community{left:0; bottom:70px;}
 /* Circle image */
 .fw3-img{
-  width:136px;height:136px;
+  width:210px;height:210px;
   border-radius:50%;
   overflow:hidden;
   border:2px solid rgba(226,192,104,.45);
-  box-shadow:0 0 0 6px rgba(184,135,58,.09),0 0 40px rgba(184,135,58,.18);
+  box-shadow:0 0 0 7px rgba(184,135,58,.09),0 0 48px rgba(184,135,58,.20);
   flex-shrink:0;
 }
 .fw3-img img{width:100%;height:100%;object-fit:cover;transition:transform .75s cubic-bezier(.16,1,.3,1);}
@@ -755,7 +755,7 @@ footer{}
   background:rgba(255,255,255,.065);
 }
 .fw3-n{font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.38em;color:rgba(226,192,104,.75);display:block;margin-bottom:4px;}
-.fw3-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;letter-spacing:.1em;color:#fff;line-height:1;margin-bottom:6px;}
+.fw3-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,1.9vw,2rem);font-weight:400;letter-spacing:.08em;color:#fff;line-height:1.1;margin-bottom:6px;overflow-wrap:break-word;word-break:break-word;}
 .fw3-sub{font-size:.84rem;color:#E2C068;letter-spacing:.09em;font-family:'Noto Sans JP',sans-serif;margin-bottom:10px;}
 .fw3-desc{font-size:.83rem;color:rgba(255,255,255,.68);line-height:1.9;font-family:'Noto Sans JP',sans-serif;margin-bottom:12px;}
 .fw3-list{list-style:none;padding:0;margin:0;}
@@ -774,17 +774,34 @@ footer{}
 .fw-foot em{color:#E2C068;font-style:normal;}
 /* Responsive */
 @media(max-width:980px){
-  .fw3-stage{height:auto;display:flex;flex-direction:column;gap:14px;padding:0 16px;}
+  .fw3-stage{height:auto;display:flex;flex-direction:column;gap:12px;padding:0 16px;}
   .fw3-svg,.fw3-hub{display:none;}
-  .fw3-node{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:100%;flex-direction:row;gap:16px;}
-  .fw3-img{width:80px;height:80px;}
-  .fw3-name{font-size:1.55rem;}
-  .fw3-text{padding:14px 16px;}
+  .fw3-node{
+    position:relative!important;left:auto!important;right:auto!important;
+    top:auto!important;bottom:auto!important;
+    width:100%;flex-direction:row;align-items:center;gap:14px;
+  }
+  /* 全ノードで画像を左側に固定・大きめ正方形 */
+  .fw3-img{
+    order:-1;
+    width:120px;height:120px;
+    border-radius:10px;
+    flex-shrink:0;
+  }
+  /* テキストカードをコンパクトに */
+  .fw3-text{
+    padding:12px 14px;
+    background:rgba(255,255,255,.038);
+  }
+  .fw3-n{font-size:.62rem;margin-bottom:2px;}
+  .fw3-name{font-size:1.35rem;margin-bottom:4px;}
+  .fw3-sub{font-size:.76rem;margin-bottom:6px;}
+  .fw3-desc{font-size:.78rem;line-height:1.75;margin-bottom:0;}
 }
 @media(max-width:560px){
-  .fw3-img{width:68px;height:68px;}
-  .fw3-name{font-size:1.3rem;}
-  .fw3-desc{display:none;}
+  .fw3-img{width:104px;height:104px;border-radius:8px;}
+  .fw3-name{font-size:1.2rem;}
+  .fw3-desc{font-size:.74rem;}
 }
 </style>
 
@@ -826,8 +843,7 @@ footer{}
 
     <!-- Center hub -->
     <div class="fw3-hub">
-      <strong>FOMUS</strong>
-      <span>日本文化の価値を<br>世界へ</span>
+      <img src="FOMUSlogo_edited.png" alt="FOMUS">
     </div>
 
     <!-- 01 CRAFT: text LEFT, circle RIGHT -->
@@ -836,13 +852,7 @@ footer{}
         <span class="fw3-n">01</span>
         <div class="fw3-name">CRAFT</div>
         <div class="fw3-sub">工芸・空間・プロダクト</div>
-        <p class="fw3-desc">日本の美と技を、<br>プロダクトや空間体験へ。</p>
-        <ul class="fw3-list">
-          <li>FOMUS MASU</li>
-          <li>KUMIKI</li>
-          <li>MASUKAME</li>
-          <li>Masu Wall</li>
-        </ul>
+        <p class="fw3-desc">枡をはじめとする日本の美と技を、プロダクトや空間体験として形にする。伝統工芸の可能性を現代へ。</p>
       </div>
       <div class="fw3-img"><img src="FOMUS枡.jpg" alt="CRAFT" loading="lazy"></div>
     </a>
@@ -854,13 +864,7 @@ footer{}
         <span class="fw3-n">02</span>
         <div class="fw3-name">BUSINESS</div>
         <div class="fw3-sub">AI・Web・地域DX</div>
-        <p class="fw3-desc">テクノロジーで日本文化と<br>事業を拡張する。</p>
-        <ul class="fw3-list">
-          <li>TerroirHub</li>
-          <li>KANADE AI</li>
-          <li>AI Consulting</li>
-          <li>Web / DX</li>
-        </ul>
+        <p class="fw3-desc">AIとテクノロジーを活用し、文化と事業の可能性を世界へ広げる。企業・地域・クリエイターの挑戦を支援。</p>
       </div>
     </a>
 
@@ -871,13 +875,7 @@ footer{}
         <span class="fw3-n">03</span>
         <div class="fw3-name">ENTERTAINMENT</div>
         <div class="fw3-sub">IP・アニメ・ゲーム</div>
-        <p class="fw3-desc">物語と体験を、世界中の人へ<br>感動として届ける。</p>
-        <ul class="fw3-list">
-          <li>KUKU</li>
-          <li>SILVA</li>
-          <li>Music / MV</li>
-          <li>Animation</li>
-        </ul>
+        <p class="fw3-desc">日本発のキャラクター・音楽・映像を通じて、世界中の人々に感動と物語を届けるコンテンツを展開。</p>
       </div>
     </a>
 
@@ -887,13 +885,7 @@ footer{}
         <span class="fw3-n">04</span>
         <div class="fw3-name">COMMUNITY</div>
         <div class="fw3-sub">共創・コミュニティ</div>
-        <p class="fw3-desc">人と人、文化と文化をつなぎ、<br>共に未来をつくる。</p>
-        <ul class="fw3-list">
-          <li>FOMUS GUILD</li>
-          <li>Masu Photo</li>
-          <li>Events / Exhibition</li>
-          <li>Global Network</li>
-        </ul>
+        <p class="fw3-desc">人と人、文化と文化をつなぐ場をつくる。イベントや共創活動を通じ、国内外で新しい文化の芽を育てる。</p>
       </div>
       <div class="fw3-img"><img src="オンラインコミュニティ.JPG" alt="COMMUNITY" loading="lazy"></div>
     </a>
