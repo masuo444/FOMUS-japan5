@@ -164,7 +164,38 @@ a{color:inherit;text-decoration:none}
   color:#444;line-height:2.2;
 }
 
-/* ════ §03 PROJECTS ════ */
+/* ════ §03 EXPERIENCES ════ */
+.experiences{background:var(--cream);padding:100px 0}
+.exp-head{margin-bottom:56px}
+.exp-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,2.4vw,2.2rem);
+  font-weight:300;color:var(--ink);
+  letter-spacing:.06em;margin-top:16px;
+  line-height:1.4;
+}
+.exp-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(10,18,34,.1);
+}
+.exp-item{
+  padding:36px 32px 36px 0;
+  border-bottom:1px solid rgba(10,18,34,.06);
+}
+.exp-num{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.4em;
+  color:var(--gold);margin-bottom:14px;
+}
+.exp-name{
+  font-family:var(--serif);font-size:1.05rem;font-weight:400;
+  color:var(--ink);margin-bottom:10px;
+}
+.exp-desc{
+  font-family:var(--sans);font-size:.86rem;
+  color:#666;line-height:1.9;
+}
+
+/* ════ §04 PROJECTS ════ */
 .projects{background:var(--warm);padding:112px 0}
 .proj-head{margin-bottom:64px}
 .proj-head-h{
@@ -327,6 +358,7 @@ a{color:inherit;text-decoration:none}
 @media(max-width:960px){
   .W{padding:0 32px}
   .phi-inner{grid-template-columns:1fr;gap:40px}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
   .proj-grid{grid-template-columns:1fr}
   .global-inner{grid-template-columns:1fr;min-height:auto}
   .global-text-wrap{padding:72px 32px}
@@ -343,6 +375,7 @@ a{color:inherit;text-decoration:none}
   .hero-scroll{display:none}
   .phi{padding:72px 0}
   .projects{padding:72px 0}
+  .exp-grid{grid-template-columns:1fr}
   .proj-body{padding:24px 24px 32px}
   .com-cta{padding:80px 0}
   .global-stats{flex-wrap:wrap;gap:20px}
@@ -384,7 +417,7 @@ a{color:inherit;text-decoration:none}
   <div class="hero-left">
     <div class="hero-inner">
       <div class="hero-eyebrow">Community</div>
-      <h1 class="hero-h1">日本文化を、<br>世界中の仲間と。</h1>
+      <h1 class="hero-h1">世界中の仲間と、<br>日本文化を楽しむ。</h1>
       <p class="hero-desc">FOMUSは、イベント、国際交流、コミュニティを通じ、世界中の人々と日本文化を共創しています。</p>
       <div class="hero-tags">
         <span class="hero-tag">Masu Photo</span>
@@ -420,7 +453,49 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- ════ §03 PROJECTS ════ -->
+<!-- ════ §03 EXPERIENCES ════ -->
+<section class="experiences">
+  <div class="W">
+    <div class="exp-head rv">
+      <span class="lbl">Experiences</span>
+      <h2 class="exp-h2">参加したら、<br>こんな体験が待っています。</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item rv d1">
+        <p class="exp-num">01</p>
+        <p class="exp-name">枡フォト参加</p>
+        <p class="exp-desc">世界各地で枡を持って撮影。文化を超えた交流の瞬間を共有します。</p>
+      </div>
+      <div class="exp-item rv d2">
+        <p class="exp-num">02</p>
+        <p class="exp-name">国際交流イベント</p>
+        <p class="exp-desc">海外日本国大使館を含む国際イベントに参加。世界と直接つながります。</p>
+      </div>
+      <div class="exp-item rv d3">
+        <p class="exp-num">03</p>
+        <p class="exp-name">日本酒・工芸体験</p>
+        <p class="exp-desc">日本の伝統文化を深める体験型プログラム。日本酒、枡、工芸を知る。</p>
+      </div>
+      <div class="exp-item rv d1">
+        <p class="exp-num">04</p>
+        <p class="exp-name">KUKUコミュニティ</p>
+        <p class="exp-desc">KUKUファンとつながり、物語を一緒に育てるファンコミュニティ。</p>
+      </div>
+      <div class="exp-item rv d2">
+        <p class="exp-num">05</p>
+        <p class="exp-name">世界の仲間と交流</p>
+        <p class="exp-desc">40カ国以上のメンバーとオンライン・オフライン両方で交流できます。</p>
+      </div>
+      <div class="exp-item rv d3">
+        <p class="exp-num">06</p>
+        <p class="exp-name">Guild限定企画</p>
+        <p class="exp-desc">FOMUS Guild メンバーだけが参加できるプロジェクトや先行体験。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ §04 PROJECTS ════ -->
 <section class="projects">
   <div class="W">
     <div class="proj-head rv">
