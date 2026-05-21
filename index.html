@@ -557,6 +557,71 @@ textarea.fc{resize:vertical;min-height:120px}
 /* ══════════════════════════════════════
    FOOTER
 ══════════════════════════════════════ */
+/* ══════════════════════════════════════
+   MOBILE OPTIMIZATION  ≤600px
+══════════════════════════════════════ */
+@media(max-width:600px){
+
+  /* --- セクション縦padding 統一 --- */
+  #what      {padding:72px 0 56px}
+  #projects  {padding:64px 0}
+  #global    {padding:64px 0}
+  #founder   {padding:64px 0}
+  #contact   {padding:64px 0}
+  #flywheel  {padding:72px 0 80px}
+
+  /* --- What is FOMUS: 見出しが1remで極小 → 修正 --- */
+  .wif-h    {font-size:1.55rem!important;line-height:1.42;letter-spacing:.04em}
+  .wif-body {font-size:1rem;line-height:2}
+  .wif-lead {font-size:.92rem}
+  .wif-logo {width:68px;height:68px;margin-bottom:36px}
+  .wif-logo img{width:68px;height:68px}
+
+  /* --- Hero --- */
+  .h-h1 {font-size:2.2rem!important;line-height:1.24}
+  .h-sub{font-size:1rem;margin-bottom:28px}
+  .h-ey {font-size:.6rem;margin-bottom:14px}
+  .cp,.cs{padding:13px 22px;font-size:.76rem}
+
+  /* --- Featured Projects --- */
+  #projects .W{padding:0 16px}
+  .fp-grid{gap:12px}
+  .fp-body{padding:14px 16px 18px}
+  .fp-name{font-size:1rem}
+  .fp-desc{font-size:.88rem}
+
+  /* --- Global Trust --- */
+  .gl-h2     {font-size:1.75rem}
+  .gl-cap-desc{font-size:.84rem}
+  .gl-cap-country{font-size:.98rem}
+
+  /* --- Founder --- */
+  .fd-txt    {padding:26px 20px}
+  .fd-bio    {font-size:.9rem;line-height:1.85}
+  .fd-vis img{min-height:260px;max-height:300px}
+
+  /* --- Contact --- */
+  .co-h  {font-size:1.35rem}
+  .co-form{padding:26px 16px}
+  .co-l p {font-size:.92rem}
+  .fg label{font-size:.8rem}
+  .fc    {font-size:.94rem;padding:12px 14px}
+  .fsub  {font-size:.9rem}
+
+  /* --- Flywheel head --- */
+  .fw-eco-h{font-size:2rem!important;letter-spacing:.12em}
+  .fw-sub  {font-size:.92rem}
+  .fw-head {margin-bottom:40px}
+
+  /* --- Footer --- */
+  .ft {gap:24px;margin-bottom:36px}
+  .fns{gap:24px}
+  .fng h4  {font-size:.58rem;margin-bottom:10px}
+  .fng li a{font-size:.84rem}
+  .fbot    {flex-direction:column;align-items:flex-start;gap:8px}
+  .fcp     {font-size:.6rem}
+}
+
 footer{}
 .ft{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:56px;flex-wrap:wrap;gap:44px}
 .fb img{height:24px;width:auto;margin-bottom:10px}
@@ -656,7 +721,88 @@ footer{}
   </div>
 </section>
 
-<!-- ══════════════ §03 FOMUS ECOSYSTEM FLYWHEEL ══════════════ -->
+<!-- ══════════════ §03 FEATURED PROJECTS ══════════════ -->
+<section id="projects">
+  <div class="W">
+    <div class="rv" style="margin-bottom:52px;">
+      <span class="lbl">Featured Projects</span>
+      <div class="bar"></div>
+    </div>
+
+    <div class="fp-grid">
+
+      <!-- 1 枡 -->
+      <a href="masu.html" class="fp-card rv d1">
+        <div class="fp-thumb"><img src="FOMUS枡.jpg" alt="枡" loading="lazy"></div>
+        <div class="fp-body">
+          <div class="fp-cat">CRAFT</div>
+          <div class="fp-name">枡</div>
+          <p class="fp-desc">FOMUSの原点となる、日本のクラフト。国産ヒノキを使用した高品質な枡を、ギフト、企業贈答、ホテル、イベント向けに展開。名入れ・オーダーメイドに加え、防水・耐熱性を高めた特殊コーティング仕様にも対応しています。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 2 枡フォト -->
+      <a href="#contact" class="fp-card rv d2">
+        <div class="fp-thumb"><img src="枡フォト.jpg" alt="枡フォト" loading="lazy"></div>
+        <div class="fp-body">
+          <div class="fp-cat">CRAFT</div>
+          <div class="fp-name">枡フォト</div>
+          <p class="fp-desc">一枚の写真から、文化交流が始まる。枡をシンボルに、世界中で人々を撮影するグローバルフォトプロジェクト。人と人、日本と世界をつなぐFOMUS独自の文化体験です。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 3 KUMIKI -->
+      <a href="https://parure.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d3">
+        <div class="fp-thumb"><img src="589ABBB5-915D-46DB-9283-FD9F4EC68260_1_201_a.jpeg" alt="KUMIKI"></div>
+        <div class="fp-body">
+          <div class="fp-cat">CRAFT</div>
+          <div class="fp-name">KUMIKI</div>
+          <p class="fp-desc">1300年の日本文化を、ジュエリーへ。日本の伝統工芸「枡」を、世界最小級のジュエリーとして再解釈。木の温もりと職人技を融合した、日本発のクラフトラグジュアリー。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 4 KUKU -->
+      <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d1">
+        <div class="fp-thumb"><img src="KUKU.jpg" alt="KUKU"></div>
+        <div class="fp-body">
+          <div class="fp-cat">ENTERTAINMENT</div>
+          <div class="fp-name">KUKU</div>
+          <p class="fp-desc">世界へ届ける、日本発ファンタジーIP。木の神と人々の物語を軸に、絵本、アニメ、音楽、グッズへ展開するクロスメディアプロジェクト。世界に愛される日本発IPを目指しています。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 5 TerroirHUB -->
+      <a href="https://terroirhub.com/" target="_blank" rel="noopener" class="fp-card rv d2">
+        <div class="fp-thumb"><img src="22E8DEB1-4913-4ECD-9553-A64A7BA2CCF3_1_201_a.jpeg" alt="TerroirHUB"></div>
+        <div class="fp-body">
+          <div class="fp-cat">BUSINESS</div>
+          <div class="fp-name">TerroirHUB</div>
+          <p class="fp-desc">地域の魅力を、世界へ届けるAIプラットフォーム。日本酒、ワイン、観光、工芸などに向けた多言語ウェブ・AIソリューション。地域の魅力や生産者の想いを、国内だけでなく海外顧客へも届ける越境DXを支援します。</p>
+          <span class="fp-link">詳細を見る</span>
+        </div>
+      </a>
+
+      <!-- 6 KANADE AI -->
+      <a href="https://kanade-ai.com/" target="_blank" rel="noopener" class="fp-card rv d3">
+        <div class="fp-thumb"><img src="KANADE アイコン.png" alt="KANADE AI"></div>
+        <div class="fp-body">
+          <div class="fp-cat">BUSINESS</div>
+          <div class="fp-name">KANADE AI<span style="font-size:.72em;font-weight:300;color:var(--mid);display:block;margin-top:3px;letter-spacing:.02em;">(FOMUS CREATIVE STUDIO)</span></div>
+          <p class="fp-desc">中小企業のAI導入を、実装まで支援。多言語ウェブ制作、AI活用、業務自動化を伴走支援。IT導入支援事業者として、補助金を活用したデジタル化・AI導入にも対応。</p>
+          <span class="fp-link">相談する</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════ §04 FOMUS ECOSYSTEM FLYWHEEL ══════════════ -->
 <style>
 #flywheel{
   position:relative;
@@ -900,87 +1046,6 @@ footer{}
 </section>
 
 
-<!-- ══════════════ §04 FEATURED PROJECTS ══════════════ -->
-<section id="projects">
-  <div class="W">
-    <div class="rv" style="margin-bottom:52px;">
-      <span class="lbl">Featured Projects</span>
-      <div class="bar"></div>
-    </div>
-
-    <div class="fp-grid">
-
-      <!-- 1 枡 -->
-      <a href="masu.html" class="fp-card rv d1">
-        <div class="fp-thumb"><img src="FOMUS枡.jpg" alt="枡" loading="lazy"></div>
-        <div class="fp-body">
-          <div class="fp-cat">CRAFT</div>
-          <div class="fp-name">枡</div>
-          <p class="fp-desc">FOMUSの原点となる、日本のクラフト。国産ヒノキを使用した高品質な枡を、ギフト、企業贈答、ホテル、イベント向けに展開。名入れ・オーダーメイドに加え、防水・耐熱性を高めた特殊コーティング仕様にも対応しています。</p>
-          <span class="fp-link">詳細を見る</span>
-        </div>
-      </a>
-
-      <!-- 2 枡フォト -->
-      <a href="#contact" class="fp-card rv d2">
-        <div class="fp-thumb"><img src="枡フォト.jpg" alt="枡フォト" loading="lazy"></div>
-        <div class="fp-body">
-          <div class="fp-cat">CRAFT</div>
-          <div class="fp-name">枡フォト</div>
-          <p class="fp-desc">一枚の写真から、文化交流が始まる。枡をシンボルに、世界中で人々を撮影するグローバルフォトプロジェクト。人と人、日本と世界をつなぐFOMUS独自の文化体験です。</p>
-          <span class="fp-link">詳細を見る</span>
-        </div>
-      </a>
-
-      <!-- 3 KUMIKI -->
-      <a href="https://parure.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d3">
-        <div class="fp-thumb"><img src="589ABBB5-915D-46DB-9283-FD9F4EC68260_1_201_a.jpeg" alt="KUMIKI"></div>
-        <div class="fp-body">
-          <div class="fp-cat">CRAFT</div>
-          <div class="fp-name">KUMIKI</div>
-          <p class="fp-desc">1300年の日本文化を、ジュエリーへ。日本の伝統工芸「枡」を、世界最小級のジュエリーとして再解釈。木の温もりと職人技を融合した、日本発のクラフトラグジュアリー。</p>
-          <span class="fp-link">詳細を見る</span>
-        </div>
-      </a>
-
-      <!-- 4 KUKU -->
-      <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d1">
-        <div class="fp-thumb"><img src="KUKU.jpg" alt="KUKU"></div>
-        <div class="fp-body">
-          <div class="fp-cat">ENTERTAINMENT</div>
-          <div class="fp-name">KUKU</div>
-          <p class="fp-desc">世界へ届ける、日本発ファンタジーIP。木の神と人々の物語を軸に、絵本、アニメ、音楽、グッズへ展開するクロスメディアプロジェクト。世界に愛される日本発IPを目指しています。</p>
-          <span class="fp-link">詳細を見る</span>
-        </div>
-      </a>
-
-      <!-- 5 TerroirHUB -->
-      <a href="https://terroirhub.com/" target="_blank" rel="noopener" class="fp-card rv d2">
-        <div class="fp-thumb"><img src="22E8DEB1-4913-4ECD-9553-A64A7BA2CCF3_1_201_a.jpeg" alt="TerroirHUB"></div>
-        <div class="fp-body">
-          <div class="fp-cat">BUSINESS</div>
-          <div class="fp-name">TerroirHUB</div>
-          <p class="fp-desc">地域の魅力を、世界へ届けるAIプラットフォーム。日本酒、ワイン、観光、工芸などに向けた多言語ウェブ・AIソリューション。地域の魅力や生産者の想いを、国内だけでなく海外顧客へも届ける越境DXを支援します。</p>
-          <span class="fp-link">詳細を見る</span>
-        </div>
-      </a>
-
-      <!-- 6 KANADE AI -->
-      <a href="https://kanade-ai.com/" target="_blank" rel="noopener" class="fp-card rv d3">
-        <div class="fp-thumb"><img src="KANADE アイコン.png" alt="KANADE AI"></div>
-        <div class="fp-body">
-          <div class="fp-cat">BUSINESS</div>
-          <div class="fp-name">KANADE AI<span style="font-size:.72em;font-weight:300;color:var(--mid);display:block;margin-top:3px;letter-spacing:.02em;">(FOMUS CREATIVE STUDIO)</span></div>
-          <p class="fp-desc">中小企業のAI導入を、実装まで支援。多言語ウェブ制作、AI活用、業務自動化を伴走支援。IT導入支援事業者として、補助金を活用したデジタル化・AI導入にも対応。</p>
-          <span class="fp-link">相談する</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
 <!-- ══════════════ §05 GLOBAL TRUST ══════════════ -->
 <section id="global">
   <div class="W">
@@ -1010,6 +1075,7 @@ footer{}
             <div class="gl-slide"><img src="slideshow/9.jpg" alt="FOMUS Global 9" loading="lazy"></div>
             <div class="gl-slide"><img src="slideshow/10.jpg" alt="FOMUS Global 10" loading="lazy"></div>
             <div class="gl-slide"><img src="slideshow/11.jpg" alt="FOMUS Global 11" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/12.jpg" alt="台湾一周" loading="lazy"></div>
           </div>
         </div>
         <div class="gl-ss-dots" id="glDots"></div>
@@ -1057,6 +1123,10 @@ footer{}
           <div class="gl-cap">
             <div class="gl-cap-hd"><span class="gl-cap-flag">🇦🇪</span><span class="gl-cap-country">Dubai</span><span class="gl-cap-badge">ドバイ日本フェア</span><span class="gl-cap-year">2025</span></div>
             <p class="gl-cap-desc">ドバイ日本フェア2025。浴衣姿の人々が盆踊りを楽しむ中、FOMUSはフォトグラファーとして参加。</p>
+          </div>
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇹🇼</span><span class="gl-cap-country">Taiwan</span><span class="gl-cap-badge">台湾一周ランニングプロジェクト</span><span class="gl-cap-year">2023</span></div>
+            <p class="gl-cap-desc">GPSランナー・志水直樹氏とともに台湾を一周。出会った台湾の人々へコラボ枡をギフトとして届け、走りながら日本文化を繋いだ旅。</p>
           </div>
         </div>
       </div>
@@ -1109,17 +1179,14 @@ footer{}
       <div class="rv-l">
         <h2 class="co-h">何でも<br>ご相談ください</h2>
         <p>FOMUSへのご依頼・ご相談は、カテゴリをお選びください。すべてのメッセージに目を通し、必ずお返事します。</p>
-        <ul class="co-cats">
-          <li><label class="clbl"><input type="radio" name="csel" value="gift"><span class="crdio"></span>商品・ギフト（枡・名入れ・企業贈答）</label></li>
-          <li><label class="clbl"><input type="radio" name="csel" value="ai"><span class="crdio"></span>AI・Web制作</label></li>
-          <li><label class="clbl"><input type="radio" name="csel" value="global"><span class="crdio"></span>海外展開相談</label></li>
-          <li><label class="clbl"><input type="radio" name="csel" value="lecture"><span class="crdio"></span>講演・研修</label></li>
-          <li><label class="clbl"><input type="radio" name="csel" value="kuku"><span class="crdio"></span>KUKU / IP関連</label></li>
-          <li><label class="clbl"><input type="radio" name="csel" value="other"><span class="crdio"></span>その他</label></li>
-        </ul>
       </div>
       <div class="rv-r">
         <form class="co-form" action="mailto:fomus.official@gmail.com" method="POST" enctype="text/plain">
+          <div class="fr">
+            <div class="fg"><label>お名前 <span class="req">*</span></label><input type="text" name="name" class="fc" placeholder="山田 太郎" required></div>
+            <div class="fg"><label>会社名 / 団体名</label><input type="text" name="company" class="fc" placeholder="任意"></div>
+          </div>
+          <div class="fg"><label>メールアドレス <span class="req">*</span></label><input type="email" name="email" class="fc" placeholder="example@email.com" required></div>
           <div class="fg">
             <label>お問い合わせカテゴリ <span class="req">*</span></label>
             <select name="category" class="fc" required>
@@ -1132,11 +1199,6 @@ footer{}
               <option value="other">その他</option>
             </select>
           </div>
-          <div class="fr">
-            <div class="fg"><label>お名前 <span class="req">*</span></label><input type="text" name="name" class="fc" placeholder="山田 太郎" required></div>
-            <div class="fg"><label>会社名 / 団体名</label><input type="text" name="company" class="fc" placeholder="任意"></div>
-          </div>
-          <div class="fg"><label>メールアドレス <span class="req">*</span></label><input type="email" name="email" class="fc" placeholder="example@email.com" required></div>
           <div class="fg"><label>メッセージ <span class="req">*</span></label><textarea name="message" class="fc" placeholder="ご相談内容・ご質問をお書きください" required></textarea></div>
           <label class="cck"><input type="checkbox" name="consent" required><span><a href="/privacy.html" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline">プライバシーポリシー</a>に同意のうえ送信します。</span></label>
           <button type="submit" class="fsub">メッセージを送る</button>
@@ -1148,30 +1210,74 @@ footer{}
 
 
 <!-- ══════════════ FOOTER ══════════════ -->
-<footer class="bg-[#1a2a3a] text-white py-16">
-  <div class="max-w-7xl mx-auto px-6 space-y-8">
-    <div class="flex flex-col md:flex-row justify-between items-start gap-10">
-      <div class="space-y-3">
-        <div class="text-3xl font-bold en-serif tracking-tighter">FOMUS</div>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <button type="button" data-footer-tab="company" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">会社概要</button>
-        <button type="button" data-footer-tab="tokusho" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">特商法表記</button>
-        <button type="button" data-footer-tab="privacy" class="footer-tab rounded-full border border-white/30 px-4 py-2 text-xs tracking-[0.25em] uppercase text-white/80 hover:text-white hover:border-white/60 transition">プライバシーポリシー</button>
+<style>
+#footer{background:var(--ink2);color:#fff;padding:64px 0 40px}
+.ft-inner{max-width:1240px;margin:0 auto;padding:0 48px}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.ft-brand{font-family:var(--en);font-size:1.8rem;font-weight:200;letter-spacing:.18em;color:#fff}
+.ft-tabs{display:flex;flex-wrap:wrap;gap:10px}
+.ft-tab{
+  font-family:var(--en);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:7px 18px;background:none;cursor:pointer;
+  transition:color .2s,border-color .2s;
+}
+.ft-tab:hover,.ft-tab.act{color:#fff;border-color:rgba(255,255,255,.55)}
+.ft-panels{margin-bottom:36px}
+.ft-panel{
+  display:none;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:8px;padding:24px 28px;
+  font-size:.88rem;line-height:2;color:rgba(255,255,255,.72);
+}
+.ft-panel.open{display:block}
+.ft-panel h3{font-family:var(--serif);font-size:1rem;font-weight:400;color:#fff;margin-bottom:14px;letter-spacing:.06em}
+.ft-panel ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.ft-panel p{margin-bottom:8px}
+.ft-bot{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.ft-copy{font-family:var(--en);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.ft-sns{display:flex;gap:20px}
+.ft-sns a{color:rgba(255,255,255,.3);transition:color .2s;font-size:.82rem}
+.ft-sns a:hover{color:var(--gilt)}
+@media(max-width:600px){
+  .ft-inner{padding:0 20px}
+  .ft-top{flex-direction:column;gap:20px;margin-bottom:24px}
+  .ft-brand{font-size:1.5rem}
+  .ft-tab{font-size:.64rem;padding:6px 14px}
+  .ft-panel{padding:18px 16px;font-size:.84rem}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:8px}
+}
+</style>
+
+<footer id="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">FOMUS</div>
+      <div class="ft-tabs">
+        <button class="ft-tab" data-ft="company">会社概要</button>
+        <button class="ft-tab" data-ft="tokusho">特商法表記</button>
+        <button class="ft-tab" data-ft="privacy">プライバシーポリシー</button>
       </div>
     </div>
-    <div class="space-y-4">
-      <div data-footer-panel="company" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
-        <h3 class="text-base font-semibold mb-3">会社概要</h3>
-        <ul class="space-y-1 text-white/80">
+
+    <div class="ft-panels">
+      <div class="ft-panel" id="ft-company">
+        <h3>会社概要</h3>
+        <ul>
           <li>会社名：合同会社FOMUS</li>
           <li>所在地：日本</li>
           <li>代表者：増尾圭亮</li>
         </ul>
       </div>
-      <div data-footer-panel="tokusho" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
-        <h3 class="text-base font-semibold mb-3">特定商取引法に基づく表記</h3>
-        <ul class="space-y-1 text-white/80">
+      <div class="ft-panel" id="ft-tokusho">
+        <h3>特定商取引法に基づく表記</h3>
+        <ul>
           <li>販売事業者：合同会社FOMUS</li>
           <li>代表者：増尾圭亮</li>
           <li>所在地：日本</li>
@@ -1184,24 +1290,26 @@ footer{}
           <li>返品・キャンセル：商品特性に応じ各ページに記載</li>
         </ul>
       </div>
-      <div data-footer-panel="privacy" class="footer-panel hidden rounded-2xl border border-white/10 bg-white/5 p-6 text-xs md:text-sm leading-relaxed">
-        <h3 class="text-base font-semibold mb-3">プライバシーポリシー</h3>
-        <div class="space-y-2 text-white/80">
-          <p>合同会社FOMUS（以下「当社」）は、お問い合わせ等で取得する個人情報を、以下の目的の範囲で適切に取り扱います。</p>
-          <ul class="space-y-1">
-            <li>お問い合わせ対応およびご連絡</li>
-            <li>サービス提供・運営に関するご案内</li>
-            <li>品質向上のための分析・改善</li>
-            <li>新サービス・イベント等のご案内（希望者のみ）</li>
-          </ul>
-          <p>取得した個人情報は、法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
-          <p>業務委託先に取り扱いを委託する場合は、適切な監督のもとで取り扱います。</p>
-          <p>個人情報の開示・訂正・削除・利用停止をご希望の場合は、fomus.official@gmail.com までご連絡ください。</p>
-          <p>本方針は、必要に応じて見直し・改定することがあります。</p>
-        </div>
+      <div class="ft-panel" id="ft-privacy">
+        <h3>プライバシーポリシー</h3>
+        <p>合同会社FOMUS（以下「当社」）は、お問い合わせ等で取得する個人情報を、以下の目的の範囲で適切に取り扱います。</p>
+        <ul>
+          <li>お問い合わせ対応およびご連絡</li>
+          <li>サービス提供・運営に関するご案内</li>
+          <li>品質向上のための分析・改善</li>
+          <li>新サービス・イベント等のご案内（希望者のみ）</li>
+        </ul>
+        <p style="margin-top:10px">取得した個人情報は、法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+        <p>個人情報の開示・訂正・削除・利用停止をご希望の場合は、fomus.official@gmail.com までご連絡ください。</p>
       </div>
     </div>
-    <p class="text-[10px] opacity-40 tracking-widest uppercase">&copy; 2021–2026 FOMUS. All rights reserved.</p>
+
+    <div class="ft-bot">
+      <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
+      <div class="ft-sns">
+        <a href="https://www.instagram.com/fomus_official/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -1235,25 +1343,26 @@ document.querySelectorAll('.clbl input').forEach(inp => {
 
 /* ── Footer tab switcher ── */
 (function(){
-  const tabs   = document.querySelectorAll('[data-footer-tab]');
-  const panels = document.querySelectorAll('[data-footer-panel]');
+  const tabs = document.querySelectorAll('.ft-tab');
   let active = null;
-  function set(name){
-    active = name;
-    panels.forEach(p => p.classList.toggle('hidden', p.dataset.footerPanel !== name));
-    tabs.forEach(t => {
-      const on = t.dataset.footerTab === name;
-      t.classList.toggle('bg-amber-200', on);
-      t.classList.toggle('border-amber-200', on);
-      t.classList.toggle('text-white/80', !on);
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      const key = t.dataset.ft;
+      const panel = document.getElementById('ft-' + key);
+      if(!panel) return;
+      if(active === key){
+        panel.classList.remove('open');
+        t.classList.remove('act');
+        active = null;
+      } else {
+        document.querySelectorAll('.ft-panel').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.ft-tab').forEach(b => b.classList.remove('act'));
+        panel.classList.add('open');
+        t.classList.add('act');
+        active = key;
+      }
     });
-  }
-  function clear(){
-    active = null;
-    panels.forEach(p => p.classList.add('hidden'));
-    tabs.forEach(t => { t.classList.remove('bg-amber-200','border-amber-200'); t.classList.add('text-white/80'); });
-  }
-  tabs.forEach(t => t.addEventListener('click', () => active === t.dataset.footerTab ? clear() : set(t.dataset.footerTab)));
+  });
 })();
 
 /* ── Global slideshow ── */

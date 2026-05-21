@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <title>FOMUS CRAFT | 日本文化を、手に取れる価値へ。</title>
+  <meta name="description" content="FOMUSのクラフト事業。枡を起点に、プロダクト・ギフト・空間・アートへ。日本文化を現代のライフスタイルへ再設計する。">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#0A1222;--ink2:#0F1E36;
+  --gold:#B8873A;--gold2:#C9993E;--gilt:#E2C068;
+  --cream:#FAF8F3;--warm:#F3EDE0;--dust:#E8E0D0;--mid:#888;
+  --serif:'Noto Serif JP',serif;
+  --sans:'Noto Sans JP',sans-serif;
+  --en:'Cormorant Garamond',serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.W{max-width:1240px;margin:0 auto;padding:0 56px}
+.lbl{font-family:var(--en);font-size:.66rem;letter-spacing:.46em;text-transform:uppercase;color:var(--gold)}
+.bar{width:36px;height:1px;background:var(--gold);margin:20px 0}
+
+/* ── Scroll reveal ── */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-l.in{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-r.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}.d4{transition-delay:.30s}
+
+/* ════════════════════════
+   HEADER
+════════════════════════ */
+#H{
+  position:fixed;inset:0 0 auto;z-index:900;
+  padding:0 56px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,box-shadow .4s;
+}
+#H.s{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.hl img{height:28px;width:auto;transition:filter .35s}
+#H:not(.s) .hl img{filter:brightness(0) invert(1)}
+.hn{display:flex;align-items:center;gap:32px;list-style:none}
+.hn a{font-family:var(--en);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .2s}
+#H.s .hn a{color:#555}
+.hn a:hover,.hn a.act{color:var(--gilt)!important}
+#H.s .hn a.act{color:var(--gold)!important}
+.hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
+#H.s .hcta{border-color:var(--ink);color:var(--ink)}
+.hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+/* mobile hamburger */
+.hbg{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer;background:none;border:none}
+.hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
+#H.s .hbg span{background:var(--ink)}
+@media(max-width:860px){.hn,.hcta{display:none}.hbg{display:flex}}
+#MN{display:none;position:fixed;inset:0;background:var(--ink);z-index:899;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+#MN.open{display:flex}
+#MN a{font-family:var(--en);font-size:1.8rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+#MN a:hover{color:var(--gilt)}
+.mnx{position:absolute;top:28px;right:36px;font-family:var(--en);font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer}
+
+/* ════════════════════════
+   §01  HERO
+════════════════════════ */
+.hero{
+  display:flex;
+  height:100vh;min-height:640px;
+  overflow:hidden;
+  position:relative;
+}
+.hero-left{
+  flex:0 0 50%;
+  background:var(--ink);
+  display:flex;
+  align-items:flex-end;
+  padding:100px 56px 80px 56px;
+}
+.hero-right{
+  flex:1;
+  overflow:hidden;
+}
+.hero-right img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.hero-inner{max-width:480px;width:100%}
+.hero-eyebrow{
+  font-family:var(--en);
+  font-size:.68rem;letter-spacing:.55em;text-transform:uppercase;
+  color:var(--gilt);margin-bottom:24px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gilt);flex-shrink:0}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3vw,3rem);
+  font-weight:500;
+  color:#fff;
+  line-height:1.30;
+  letter-spacing:.03em;
+  margin-bottom:28px;
+}
+.hero-desc{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1.1vw,1rem);
+  font-weight:400;
+  color:rgba(255,255,255,.72);
+  line-height:1.95;
+  margin-bottom:36px;
+}
+.hero-tags{
+  font-family:var(--en);
+  font-size:.65rem;letter-spacing:.32em;
+  color:rgba(255,255,255,.35);
+  text-transform:uppercase;
+}
+/* scroll indicator */
+.hero-scroll{
+  position:absolute;bottom:40px;right:40px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.hero-scroll span{font-family:var(--en);font-size:.55rem;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.scl{width:1px;height:40px;background:rgba(255,255,255,.15);overflow:hidden;position:relative}
+.scl::after{content:'';position:absolute;top:-100%;width:100%;height:100%;background:var(--gilt);animation:scr 2.2s ease-in-out infinite}
+@keyframes scr{0%{top:-100%}100%{top:200%}}
+
+/* ════════════════════════
+   §02  PHILOSOPHY
+════════════════════════ */
+.philosophy{
+  background:#fff;
+  padding:112px 0 104px;
+}
+.phi-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:96px;
+  align-items:center;
+}
+.phi-left .lbl{display:block;margin-bottom:20px}
+.phi-title{
+  font-family:var(--en);
+  font-size:clamp(3rem,5.5vw,5rem);
+  font-weight:400;
+  font-style:italic;
+  color:var(--ink);
+  line-height:1.05;
+  letter-spacing:.01em;
+}
+.phi-right{}
+.phi-lead{
+  font-family:var(--serif);
+  font-size:clamp(1.1rem,1.6vw,1.35rem);
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.65;
+  margin-bottom:24px;
+  letter-spacing:.04em;
+}
+.phi-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.05vw,1rem);
+  font-weight:400;
+  color:#444;
+  line-height:2.1;
+}
+
+/* ════════════════════════
+   §03  FEATURED PROJECTS
+════════════════════════ */
+.projects{
+  background:var(--cream);
+  padding:112px 0;
+}
+.proj-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:60px;
+}
+.proj-head-left .lbl{display:block;margin-bottom:14px}
+.proj-head-title{
+  font-family:var(--en);
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:400;
+  color:var(--ink);
+  letter-spacing:.06em;
+  line-height:1;
+}
+.proj-head-sub{
+  font-family:var(--sans);
+  font-size:.84rem;color:var(--mid);letter-spacing:.04em;
+}
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.proj-card{
+  background:#fff;
+  border-radius:3px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  border:1px solid rgba(10,18,34,.05);
+  transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;
+  text-decoration:none;color:var(--ink);
+}
+.proj-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,.1)}
+.proj-img{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:3/4;
+}
+.proj-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+}
+.proj-card:hover .proj-img img{transform:scale(1.06)}
+.proj-body{
+  padding:24px 22px 28px;
+  flex:1;display:flex;flex-direction:column;
+}
+.proj-num{
+  font-family:var(--en);font-size:.62rem;letter-spacing:.38em;
+  color:var(--gold);margin-bottom:8px;
+}
+.proj-name{
+  font-family:var(--en);
+  font-size:1.65rem;font-weight:400;
+  color:var(--ink);line-height:1;
+  letter-spacing:.06em;
+  margin-bottom:6px;
+}
+.proj-ja{
+  font-family:var(--serif);
+  font-size:.78rem;font-weight:400;
+  color:var(--gold);letter-spacing:.12em;
+  margin-bottom:16px;
+}
+.proj-desc{
+  font-family:var(--sans);
+  font-size:.85rem;font-weight:400;
+  color:#555;line-height:1.9;
+  flex:1;margin-bottom:22px;
+}
+.proj-link{
+  font-family:var(--en);
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .25s;
+}
+.proj-link::after{content:'→';display:inline-block}
+.proj-card:hover .proj-link{gap:11px}
+
+/* ════════════════════════
+   §04  WHAT WE OFFER
+════════════════════════ */
+.offer{
+  background:var(--ink);
+  padding:96px 0;
+}
+.offer-head{
+  text-align:center;
+  margin-bottom:64px;
+}
+.offer-head .lbl{color:var(--gilt);display:block;margin-bottom:16px}
+.offer-title{
+  font-family:var(--en);
+  font-size:clamp(2rem,3vw,2.6rem);
+  font-weight:400;color:#fff;
+  letter-spacing:.08em;line-height:1;
+}
+.offer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2px;
+}
+.offer-item{
+  padding:52px 36px;
+  border:1px solid rgba(255,255,255,.07);
+  text-align:center;
+  transition:background .3s,border-color .3s;
+  cursor:default;
+}
+.offer-item:hover{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(226,192,104,.24);
+}
+.offer-icon{
+  width:52px;height:52px;
+  margin:0 auto 22px;
+  opacity:.72;
+  transition:opacity .3s;
+}
+.offer-item:hover .offer-icon{opacity:1}
+.offer-icon svg{width:100%;height:100%}
+.offer-name{
+  font-family:var(--serif);
+  font-size:1rem;font-weight:400;
+  color:#fff;letter-spacing:.06em;
+  line-height:1.5;
+}
+
+/* ════════════════════════
+   §05  GLOBAL TRUST
+════════════════════════ */
+.global-trust{
+  background:var(--warm);
+  padding:112px 0;
+}
+.global-inner{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:80px;
+  align-items:center;
+}
+.global-text .lbl{display:block;margin-bottom:20px}
+.global-title{
+  font-family:var(--en);
+  font-size:clamp(2rem,3.5vw,3.2rem);
+  font-weight:400;
+  color:var(--ink);
+  line-height:1.15;
+  letter-spacing:.04em;
+  margin-bottom:24px;
+}
+.global-title-ja{
+  font-family:var(--serif);
+  font-size:clamp(1rem,1.6vw,1.3rem);
+  font-weight:400;
+  color:var(--gold);
+  letter-spacing:.12em;
+  font-style:normal;
+}
+.global-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.05vw,1rem);
+  font-weight:400;
+  color:#444;
+  line-height:2.1;
+  margin-bottom:36px;
+}
+.global-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--en);font-size:.72rem;letter-spacing:.2em;
+  color:var(--gold);
+  border:1px solid rgba(184,135,58,.36);
+  padding:9px 18px;border-radius:2px;
+}
+.global-badge::before{
+  content:'';width:7px;height:7px;
+  border-radius:50%;background:var(--gold);
+  animation:gp 2.4s infinite;
+}
+@keyframes gp{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(184,135,58,.4)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(184,135,58,0)}}
+.global-img{
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  box-shadow:0 32px 80px rgba(0,0,0,.14);
+}
+.global-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+}
+.global-img:hover img{transform:scale(1.04)}
+.global-img::after{
+  content:'';position:absolute;inset:0;
+  border:1px solid rgba(184,135,58,.2);
+  pointer-events:none;border-radius:4px;
+}
+
+/* ════════════════════════
+   §06  CTA
+════════════════════════ */
+.cta-sec{
+  background:var(--ink);
+  padding:112px 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-sec::before{
+  content:'CRAFT';
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--en);font-size:clamp(8rem,22vw,20rem);
+  font-weight:300;letter-spacing:.08em;
+  color:rgba(255,255,255,.018);
+  white-space:nowrap;pointer-events:none;
+}
+.cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto;padding:0 40px}
+.cta-sec .lbl{color:var(--gilt);display:block;margin-bottom:22px}
+.cta-h{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3.5vw,3rem);
+  font-weight:500;color:#fff;
+  line-height:1.38;letter-spacing:.03em;
+  margin-bottom:20px;
+}
+.cta-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.1vw,1rem);
+  font-weight:400;
+  color:rgba(255,255,255,.62);
+  line-height:2;margin-bottom:48px;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:18px 52px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.cta-btn:hover{background:#9A6E2A;transform:translateY(-2px)}
+.cta-btn::after{content:'→';transition:transform .2s;display:inline-block}
+.cta-btn:hover::after{transform:translateX(4px)}
+
+/* ════════════════════════
+   FOOTER
+════════════════════════ */
+#footer{background:var(--ink2);color:#fff;padding:64px 0 40px}
+.ft-inner{max-width:1240px;margin:0 auto;padding:0 56px}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.ft-brand{font-family:var(--en);font-size:1.8rem;font-weight:200;letter-spacing:.18em;color:#fff}
+.ft-tabs{display:flex;flex-wrap:wrap;gap:10px}
+.ft-tab{
+  font-family:var(--en);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:7px 18px;background:none;cursor:pointer;
+  transition:color .2s,border-color .2s;
+}
+.ft-tab:hover,.ft-tab.act{color:#fff;border-color:rgba(255,255,255,.55)}
+.ft-panels{margin-bottom:36px}
+.ft-panel{
+  display:none;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:8px;padding:24px 28px;
+  font-size:.88rem;line-height:2;color:rgba(255,255,255,.72);
+}
+.ft-panel.open{display:block}
+.ft-panel h3{font-family:var(--serif);font-size:1rem;font-weight:400;color:#fff;margin-bottom:14px;letter-spacing:.06em}
+.ft-panel ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.ft-panel p{margin-bottom:8px}
+.ft-bot{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.ft-copy{font-family:var(--en);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* ════════════════════════
+   RESPONSIVE
+════════════════════════ */
+@media(max-width:900px){
+  .W{padding:0 32px}
+  #H{padding:0 32px}
+  .phi-inner{grid-template-columns:1fr;gap:48px}
+  .phi-title{font-size:3rem}
+  .proj-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .offer-grid{grid-template-columns:repeat(2,1fr)}
+  .global-inner{grid-template-columns:1fr;gap:48px}
+  .ft-inner{padding:0 32px}
+}
+@media(max-width:600px){
+  .W{padding:0 20px}
+  #H{padding:0 20px}
+  .hero{flex-direction:column;height:auto;min-height:100svh}
+  .hero-left{flex:none;padding:80px 24px 56px;order:2}
+  .hero-right{flex:none;height:52vw;min-height:220px;order:1}
+  .hero-h1{font-size:1.9rem}
+  .hero-scroll{display:none}
+  .philosophy{padding:72px 0}
+  .phi-inner{gap:36px}
+  .phi-title{font-size:2.4rem}
+  .phi-lead{font-size:1.05rem}
+  .projects{padding:72px 0}
+  .proj-grid{grid-template-columns:1fr;gap:14px}
+  .proj-img{aspect-ratio:16/9}
+  .offer{padding:64px 0}
+  .offer-grid{grid-template-columns:repeat(2,1fr)}
+  .offer-item{padding:36px 20px}
+  .global-trust{padding:72px 0}
+  .cta-sec{padding:80px 0}
+  .cta-h{font-size:1.7rem}
+  .cta-btn{padding:16px 36px}
+  .ft-inner{padding:0 20px}
+  .ft-top{flex-direction:column;gap:18px}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header id="H">
+  <a href="index.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
+  <nav>
+    <ul class="hn">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="craft.html" class="act">Craft</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="entertainment.html">Entertainment</a></li>
+      <li><a href="community.html">Community</a></li>
+    </ul>
+  </nav>
+  <a href="index.html#contact" class="hcta">相談する</a>
+  <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Mobile nav -->
+<nav id="MN">
+  <button class="mnx" id="mnx">CLOSE ✕</button>
+  <a href="index.html"         onclick="cNav()">Home</a>
+  <a href="craft.html"         onclick="cNav()">Craft</a>
+  <a href="business.html"      onclick="cNav()">Business</a>
+  <a href="entertainment.html" onclick="cNav()">Entertainment</a>
+  <a href="community.html"     onclick="cNav()">Community</a>
+  <a href="index.html#contact" onclick="cNav()">Contact</a>
+</nav>
+
+
+<!-- ════ §01 HERO ════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Craft</div>
+      <h1 class="hero-h1">日本文化を、<br>手に取れる価値へ。</h1>
+      <p class="hero-desc">枡を起点に、プロダクト、ギフト、空間、アートへ。<br>FOMUSは、日本文化を現代のライフスタイルへ再設計するクラフト事業です。</p>
+      <div class="hero-tags">MASU &nbsp;/&nbsp; KUMIKI &nbsp;/&nbsp; MASUKAME &nbsp;/&nbsp; SPACE</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="FOMUS枡.jpg" alt="FOMUS Masu" loading="eager">
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scl"></div>
+  </div>
+</section>
+
+
+<!-- ════ §02 PHILOSOPHY ════ -->
+<section class="philosophy">
+  <div class="W">
+    <div class="phi-inner">
+      <div class="phi-left rv-l">
+        <span class="lbl">Philosophy</span>
+        <div class="bar"></div>
+        <div class="phi-title">Craft<br>Philosophy</div>
+      </div>
+      <div class="phi-right rv-r">
+        <p class="phi-lead">伝統を守るのではなく、未来へつなぐ。</p>
+        <p class="phi-body">FOMUSは、1300年以上の歴史を持つ枡文化を起点に、工芸・デザイン・空間体験を再構築しています。日本文化を、世界で愛される体験価値へ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §03 FEATURED PROJECTS ════ -->
+<section class="projects">
+  <div class="W">
+    <div class="proj-head rv">
+      <div class="proj-head-left">
+        <span class="lbl">Featured Projects</span>
+        <div class="proj-head-title">Craft Collection</div>
+      </div>
+      <div class="proj-head-sub">4 collections</div>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- FOMUS MASU -->
+      <a href="masu.html" class="proj-card rv d1">
+        <div class="proj-img">
+          <img src="FOMUS枡.jpg" alt="FOMUS MASU" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">01</div>
+          <div class="proj-name">FOMUS MASU</div>
+          <div class="proj-ja">FOMUSの原点</div>
+          <p class="proj-desc">特殊コーティング・名入れ対応の国産ヒノキ枡。ギフト・企業贈答・ホテル導入まで幅広く展開。</p>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+      <!-- KUMIKI -->
+      <a href="craft.html" class="proj-card rv d2">
+        <div class="proj-img">
+          <img src="589ABBB5-915D-46DB-9283-FD9F4EC68260_1_201_a.jpeg" alt="KUMIKI" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">02</div>
+          <div class="proj-name">KUMIKI</div>
+          <div class="proj-ja">日本文化を身につける</div>
+          <p class="proj-desc">日本の枡文化を、世界最小級のジュエリーへ。</p>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+      <!-- MASUKAME -->
+      <a href="craft.html" class="proj-card rv d3">
+        <div class="proj-img">
+          <img src="MASUKAME.jpg" alt="MASUKAME" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">03</div>
+          <div class="proj-name">MASUKAME</div>
+          <div class="proj-ja">祝いを、アートへ</div>
+          <p class="proj-desc">枡と亀が融合した、現代の縁起物アート。</p>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+      <!-- SPACE -->
+      <a href="craft.html" class="proj-card rv d4">
+        <div class="proj-img">
+          <img src="プロジェクト画像/枡ウォール.png" alt="FOMUS SPACE" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-num">04</div>
+          <div class="proj-name">Space</div>
+          <div class="proj-ja">空間に、日本文化を。</div>
+          <p class="proj-desc">枡ウォールやインスタレーションによる空間演出。</p>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §04 WHAT WE OFFER ════ -->
+<section class="offer">
+  <div class="W">
+    <div class="offer-head rv">
+      <span class="lbl">Services</span>
+      <div class="offer-title">What We Offer</div>
+    </div>
+    <div class="offer-grid">
+
+      <div class="offer-item rv d1">
+        <div class="offer-icon">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="22" width="32" height="22" rx="1" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M18 22v-4a8 8 0 0116 0v4" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M22 34a4 4 0 008 0" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="offer-name">法人ギフト</div>
+      </div>
+
+      <div class="offer-item rv d2">
+        <div class="offer-icon">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 38L26 14l12 24" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 30h16" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="26" cy="12" r="3" stroke="#E2C068" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div class="offer-name">カスタム制作</div>
+      </div>
+
+      <div class="offer-item rv d3">
+        <div class="offer-icon">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="28" width="32" height="14" rx="1" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M16 28v-8a10 10 0 0120 0v8" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M26 10v4M20 12l2 3M32 12l-2 3" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="offer-name">ホテル・空間演出</div>
+      </div>
+
+      <div class="offer-item rv d4">
+        <div class="offer-icon">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="20" r="7" stroke="#E2C068" stroke-width="1.4"/>
+            <circle cx="34" cy="20" r="7" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M11 42c0-6.627 3.134-12 7-12s7 5.373 7 12" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M27 42c0-6.627 3.134-12 7-12s7 5.373 7 12" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="offer-name">ブランドコラボ</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §05 GLOBAL TRUST ════ -->
+<section class="global-trust">
+  <div class="W">
+    <div class="global-inner">
+      <div class="global-text rv-l">
+        <span class="lbl">Global</span>
+        <div class="bar"></div>
+        <h2 class="global-title">Global Trust<br><span class="global-title-ja">海外展開</span></h2>
+        <p class="global-body">海外日本国大使館での展示をはじめ、世界各地で日本文化の価値発信を実践。アイルランド、バーレーン、サウジアラビア、ドバイなど、40カ国以上で活動しています。</p>
+        <span class="global-badge">世界40カ国以上 · 大使館展示実績</span>
+      </div>
+      <div class="global-img rv-r">
+        <img src="slideshow/1.0.JPG" alt="Embassy Exhibition" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §06 CTA ════ -->
+<section class="cta-sec">
+  <div class="cta-inner rv">
+    <span class="lbl">Contact</span>
+    <h2 class="cta-h">日本文化を活かした、<br>プロダクト・空間づくりを。</h2>
+    <p class="cta-body">ギフト、ホテル空間、コラボレーションなど、<br>お気軽にご相談ください。</p>
+    <a href="index.html#contact" class="cta-btn">相談する</a>
+  </div>
+</section>
+
+
+<!-- ════ FOOTER ════ -->
+<style>
+#footer{background:var(--ink2);color:#fff;padding:64px 0 40px}
+</style>
+<footer id="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">FOMUS</div>
+      <div class="ft-tabs">
+        <button class="ft-tab" data-ft="company">会社概要</button>
+        <button class="ft-tab" data-ft="tokusho">特商法表記</button>
+        <button class="ft-tab" data-ft="privacy">プライバシーポリシー</button>
+      </div>
+    </div>
+    <div class="ft-panels">
+      <div class="ft-panel" id="ft-company">
+        <h3>会社概要</h3>
+        <ul><li>会社名：合同会社FOMUS</li><li>所在地：日本</li><li>代表者：増尾圭亮</li></ul>
+      </div>
+      <div class="ft-panel" id="ft-tokusho">
+        <h3>特定商取引法に基づく表記</h3>
+        <ul>
+          <li>販売事業者：合同会社FOMUS</li><li>代表者：増尾圭亮</li><li>所在地：日本</li>
+          <li>連絡先：fomus.official@gmail.com</li>
+          <li>販売価格：各商品・サービスのページに記載</li>
+          <li>お支払い方法：クレジットカード / 銀行振込 ほか</li>
+          <li>返品・キャンセル：商品特性に応じ各ページに記載</li>
+        </ul>
+      </div>
+      <div class="ft-panel" id="ft-privacy">
+        <h3>プライバシーポリシー</h3>
+        <p>合同会社FOMUSは、取得した個人情報をお問い合わせ対応・サービス提供の目的で利用します。法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════ JS ════ -->
+<script>
+/* Header scroll */
+const H = document.getElementById('H');
+addEventListener('scroll', () => H.classList.toggle('s', scrollY > 60), {passive:true});
+
+/* Mobile nav */
+document.getElementById('hbg').onclick = () => document.getElementById('MN').classList.add('open');
+document.getElementById('mnx').onclick = cNav;
+function cNav(){ document.getElementById('MN').classList.remove('open'); }
+
+/* Scroll reveal */
+(function(){
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.06, rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el => io.observe(el));
+})();
+
+/* Footer tabs */
+(function(){
+  const tabs = document.querySelectorAll('.ft-tab');
+  let active = null;
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      const key = t.dataset.ft;
+      const panel = document.getElementById('ft-' + key);
+      if(!panel) return;
+      if(active === key){
+        panel.classList.remove('open');
+        t.classList.remove('act');
+        active = null;
+      } else {
+        document.querySelectorAll('.ft-panel').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.ft-tab').forEach(b => b.classList.remove('act'));
+        panel.classList.add('open');
+        t.classList.add('act');
+        active = key;
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
