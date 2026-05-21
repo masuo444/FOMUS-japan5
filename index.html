@@ -1056,16 +1056,6 @@ footer{}
 
 <!-- ══════════════ JS ══════════════ -->
 <script>
-/* ── Video detection ── */
-(function(){
-  var v = document.getElementById('heroVid');
-  if(!v) return;
-  v.addEventListener('canplay', function(){
-    document.getElementById('hVid').style.display  = 'block';
-    document.getElementById('hFilm').style.display = 'none';
-  });
-})();
-
 /* ── Header scroll ── */
 const H = document.getElementById('H');
 addEventListener('scroll', () => H.classList.toggle('s', scrollY > 60), {passive:true});
@@ -1074,38 +1064,6 @@ addEventListener('scroll', () => H.classList.toggle('s', scrollY > 60), {passive
 document.getElementById('hbg').onclick = () => document.getElementById('MN').classList.add('open');
 document.getElementById('mnx').onclick = cNav;
 function cNav(){ document.getElementById('MN').classList.remove('open'); }
-
-/* ── Cinematic slideshow ── */
-(function(){
-  const frames   = document.querySelectorAll('.h-frame');
-  const chapters = document.querySelectorAll('.h-ch');
-  const dotWrap  = document.getElementById('hDots');
-  let idx = 0;
-
-  frames.forEach((_,i) => {
-    const d = document.createElement('button');
-    d.className = 'h-dot' + (i === 0 ? ' act' : '');
-    d.setAttribute('aria-label', 'frame ' + (i+1));
-    d.onclick = () => go(i);
-    dotWrap.appendChild(d);
-  });
-  const dots = dotWrap.querySelectorAll('.h-dot');
-
-  function go(n){
-    frames[idx].classList.remove('act');
-    dots[idx].classList.remove('act');
-    if(chapters[idx]) chapters[idx].classList.remove('act');
-    const img = frames[n].querySelector('img');
-    img.style.animation = 'none';
-    img.offsetHeight;
-    img.style.animation = '';
-    idx = n;
-    frames[idx].classList.add('act');
-    dots[idx].classList.add('act');
-    if(chapters[idx]) chapters[idx].classList.add('act');
-  }
-  setInterval(() => go((idx+1) % frames.length), 5500);
-})();
 
 /* ── Scroll reveal ── */
 (function(){
