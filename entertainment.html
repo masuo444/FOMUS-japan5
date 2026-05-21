@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <title>FOMUS ENTERTAINMENT | 世界へ届ける、日本発の物語。</title>
+  <meta name="description" content="FOMUSのエンターテインメント領域。物語、音楽、ゲーム、キャラクターを通じ、日本発のIPを世界へ届けます。">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#0A1222;--ink2:#0F1E36;
+  --gold:#B8873A;--gold2:#C9993E;--gilt:#E2C068;
+  --cream:#FAF8F3;--warm:#F3EDE0;--mid:#888;
+  --serif:'Noto Serif JP',serif;
+  --sans:'Noto Sans JP',sans-serif;
+  --en:'Cormorant Garamond',serif;
+}
+body{font-family:var(--sans);background:var(--ink);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.W{max-width:1240px;margin:0 auto;padding:0 56px}
+.lbl{font-family:var(--en);font-size:.66rem;letter-spacing:.46em;text-transform:uppercase;color:var(--gold)}
+.bar{width:36px;height:1px;background:var(--gold);margin:20px 0}
+
+/* Scroll reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-l.in{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-r.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.15s}.d3{transition-delay:.24s}.d4{transition-delay:.33s}
+
+/* ════ HEADER ════ */
+#H{
+  position:fixed;inset:0 0 auto;z-index:900;
+  padding:0 56px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,box-shadow .4s;
+}
+#H.s{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.hl img{height:28px;width:auto;transition:filter .35s}
+#H:not(.s) .hl img{filter:brightness(0) invert(1)}
+.hn{display:flex;align-items:center;gap:32px;list-style:none}
+.hn a{font-family:var(--en);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .2s}
+#H.s .hn a{color:#555}
+.hn a:hover,.hn a.act{color:var(--gilt)!important}
+#H.s .hn a.act{color:var(--gold)!important}
+.hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
+#H.s .hcta{border-color:var(--ink);color:var(--ink)}
+.hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.hbg{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer;background:none;border:none}
+.hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
+#H.s .hbg span{background:var(--ink)}
+@media(max-width:860px){.hn,.hcta{display:none}.hbg{display:flex}}
+#MN{display:none;position:fixed;inset:0;background:var(--ink);z-index:899;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+#MN.open{display:flex}
+#MN a{font-family:var(--en);font-size:1.8rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+#MN a:hover{color:var(--gilt)}
+.mnx{position:absolute;top:28px;right:36px;font-family:var(--en);font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer}
+
+/* ════ §01 HERO ════ */
+.hero{
+  position:relative;
+  height:100vh;min-height:640px;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('KUKU.jpg') center/cover no-repeat;
+  filter:brightness(.28);
+  transform:scale(1.05);
+  transition:transform 9s ease;
+}
+.hero-bg.kn{transform:scale(1)}
+.hero-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(8,14,26,0) 0%,
+    rgba(8,14,26,.4) 55%,
+    rgba(8,14,26,.92) 85%,
+    rgba(8,14,26,1) 100%
+  );
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding-bottom:88px;
+}
+.hero-lbl{
+  font-family:var(--en);font-size:.66rem;letter-spacing:.55em;
+  text-transform:uppercase;color:var(--gilt);
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:28px;
+}
+.hero-lbl::before{content:'';width:28px;height:1px;background:var(--gilt);flex-shrink:0}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,4.5vw,4.2rem);
+  font-weight:300;color:#fff;
+  line-height:1.25;letter-spacing:.06em;
+  margin-bottom:28px;
+}
+.hero-desc{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1.1vw,1rem);
+  color:rgba(255,255,255,.68);
+  line-height:2;
+  max-width:520px;
+  margin-bottom:36px;
+}
+.hero-tags{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-bottom:44px;
+}
+.hero-tag{
+  font-family:var(--en);font-size:.64rem;letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  border:1px solid rgba(255,255,255,.18);
+  padding:6px 16px;border-radius:2px;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:15px 44px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.hero-cta::after{content:'→';transition:transform .2s;display:inline-block}
+.hero-cta:hover{background:#9A6E2A;transform:translateY(-2px)}
+.hero-cta:hover::after{transform:translateX(4px)}
+/* scroll indicator */
+.hero-scroll{
+  position:absolute;bottom:40px;right:56px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.hero-scroll span{font-family:var(--en);font-size:.55rem;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.scl{width:1px;height:44px;background:linear-gradient(to bottom,var(--gilt),transparent);animation:scla 1.8s ease-in-out infinite}
+@keyframes scla{0%{opacity:0;transform:scaleY(0);transform-origin:top}40%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}
+
+/* ════ §02 PHILOSOPHY ════ */
+.phi{
+  background:var(--cream);
+  padding:100px 0;
+}
+.phi-inner{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:80px;
+  align-items:center;
+}
+.phi-label-wrap{}
+.phi-eyebrow{
+  font-family:var(--en);font-size:.7rem;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:20px;
+}
+.phi-h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.2vw,3rem);
+  font-weight:300;color:var(--ink);
+  line-height:1.3;letter-spacing:.06em;
+}
+.phi-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.1vw,1rem);
+  color:#444;line-height:2.1;
+}
+
+/* ════ §03 FEATURED PROJECT ════ */
+.kuku{
+  background:var(--ink2);
+  overflow:hidden;
+}
+.kuku-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:640px;
+  align-items:stretch;
+}
+.kuku-img{
+  position:relative;overflow:hidden;
+}
+.kuku-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+  display:block;
+}
+.kuku-img:hover img{transform:scale(1.04)}
+.kuku-text{
+  display:flex;align-items:center;
+  padding:80px 72px 80px 72px;
+}
+.kuku-text-inner{}
+.kuku-lbl{
+  font-family:var(--en);font-size:.64rem;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--gilt);
+  margin-bottom:16px;
+}
+.kuku-title{
+  font-family:var(--en);
+  font-size:clamp(3rem,4.5vw,4.8rem);
+  font-weight:300;color:#fff;
+  letter-spacing:.08em;line-height:1;
+  margin-bottom:12px;
+}
+.kuku-tagline{
+  font-family:var(--serif);
+  font-size:clamp(.95rem,1.3vw,1.15rem);
+  font-weight:300;color:var(--gilt);
+  letter-spacing:.1em;margin-bottom:32px;
+}
+.kuku-bar{width:36px;height:1px;background:rgba(226,192,104,.4);margin-bottom:32px}
+.kuku-desc{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1vw,.96rem);
+  color:rgba(255,255,255,.65);
+  line-height:2.1;margin-bottom:36px;
+}
+.kuku-tags{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:44px;
+}
+.kuku-tag{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  border:1px solid rgba(255,255,255,.14);
+  padding:5px 14px;border-radius:2px;
+}
+.kuku-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:14px 40px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.kuku-btn::after{content:'→';transition:transform .2s;display:inline-block}
+.kuku-btn:hover{background:#9A6E2A;transform:translateY(-2px)}
+.kuku-btn:hover::after{transform:translateX(4px)}
+
+/* ════ §04 WORLD EXPANSION ════ */
+.world{
+  background:var(--ink);
+  padding:96px 0;
+}
+.world-head{
+  margin-bottom:64px;
+}
+.world-h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.2vw,3rem);
+  font-weight:300;color:#fff;
+  line-height:1.3;letter-spacing:.06em;
+  margin-bottom:16px;
+}
+.world-sub{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1vw,.96rem);
+  color:rgba(255,255,255,.5);
+  line-height:2;max-width:560px;
+}
+.world-icons{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.world-item{
+  padding:40px 24px 40px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.world-item-en{
+  font-family:var(--en);
+  font-size:clamp(1.4rem,1.8vw,2rem);
+  font-weight:300;color:var(--gilt);
+  letter-spacing:.08em;
+  margin-bottom:10px;
+  line-height:1;
+}
+.world-item-ja{
+  font-family:var(--serif);
+  font-size:.78rem;font-weight:300;
+  color:rgba(255,255,255,.42);
+  letter-spacing:.12em;
+}
+
+/* ════ §05 CTA ════ */
+.ent-cta{
+  position:relative;
+  padding:120px 0;
+  text-align:center;
+  overflow:hidden;
+  background:var(--ink2);
+}
+.ent-cta-bg{
+  position:absolute;inset:0;
+  background:url('KUKU.jpg') center/cover no-repeat;
+  opacity:.08;
+}
+.ent-cta-inner{
+  position:relative;z-index:2;
+  max-width:640px;margin:0 auto;padding:0 40px;
+}
+.ent-cta .lbl{color:var(--gilt)}
+.ent-cta-h{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,2.8vw,2.4rem);
+  font-weight:300;color:#fff;
+  line-height:1.5;letter-spacing:.06em;
+  margin:20px 0 16px;
+}
+.ent-cta-body{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1vw,.96rem);
+  color:rgba(255,255,255,.55);
+  line-height:2;margin-bottom:48px;
+}
+.ent-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:16px 48px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.ent-cta-btn::after{content:'→';transition:transform .2s;display:inline-block}
+.ent-cta-btn:hover{background:#9A6E2A;transform:translateY(-2px)}
+.ent-cta-btn:hover::after{transform:translateX(4px)}
+
+/* ════ FOOTER ════ */
+#footer{background:var(--ink2);color:#fff;padding:64px 0 40px}
+.ft-inner{max-width:1240px;margin:0 auto;padding:0 56px}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.ft-brand{font-family:var(--en);font-size:1.8rem;font-weight:200;letter-spacing:.18em;color:#fff}
+.ft-tabs{display:flex;flex-wrap:wrap;gap:10px}
+.ft-tab{
+  font-family:var(--en);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.15);
+  padding:6px 18px;border-radius:2px;background:none;cursor:pointer;transition:all .2s;
+}
+.ft-tab:hover,.ft-tab.act{color:#fff;border-color:rgba(255,255,255,.55)}
+.ft-panels{margin-bottom:36px}
+.ft-panel{
+  display:none;
+  font-family:var(--sans);font-size:.82rem;color:rgba(255,255,255,.55);
+  line-height:1.9;padding:20px 0 4px;
+}
+.ft-panel.open{display:block}
+.ft-panel h3{font-family:var(--serif);font-size:1rem;font-weight:400;color:#fff;margin-bottom:14px;letter-spacing:.06em}
+.ft-panel ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.ft-panel p{margin-bottom:8px}
+.ft-bot{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.ft-copy{font-family:var(--en);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:960px){
+  .W{padding:0 32px}
+  .phi-inner{grid-template-columns:1fr;gap:40px}
+  .kuku-inner{grid-template-columns:1fr;min-height:auto}
+  .kuku-img{aspect-ratio:16/9}
+  .kuku-text{padding:64px 32px}
+  .world-icons{grid-template-columns:repeat(3,1fr)}
+  .ft-inner{padding:0 32px}
+}
+@media(max-width:600px){
+  #H{padding:0 20px}
+  .W{padding:0 20px}
+  .hero-content{padding-bottom:72px}
+  .hero-scroll{right:20px}
+  .phi{padding:72px 0}
+  .world{padding:72px 0}
+  .world-icons{grid-template-columns:repeat(2,1fr);gap:0}
+  .world-item:last-child{grid-column:span 2}
+  .ent-cta{padding:80px 0}
+  .ft-inner{padding:0 20px}
+  .ft-top{flex-direction:column;gap:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header id="H">
+  <a href="index.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
+  <nav>
+    <ul class="hn">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="craft.html">Craft</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="entertainment.html" class="act">Entertainment</a></li>
+      <li><a href="community.html">Community</a></li>
+    </ul>
+  </nav>
+  <a href="index.html#contact" class="hcta">無料相談する</a>
+  <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Mobile nav -->
+<nav id="MN">
+  <button class="mnx" id="mnx">CLOSE ✕</button>
+  <a href="index.html"         onclick="cNav()">Home</a>
+  <a href="craft.html"         onclick="cNav()">Craft</a>
+  <a href="business.html"      onclick="cNav()">Business</a>
+  <a href="entertainment.html" onclick="cNav()">Entertainment</a>
+  <a href="community.html"     onclick="cNav()">Community</a>
+</nav>
+
+<!-- ════ §01 HERO ════ -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-grad"></div>
+  <div class="W hero-content">
+    <div class="hero-lbl rv">Entertainment</div>
+    <h1 class="hero-h1 rv d1">世界へ届ける、<br>日本発の物語。</h1>
+    <p class="hero-desc rv d2">FOMUSは、物語、音楽、ゲーム、キャラクターを通じ、<br>日本発のエンターテインメントIPを世界へ届けます。</p>
+    <div class="hero-tags rv d3">
+      <span class="hero-tag">KUKU</span>
+      <span class="hero-tag">Fantasy</span>
+      <span class="hero-tag">Animation</span>
+      <span class="hero-tag">Music</span>
+    </div>
+    <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="hero-cta rv d4">Explore KUKU World</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scl"></div>
+  </div>
+</section>
+
+<!-- ════ §02 PHILOSOPHY ════ -->
+<section class="phi">
+  <div class="W">
+    <div class="phi-inner">
+      <div class="rv-l">
+        <p class="phi-eyebrow">Why Entertainment?</p>
+        <div class="bar"></div>
+        <h2 class="phi-h2">物語は、<br>世界をつなぐ。</h2>
+      </div>
+      <div class="rv-r">
+        <p class="phi-body">日本文化や神話を起点に、長く愛される日本発IPを創る。FOMUSは、物語を通じた新しい文化体験に挑戦しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ §03 FEATURED PROJECT — KUKU ════ -->
+<section class="kuku">
+  <div class="kuku-inner">
+    <div class="kuku-img rv-l">
+      <img src="KUKU.jpg" alt="KUKU — 日本発ファンタジーIP" loading="lazy">
+    </div>
+    <div class="kuku-text">
+      <div class="kuku-text-inner rv-r">
+        <p class="kuku-lbl">Featured Project</p>
+        <h2 class="kuku-title">KUKU</h2>
+        <p class="kuku-tagline">世界がもう一度、芽吹くための物語。</p>
+        <div class="kuku-bar"></div>
+        <p class="kuku-desc">木の神と人々のつながりを描く、日本発の長編ファンタジープロジェクト。絵本、アニメ、音楽、グッズを通じ、世界へ届ける新しい物語IPを目指しています。</p>
+        <div class="kuku-tags">
+          <span class="kuku-tag">Fantasy</span>
+          <span class="kuku-tag">Animation</span>
+          <span class="kuku-tag">Music</span>
+          <span class="kuku-tag">Goods</span>
+        </div>
+        <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="kuku-btn">KUKU公式サイトを見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ §04 WORLD EXPANSION ════ -->
+<section class="world">
+  <div class="W">
+    <div class="world-head rv">
+      <span class="lbl" style="color:var(--gilt)">Beyond Entertainment</span>
+      <div class="bar" style="background:rgba(226,192,104,.4);margin:20px 0"></div>
+      <h2 class="world-h2">物語を、<br>世界へ。</h2>
+      <p class="world-sub">小説、音楽、ショートコンテンツ、グッズ、映像作品へ。KUKUは、多層的な展開を通じて世界規模のIPを目指しています。</p>
+    </div>
+    <div class="world-icons">
+      <div class="world-item rv d1">
+        <p class="world-item-en">Ehon</p>
+        <p class="world-item-ja">絵本</p>
+      </div>
+      <div class="world-item rv d2">
+        <p class="world-item-en">Anime</p>
+        <p class="world-item-ja">アニメ</p>
+      </div>
+      <div class="world-item rv d2">
+        <p class="world-item-en">Music</p>
+        <p class="world-item-ja">音楽</p>
+      </div>
+      <div class="world-item rv d3">
+        <p class="world-item-en">Goods</p>
+        <p class="world-item-ja">グッズ</p>
+      </div>
+      <div class="world-item rv d3">
+        <p class="world-item-en">Game</p>
+        <p class="world-item-ja">ゲーム</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ §05 CTA ════ -->
+<section class="ent-cta">
+  <div class="ent-cta-bg"></div>
+  <div class="ent-cta-inner rv">
+    <span class="lbl">Visit KUKU World</span>
+    <h2 class="ent-cta-h">世界がもう一度、<br>芽吹くための物語。</h2>
+    <p class="ent-cta-body">KUKUの世界観、キャラクター、物語をもっと知る。</p>
+    <a href="https://kuku.fomusglobal.com/" target="_blank" rel="noopener" class="ent-cta-btn">Visit KUKU World</a>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer id="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">FOMUS</div>
+      <div class="ft-tabs">
+        <button class="ft-tab" data-ft="company">会社概要</button>
+        <button class="ft-tab" data-ft="tokusho">特商法表記</button>
+        <button class="ft-tab" data-ft="privacy">プライバシーポリシー</button>
+      </div>
+    </div>
+    <div class="ft-panels">
+      <div class="ft-panel" id="ft-company">
+        <h3>会社概要</h3>
+        <ul><li>会社名：合同会社FOMUS</li><li>所在地：日本</li><li>代表者：増尾圭亮</li></ul>
+      </div>
+      <div class="ft-panel" id="ft-tokusho">
+        <h3>特定商取引法に基づく表記</h3>
+        <ul>
+          <li>販売事業者：合同会社FOMUS</li><li>代表者：増尾圭亮</li><li>所在地：日本</li>
+          <li>連絡先：fomus.official@gmail.com</li>
+          <li>販売価格：各商品・サービスのページに記載</li>
+          <li>お支払い方法：クレジットカード / 銀行振込 ほか</li>
+          <li>返品・キャンセル：商品特性に応じ各ページに記載</li>
+        </ul>
+      </div>
+      <div class="ft-panel" id="ft-privacy">
+        <h3>プライバシーポリシー</h3>
+        <p>合同会社FOMUSは、取得した個人情報をお問い合わせ対応・サービス提供の目的で利用します。法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ JS ════ -->
+<script>
+const H = document.getElementById('H');
+addEventListener('scroll', () => H.classList.toggle('s', scrollY > 60), {passive:true});
+
+document.getElementById('hbg').onclick = () => document.getElementById('MN').classList.add('open');
+document.getElementById('mnx').onclick = cNav;
+function cNav(){ document.getElementById('MN').classList.remove('open'); }
+
+/* Ken-burns hero */
+addEventListener('load', () => document.getElementById('heroBg').classList.add('kn'));
+
+/* Scroll reveal */
+(function(){
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.06, rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el => io.observe(el));
+})();
+
+/* Footer tabs */
+(function(){
+  const tabs = document.querySelectorAll('.ft-tab');
+  let active = null;
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      const key = t.dataset.ft;
+      const panel = document.getElementById('ft-' + key);
+      if(!panel) return;
+      if(active === key){
+        panel.classList.remove('open');
+        t.classList.remove('act');
+        active = null;
+      } else {
+        document.querySelectorAll('.ft-panel').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.ft-tab').forEach(b => b.classList.remove('act'));
+        panel.classList.add('open');
+        t.classList.add('act');
+        active = key;
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
