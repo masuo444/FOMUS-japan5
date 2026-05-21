@@ -405,7 +405,7 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 /* ══════════════════════════════════════
    §05  GLOBAL TRUST
 ══════════════════════════════════════ */
-#global{background:var(--ink);padding:144px 0;position:relative;overflow:hidden}
+#global{background:var(--ink);padding:80px 0 64px;position:relative;overflow:hidden}
 #global::after{
   content:'WORLD';position:absolute;right:-60px;top:50%;transform:translateY(-50%);
   font-family:var(--en);font-size:22vw;font-weight:200;
@@ -413,14 +413,14 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 }
 #global .lbl{color:var(--gilt)}
 #global .bar{background:rgba(255,255,255,.2)}
-.global-hero-txt{max-width:680px;margin-bottom:84px}
+.global-hero-txt{max-width:680px;margin-bottom:40px}
 .global-h2{
   font-family:var(--en);font-size:clamp(2.4rem,6vw,4.8rem);
   font-weight:200;color:#fff;line-height:1.12;letter-spacing:.01em;margin-bottom:22px;
 }
 .global-sub{font-size:clamp(1.125rem,1.5vw,1.5rem);color:rgba(255,255,255,.6);line-height:2;font-weight:400;max-width:600px}
 
-.gl-cap-area{padding:24px 6% 0;min-height:96px}
+.gl-cap-area{padding:16px 6% 0;min-height:72px}
 .gl-cap{display:none}
 .gl-cap.act{display:block;animation:capFade .4s ease}
 @keyframes capFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -435,12 +435,12 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 .gst-num{font-family:var(--en);font-size:4rem;font-weight:200;color:var(--gilt);line-height:1}
 .gst-lbl{font-size:.74rem;color:rgba(255,255,255,.32);letter-spacing:.1em;margin-top:7px}
 
-.gl-slideshow{overflow:hidden;margin-top:56px;padding:0 6%}
+.gl-slideshow{overflow:hidden;margin-top:36px;padding:0 6%}
 .gl-track{display:flex;gap:16px;transition:transform .65s cubic-bezier(.4,0,.2,1)}
 .gl-slide{flex:0 0 88%;border-radius:6px;overflow:hidden;flex-shrink:0;background:var(--ink)}
-.gl-slide img{width:100%;height:auto;display:block;transition:transform .6s}
+.gl-slide img{width:100%;height:auto;max-height:clamp(220px,38vh,440px);object-fit:contain;display:block}
 .gl-slide:hover img{transform:scale(1.02)}
-.gl-ss-dots{display:flex;gap:6px;justify-content:center;margin-top:20px;padding-bottom:8px}
+.gl-ss-dots{display:flex;gap:6px;justify-content:center;margin-top:16px;padding-bottom:4px}
 .gl-ss-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.22);border:none;padding:0;cursor:pointer;transition:all .3s}
 .gl-ss-dot.act{background:var(--gilt);width:20px;border-radius:3px}
 @media(max-width:600px){.gl-slide{flex:0 0 85%}.gl-slideshow{padding:0 4%}}
