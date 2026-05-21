@@ -677,83 +677,313 @@ footer{}
   </div>
 </section>
 
-<!-- ══════════════ §03 FOMUS DOMAINS ══════════════ -->
-<section id="domains">
-  <div class="dom-lead rv">
-    <h2>FOMUS Ecosystem<br>文化が、価値へ変わる循環。</h2>
-    <p>工芸から始まり、体験、エンタメ、コミュニティへ。<br>FOMUSは日本文化を"循環する仕組み"として設計しています。</p>
+<!-- ══════════════ §03 FOMUS ECOSYSTEM FLYWHEEL ══════════════ -->
+<style>
+#flywheel{
+  position:relative;
+  background:#0A1222;
+  color:#fff;
+  overflow:hidden;
+  padding:118px 0 128px;
+}
+#flywheel::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(184,135,58,.13),transparent 34%),
+    radial-gradient(circle at 18% 18%,rgba(226,192,104,.07),transparent 24%),
+    linear-gradient(180deg,rgba(10,18,34,1) 0%,rgba(9,16,30,1) 100%);
+  pointer-events:none;
+}
+#flywheel::after{
+  content:'ECOSYSTEM';
+  position:absolute;
+  left:50%;top:52%;
+  transform:translate(-50%,-50%);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(5rem,17vw,16rem);
+  font-weight:200;
+  letter-spacing:.08em;
+  color:rgba(255,255,255,.018);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.fw-head{
+  position:relative;z-index:2;
+  text-align:center;
+  max-width:820px;
+  margin:0 auto 72px;
+  padding:0 28px;
+}
+.fw-label{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.66rem;
+  letter-spacing:.44em;
+  text-transform:uppercase;
+  color:#E2C068;
+  margin-bottom:18px;
+}
+.fw-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(1.9rem,4.2vw,3.7rem);
+  font-weight:300;
+  line-height:1.28;
+  letter-spacing:.05em;
+  color:#fff;
+  margin-bottom:24px;
+}
+.fw-lead{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:clamp(.95rem,1.15vw,1.08rem);
+  line-height:2.05;
+  letter-spacing:.035em;
+  color:rgba(255,255,255,.62);
+}
+.fw-stage{
+  position:relative;z-index:2;
+  width:min(1040px,calc(100vw - 64px));
+  min-height:760px;
+  margin:0 auto;
+}
+.fw-orbit{
+  position:absolute;
+  left:50%;top:50%;
+  width:min(560px,52vw);
+  aspect-ratio:1/1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(226,192,104,.28);
+  box-shadow:inset 0 0 58px rgba(184,135,58,.08),0 0 90px rgba(184,135,58,.08);
+}
+.fw-orbit::before{
+  content:'';
+  position:absolute;inset:-9px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.045);
+}
+.fw-orbit::after{
+  content:'';
+  position:absolute;inset:-1px;
+  border-radius:50%;
+  background:conic-gradient(from 0deg,transparent 0deg,rgba(226,192,104,.9) 28deg,transparent 56deg,transparent 92deg,rgba(226,192,104,.72) 122deg,transparent 150deg,transparent 210deg,rgba(226,192,104,.58) 244deg,transparent 278deg,transparent 320deg,rgba(226,192,104,.78) 344deg,transparent 360deg);
+  mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));
+  animation:fwSpin 26s linear infinite;
+}
+@keyframes fwSpin{to{transform:rotate(360deg)}}
+.fw-arrow{
+  position:absolute;
+  width:38px;height:38px;
+  border-top:1px solid #E2C068;
+  border-right:1px solid #E2C068;
+  opacity:.85;
+  filter:drop-shadow(0 0 10px rgba(226,192,104,.35));
+}
+.fw-a1{right:20%;top:22%;transform:rotate(45deg)}
+.fw-a2{right:20%;bottom:22%;transform:rotate(135deg)}
+.fw-a3{left:20%;bottom:22%;transform:rotate(225deg)}
+.fw-a4{left:20%;top:22%;transform:rotate(315deg)}
+.fw-center{
+  position:absolute;
+  left:50%;top:50%;
+  width:230px;height:230px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:rgba(10,18,34,.84);
+  border:1px solid rgba(226,192,104,.28);
+  box-shadow:0 24px 70px rgba(0,0,0,.36),inset 0 0 40px rgba(255,255,255,.035);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:22px;
+  backdrop-filter:blur(10px);
+}
+.fw-center strong{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.15rem;
+  line-height:1;
+  font-weight:300;
+  letter-spacing:.11em;
+  color:#E2C068;
+}
+.fw-center span{
+  margin-top:12px;
+  font-size:.84rem;
+  line-height:1.8;
+  color:rgba(255,255,255,.72);
+  letter-spacing:.05em;
+}
+.fw-node{
+  position:absolute;
+  width:310px;
+  display:grid;
+  grid-template-columns:104px 1fr;
+  gap:18px;
+  align-items:center;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.045);
+  border-radius:8px;
+  backdrop-filter:blur(14px);
+  box-shadow:0 22px 60px rgba(0,0,0,.18);
+  transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s;
+  color:inherit;
+  text-decoration:none;
+}
+.fw-node:hover{
+  transform:translateY(-6px);
+  border-color:rgba(226,192,104,.42);
+  background:rgba(255,255,255,.075);
+}
+.fw-node-img{
+  width:104px;height:104px;
+  border-radius:6px;
+  overflow:hidden;
+  border:1px solid rgba(226,192,104,.22);
+  background:rgba(255,255,255,.03);
+}
+.fw-node-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .75s cubic-bezier(.16,1,.3,1);
+}
+.fw-node:hover .fw-node-img img{transform:scale(1.06)}
+.fw-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.78rem;
+  letter-spacing:.28em;
+  color:#E2C068;
+  margin-bottom:6px;
+}
+.fw-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.55rem;
+  line-height:1;
+  letter-spacing:.08em;
+  color:#fff;
+  margin-bottom:8px;
+}
+.fw-tag{
+  font-size:.86rem;
+  color:rgba(255,255,255,.82);
+  letter-spacing:.06em;
+  margin-bottom:10px;
+}
+.fw-copy{
+  font-size:.74rem;
+  line-height:1.85;
+  color:rgba(255,255,255,.5);
+}
+.fw-node.craft{left:0;top:64px}
+.fw-node.business{right:0;top:64px}
+.fw-node.entertainment{right:0;bottom:64px}
+.fw-node.community{left:0;bottom:64px}
+.fw-foot{
+  position:relative;z-index:2;
+  margin:64px auto 0;
+  max-width:760px;
+  text-align:center;
+  color:rgba(255,255,255,.72);
+  font-size:clamp(.95rem,1.1vw,1.08rem);
+  line-height:2;
+  letter-spacing:.06em;
+}
+.fw-foot em{color:#E2C068;font-style:normal}
+@media(max-width:980px){
+  #flywheel{padding:92px 0 104px}
+  .fw-stage{
+    width:min(720px,calc(100vw - 48px));
+    min-height:0;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .fw-orbit,.fw-center,.fw-arrow{display:none}
+  .fw-node{
+    position:relative;
+    left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+    width:100%;
+    grid-template-columns:96px 1fr;
+  }
+}
+@media(max-width:560px){
+  .fw-stage{width:calc(100vw - 32px)}
+  .fw-node{grid-template-columns:1fr;padding:14px}
+  .fw-node-img{width:100%;height:auto;aspect-ratio:16/10}
+  .fw-name{font-size:1.35rem}
+}
+</style>
+
+<section id="flywheel">
+  <div class="fw-head">
+    <span class="fw-label">FOMUS Ecosystem</span>
+    <h2 class="fw-title">文化が、価値へ変わる循環。</h2>
+    <p class="fw-lead">
+      FOMUSは、日本の伝統工芸「枡」を起点に、工芸・テクノロジー・エンタメ・コミュニティを循環させながら、日本文化の新しい価値を世界へ届けるカルチャーブランドです。
+    </p>
   </div>
-  <div class="dom-grid">
 
-    <!-- 01 CRAFT -->
-    <a href="craft.html" class="dom-card rv">
-      <div class="dom-img"><img src="FOMUS枡.jpg" alt="CRAFT" loading="lazy"></div>
-      <div class="dom-ov"></div>
-      <div class="dom-body">
-        <div class="dom-num">01 — CRAFT</div>
-        <div class="dom-name">Craft</div>
-        <div class="dom-tag">工芸・空間・プロダクト</div>
-        <div class="dom-items">
-          <span class="dom-item">FOMUS MASU</span>
-          <span class="dom-item">KUMIKI</span>
-          <span class="dom-item">MASUKAME</span>
-        </div>
-        <span class="dom-cta">詳しく見る</span>
+  <div class="fw-stage">
+    <div class="fw-orbit">
+      <span class="fw-arrow fw-a1"></span>
+      <span class="fw-arrow fw-a2"></span>
+      <span class="fw-arrow fw-a3"></span>
+      <span class="fw-arrow fw-a4"></span>
+    </div>
+
+    <div class="fw-center">
+      <strong>FOMUS</strong>
+      <span>日本文化の価値を<br>世界へ</span>
+    </div>
+
+    <a href="craft.html" class="fw-node craft">
+      <div class="fw-node-img"><img src="枡とは.jpg" alt="CRAFT" loading="lazy"></div>
+      <div>
+        <div class="fw-num">01</div>
+        <div class="fw-name">CRAFT</div>
+        <div class="fw-tag">工芸・空間・プロダクト</div>
+        <p class="fw-copy">枡、KUMIKI、MASUKAMEなど、日本文化を形あるプロダクトへ。</p>
       </div>
     </a>
 
-    <!-- 02 BUSINESS -->
-    <a href="business.html" class="dom-card rv d1">
-      <div class="dom-img"><img src="FOMUSイベント風景.jpg" alt="BUSINESS" loading="lazy"></div>
-      <div class="dom-ov"></div>
-      <div class="dom-body">
-        <div class="dom-num">02 — BUSINESS</div>
-        <div class="dom-name">Business</div>
-        <div class="dom-tag">AI・Web・地域DX</div>
-        <div class="dom-items">
-          <span class="dom-item">TerroirHub</span>
-          <span class="dom-item">KANADE AI</span>
-          <span class="dom-item">AI Consulting</span>
-        </div>
-        <span class="dom-cta">詳しく見る</span>
+    <a href="business.html" class="fw-node business">
+      <div class="fw-node-img"><img src="KANADE アイコン.png" alt="BUSINESS" loading="lazy" style="object-fit:contain;background:#0F1E36;padding:8px;"></div>
+      <div>
+        <div class="fw-num">02</div>
+        <div class="fw-name">BUSINESS</div>
+        <div class="fw-tag">AI・Web・地域DX</div>
+        <p class="fw-copy">TerroirHub、KANADE AI、AIコンサルで文化と事業を拡張。</p>
       </div>
     </a>
 
-    <!-- 03 ENTERTAINMENT -->
-    <a href="entertainment.html" class="dom-card rv d2">
-      <div class="dom-img"><img src="KUKU.jpg" alt="ENTERTAINMENT" loading="lazy"></div>
-      <div class="dom-ov"></div>
-      <div class="dom-body">
-        <div class="dom-num">03 — ENTERTAINMENT</div>
-        <div class="dom-name">Entertainment</div>
-        <div class="dom-tag">物語・IP・ゲーム</div>
-        <div class="dom-items">
-          <span class="dom-item">KUKU</span>
-          <span class="dom-item">SILVA</span>
-          <span class="dom-item">Music</span>
-        </div>
-        <span class="dom-cta">詳しく見る</span>
+    <a href="entertainment.html" class="fw-node entertainment">
+      <div class="fw-node-img"><img src="KUKU.jpg" alt="ENTERTAINMENT" loading="lazy"></div>
+      <div>
+        <div class="fw-num">03</div>
+        <div class="fw-name">ENTERTAINMENT</div>
+        <div class="fw-tag">IP・アニメ・ゲーム</div>
+        <p class="fw-copy">KUKU、SILVA、音楽など、世界観をコンテンツとして展開。</p>
       </div>
     </a>
 
-    <!-- 04 COMMUNITY -->
-    <a href="community.html" class="dom-card rv d3">
-      <div class="dom-img"><img src="オンラインコミュニティ.JPG" alt="COMMUNITY" loading="lazy"></div>
-      <div class="dom-ov"></div>
-      <div class="dom-body">
-        <div class="dom-num">04 — COMMUNITY</div>
-        <div class="dom-name">Community</div>
-        <div class="dom-tag">共創・コミュニティ</div>
-        <div class="dom-items">
-          <span class="dom-item">FOMUS GUILD</span>
-          <span class="dom-item">Masu Photo</span>
-          <span class="dom-item">Events</span>
-        </div>
-        <span class="dom-cta">詳しく見る</span>
+    <a href="community.html" class="fw-node community">
+      <div class="fw-node-img"><img src="枡フォト.jpg" alt="COMMUNITY" loading="lazy"></div>
+      <div>
+        <div class="fw-num">04</div>
+        <div class="fw-name">COMMUNITY</div>
+        <div class="fw-tag">共創・コミュニティ</div>
+        <p class="fw-copy">FOMUS GUILD、Masu Photo、イベントで人と文化をつなぐ。</p>
       </div>
     </a>
-
   </div>
+
+  <p class="fw-foot">
+    工芸から始まり、テクノロジーで広げ、エンタメで感動を生み、<br>
+    コミュニティがまた新しい文化を生み出していく。<br>
+    <em>この循環が、FOMUSの原動力です。</em>
+  </p>
 </section>
 
 
@@ -811,30 +1041,8 @@ footer{}
         </div>
       </a>
 
-      <!-- 5 SILVA -->
-      <a href="https://silva.fomus.jp/" target="_blank" rel="noopener" class="fp-card rv d2">
-        <div class="fp-thumb"><img src="SILVA.png" alt="SILVA"></div>
-        <div class="fp-body">
-          <div class="fp-cat">ENTERTAINMENT</div>
-          <div class="fp-name">SILVA</div>
-          <p class="fp-desc">音楽・映像・ストーリーが交差するFOMUSのエンターテインメントプロジェクト。</p>
-          <span class="fp-link">詳細を見る</span>
-        </div>
-      </a>
-
-      <!-- 6 FOMUS CREATIVE STUDIO -->
-      <a href="https://studio.fomus.jp/" target="_blank" rel="noopener" class="fp-card rv d3">
-        <div class="fp-thumb"><img src="8AE2240A-69B4-45F2-B4AC-DC520ECE060D_1_201_a.jpeg" alt="FOMUS CREATIVE STUDIO"></div>
-        <div class="fp-body">
-          <div class="fp-cat">BUSINESS</div>
-          <div class="fp-name">FOMUS CREATIVE STUDIO</div>
-          <p class="fp-desc">写真・映像・Web・デザイン。クリエイティブを軸に企業・ブランドの表現を支援。</p>
-          <span class="fp-link">相談する</span>
-        </div>
-      </a>
-
-      <!-- 7 TerroirHUB -->
-      <a href="https://terroirhub.com/" target="_blank" rel="noopener" class="fp-card rv d1">
+      <!-- 5 TerroirHUB -->
+      <a href="https://terroirhub.com/" target="_blank" rel="noopener" class="fp-card rv d2">
         <div class="fp-thumb"><img src="22E8DEB1-4913-4ECD-9553-A64A7BA2CCF3_1_201_a.jpeg" alt="TerroirHUB"></div>
         <div class="fp-body">
           <div class="fp-cat">BUSINESS</div>
@@ -844,25 +1052,14 @@ footer{}
         </div>
       </a>
 
-      <!-- 8 KANADE AI -->
-      <a href="https://kanade-ai.com/" target="_blank" rel="noopener" class="fp-card rv d2">
+      <!-- 6 KANADE AI -->
+      <a href="https://kanade-ai.com/" target="_blank" rel="noopener" class="fp-card rv d3">
         <div class="fp-thumb"><img src="KANADE アイコン.png" alt="KANADE AI"></div>
         <div class="fp-body">
           <div class="fp-cat">BUSINESS</div>
-          <div class="fp-name">KANADE AI</div>
+          <div class="fp-name">KANADE AI<span style="font-size:.72em;font-weight:300;color:var(--mid);display:block;margin-top:3px;letter-spacing:.02em;">(FOMUS CREATIVE STUDIO)</span></div>
           <p class="fp-desc">日本文化×AI。多言語サイト制作・AI導入で企業のグローバル展開を支援。</p>
           <span class="fp-link">相談する</span>
-        </div>
-      </a>
-
-      <!-- 9 FOMUS GUILD -->
-      <a href="https://guild.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card rv d3">
-        <div class="fp-thumb"><img src="オンラインコミュニティ.JPG" alt="FOMUS GUILD"></div>
-        <div class="fp-body">
-          <div class="fp-cat">COMMUNITY</div>
-          <div class="fp-name">FOMUS GUILD</div>
-          <p class="fp-desc">日本文化に共感する人々が集う共創コミュニティ。国内外のメンバーと共に動く。</p>
-          <span class="fp-link">詳細を見る</span>
         </div>
       </a>
 
