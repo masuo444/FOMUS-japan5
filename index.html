@@ -437,9 +437,9 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 
 .gl-slideshow{overflow:hidden;margin-top:56px;padding:0 6%}
 .gl-track{display:flex;gap:16px;transition:transform .65s cubic-bezier(.4,0,.2,1)}
-.gl-slide{flex:0 0 88%;height:clamp(260px,42vw,520px);border-radius:6px;overflow:hidden;flex-shrink:0}
-.gl-slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.gl-slide:hover img{transform:scale(1.03)}
+.gl-slide{flex:0 0 88%;border-radius:6px;overflow:hidden;flex-shrink:0;background:var(--ink)}
+.gl-slide img{width:100%;height:auto;display:block;transition:transform .6s}
+.gl-slide:hover img{transform:scale(1.02)}
 .gl-ss-dots{display:flex;gap:6px;justify-content:center;margin-top:20px;padding-bottom:8px}
 .gl-ss-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.22);border:none;padding:0;cursor:pointer;transition:all .3s}
 .gl-ss-dot.act{background:var(--gilt);width:20px;border-radius:3px}
