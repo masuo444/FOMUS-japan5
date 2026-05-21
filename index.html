@@ -964,13 +964,9 @@ footer{}
     <!-- SVG ring + arrows (viewBox 460×460, center 230,230, ring r=178) -->
     <svg class="fw3-svg" viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <marker id="arrowFW" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5.5" markerHeight="5.5" orient="auto">
+        <marker id="arrowFW" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto">
           <path d="M 0 1 L 10 6 L 0 11 z" fill="#E2C068"/>
         </marker>
-        <filter id="glowFW" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
       </defs>
       <!-- outer ring -->
       <circle cx="230" cy="230" r="180" fill="none" stroke="rgba(226,192,104,0.20)" stroke-width="1"/>
@@ -978,13 +974,13 @@ footer{}
       <circle cx="230" cy="230" r="175" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
       <!-- arrow arcs clockwise, r=178, arcs offset ±28° from each corner (45°,135°,225°,315°) -->
       <!-- CRAFT→BUSINESS (top arc): from 197° to 343° passing over top -->
-      <path d="M 168 63 A 178 178 0 0 1 292 63" fill="none" stroke="#E2C068" stroke-width="2" marker-end="url(#arrowFW)" filter="url(#glowFW)" opacity=".92"/>
+      <path d="M 168 63 A 178 178 0 0 1 292 63" fill="none" stroke="#E2C068" stroke-width="3.5" marker-end="url(#arrowFW)" opacity=".92"/>
       <!-- BUSINESS→ENTERTAINMENT (right arc) -->
-      <path d="M 397 168 A 178 178 0 0 1 397 292" fill="none" stroke="#E2C068" stroke-width="2" marker-end="url(#arrowFW)" filter="url(#glowFW)" opacity=".92"/>
+      <path d="M 397 168 A 178 178 0 0 1 397 292" fill="none" stroke="#E2C068" stroke-width="3.5" marker-end="url(#arrowFW)" opacity=".92"/>
       <!-- ENTERTAINMENT→COMMUNITY (bottom arc) -->
-      <path d="M 292 397 A 178 178 0 0 1 168 397" fill="none" stroke="#E2C068" stroke-width="2" marker-end="url(#arrowFW)" filter="url(#glowFW)" opacity=".92"/>
+      <path d="M 292 397 A 178 178 0 0 1 168 397" fill="none" stroke="#E2C068" stroke-width="3.5" marker-end="url(#arrowFW)" opacity=".92"/>
       <!-- COMMUNITY→CRAFT (left arc) -->
-      <path d="M 63 292 A 178 178 0 0 1 63 168" fill="none" stroke="#E2C068" stroke-width="2" marker-end="url(#arrowFW)" filter="url(#glowFW)" opacity=".92"/>
+      <path d="M 63 292 A 178 178 0 0 1 63 168" fill="none" stroke="#E2C068" stroke-width="3.5" marker-end="url(#arrowFW)" opacity=".92"/>
     </svg>
 
     <!-- Center hub -->
