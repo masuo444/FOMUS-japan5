@@ -110,7 +110,7 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 #hero{position:relative;height:100dvh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;padding-bottom:96px}
 
 .h-video{position:absolute;inset:0;background:var(--ink)}
-.h-video video{width:100%;height:100%;object-fit:cover;opacity:.72}
+.h-video video{width:100%;height:100%;object-fit:cover;opacity:1}
 
 .h-film{position:absolute;inset:0}
 .h-frame{position:absolute;inset:0;opacity:0;transition:opacity 1.8s cubic-bezier(.4,0,.2,1)}
@@ -404,7 +404,7 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 /* ══════════════════════════════════════
    §05  GLOBAL TRUST
 ══════════════════════════════════════ */
-#global{background:var(--ink);padding:80px 0 64px;position:relative;overflow:hidden}
+#global{background:var(--ink);padding:100px 0;position:relative;overflow:hidden}
 #global::after{
   content:'WORLD';position:absolute;right:-60px;top:50%;transform:translateY(-50%);
   font-family:var(--en);font-size:22vw;font-weight:200;
@@ -412,37 +412,46 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 }
 #global .lbl{color:var(--gilt)}
 #global .bar{background:rgba(255,255,255,.2)}
-.global-hero-txt{max-width:680px;margin-bottom:40px}
-.global-h2{
-  font-family:var(--en);font-size:clamp(2.4rem,6vw,4.8rem);
-  font-weight:200;color:#fff;line-height:1.12;letter-spacing:.01em;margin-bottom:22px;
+
+/* 2-column layout */
+.gl-layout{display:grid;grid-template-columns:1fr 1.7fr;gap:72px;align-items:center}
+.gl-left{}
+.gl-h2{
+  font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);
+  font-weight:200;color:#fff;line-height:1.15;letter-spacing:.04em;margin-bottom:20px;
 }
-.global-sub{font-size:clamp(1.125rem,1.5vw,1.5rem);color:rgba(255,255,255,.6);line-height:2;font-weight:400;max-width:600px}
+.gl-sub{font-family:var(--sans);font-size:clamp(.95rem,1.1vw,1.1rem);color:rgba(255,255,255,.58);line-height:1.9;font-weight:400;margin-bottom:40px}
+.gl-stats{display:flex;gap:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
+.gl-stat-num{font-family:var(--en);font-size:3rem;font-weight:200;color:var(--gilt);line-height:1}
+.gl-stat-lbl{font-size:.7rem;color:rgba(255,255,255,.35);letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
 
-.gl-cap-area{padding:16px 6% 0;min-height:72px}
-.gl-cap{display:none}
-.gl-cap.act{display:block;animation:capFade .4s ease}
-@keyframes capFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.gl-cap-hd{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-.gl-cap-flag{font-size:1.3rem;line-height:1}
-.gl-cap-country{font-family:var(--en);font-size:1.25rem;letter-spacing:.08em;color:#fff;font-weight:400}
-.gl-cap-badge{font-size:.68rem;letter-spacing:.06em;border:1px solid rgba(226,192,104,.45);color:var(--gilt);padding:2px 8px;border-radius:2px}
-.gl-cap-year{font-size:.76rem;color:rgba(255,255,255,.48);letter-spacing:.08em}
-.gl-cap-desc{font-family:var(--sans);font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.85}
-
-.g-stats{display:flex;gap:60px;margin:56px 0;flex-wrap:wrap}
-.gst-num{font-family:var(--en);font-size:4rem;font-weight:200;color:var(--gilt);line-height:1}
-.gst-lbl{font-size:.74rem;color:rgba(255,255,255,.32);letter-spacing:.1em;margin-top:7px}
-
-.gl-slideshow{overflow:hidden;margin-top:36px;padding:0 6%}
-.gl-track{display:flex;gap:16px;transition:transform .65s cubic-bezier(.4,0,.2,1)}
-.gl-slide{flex:0 0 88%;border-radius:6px;overflow:hidden;flex-shrink:0;background:var(--ink)}
-.gl-slide img{width:100%;height:auto;max-height:clamp(220px,38vh,440px);object-fit:contain;display:block}
-.gl-slide:hover img{transform:scale(1.02)}
-.gl-ss-dots{display:flex;gap:6px;justify-content:center;margin-top:16px;padding-bottom:4px}
+/* right: slideshow */
+.gl-right{overflow:hidden}
+.gl-slideshow{overflow:hidden}
+.gl-track{display:flex;gap:12px;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.gl-slide{flex:0 0 88%;border-radius:8px;overflow:hidden;flex-shrink:0;aspect-ratio:4/3}
+.gl-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.gl-slide:hover img{transform:scale(1.03)}
+.gl-ss-dots{display:flex;gap:5px;margin-top:14px}
 .gl-ss-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.22);border:none;padding:0;cursor:pointer;transition:all .3s}
-.gl-ss-dot.act{background:var(--gilt);width:20px;border-radius:3px}
-@media(max-width:600px){.gl-slide{flex:0 0 85%}.gl-slideshow{padding:0 4%}}
+.gl-ss-dot.act{background:var(--gilt);width:18px;border-radius:3px}
+
+/* caption */
+.gl-cap-area{margin-top:20px;min-height:64px}
+.gl-cap{display:none}
+.gl-cap.act{display:block;animation:capFade .35s ease}
+@keyframes capFade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.gl-cap-hd{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.gl-cap-flag{font-size:1.2rem;line-height:1}
+.gl-cap-country{font-family:var(--en);font-size:1.1rem;letter-spacing:.08em;color:#fff;font-weight:400}
+.gl-cap-badge{font-size:.65rem;letter-spacing:.06em;border:1px solid rgba(226,192,104,.4);color:var(--gilt);padding:2px 7px;border-radius:2px}
+.gl-cap-year{font-size:.72rem;color:rgba(255,255,255,.42);letter-spacing:.08em}
+.gl-cap-desc{font-family:var(--sans);font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.8}
+
+@media(max-width:860px){
+  .gl-layout{grid-template-columns:1fr;gap:40px}
+  .gl-slide{flex:0 0 85%}
+}
 
 /* ══════════════════════════════════════
    §06  FOUNDER  — compact
@@ -580,57 +589,11 @@ footer{}
 
 <!-- ══════════════ §01 HERO ══════════════ -->
 <section id="hero">
-  <!-- 動画: hero.mp4 を同フォルダに置くだけで自動適用 -->
-  <div class="h-video" id="hVid" style="display:none">
-    <video id="heroVid" src="hero.mp4" autoplay muted loop playsinline></video>
+  <div class="h-video">
+    <video src="hero.mp4" autoplay muted loop playsinline></video>
   </div>
-
-  <!-- Cinematic image sequence -->
-  <div class="h-film" id="hFilm">
-    <div class="h-frame act"><img src="FOMUS枡.jpg"  alt="工芸"></div>
-    <div class="h-frame"><img src="FOMUSイベント風景.jpg"      alt="海外"></div>
-    <div class="h-frame"><img src="KUKU.jpg"   alt="KUKU"></div>
-    <div class="h-frame"><img src="オンラインコミュニティ.JPG"      alt="つながり"></div>
-    <div class="h-frame"><img src="枡フォト.jpg"      alt="FOMUS"></div>
-    <div class="h-frame"><img src="縁起物・祝い.jpg"      alt="FOMUS"></div>
-    <div class="h-frame"><img src="金箔.jpg"      alt="FOMUS"></div>
-    <div class="h-frame"><img src="SILVA.png"     alt="FOMUS"></div>
-  </div>
-
   <div class="h-ov"></div>
   <div class="h-grain"></div>
-
-  <!-- Chapter labels -->
-  <div class="h-chapters" id="hChapters">
-    <div class="h-ch act">— 工芸 / Craft</div>
-    <div class="h-ch">— 世界 / Global</div>
-    <div class="h-ch">— 物語 / Story</div>
-    <div class="h-ch">— 人 / People</div>
-    <div class="h-ch">— 枡 / Masu</div>
-    <div class="h-ch">— 文化 / Culture</div>
-    <div class="h-ch">— AI / Future</div>
-    <div class="h-ch">— FOMUS</div>
-  </div>
-
-  <div class="h-copy">
-    <div class="W">
-      <p class="h-ey">Cultural Creative Company — Since 2021</p>
-      <h1 class="h-h1"><em>枡</em>から、<br>日本文化の<br>未来を。</h1>
-      <p class="h-sub">
-        FOMUSは、日本の伝統工芸「枡」を起点に、<br>
-        工芸・テクノロジー・物語・コミュニティを通じて、<br>
-        日本文化の価値を世界へ届ける文化クリエイティブカンパニーです。
-      </p>
-      <div class="h-ctas">
-        <a href="#what"     class="cp">FOMUSとは</a>
-        <a href="#projects" class="cs">プロジェクトを見る</a>
-        <a href="#contact"  class="cg">相談する</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="h-sc"><span>scroll</span><div class="scl"></div></div>
-  <div class="h-dots" id="hDots"></div>
 </section>
 
 
@@ -860,52 +823,74 @@ footer{}
 <!-- ══════════════ §05 GLOBAL TRUST ══════════════ -->
 <section id="global">
   <div class="W">
-    <div class="global-hero-txt rv">
-      <span style="font-family:var(--serif);font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:200;color:rgba(255,255,255,.55);display:block;margin-bottom:16px;letter-spacing:.02em;">海外展開</span>
-      <span class="lbl">Global Activities</span>
-      <div class="bar"></div>
-      <p class="global-sub">日本国大使館での展示から始まり、世界5カ国の外交拠点でFOMUSは信頼を証明してきた。</p>
-    </div>
+    <div class="gl-layout">
 
-    <div class="gl-slideshow" id="glSS">
-      <div class="gl-track" id="glTrack">
-        <div class="gl-slide"><img src="slideshow/1.0.JPG" alt="FOMUS Global 1" loading="eager" fetchpriority="high"></div>
-        <div class="gl-slide"><img src="slideshow/2.jpg" alt="FOMUS Global 2" loading="eager"></div>
-        <div class="gl-slide"><img src="slideshow/3.jpg" alt="FOMUS Global 3" loading="eager"></div>
-        <div class="gl-slide"><img src="slideshow/4.jpg" alt="FOMUS Global 4" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/5.jpg" alt="FOMUS Global 5" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/6.jpg" alt="FOMUS Global 6" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/7.jpg" alt="FOMUS Global 7" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/8.jpg" alt="FOMUS Global 8" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/9.jpg" alt="FOMUS Global 9" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/10.jpg" alt="FOMUS Global 10" loading="lazy"></div>
-        <div class="gl-slide"><img src="slideshow/11.jpg" alt="FOMUS Global 11" loading="lazy"></div>
+      <!-- 左: タイトル + stats -->
+      <div class="gl-left rv">
+        <span class="lbl" style="display:block;margin-bottom:16px;">Global Activities</span>
+        <div class="bar"></div>
+        <h2 class="gl-h2">海外展開</h2>
+        <p class="gl-sub">日本国大使館での展示から始まり、<br>世界5カ国の外交拠点で<br>FOMUSは信頼を証明してきた。</p>
+        <div class="gl-stats">
+          <div>
+            <div class="gl-stat-num">5</div>
+            <div class="gl-stat-lbl">Countries</div>
+          </div>
+          <div>
+            <div class="gl-stat-num">40<span style="font-size:1.6rem">+</span></div>
+            <div class="gl-stat-lbl">Nations Active</div>
+          </div>
+          <div>
+            <div class="gl-stat-num">4</div>
+            <div class="gl-stat-lbl">Embassies</div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="gl-ss-dots" id="glDots"></div>
-    <div class="gl-cap-area" id="glCapArea">
-      <div class="gl-cap act">
-        <div class="gl-cap-hd"><span class="gl-cap-flag">🇮🇪</span><span class="gl-cap-country">Ireland</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2024–2025</span></div>
-        <p class="gl-cap-desc">アイルランド日本国大使館での枡の展示・提供。シャールビル城に欧州拠点を設立。</p>
+
+      <!-- 右: スライドショー + キャプション -->
+      <div class="gl-right rv d2">
+        <div class="gl-slideshow" id="glSS">
+          <div class="gl-track" id="glTrack">
+            <div class="gl-slide"><img src="slideshow/1.0.JPG" alt="FOMUS Global 1" loading="eager" fetchpriority="high"></div>
+            <div class="gl-slide"><img src="slideshow/2.jpg" alt="FOMUS Global 2" loading="eager"></div>
+            <div class="gl-slide"><img src="slideshow/3.jpg" alt="FOMUS Global 3" loading="eager"></div>
+            <div class="gl-slide"><img src="slideshow/4.jpg" alt="FOMUS Global 4" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/5.jpg" alt="FOMUS Global 5" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/6.jpg" alt="FOMUS Global 6" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/7.jpg" alt="FOMUS Global 7" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/8.jpg" alt="FOMUS Global 8" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/9.jpg" alt="FOMUS Global 9" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/10.jpg" alt="FOMUS Global 10" loading="lazy"></div>
+            <div class="gl-slide"><img src="slideshow/11.jpg" alt="FOMUS Global 11" loading="lazy"></div>
+          </div>
+        </div>
+        <div class="gl-ss-dots" id="glDots"></div>
+        <div class="gl-cap-area" id="glCapArea">
+          <div class="gl-cap act">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇮🇪</span><span class="gl-cap-country">Ireland</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2024–2025</span></div>
+            <p class="gl-cap-desc">アイルランド日本国大使館での枡の展示・提供。シャールビル城に欧州拠点を設立。</p>
+          </div>
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇧🇭</span><span class="gl-cap-country">Bahrain</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2025</span></div>
+            <p class="gl-cap-desc">バーレーン日本国大使館での展示活動。中東での日本文化発信の拠点。</p>
+          </div>
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇸🇦</span><span class="gl-cap-country">Saudi Arabia</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2025</span></div>
+            <p class="gl-cap-desc">サウジアラビア日本国大使館での展示・交流活動。中東最大市場でのネットワーク構築。</p>
+          </div>
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🇦🇪</span><span class="gl-cap-country">Dubai / UAE</span><span class="gl-cap-badge">法人設立 · 展示</span><span class="gl-cap-year">2025</span></div>
+            <p class="gl-cap-desc">ドバイに海外法人設立。中東ハブとして展示・事業活動を本格展開。</p>
+          </div>
+          <div class="gl-cap">
+            <div class="gl-cap-hd"><span class="gl-cap-flag">🌍</span><span class="gl-cap-country">40+ Countries</span><span class="gl-cap-badge">活動実績</span><span class="gl-cap-year">2021–</span></div>
+            <p class="gl-cap-desc">世界40カ国以上で活動。各地の文化・人・場所と繋がりながら、日本文化の新しい可能性を探求。</p>
+          </div>
+          <div class="gl-cap"></div><div class="gl-cap"></div><div class="gl-cap"></div>
+          <div class="gl-cap"></div><div class="gl-cap"></div><div class="gl-cap"></div>
+        </div>
       </div>
-      <div class="gl-cap">
-        <div class="gl-cap-hd"><span class="gl-cap-flag">🇧🇭</span><span class="gl-cap-country">Bahrain</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2025</span></div>
-        <p class="gl-cap-desc">バーレーン日本国大使館での展示活動。中東での日本文化発信の拠点。</p>
-      </div>
-      <div class="gl-cap">
-        <div class="gl-cap-hd"><span class="gl-cap-flag">🇸🇦</span><span class="gl-cap-country">Saudi Arabia</span><span class="gl-cap-badge">日本国大使館 展示</span><span class="gl-cap-year">2025</span></div>
-        <p class="gl-cap-desc">サウジアラビア日本国大使館での展示・交流活動。中東最大市場でのネットワーク構築。</p>
-      </div>
-      <div class="gl-cap">
-        <div class="gl-cap-hd"><span class="gl-cap-flag">🇦🇪</span><span class="gl-cap-country">Dubai / UAE</span><span class="gl-cap-badge">法人設立 · 展示</span><span class="gl-cap-year">2025</span></div>
-        <p class="gl-cap-desc">ドバイに海外法人設立。中東ハブとして展示・事業活動を本格展開。</p>
-      </div>
-      <div class="gl-cap">
-        <div class="gl-cap-hd"><span class="gl-cap-flag">🌍</span><span class="gl-cap-country">40+ Countries</span><span class="gl-cap-badge">活動実績</span><span class="gl-cap-year">2021–</span></div>
-        <p class="gl-cap-desc">世界40カ国以上で活動。各地の文化・人・場所と繋がりながら、日本文化の新しい可能性を探求。</p>
-      </div>
-      <div class="gl-cap"></div><div class="gl-cap"></div><div class="gl-cap"></div>
-      <div class="gl-cap"></div><div class="gl-cap"></div><div class="gl-cap"></div>
+
     </div>
   </div>
 </section>
