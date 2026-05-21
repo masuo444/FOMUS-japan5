@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <title>FOMUS BUSINESS | AIとクリエイティブで、事業を加速する。</title>
+  <meta name="description" content="FOMUSのBusiness領域。多言語サイト制作、AI導入、業務効率化、地域DXまで。企業や地域事業者の成長を支える実践型パートナーです。">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#0A1222;--ink2:#0F1E36;
+  --gold:#B8873A;--gold2:#C9993E;--gilt:#E2C068;
+  --cream:#FAF8F3;--warm:#F3EDE0;--dust:#E8E0D0;--mid:#888;
+  --serif:'Noto Serif JP',serif;
+  --sans:'Noto Sans JP',sans-serif;
+  --en:'Cormorant Garamond',serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.W{max-width:1240px;margin:0 auto;padding:0 56px}
+.lbl{font-family:var(--en);font-size:.66rem;letter-spacing:.46em;text-transform:uppercase;color:var(--gold)}
+.bar{width:36px;height:1px;background:var(--gold);margin:20px 0}
+
+/* ── Scroll reveal ── */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-l.in{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-r.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}.d4{transition-delay:.30s}
+
+/* ════════════════════════
+   HEADER
+════════════════════════ */
+#H{
+  position:fixed;inset:0 0 auto;z-index:900;
+  padding:0 56px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,box-shadow .4s;
+}
+#H.s{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.hl img{height:28px;width:auto;transition:filter .35s}
+#H:not(.s) .hl img{filter:brightness(0) invert(1)}
+.hn{display:flex;align-items:center;gap:32px;list-style:none}
+.hn a{font-family:var(--en);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .2s}
+#H.s .hn a{color:#555}
+.hn a:hover,.hn a.act{color:var(--gilt)!important}
+#H.s .hn a.act{color:var(--gold)!important}
+.hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
+#H.s .hcta{border-color:var(--ink);color:var(--ink)}
+.hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.hbg{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer;background:none;border:none}
+.hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
+#H.s .hbg span{background:var(--ink)}
+@media(max-width:860px){.hn,.hcta{display:none}.hbg{display:flex}}
+#MN{display:none;position:fixed;inset:0;background:var(--ink);z-index:899;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+#MN.open{display:flex}
+#MN a{font-family:var(--en);font-size:1.8rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+#MN a:hover{color:var(--gilt)}
+.mnx{position:absolute;top:28px;right:36px;font-family:var(--en);font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer}
+
+/* ════════════════════════
+   §01  HERO
+════════════════════════ */
+.hero{
+  display:flex;
+  height:100vh;min-height:640px;
+  overflow:hidden;
+  position:relative;
+}
+.hero-left{
+  flex:0 0 50%;
+  background:var(--ink);
+  display:flex;
+  align-items:flex-end;
+  padding:100px 56px 80px 56px;
+}
+.hero-right{
+  flex:1;
+  overflow:hidden;
+}
+.hero-right img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.hero-inner{max-width:480px;width:100%}
+.hero-eyebrow{
+  font-family:var(--en);
+  font-size:.68rem;letter-spacing:.55em;text-transform:uppercase;
+  color:var(--gilt);margin-bottom:24px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gilt);flex-shrink:0}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3vw,3rem);
+  font-weight:500;
+  color:#fff;
+  line-height:1.30;
+  letter-spacing:.03em;
+  margin-bottom:28px;
+}
+.hero-desc{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1.1vw,1rem);
+  font-weight:400;
+  color:rgba(255,255,255,.72);
+  line-height:2;
+  margin-bottom:32px;
+}
+.hero-tags{
+  font-family:var(--en);
+  font-size:.65rem;letter-spacing:.32em;
+  color:rgba(255,255,255,.35);
+  text-transform:uppercase;
+  margin-bottom:32px;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:15px 44px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.hero-cta::after{content:'→';display:inline-block;transition:transform .2s}
+.hero-cta:hover{background:#9A6E2A;transform:translateY(-2px)}
+.hero-cta:hover::after{transform:translateX(4px)}
+/* scroll indicator */
+.hero-scroll{
+  position:absolute;bottom:40px;right:40px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.hero-scroll span{font-family:var(--en);font-size:.55rem;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.scl{width:1px;height:40px;background:rgba(255,255,255,.15);overflow:hidden;position:relative}
+.scl::after{content:'';position:absolute;top:-100%;width:100%;height:100%;background:var(--gilt);animation:scr 2.2s ease-in-out infinite}
+@keyframes scr{0%{top:-100%}100%{top:200%}}
+
+/* ════════════════════════
+   §02  PHILOSOPHY
+════════════════════════ */
+.philosophy{
+  background:#fff;
+  padding:112px 0 104px;
+}
+.phi-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:96px;
+  align-items:center;
+}
+.phi-left .lbl{display:block;margin-bottom:20px}
+.phi-title{
+  font-family:var(--en);
+  font-size:clamp(3rem,5.5vw,5rem);
+  font-weight:400;
+  font-style:italic;
+  color:var(--ink);
+  line-height:1.05;
+  letter-spacing:.01em;
+}
+.phi-lead{
+  font-family:var(--serif);
+  font-size:clamp(1.1rem,1.6vw,1.35rem);
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.65;
+  margin-bottom:24px;
+  letter-spacing:.04em;
+}
+.phi-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.05vw,1rem);
+  font-weight:400;
+  color:#444;
+  line-height:2.1;
+}
+
+/* ════════════════════════
+   §03  CHALLENGES
+════════════════════════ */
+.challenges{
+  background:var(--ink);
+  padding:112px 0;
+}
+.ch-head{text-align:center;margin-bottom:64px}
+.ch-head .lbl{color:var(--gilt);display:block;margin-bottom:16px}
+.ch-title{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:500;color:#fff;
+  line-height:1.4;letter-spacing:.04em;
+}
+.ch-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  margin-bottom:72px;
+}
+.ch-card{
+  padding:52px 40px;
+  border:1px solid rgba(255,255,255,.07);
+  transition:background .3s,border-color .3s;
+}
+.ch-card:hover{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(226,192,104,.22);
+}
+.ch-num{
+  font-family:var(--en);
+  font-size:.62rem;letter-spacing:.3em;
+  color:var(--gilt);opacity:.6;
+  margin-bottom:20px;
+}
+.ch-text{
+  font-family:var(--serif);
+  font-size:clamp(.95rem,1.2vw,1.1rem);
+  font-weight:400;color:rgba(255,255,255,.88);
+  line-height:1.75;letter-spacing:.04em;
+}
+.ch-text strong{
+  display:block;font-weight:500;color:#fff;
+}
+.ch-resolve{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:64px;
+}
+.ch-resolve-h{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  font-weight:500;color:#fff;
+  line-height:1.4;letter-spacing:.04em;
+  margin-bottom:16px;
+}
+.ch-resolve-h span{color:var(--gilt)}
+.ch-resolve-body{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1.05vw,1rem);
+  color:rgba(255,255,255,.52);
+  line-height:2;
+}
+@media(max-width:900px){.ch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.ch-grid{grid-template-columns:1fr}.challenges{padding:72px 0}.ch-card{padding:40px 28px}}
+
+/* ════════════════════════
+   §04  BUSINESS SOLUTIONS
+════════════════════════ */
+.projects{
+  background:var(--cream);
+  padding:112px 0;
+}
+.proj-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:60px;
+}
+.proj-head-left .lbl{display:block;margin-bottom:14px}
+.proj-head-title{
+  font-family:var(--en);
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:400;
+  color:var(--ink);
+  letter-spacing:.06em;
+  line-height:1;
+}
+.proj-head-sub{
+  font-family:var(--sans);
+  font-size:.84rem;color:var(--mid);letter-spacing:.04em;
+}
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.proj-card{
+  background:#fff;
+  border-radius:3px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  border:1px solid rgba(10,18,34,.05);
+  transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s;
+  text-decoration:none;color:var(--ink);
+}
+.proj-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,.1)}
+.proj-img{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:3/4;
+}
+.proj-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+}
+.proj-card:hover .proj-img img{transform:scale(1.06)}
+/* Dark logo card variant (KANADE AI) */
+.proj-img--dark{
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  aspect-ratio:3/4;
+}
+.proj-img--dark img{
+  width:60%;height:auto;
+  object-fit:contain;
+  transition:transform .9s cubic-bezier(.16,1,.3,1),opacity .3s;
+  opacity:.9;
+}
+.proj-card:hover .proj-img--dark img{transform:scale(1.04);opacity:1}
+.proj-body{
+  padding:24px 22px 26px;
+  flex:1;display:flex;flex-direction:column;
+}
+.proj-cat{
+  font-family:var(--en);font-size:.58rem;letter-spacing:.38em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:6px;
+}
+.proj-name{
+  font-family:var(--en);
+  font-size:1.5rem;font-weight:400;
+  color:var(--ink);line-height:1;
+  letter-spacing:.06em;
+  margin-bottom:8px;
+}
+.proj-ja{
+  font-family:var(--serif);
+  font-size:.78rem;font-weight:400;
+  color:var(--gold);letter-spacing:.12em;
+  margin-bottom:14px;
+}
+.proj-desc{
+  font-family:var(--sans);
+  font-size:.84rem;font-weight:400;
+  color:#555;line-height:1.95;
+  flex:1;margin-bottom:18px;
+}
+.proj-tags{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-bottom:18px;
+}
+.proj-tag{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.18em;
+  color:var(--mid);border:1px solid rgba(10,18,34,.12);
+  padding:4px 11px;border-radius:999px;
+  transition:color .2s,border-color .2s;
+}
+.proj-card:hover .proj-tag{color:var(--gold);border-color:rgba(184,135,58,.3)}
+.proj-link{
+  font-family:var(--en);
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:gap .25s;margin-top:auto;
+}
+.proj-link::after{content:'→';display:inline-block}
+.proj-card:hover .proj-link{gap:11px}
+
+/* ════════════════════════
+   §04  WHAT WE OFFER
+════════════════════════ */
+.offer{
+  background:var(--ink);
+  padding:96px 0;
+}
+.offer-head{
+  text-align:center;
+  margin-bottom:64px;
+}
+.offer-head .lbl{color:var(--gilt);display:block;margin-bottom:16px}
+.offer-title{
+  font-family:var(--en);
+  font-size:clamp(2rem,3vw,2.6rem);
+  font-weight:400;color:#fff;
+  letter-spacing:.08em;line-height:1;
+}
+.offer-sub{
+  font-family:var(--serif);
+  font-size:.9rem;color:rgba(255,255,255,.4);
+  letter-spacing:.08em;margin-top:12px;
+}
+.offer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2px;
+}
+.offer-item{
+  padding:52px 36px;
+  border:1px solid rgba(255,255,255,.07);
+  text-align:center;
+  transition:background .3s,border-color .3s;
+  cursor:default;
+}
+.offer-item:hover{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(226,192,104,.24);
+}
+.offer-icon{
+  width:52px;height:52px;
+  margin:0 auto 22px;
+  opacity:.72;
+  transition:opacity .3s;
+}
+.offer-item:hover .offer-icon{opacity:1}
+.offer-icon svg{width:100%;height:100%}
+.offer-name{
+  font-family:var(--serif);
+  font-size:1rem;font-weight:400;
+  color:#fff;letter-spacing:.06em;
+  line-height:1.6;
+}
+
+/* ════════════════════════
+   §05  TRUSTED FOR GROWTH
+════════════════════════ */
+.trust{
+  background:var(--warm);
+  padding:112px 0;
+}
+.trust-inner{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:80px;
+  align-items:center;
+}
+.trust-text .lbl{display:block;margin-bottom:20px}
+.trust-title{
+  font-family:var(--en);
+  font-size:clamp(2rem,3.5vw,3.2rem);
+  font-weight:400;
+  color:var(--ink);
+  line-height:1.15;
+  letter-spacing:.04em;
+  margin-bottom:8px;
+}
+.trust-title-ja{
+  font-family:var(--serif);
+  font-size:clamp(1rem,1.6vw,1.3rem);
+  font-weight:400;
+  color:var(--gold);
+  letter-spacing:.12em;
+  display:block;
+  margin-bottom:28px;
+}
+.trust-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.05vw,1rem);
+  font-weight:400;
+  color:#444;
+  line-height:2.1;
+  margin-bottom:36px;
+}
+.trust-badges{
+  display:flex;flex-wrap:wrap;gap:12px;
+  margin-bottom:40px;
+}
+.trust-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--en);font-size:.7rem;letter-spacing:.18em;
+  color:var(--gold);
+  border:1px solid rgba(184,135,58,.36);
+  padding:9px 18px;border-radius:2px;
+}
+.trust-badge.pulse::before{
+  content:'';width:7px;height:7px;
+  border-radius:50%;background:var(--gold);flex-shrink:0;
+  animation:gp 2.4s infinite;
+}
+@keyframes gp{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(184,135,58,.4)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(184,135,58,0)}}
+.trust-stats{
+  display:flex;gap:36px;align-items:flex-start;
+}
+.ts-item{}
+.ts-num{
+  font-family:var(--en);
+  font-size:2.8rem;font-weight:300;
+  color:var(--ink);letter-spacing:.02em;
+  line-height:1;
+}
+.ts-label{
+  font-family:var(--sans);
+  font-size:.75rem;color:var(--mid);
+  letter-spacing:.08em;margin-top:4px;
+}
+.ts-sep{
+  width:1px;height:52px;
+  background:rgba(10,18,34,.15);
+  align-self:center;
+  flex-shrink:0;
+}
+.trust-img{
+  position:relative;
+  border-radius:4px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  box-shadow:0 32px 80px rgba(0,0,0,.14);
+}
+.trust-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.16,1,.3,1);
+}
+.trust-img:hover img{transform:scale(1.04)}
+.trust-img::after{
+  content:'';position:absolute;inset:0;
+  border:1px solid rgba(184,135,58,.2);
+  pointer-events:none;border-radius:4px;
+}
+
+/* ════════════════════════
+   §06  CTA
+════════════════════════ */
+.cta-sec{
+  background:var(--ink);
+  padding:112px 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-sec::before{
+  content:'BUSINESS';
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--en);font-size:clamp(6rem,16vw,15rem);
+  font-weight:300;letter-spacing:.08em;
+  color:rgba(255,255,255,.018);
+  white-space:nowrap;pointer-events:none;
+}
+.cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto;padding:0 40px}
+.cta-sec .lbl{color:var(--gilt);display:block;margin-bottom:22px}
+.cta-h{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3.5vw,3rem);
+  font-weight:500;color:#fff;
+  line-height:1.38;letter-spacing:.03em;
+  margin-bottom:20px;
+}
+.cta-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.1vw,1rem);
+  font-weight:400;
+  color:rgba(255,255,255,.62);
+  line-height:2;margin-bottom:48px;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:18px 52px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.cta-btn:hover{background:#9A6E2A;transform:translateY(-2px)}
+.cta-btn::after{content:'→';transition:transform .2s;display:inline-block}
+.cta-btn:hover::after{transform:translateX(4px)}
+
+/* ════════════════════════
+   FOOTER
+════════════════════════ */
+#footer{background:var(--ink2);color:#fff;padding:64px 0 40px}
+.ft-inner{max-width:1240px;margin:0 auto;padding:0 56px}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.ft-brand{font-family:var(--en);font-size:1.8rem;font-weight:200;letter-spacing:.18em;color:#fff}
+.ft-tabs{display:flex;flex-wrap:wrap;gap:10px}
+.ft-tab{
+  font-family:var(--en);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:7px 18px;background:none;cursor:pointer;
+  transition:color .2s,border-color .2s;
+}
+.ft-tab:hover,.ft-tab.act{color:#fff;border-color:rgba(255,255,255,.55)}
+.ft-panels{margin-bottom:36px}
+.ft-panel{
+  display:none;background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:8px;padding:24px 28px;
+  font-size:.88rem;line-height:2;color:rgba(255,255,255,.72);
+}
+.ft-panel.open{display:block}
+.ft-panel h3{font-family:var(--serif);font-size:1rem;font-weight:400;color:#fff;margin-bottom:14px;letter-spacing:.06em}
+.ft-panel ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.ft-panel p{margin-bottom:8px}
+.ft-bot{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:22px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.ft-copy{font-family:var(--en);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* ════════════════════════
+   RESPONSIVE
+════════════════════════ */
+@media(max-width:900px){
+  .W{padding:0 32px}
+  #H{padding:0 32px}
+  .phi-inner{grid-template-columns:1fr;gap:48px}
+  .phi-title{font-size:3rem}
+  .proj-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .offer-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-inner{grid-template-columns:1fr;gap:48px}
+  .ft-inner{padding:0 32px}
+}
+@media(max-width:600px){
+  .W{padding:0 20px}
+  #H{padding:0 20px}
+  .hero{flex-direction:column;height:auto;min-height:100svh}
+  .hero-left{flex:none;padding:80px 24px 56px;order:2}
+  .hero-right{flex:none;height:52vw;min-height:220px;order:1}
+  .hero-h1{font-size:1.9rem}
+  .hero-scroll{display:none}
+  .philosophy{padding:72px 0}
+  .phi-inner{gap:36px}
+  .phi-title{font-size:2.4rem}
+  .phi-lead{font-size:1.05rem}
+  .projects{padding:72px 0}
+  .proj-grid{grid-template-columns:1fr;gap:14px}
+  .proj-img,.proj-img--dark{aspect-ratio:16/9}
+  .offer{padding:64px 0}
+  .offer-grid{grid-template-columns:repeat(2,1fr)}
+  .offer-item{padding:36px 20px}
+  .trust{padding:72px 0}
+  .trust-stats{flex-wrap:wrap;gap:20px}
+  .cta-sec{padding:80px 0}
+  .cta-h{font-size:1.7rem}
+  .cta-btn{padding:16px 36px}
+  .ft-inner{padding:0 20px}
+  .ft-top{flex-direction:column;gap:18px}
+  .ft-bot{flex-direction:column;align-items:flex-start;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header id="H">
+  <a href="index.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
+  <nav>
+    <ul class="hn">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="craft.html">Craft</a></li>
+      <li><a href="business.html" class="act">Business</a></li>
+      <li><a href="entertainment.html">Entertainment</a></li>
+      <li><a href="community.html">Community</a></li>
+    </ul>
+  </nav>
+  <a href="index.html#contact" class="hcta">無料相談する</a>
+  <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Mobile nav -->
+<nav id="MN">
+  <button class="mnx" id="mnx">CLOSE ✕</button>
+  <a href="index.html"         onclick="cNav()">Home</a>
+  <a href="craft.html"         onclick="cNav()">Craft</a>
+  <a href="business.html"      onclick="cNav()">Business</a>
+  <a href="entertainment.html" onclick="cNav()">Entertainment</a>
+  <a href="community.html"     onclick="cNav()">Community</a>
+  <a href="index.html#contact" onclick="cNav()">Contact</a>
+</nav>
+
+
+<!-- ════ §01 HERO ════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Business</div>
+      <h1 class="hero-h1">AIとクリエイティブで、<br>事業課題を解決する。</h1>
+      <p class="hero-desc">多言語サイト制作、AI導入、業務効率化、地域DXまで。<br>FOMUSは、企業や地域事業者の課題解決を支える実践型パートナーです。</p>
+      <div class="hero-tags">KANADE AI &nbsp;/&nbsp; TerroirHub &nbsp;/&nbsp; AI Retreat &nbsp;/&nbsp; Creative Studio</div>
+      <a href="index.html#contact" class="hero-cta">無料相談する</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="プロフィール.jpg" alt="FOMUS Business Consulting" loading="eager">
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scl"></div>
+  </div>
+</section>
+
+
+<!-- ════ §02 PHILOSOPHY ════ -->
+<section class="philosophy">
+  <div class="W">
+    <div class="phi-inner">
+      <div class="phi-left rv-l">
+        <span class="lbl">Why Business?</span>
+        <div class="bar"></div>
+        <div class="phi-title">Why<br>Business?</div>
+      </div>
+      <div class="phi-right rv-r">
+        <p class="phi-lead">「作る」だけでは、終わらせない。</p>
+        <p class="phi-body">FOMUSのビジネス領域では、AI、Web、クリエイティブを活用し、企業や地域事業者の成長を支援しています。企画から制作、運用まで伴走し、成果につながる仕組みづくりを重視しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §03 CHALLENGES ════ -->
+<section class="challenges">
+  <div class="W">
+    <div class="ch-head rv">
+      <span class="lbl">Challenges We Solve</span>
+      <h2 class="ch-title">こんなお悩み、<br>ありませんか？</h2>
+    </div>
+
+    <div class="ch-grid">
+      <div class="ch-card rv d1">
+        <div class="ch-num">01</div>
+        <p class="ch-text"><strong>AIを導入したいが、</strong>何から始めればいいかわからない</p>
+      </div>
+      <div class="ch-card rv d2">
+        <div class="ch-num">02</div>
+        <p class="ch-text"><strong>海外顧客向けに</strong>多言語対応したい</p>
+      </div>
+      <div class="ch-card rv d3">
+        <div class="ch-num">03</div>
+        <p class="ch-text"><strong>人手不足で、</strong>業務効率化したい</p>
+      </div>
+      <div class="ch-card rv d1">
+        <div class="ch-num">04</div>
+        <p class="ch-text"><strong>WebサイトやSNSが古く、</strong>成果につながらない</p>
+      </div>
+      <div class="ch-card rv d2">
+        <div class="ch-num">05</div>
+        <p class="ch-text"><strong>地域・ブランドの魅力を</strong>もっと発信したい</p>
+      </div>
+      <div class="ch-card rv d3">
+        <div class="ch-num">06</div>
+        <p class="ch-text"><strong>社内でAIを活用できる</strong>人材を育てたい</p>
+      </div>
+    </div>
+
+    <div class="ch-resolve rv">
+      <h3 class="ch-resolve-h"><span>FOMUSなら、</span><br>実装まで伴走します。</h3>
+      <p class="ch-resolve-body">AI導入、多言語Web、業務効率化、クリエイティブ制作まで。<br>課題に合わせた最適な方法をご提案します。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §04 BUSINESS SOLUTIONS ════ -->
+<section class="projects">
+  <div class="W">
+    <div class="proj-head rv">
+      <div class="proj-head-left">
+        <span class="lbl">Featured Projects</span>
+        <div class="proj-head-title">Business Solutions</div>
+      </div>
+      <div class="proj-head-sub">FOMUSの事業支援</div>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- 01 KANADE AI -->
+      <a href="#" class="proj-card rv d1">
+        <div class="proj-img--dark">
+          <img src="KANADE アイコン.png" alt="KANADE AI" loading="eager">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">KANADE AI</div>
+          <div class="proj-ja">AIを、もっと実践的に。</div>
+          <p class="proj-desc">多言語サイト制作、AI導入、業務自動化を支援するクリエイティブAIスタジオ。IT導入支援事業者として、中小企業のAI・デジタル化を支援。</p>
+          <div class="proj-tags">
+            <span class="proj-tag">AI導入</span>
+            <span class="proj-tag">多言語サイト</span>
+            <span class="proj-tag">業務効率化</span>
+          </div>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+      <!-- 02 TerroirHub -->
+      <a href="#" class="proj-card rv d2">
+        <div class="proj-img">
+          <img src="slideshow/4.jpg" alt="TerroirHub" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">TerroirHub</div>
+          <div class="proj-ja">地域の魅力を、世界へ。</div>
+          <p class="proj-desc">日本酒、ワイン、観光、工芸分野に向けた多言語AIプラットフォーム。地域ブランドの海外展開やインバウンド対応を支援します。</p>
+          <div class="proj-tags">
+            <span class="proj-tag">地域DX</span>
+            <span class="proj-tag">多言語化</span>
+            <span class="proj-tag">観光</span>
+          </div>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+      <!-- 03 Fuefuki AI Base -->
+      <a href="#" class="proj-card rv d3">
+        <div class="proj-img">
+          <img src="slideshow/6.jpg" alt="Fuefuki AI Base" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">Fuefuki AI Base</div>
+          <div class="proj-ja">温泉地で、AIを学ぶ。</div>
+          <p class="proj-desc">山梨・笛吹BASEを拠点にした少人数制AIリトリート。日帰りから2泊3日まで、AI活用・業務効率化を実践で学ぶ体験型プログラムです。</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Day Trip</span>
+            <span class="proj-tag">1泊2日</span>
+            <span class="proj-tag">2泊3日</span>
+          </div>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+      <!-- 04 Creative Studio -->
+      <a href="#" class="proj-card rv d4">
+        <div class="proj-img">
+          <img src="slideshow/2.jpg" alt="FOMUS Creative Studio" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">Creative Studio</div>
+          <div class="proj-ja">アイデアを、事業へ。</div>
+          <p class="proj-desc">Web制作、映像、デザイン、SNS、コンテンツ制作まで。ブランドの世界観づくりから実装までを一貫して支援します。</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Web制作</span>
+            <span class="proj-tag">動画制作</span>
+            <span class="proj-tag">ブランド設計</span>
+          </div>
+          <span class="proj-link">View Details</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §05 WHAT WE OFFER ════ -->
+<section class="offer">
+  <div class="W">
+    <div class="offer-head rv">
+      <span class="lbl">Services</span>
+      <div class="offer-title">What We Offer</div>
+      <div class="offer-sub">提供サービス</div>
+    </div>
+    <div class="offer-grid">
+
+      <div class="offer-item rv d1">
+        <div class="offer-icon">
+          <!-- AI導入支援: brain + circuit -->
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="26" cy="24" rx="12" ry="11" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M26 13v-4M14 24H10M38 24h4M18.1 15.1l-2.8-2.8M33.9 15.1l2.8-2.8" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M21 28h10M23 32h6M26 35v4" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="26" cy="24" r="3" fill="#E2C068" opacity=".3"/>
+          </svg>
+        </div>
+        <div class="offer-name">AI導入支援</div>
+      </div>
+
+      <div class="offer-item rv d2">
+        <div class="offer-icon">
+          <!-- 多言語Web制作: globe -->
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="14" stroke="#E2C068" stroke-width="1.4"/>
+            <ellipse cx="26" cy="26" rx="6" ry="14" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M12 26h28M13 19h26M13 33h26" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="offer-name">多言語Web制作</div>
+      </div>
+
+      <div class="offer-item rv d3">
+        <div class="offer-icon">
+          <!-- 業務効率化: gear + arrow -->
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 14a12 12 0 100 24 12 12 0 000-24z" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M26 14v-4M26 42v-4M14 26h-4M42 26h-4M17.2 17.2l-2.8-2.8M37.6 37.6l-2.8-2.8M17.2 34.8l-2.8 2.8M37.6 14.4l-2.8 2.8" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="26" cy="26" r="4" stroke="#E2C068" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div class="offer-name">業務効率化・自動化</div>
+      </div>
+
+      <div class="offer-item rv d4">
+        <div class="offer-icon">
+          <!-- AI研修・リトリート: person + mountain -->
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="16" r="5" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M14 42l12-18 12 18" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 42h32" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M20 34l6-4 6 4" stroke="#E2C068" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+          </svg>
+        </div>
+        <div class="offer-name">AI研修・リトリート</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §05 TRUSTED FOR GROWTH ════ -->
+<section class="trust">
+  <div class="W">
+    <div class="trust-inner">
+      <div class="trust-text rv-l">
+        <span class="lbl">Trust</span>
+        <div class="bar"></div>
+        <h2 class="trust-title">Trusted for Growth</h2>
+        <span class="trust-title-ja">実践と現場から、成長を支える。</span>
+        <p class="trust-body">IT導入支援事業者としての支援に加え、国内外での事業経験を活かし、中小企業や地域事業者のデジタル化・AI活用を支援しています。</p>
+        <div class="trust-badges">
+          <span class="trust-badge pulse">IT導入支援事業者 登録済</span>
+        </div>
+        <div class="trust-stats">
+          <div class="ts-item">
+            <div class="ts-num">40+</div>
+            <div class="ts-label">Countries</div>
+          </div>
+          <div class="ts-sep"></div>
+          <div class="ts-item">
+            <div class="ts-num">AI</div>
+            <div class="ts-label">× Creative × Global</div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-img rv-r">
+        <img src="FOMUSイベント風景.jpg" alt="FOMUS Event" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §06 CTA ════ -->
+<section class="cta-sec">
+  <div class="cta-inner rv">
+    <span class="lbl">Contact</span>
+    <h2 class="cta-h">AIとクリエイティブで、<br>事業を次のステージへ。</h2>
+    <p class="cta-body">AI導入、多言語サイト制作、業務効率化など、<br>お気軽にご相談ください。</p>
+    <a href="index.html#contact" class="cta-btn">無料相談する</a>
+  </div>
+</section>
+
+
+<!-- ════ FOOTER ════ -->
+<footer id="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">FOMUS</div>
+      <div class="ft-tabs">
+        <button class="ft-tab" data-ft="company">会社概要</button>
+        <button class="ft-tab" data-ft="tokusho">特商法表記</button>
+        <button class="ft-tab" data-ft="privacy">プライバシーポリシー</button>
+      </div>
+    </div>
+    <div class="ft-panels">
+      <div class="ft-panel" id="ft-company">
+        <h3>会社概要</h3>
+        <ul><li>会社名：合同会社FOMUS</li><li>所在地：日本</li><li>代表者：増尾圭亮</li></ul>
+      </div>
+      <div class="ft-panel" id="ft-tokusho">
+        <h3>特定商取引法に基づく表記</h3>
+        <ul>
+          <li>販売事業者：合同会社FOMUS</li><li>代表者：増尾圭亮</li><li>所在地：日本</li>
+          <li>連絡先：fomus.official@gmail.com</li>
+          <li>販売価格：各商品・サービスのページに記載</li>
+          <li>お支払い方法：クレジットカード / 銀行振込 ほか</li>
+          <li>返品・キャンセル：商品特性に応じ各ページに記載</li>
+        </ul>
+      </div>
+      <div class="ft-panel" id="ft-privacy">
+        <h3>プライバシーポリシー</h3>
+        <p>合同会社FOMUSは、取得した個人情報をお問い合わせ対応・サービス提供の目的で利用します。法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════ JS ════ -->
+<script>
+/* Header scroll */
+const H = document.getElementById('H');
+addEventListener('scroll', () => H.classList.toggle('s', scrollY > 60), {passive:true});
+
+/* Mobile nav */
+document.getElementById('hbg').onclick = () => document.getElementById('MN').classList.add('open');
+document.getElementById('mnx').onclick = cNav;
+function cNav(){ document.getElementById('MN').classList.remove('open'); }
+
+/* Scroll reveal */
+(function(){
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.06, rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el => io.observe(el));
+})();
+
+/* Footer tabs */
+(function(){
+  const tabs = document.querySelectorAll('.ft-tab');
+  let active = null;
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      const key = t.dataset.ft;
+      const panel = document.getElementById('ft-' + key);
+      if(!panel) return;
+      if(active === key){
+        panel.classList.remove('open');
+        t.classList.remove('act');
+        active = null;
+      } else {
+        document.querySelectorAll('.ft-panel').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.ft-tab').forEach(b => b.classList.remove('act'));
+        panel.classList.add('open');
+        t.classList.add('act');
+        active = key;
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
