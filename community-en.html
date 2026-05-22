@@ -1,675 +1,716 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico" sizes="any">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
-  <title>FOMUS COMMUNITY | Connect through Masu</title>
-  <meta name="description" content="A community rooted in masu, connecting people and places across the world. Learn the two ways to participate." />
-  <link rel="canonical" href="https://www.fomus.jp/community-en.html" />
-  <meta property="og:title" content="FOMUS COMMUNITY | Connect through Masu" />
-  <meta property="og:description" content="A community rooted in masu, connecting people and places across the world. Learn the two ways to participate." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.fomus.jp/community-en.html" />
-  <meta property="og:image" content="https://www.fomus.jp/ogp.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="FOMUS Masu" />
-  <meta property="og:site_name" content="FOMUS" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FOMUS COMMUNITY | Connect through Masu" />
-  <meta name="twitter:description" content="A community rooted in masu, connecting people and places across the world. Learn the two ways to participate." />
-  <meta name="twitter:image" content="https://www.fomus.jp/ogp.png" />
-  <meta name="twitter:image:alt" content="FOMUS Masu" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "FOMUS COMMUNITY",
-    "url": "https://www.fomus.jp/community-en.html",
-    "inLanguage": "en",
-    "description": "A community rooted in masu, connecting people and places across the world. Learn the two ways to participate.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FOMUS",
-      "url": "https://www.fomus.jp/"
-    }
-  }
-  </script>
-  <style>
-    :root {
-      --ink: #1f2a37;
-      --gold: #c78a2f;
-      --gold-strong: #b06d11;
-      --mist: #f7f2ea;
-      --stone: #ece2d6;
-      --teal: #2e6f7b;
-      --paper: #fffaf3;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Space Grotesk", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-      color: var(--ink);
-      background-image:
-        radial-gradient(circle at 20% 10%, #fff2db 0%, #fdf7ee 45%, #f7f0e6 100%),
-        repeating-linear-gradient(135deg, rgba(199, 138, 47, 0.08) 0 1px, transparent 1px 14px);
-      background-attachment: fixed;
-    }
-
-    h1, h2, h3 {
-      font-family: "DM Serif Display", "Shippori Mincho", "Times New Roman", serif;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-      overflow: hidden;
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 250, 243, 0.9);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(199, 138, 47, 0.2);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
-      color: var(--gold-strong);
-    }
-
-    .logo img {
-      height: 34px;
-      width: auto;
-      display: block;
-      background: transparent;
-    }
-
-    .hero {
-      position: relative;
-      padding: 90px 24px 60px;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(0px);
-      opacity: 0.28;
-      z-index: 0;
-    }
-
-    .hero::before {
-      width: 320px;
-      height: 320px;
-      background: #f7d8a8;
-      top: -60px;
-      left: -80px;
-    }
-
-    .hero::after {
-      width: 260px;
-      height: 260px;
-      background: #b7e1e7;
-      bottom: -60px;
-      right: -40px;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold-strong);
-      margin-bottom: 18px;
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 5vw, 3.5rem);
-      margin: 0 0 16px;
-    }
-
-    .hero-lead {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      line-height: 1.8;
-      max-width: 720px;
-      color: #344152;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #cf8b2e, #b66c12);
-      color: #fffdf8;
-      box-shadow: 0 12px 24px rgba(199, 138, 47, 0.25);
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(46, 111, 123, 0.4);
-      color: var(--teal);
-      background: rgba(255, 255, 255, 0.6);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 360px;
-    }
-
-    .image-stack {
-      position: relative;
-      height: 100%;
-      display: grid;
-      place-items: center;
-    }
-
-    .image-card {
-      position: absolute;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: 0 30px 50px rgba(31, 42, 55, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      background: #fff;
-    }
-
-    .image-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .image-card.large {
-      width: min(360px, 80vw);
-      height: 360px;
-      transform: rotate(-2deg);
-    }
-
-    .image-card.small {
-      width: 180px;
-      height: 180px;
-    }
-
-    .image-card.small.one {
-      top: 12%;
-      right: 4%;
-      transform: rotate(6deg);
-    }
-
-    .image-card.small.two {
-      bottom: 6%;
-      left: 6%;
-      transform: rotate(-8deg);
-    }
-
-    .hero-support {
-      max-width: 1100px;
-      margin: 40px auto 0;
-    }
-
-    .section {
-      padding: 70px 24px;
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin: 0 0 18px;
-    }
-
-    .section-lead {
-      max-width: 760px;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #3f4d5e;
-    }
-
-    .cards {
-      display: grid;
-      gap: 22px;
-      margin-top: 34px;
-    }
-
-    .card {
-      background: var(--paper);
-      border: 1px solid rgba(199, 138, 47, 0.15);
-      border-radius: 26px;
-      padding: 0;
-      box-shadow: 0 24px 40px rgba(31, 42, 55, 0.08);
-      overflow: hidden;
-      display: grid;
-      gap: 18px;
-    }
-
-    .card-body {
-      padding: 24px 28px 28px;
-      display: grid;
-      gap: 12px;
-      grid-template-rows: auto auto auto 1fr auto auto;
-    }
-
-    .card-visual {
-      position: relative;
-      height: 210px;
-      overflow: hidden;
-    }
-
-    .card-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.25) 100%);
-    }
-
-    .card-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.02);
-    }
-
-    .card-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #9b6b24;
-      font-weight: 700;
-    }
-
-    .card h3 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-
-    .card-body p {
-      margin: 0;
-    }
-
-    .price {
-      font-weight: 700;
-      color: var(--gold-strong);
-      font-size: 1.1rem;
-    }
-
-    .list {
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.8;
-      color: #3c4a5a;
-    }
-
-    .note {
-      margin-top: 0;
-      padding: 18px 22px;
-      border-radius: 18px;
-      background: rgba(46, 111, 123, 0.08);
-      color: #2a4e56;
-      line-height: 1.8;
-    }
-
-    .section-split {
-      display: grid;
-      gap: 28px;
-      align-items: center;
-      margin-top: 30px;
-    }
-
-    .split-media {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 24px 50px rgba(31, 42, 55, 0.12);
-    }
-
-    .split-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .split-label {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      background: rgba(255, 255, 255, 0.85);
-      color: #2b2b2b;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .compare {
-      margin-top: 32px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .compare-item {
-      background: #fff;
-      border-radius: 20px;
-      border: 1px solid rgba(31, 42, 55, 0.08);
-      padding: 20px 24px;
-      display: grid;
-      gap: 6px;
-    }
-
-    .compare-item span {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: #a8792b;
-    }
-
-    .choice-grid {
-      margin-top: 24px;
-      display: grid;
-      gap: 20px;
-    }
-
-    .choice-card {
-      background: #fff;
-      border-radius: 22px;
-      border: 1px solid rgba(31, 42, 55, 0.08);
-      padding: 24px 26px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .choice-card h4 {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #8b5c1a;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .cta-panel {
-      background: linear-gradient(135deg, #1f2a37, #364152);
-      color: #fef6e8;
-      border-radius: 28px;
-      padding: 34px;
-      display: grid;
-      gap: 18px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 20% 10%, rgba(199, 138, 47, 0.25), transparent 55%);
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .cta-panel p {
-      margin: 0;
-      line-height: 1.9;
-      color: #e8dfcf;
-    }
-
-    .cta-panel .btn-secondary {
-      border-color: rgba(255, 255, 255, 0.4);
-      color: #fff;
-      background: transparent;
-    }
-
-    .message-grid {
-      display: grid;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .message-visual {
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 24px 50px rgba(31, 42, 55, 0.16);
-    }
-
-    .message-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      animation: fadeUp 0.9s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.15s; }
-    .delay-2 { animation-delay: 0.3s; }
-    .delay-3 { animation-delay: 0.45s; }
-    .delay-4 { animation-delay: 0.6s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .fade-up {
-        animation: none;
-        opacity: 1;
-        transform: none;
-      }
-    }
-
-    .footer {
-      text-align: center;
-      padding: 30px 24px 50px;
-      color: #8a7b68;
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    @media (min-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1.2fr 0.8fr;
-      }
-
-      .section-split {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .compare {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .choice-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .message-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
-    }
-  </style>
+  <title>FOMUS COMMUNITY | Japanese Culture, Together with the World.</title>
+  <meta name="description" content="The FOMUS community. Through events, international exchange, Masu Photo, and FOMUS Guild, we co-create Japanese culture with people around the globe.">
+  <link rel="canonical" href="https://www.fomus.jp/community-en.html">
+  <link rel="alternate" hreflang="ja" href="https://www.fomus.jp/community.html">
+  <link rel="alternate" hreflang="en" href="https://www.fomus.jp/community-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/community.html">
+  <meta property="og:title" content="FOMUS COMMUNITY | Japanese Culture, Together with the World.">
+  <meta property="og:description" content="The FOMUS community. Through events, international exchange, Masu Photo, and FOMUS Guild, we co-create Japanese culture with people around the globe.">
+  <meta property="og:url" content="https://www.fomus.jp/community-en.html">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#0A1222;--ink2:#0F1E36;
+  --gold:#B8873A;--gold2:#C9993E;--gilt:#E2C068;
+  --cream:#FAF8F3;--warm:#F3EDE0;--dust:#E8E0D0;--mid:#888;
+  --serif:'Noto Serif JP',serif;
+  --sans:'Noto Sans JP',sans-serif;
+  --en:'Cormorant Garamond',serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.W{max-width:1240px;margin:0 auto;padding:0 56px}
+.lbl{font-family:var(--en);font-size:.66rem;letter-spacing:.46em;text-transform:uppercase;color:var(--gold)}
+.bar{width:36px;height:1px;background:var(--gold);margin:20px 0}
+
+/* Scroll reveal */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-l.in{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(40px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv-r.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}.d4{transition-delay:.30s}
+
+/* ════ HEADER ════ */
+#H{
+  position:fixed;inset:0 0 auto;z-index:900;
+  padding:0 56px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,box-shadow .4s;
+}
+#H.s{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.hl img{height:28px;width:auto;transition:filter .35s}
+#H:not(.s) .hl img{filter:brightness(0) invert(1)}
+.hn{display:flex;align-items:center;gap:32px;list-style:none}
+.hn a{font-family:var(--en);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .2s}
+#H.s .hn a{color:#555}
+.hn a:hover,.hn a.act{color:var(--gilt)!important}
+#H.s .hn a.act{color:var(--gold)!important}
+.hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
+#H.s .hcta{border-color:var(--ink);color:var(--ink)}
+.hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.hbg{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer;background:none;border:none}
+.hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
+#H.s .hbg span{background:var(--ink)}
+@media(max-width:860px){.hn,.hcta{display:none}.hbg{display:flex}}
+#MN{display:none;position:fixed;inset:0;background:var(--ink);z-index:899;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+#MN.open{display:flex}
+#MN a{font-family:var(--en);font-size:1.8rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+#MN a:hover{color:var(--gilt)}
+.mnx{position:absolute;top:28px;right:36px;font-family:var(--en);font-size:.7rem;letter-spacing:.2em;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer}
+
+/* ════ §01 HERO ════ */
+.hero{
+  display:flex;
+  height:100vh;min-height:640px;
+  overflow:hidden;
+  position:relative;
+}
+.hero-left{
+  flex:0 0 50%;
+  background:var(--ink);
+  display:flex;
+  align-items:flex-end;
+  padding:100px 56px 80px;
+}
+.hero-right{
+  flex:1;
+  overflow:hidden;
+}
+.hero-right img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.hero-inner{max-width:520px;width:100%}
+.hero-eyebrow{
+  font-family:var(--en);
+  font-size:.68rem;letter-spacing:.55em;text-transform:uppercase;
+  color:var(--gilt);margin-bottom:24px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gilt);flex-shrink:0}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3vw,3rem);
+  font-weight:400;color:#fff;
+  line-height:1.3;letter-spacing:.06em;
+  margin-bottom:28px;
+}
+.hero-desc{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1.1vw,1rem);
+  color:rgba(255,255,255,.7);
+  line-height:2;margin-bottom:32px;
+  word-break:keep-all;
+}
+.hero-tags{
+  font-family:var(--en);
+  font-size:.62rem;letter-spacing:.22em;
+  color:rgba(255,255,255,.35);
+  text-transform:uppercase;
+  margin-bottom:36px;
+  display:flex;flex-wrap:wrap;gap:8px;
+}
+.hero-tag{
+  border:1px solid rgba(255,255,255,.14);
+  padding:5px 14px;border-radius:2px;
+  color:rgba(255,255,255,.45);
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:15px 44px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.hero-cta::after{content:'→';display:inline-block;transition:transform .2s}
+.hero-cta:hover{background:#9A6E2A;transform:translateY(-2px)}
+.hero-cta:hover::after{transform:translateX(4px)}
+.hero-scroll{
+  position:absolute;bottom:40px;right:40px;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.hero-scroll span{font-family:var(--en);font-size:.55rem;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.scl{width:1px;height:44px;background:linear-gradient(to bottom,var(--gilt),transparent);animation:scla 1.8s ease-in-out infinite}
+@keyframes scla{0%{opacity:0;transform:scaleY(0);transform-origin:top}40%{opacity:1}100%{opacity:0;transform:scaleY(1);transform-origin:top}}
+
+/* ════ §02 PHILOSOPHY ════ */
+.phi{background:var(--cream);padding:100px 0}
+.phi-inner{
+  display:grid;grid-template-columns:1fr 1.5fr;
+  gap:80px;align-items:center;
+}
+.phi-eyebrow{
+  font-family:var(--en);font-size:.7rem;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:20px;
+}
+.phi-h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.2vw,3rem);
+  font-weight:300;color:var(--ink);
+  line-height:1.3;letter-spacing:.06em;
+}
+.phi-body{
+  font-family:var(--sans);
+  font-size:clamp(.9rem,1.1vw,1rem);
+  color:#444;line-height:2.2;
+}
+
+/* ════ §03 EXPERIENCES ════ */
+.experiences{background:var(--cream);padding:100px 0}
+.exp-head{margin-bottom:56px}
+.exp-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,2.4vw,2.2rem);
+  font-weight:300;color:var(--ink);
+  letter-spacing:.06em;margin-top:16px;
+  line-height:1.4;
+}
+.exp-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(10,18,34,.1);
+}
+.exp-item{
+  padding:36px 32px 36px 0;
+  border-bottom:1px solid rgba(10,18,34,.06);
+}
+.exp-num{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.4em;
+  color:var(--gold);margin-bottom:14px;
+}
+.exp-name{
+  font-family:var(--serif);font-size:1.05rem;font-weight:400;
+  color:var(--ink);margin-bottom:10px;
+}
+.exp-desc{
+  font-family:var(--sans);font-size:.86rem;
+  color:#666;line-height:1.9;
+}
+
+/* ════ §04 PROJECTS ════ */
+.projects{background:var(--warm);padding:112px 0}
+.proj-head{margin-bottom:64px}
+.proj-head-h{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,2.8vw,2.6rem);
+  font-weight:300;color:var(--ink);
+  letter-spacing:.06em;margin-top:16px;
+}
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+.proj-card{
+  background:#fff;border-radius:3px;overflow:hidden;
+  border:1px solid rgba(10,18,34,.05);
+  transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;
+  display:flex;flex-direction:column;
+}
+.proj-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(0,0,0,.09)}
+.proj-img{
+  aspect-ratio:1/1;overflow:hidden;
+  background:var(--dust);
+}
+.proj-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s ease;display:block;
+}
+.proj-card:hover .proj-img img{transform:scale(1.05)}
+.proj-body{padding:32px 36px 40px;flex:1;display:flex;flex-direction:column}
+.proj-cat{
+  font-family:var(--en);font-size:.66rem;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+}
+.proj-name{
+  font-family:var(--serif);
+  font-size:1.3rem;font-weight:400;color:var(--ink);
+  margin-bottom:6px;
+}
+.proj-tagline{
+  font-family:var(--serif);font-size:.9rem;font-weight:300;
+  color:var(--gold);letter-spacing:.06em;margin-bottom:16px;
+}
+.proj-desc{
+  font-family:var(--sans);font-size:.88rem;
+  color:#555;line-height:2;flex:1;
+}
+.proj-tags{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;
+}
+.proj-tag{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(10,18,34,.45);
+  border:1px solid rgba(10,18,34,.12);
+  padding:4px 12px;border-radius:2px;
+}
+
+/* ════ §04 GLOBAL NETWORK ════ */
+.global{
+  background:var(--ink);
+  overflow:hidden;
+}
+.global-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:560px;
+  align-items:stretch;
+}
+.global-text-wrap{
+  display:flex;align-items:center;
+  padding:100px 72px 100px max(56px, calc((100vw - 1240px) / 2 + 56px));
+}
+.global-text{}
+.global-eyebrow{
+  font-family:var(--en);font-size:.66rem;letter-spacing:.46em;
+  text-transform:uppercase;color:var(--gilt);margin-bottom:20px;
+}
+.global-h2{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,2.8vw,2.8rem);
+  font-weight:300;color:#fff;
+  line-height:1.3;letter-spacing:.06em;
+  margin-bottom:24px;
+}
+.global-body{
+  font-family:var(--sans);font-size:clamp(.88rem,1vw,.96rem);
+  color:rgba(255,255,255,.58);line-height:2.1;
+  margin-bottom:44px;
+}
+.global-stats{display:flex;gap:36px;align-items:flex-start}
+.gs-item{}
+.gs-num{
+  font-family:var(--en);font-size:2.8rem;font-weight:300;
+  color:#fff;letter-spacing:.02em;line-height:1;
+}
+.gs-label{font-family:var(--sans);font-size:.72rem;color:rgba(255,255,255,.4);letter-spacing:.1em;margin-top:4px}
+.gs-sep{width:1px;height:52px;background:rgba(255,255,255,.12);align-self:center;flex-shrink:0}
+.global-img{position:relative;overflow:hidden}
+.global-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ════ §05 CTA ════ */
+.com-cta{
+  background:var(--warm);
+  padding:112px 0;text-align:center;
+}
+.com-cta-inner{max-width:640px;margin:0 auto;padding:0 40px}
+.com-cta .lbl{display:block;margin-bottom:22px}
+.com-cta-h{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,2.8vw,2.4rem);
+  font-weight:400;color:var(--ink);
+  line-height:1.5;letter-spacing:.06em;
+  margin-bottom:20px;
+}
+.com-cta-body{
+  font-family:var(--sans);font-size:clamp(.9rem,1.1vw,1rem);
+  color:#555;line-height:2;margin-bottom:48px;
+}
+.com-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:16px 48px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.com-cta-btn::after{content:'→';transition:transform .2s;display:inline-block}
+.com-cta-btn:hover{background:#9A6E2A;transform:translateY(-2px)}
+.com-cta-btn:hover::after{transform:translateX(4px)}
+
+/* ════ FOOTER ════ */
+#footer{background:var(--ink2);color:#fff;padding:64px 0 40px}
+.ft-inner{max-width:1240px;margin:0 auto;padding:0 56px}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.ft-brand{font-family:var(--en);font-size:1.8rem;font-weight:200;letter-spacing:.18em;color:#fff}
+.ft-tabs{display:flex;flex-wrap:wrap;gap:10px}
+.ft-tab{
+  font-family:var(--en);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.15);
+  padding:6px 18px;border-radius:2px;background:none;cursor:pointer;transition:all .2s;
+}
+.ft-tab:hover,.ft-tab.act{color:#fff;border-color:rgba(255,255,255,.55)}
+.ft-panels{margin-bottom:36px}
+.ft-panel{
+  display:none;
+  font-family:var(--sans);font-size:.82rem;color:rgba(255,255,255,.55);
+  line-height:1.9;padding:20px 0 4px;
+}
+.ft-panel.open{display:block}
+.ft-panel h3{font-family:var(--serif);font-size:1rem;font-weight:400;color:#fff;margin-bottom:14px;letter-spacing:.06em}
+.ft-panel ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.ft-panel p{margin-bottom:8px}
+.ft-bot{
+  border-top:1px solid rgba(255,255,255,.08);padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.ft-copy{font-family:var(--en);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:960px){
+  .W{padding:0 32px}
+  .phi-inner{grid-template-columns:1fr;gap:40px}
+  .exp-grid{grid-template-columns:repeat(2,1fr)}
+  .proj-grid{grid-template-columns:1fr}
+  .global-inner{grid-template-columns:1fr;min-height:auto}
+  .global-text-wrap{padding:72px 32px}
+  .global-img{aspect-ratio:16/9}
+  .ft-inner{padding:0 32px}
+}
+@media(max-width:600px){
+  #H{padding:0 20px}
+  .W{padding:0 20px}
+  .hero{flex-direction:column;height:auto;min-height:100svh}
+  .hero-left{flex:none;padding:80px 24px 56px;order:2}
+  .hero-right{flex:none;height:52vw;min-height:200px;order:1}
+  .hero-h1{font-size:1.9rem}
+  .hero-scroll{display:none}
+  .phi{padding:72px 0}
+  .projects{padding:72px 0}
+  .exp-grid{grid-template-columns:1fr}
+  .proj-body{padding:24px 24px 32px}
+  .com-cta{padding:80px 0}
+  .global-stats{flex-wrap:wrap;gap:20px}
+  .ft-inner{padding:0 20px}
+  .ft-top{flex-direction:column;gap:18px}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.fomus.jp/community-en.html","url":"https://www.fomus.jp/community-en.html","name":"FOMUS COMMUNITY | Japanese Culture, Together with the World.","description":"The FOMUS community. Through events, international exchange, Masu Photo, and FOMUS Guild, we co-create Japanese culture with people around the globe.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://www.fomus.jp/","name":"FOMUS"},"publisher":{"@type":"Organization","name":"FOMUS LLC","url":"https://www.fomus.jp/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fomus.jp/"},{"@type":"ListItem","position":2,"name":"COMMUNITY","item":"https://www.fomus.jp/community-en.html"}]}
+</script>
 </head>
 <body>
-  <div class="page">
-    <header class="header">
-      <div class="header-inner">
-        <a href="index-en.html" class="logo">
-          <img src="FOMUSlogo_edited.png" alt="FOMUS" />
-          <span>Community</span>
-        </a>
-        <div class="text-xs border border-amber-600/60 rounded-full px-3 py-1 text-amber-700 font-bold">
-          <a href="community.html" class="hover:text-amber-900">JP</a> /
-          <a href="community-en.html" class="hover:text-amber-900">EN</a>
-        </div>
-      </div>
-    </header>
 
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="fade-up">
-          <div class="hero-badge">FOMUS COMMUNITY</div>
-          <h1 class="hero-title">Make the world easier to move through, starting with Masu.</h1>
-          <p class="hero-lead">
-            FOMUS builds a cultural network rooted in the Japanese craft of masu, connecting people with people and places.
-          </p>
-          <div class="hero-cta">
-            <a href="https://note.com/kei_masu/membership?from=self" class="btn btn-primary" target="_blank" rel="noopener">Join note Membership</a>
-            <a href="#" class="btn btn-secondary">Join FOMUS Community</a>
-          </div>
-        </div>
-        <div class="hero-visual fade-up delay-2">
-          <div class="image-card large">
-            <img src="assets/media/asset-16e2c54a31d6.jpg" alt="FOMUS community">
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- ════ HEADER ════ -->
+<header id="H">
+  <a href="index-en.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
+  <nav>
+    <ul class="hn">
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="craft-en.html">Craft</a></li>
+      <li><a href="business-en.html">Business</a></li>
+      <li><a href="entertainment-en.html">Entertainment</a></li>
+      <li><a href="community-en.html" class="act">Community</a></li>
+    </ul>
+  </nav>
+  <a href="index-en.html#contact" class="hcta">Join Community</a>
+  <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
+</header>
 
-    <section class="section">
-      <div class="section-inner">
-        <h2 class="section-title">There are two different ways to engage with FOMUS.</h2>
-        <p class="section-lead">Both are rooted in masu, but the purpose and relationship are different.</p>
-        <div class="cards">
-          <div class="card fade-up">
-            <div class="card-visual">
-              <img src="assets/media/asset-e21b9c783d7a.jpg" alt="note membership">
-            </div>
-            <div class="card-body">
-              <div class="card-tag">note membership</div>
-              <h3>1. note Membership <span class="price">¥500 / month</span></h3>
-              <p>Read MaSU’s personal work and thinking.</p>
-              <p>Insights from traveling across Japan and overseas—culture, business, projects, daily decisions, and trial and error—written from MaSU’s perspective.</p>
-              <div class="note">For those who want to follow quietly through writing.</div>
-              <ul class="list">
-                <li>Read MaSU’s activity articles</li>
-                <li>Learn the real background of travel, work, and challenges</li>
-                <li>See personal viewpoints and ideas</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card fade-up delay-1">
-            <div class="card-visual">
-              <img src="assets/media/asset-16e2c54a31d6.jpg" alt="FOMUS community">
-            </div>
-            <div class="card-body">
-              <div class="card-tag">FOMUS community</div>
-              <h3>2. FOMUS Community <span class="price">¥980 / month</span></h3>
-              <p>A place to connect with the world, starting with masu.</p>
-              <p>The FOMUS Community is a gentle network that connects people and places worldwide through the Japanese craft of masu. It nurtures an environment where travel, stays, and collaborations naturally emerge.</p>
-              <div class="note">Not a place to read—this is where relationships begin.</div>
-              <ul class="list">
-                <li>See where people and places with FOMUS Masu exist worldwide</li>
-                <li>Discover new cities and places to visit, in Japan and abroad</li>
-                <li>Connect with FOMUS Partners (hosts, guesthouses, shops)</li>
-                <li>Expand opportunities to meet like‑minded people and companies</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <p class="section-lead">
-          * Articles published on note are also available inside the FOMUS Community.<br>
-          If you join the FOMUS Community, you can cancel note membership.
-        </p>
-      </div>
-    </section>
+<!-- Mobile nav -->
+<nav id="MN">
+  <button class="mnx" id="mnx">CLOSE ✕</button>
+  <a href="index-en.html"         onclick="cNav()">Home</a>
+  <a href="craft-en.html"         onclick="cNav()">Craft</a>
+  <a href="business-en.html"      onclick="cNav()">Business</a>
+  <a href="entertainment-en.html" onclick="cNav()">Entertainment</a>
+  <a href="community-en.html"     onclick="cNav()">Community</a>
+</nav>
 
-    <section class="section">
-      <div class="section-inner">
-        <div class="message-grid">
-          <div class="cta-panel fade-up">
-            <h2>Message</h2>
-            <p>FOMUS does not limit how you engage. Reading is fine. Joining the connected side is also fine. We hope you find the distance that feels right for you.</p>
-            <div class="hero-cta">
-              <a href="https://note.com/kei_masu/membership?from=self" class="btn btn-primary" target="_blank" rel="noopener">Join note Membership</a>
-              <a href="#" class="btn btn-secondary">Join FOMUS Community</a>
-            </div>
-          </div>
-          <div class="message-visual fade-up delay-1">
-            <img src="assets/media/asset-c9c108c48917.png" alt="FOMUS founder profile">
-          </div>
-        </div>
+<!-- ════ §01 HERO ════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Community</div>
+      <h1 class="hero-h1">Celebrating Japanese<br>culture with the world.</h1>
+      <p class="hero-desc">Through events, international exchange, and community, FOMUS co-creates Japanese culture with people across the globe.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Masu Photo</span>
+        <span class="hero-tag">FOMUS Guild</span>
+        <span class="hero-tag">Global Events</span>
+        <span class="hero-tag">Co-Creation</span>
       </div>
-    </section>
-
-    <footer class="footer">&copy; 2024 FOMUS. All rights reserved.</footer>
+      <a href="index-en.html#contact" class="hero-cta">Join Community</a>
+    </div>
   </div>
+  <div class="hero-right">
+    <img src="枡フォト.webp" alt="FOMUS Community — Masu Photo" loading="eager">
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scl"></div>
+  </div>
+</section>
+
+<!-- ════ §02 PHILOSOPHY ════ -->
+<section class="phi">
+  <div class="W">
+    <div class="phi-inner">
+      <div class="rv-l">
+        <p class="phi-eyebrow">Why Community?</p>
+        <div class="bar"></div>
+        <h2 class="phi-h2">Culture doesn't<br>travel far<br>on its own.</h2>
+      </div>
+      <div class="rv-r">
+        <p class="phi-body">At FOMUS, we believe culture is not just something to be delivered — it's something to be built together. Through connections with people around the world, we create new cultural experiences that could not exist alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ §03 EXPERIENCES ════ -->
+<section class="experiences">
+  <div class="W">
+    <div class="exp-head rv">
+      <span class="lbl">Experiences</span>
+      <h2 class="exp-h2">What awaits you<br>when you join.</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item rv d1">
+        <p class="exp-num">01</p>
+        <p class="exp-name">Masu Photo</p>
+        <p class="exp-desc">Photograph the masu wherever you are in the world, and share a moment of cross-cultural connection.</p>
+      </div>
+      <div class="exp-item rv d2">
+        <p class="exp-num">02</p>
+        <p class="exp-name">International Exchange Events</p>
+        <p class="exp-desc">Take part in global events including those held at Japanese embassies abroad — connecting directly with the world.</p>
+      </div>
+      <div class="exp-item rv d3">
+        <p class="exp-num">03</p>
+        <p class="exp-name">Sake &amp; Craft Experiences</p>
+        <p class="exp-desc">Hands-on programs that deepen your connection to Japanese tradition — sake, masu, and artisanal craft.</p>
+      </div>
+      <div class="exp-item rv d1">
+        <p class="exp-num">04</p>
+        <p class="exp-name">KUKU Community</p>
+        <p class="exp-desc">Connect with KUKU fans and help shape the story as part of a passionate fan community.</p>
+      </div>
+      <div class="exp-item rv d2">
+        <p class="exp-num">05</p>
+        <p class="exp-name">Connect with Members Worldwide</p>
+        <p class="exp-desc">Engage with members from 40+ countries, both online and in person.</p>
+      </div>
+      <div class="exp-item rv d3">
+        <p class="exp-num">06</p>
+        <p class="exp-name">Guild Exclusive Initiatives</p>
+        <p class="exp-desc">Projects and early-access experiences available only to FOMUS Guild members.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ §04 PROJECTS ════ -->
+<section class="projects">
+  <div class="W">
+    <div class="proj-head rv">
+      <span class="lbl">Community Projects</span>
+      <h2 class="proj-head-h">Giving connection a shape.</h2>
+    </div>
+    <div class="proj-grid">
+
+      <!-- Masu Photo -->
+      <a href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener" class="proj-card rv d1">
+        <div class="proj-img">
+          <img src="枡フォト.webp" alt="Masu Photo" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Community</div>
+          <div class="proj-name">Masu Photo</div>
+          <div class="proj-tagline">Connecting people and cultures through the masu.</div>
+          <p class="proj-desc">A global photo project unique to FOMUS, where participants photograph masu cups wherever they are in the world — sparking international exchange and cultural discovery.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Global</span>
+            <span class="proj-tag">Photography</span>
+            <span class="proj-tag">Culture</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- FOMUS Guild -->
+      <a href="https://guild.fomusglobal.com/" target="_blank" rel="noopener" class="proj-card rv d2">
+        <div class="proj-img">
+          <img src="オンラインコミュニティ.webp" alt="FOMUS Guild" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Community</div>
+          <div class="proj-name">FOMUS Guild</div>
+          <div class="proj-tagline">Co-creating culture with members around the world.</div>
+          <p class="proj-desc">The community where FOMUS members come together — to build events, form connections, and grow future projects side by side.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Guild</span>
+            <span class="proj-tag">Members</span>
+            <span class="proj-tag">Global</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Global Events -->
+      <div class="proj-card rv d2">
+        <div class="proj-img">
+          <img src="events-sake.webp" alt="FOMUS Global Events" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Community</div>
+          <div class="proj-name">Events</div>
+          <div class="proj-tagline">Bringing cultural exchange to the world.</div>
+          <p class="proj-desc">Through sake events, exhibitions, and cultural gatherings, FOMUS carries Japanese culture to destinations around the globe — including exhibitions at Japanese embassies overseas.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Event</span>
+            <span class="proj-tag">Embassy</span>
+            <span class="proj-tag">Culture</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Co-Creation -->
+      <div class="proj-card rv d3">
+        <div class="proj-img">
+          <img src="slideshow/5.webp" alt="Co-Creation" loading="lazy">
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Community</div>
+          <div class="proj-name">Co-Creation</div>
+          <div class="proj-tagline">Building something new with people around the world.</div>
+          <p class="proj-desc">Through collaboration with artists, creators, local communities, and businesses, we shape the future of Japanese culture together.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Creators</span>
+            <span class="proj-tag">Partner</span>
+            <span class="proj-tag">Global</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ §04 GLOBAL NETWORK ════ -->
+<section class="global">
+  <div class="global-inner">
+    <div class="global-text-wrap">
+      <div class="global-text rv-l">
+        <p class="global-eyebrow">Global Community</p>
+        <div class="bar" style="background:rgba(226,192,104,.35);margin:20px 0"></div>
+        <h2 class="global-h2">40+ countries and<br>still growing.</h2>
+        <p class="global-body">Through exhibitions at Japanese embassies and international cultural exchange, FOMUS continues to build cultural communities in cities across the world.</p>
+        <div class="global-stats">
+          <div class="gs-item">
+            <div class="gs-num">40+</div>
+            <div class="gs-label">Countries</div>
+          </div>
+          <div class="gs-sep"></div>
+          <div class="gs-item">
+            <div class="gs-num">5+</div>
+            <div class="gs-label">Years Active</div>
+          </div>
+          <div class="gs-sep"></div>
+          <div class="gs-item">
+            <div class="gs-num">∞</div>
+            <div class="gs-label">Connections</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="global-img rv-r">
+      <img src="slideshow/3.webp" alt="FOMUS Global Activities" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ════ §05 CTA ════ -->
+<section class="com-cta">
+  <div class="com-cta-inner rv">
+    <span class="lbl">Join Us</span>
+    <h2 class="com-cta-h">Help us bring Japanese<br>culture to the world.</h2>
+    <p class="com-cta-body">Feel free to reach out about attending events, collaborating, or joining the community.</p>
+    <a href="https://guild.fomusglobal.com/" target="_blank" rel="noopener" class="com-cta-btn">Join FOMUS Community</a>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer id="footer">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">FOMUS</div>
+      <div class="ft-tabs">
+        <button class="ft-tab" data-ft="company">About Us</button>
+        <button class="ft-tab" data-ft="tokusho">Legal Notice</button>
+        <button class="ft-tab" data-ft="privacy">Privacy Policy</button>
+      </div>
+    </div>
+    <div class="ft-panels">
+      <div class="ft-panel" id="ft-company">
+        <h3>About Us</h3>
+        <ul><li>Company: FOMUS LLC</li><li>Location: Japan</li><li>Representative: Keisuke Masuo</li></ul>
+      </div>
+      <div class="ft-panel" id="ft-tokusho">
+        <h3>Legal Notice (Specified Commercial Transactions Act)</h3>
+        <ul>
+          <li>Seller: FOMUS LLC</li><li>Representative: Keisuke Masuo</li><li>Location: Japan</li>
+          <li>Contact: fomus.official@gmail.com</li>
+          <li>Pricing: As listed on each product/service page</li>
+          <li>Payment: Credit card / Bank transfer and others</li>
+          <li>Returns &amp; Cancellations: As stated on each product page</li>
+        </ul>
+      </div>
+      <div class="ft-panel" id="ft-privacy">
+        <h3>Privacy Policy</h3>
+        <p>FOMUS LLC uses personal information collected through inquiries solely for the purpose of responding to requests and providing services. We do not share your information with third parties without your consent, except as required by law.</p>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ JS ════ -->
+<script>
+const H = document.getElementById('H');
+addEventListener('scroll', () => H.classList.toggle('s', scrollY > 60), {passive:true});
+
+document.getElementById('hbg').onclick = () => document.getElementById('MN').classList.add('open');
+document.getElementById('mnx').onclick = cNav;
+function cNav(){ document.getElementById('MN').classList.remove('open'); }
+
+(function(){
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.06, rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el => io.observe(el));
+})();
+
+(function(){
+  const tabs = document.querySelectorAll('.ft-tab');
+  let active = null;
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      const key = t.dataset.ft;
+      const panel = document.getElementById('ft-' + key);
+      if(!panel) return;
+      if(active === key){
+        panel.classList.remove('open');
+        t.classList.remove('act');
+        active = null;
+      } else {
+        document.querySelectorAll('.ft-panel').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.ft-tab').forEach(b => b.classList.remove('act'));
+        panel.classList.add('open');
+        t.classList.add('act');
+        active = key;
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>

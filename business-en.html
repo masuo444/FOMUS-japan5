@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://www.fomus.jp/craft.html">
-  <meta property="og:url" content="https://www.fomus.jp/craft.html">
-  <meta property="og:type" content="website">
-  <link rel="alternate" hreflang="ja" href="https://www.fomus.jp/craft.html">
-  <link rel="alternate" hreflang="en" href="https://www.fomus.jp/craft-en.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/craft.html">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
-  <title>FOMUS CRAFT | 日本文化を、手に取れる価値へ。</title>
-  <meta name="description" content="FOMUSのクラフト事業。枡を起点に、プロダクト・ギフト・空間・アートへ。日本文化を現代のライフスタイルへ再設計する。">
+  <title>FOMUS BUSINESS | Accelerating Business with AI and Creativity.</title>
+  <meta name="description" content="FOMUS Business. Multilingual web, AI integration, workflow automation, and regional DX. A hands-on partner for companies and local businesses ready to grow.">
+  <link rel="canonical" href="https://www.fomus.jp/business-en.html">
+  <link rel="alternate" hreflang="ja" href="https://www.fomus.jp/business.html">
+  <link rel="alternate" hreflang="en" href="https://www.fomus.jp/business-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/business.html">
+  <meta property="og:title" content="FOMUS BUSINESS | Accelerating Business with AI and Creativity.">
+  <meta property="og:description" content="FOMUS Business. Multilingual web, AI integration, workflow automation, and regional DX. A hands-on partner for companies and local businesses ready to grow.">
+  <meta property="og:url" content="https://www.fomus.jp/business-en.html">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -63,7 +64,6 @@ a{color:inherit;text-decoration:none}
 .hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
 #H.s .hcta{border-color:var(--ink);color:var(--ink)}
 .hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
-/* mobile hamburger */
 .hbg{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer;background:none;border:none}
 .hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
 #H.s .hbg span{background:var(--ink)}
@@ -97,10 +97,10 @@ a{color:inherit;text-decoration:none}
 .hero-right img{
   width:100%;height:100%;
   object-fit:cover;
-  object-position:center;
+  object-position:right center;
   display:block;
 }
-.hero-inner{max-width:480px;width:100%}
+.hero-inner{max-width:560px;width:100%}
 .hero-eyebrow{
   font-family:var(--en);
   font-size:.68rem;letter-spacing:.55em;text-transform:uppercase;
@@ -122,15 +122,27 @@ a{color:inherit;text-decoration:none}
   font-size:clamp(.88rem,1.1vw,1rem);
   font-weight:400;
   color:rgba(255,255,255,.72);
-  line-height:1.95;
-  margin-bottom:36px;
+  line-height:2;
+  margin-bottom:32px;
+  word-break:keep-all;
 }
 .hero-tags{
   font-family:var(--en);
   font-size:.65rem;letter-spacing:.32em;
   color:rgba(255,255,255,.35);
   text-transform:uppercase;
+  margin-bottom:32px;
 }
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gold);color:#fff;
+  font-family:var(--en);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:15px 44px;border-radius:2px;
+  transition:background .25s,transform .2s;
+}
+.hero-cta::after{content:'→';display:inline-block;transition:transform .2s}
+.hero-cta:hover{background:#9A6E2A;transform:translateY(-2px)}
+.hero-cta:hover::after{transform:translateX(4px)}
 /* scroll indicator */
 .hero-scroll{
   position:absolute;bottom:40px;right:40px;z-index:2;
@@ -164,7 +176,6 @@ a{color:inherit;text-decoration:none}
   line-height:1.05;
   letter-spacing:.01em;
 }
-.phi-right{}
 .phi-lead{
   font-family:var(--serif);
   font-size:clamp(1.1rem,1.6vw,1.35rem);
@@ -183,7 +194,74 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ════════════════════════
-   §03  FEATURED PROJECTS
+   §03  CHALLENGES
+════════════════════════ */
+.challenges{
+  background:var(--ink);
+  padding:112px 0;
+}
+.ch-head{text-align:center;margin-bottom:64px}
+.ch-head .lbl{color:var(--gilt);display:block;margin-bottom:16px}
+.ch-title{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:500;color:#fff;
+  line-height:1.4;letter-spacing:.04em;
+}
+.ch-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  margin-bottom:72px;
+}
+.ch-card{
+  padding:52px 40px;
+  border:1px solid rgba(255,255,255,.07);
+  transition:background .3s,border-color .3s;
+}
+.ch-card:hover{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(226,192,104,.22);
+}
+.ch-num{
+  font-family:var(--en);
+  font-size:.62rem;letter-spacing:.3em;
+  color:var(--gilt);opacity:.6;
+  margin-bottom:20px;
+}
+.ch-text{
+  font-family:var(--serif);
+  font-size:clamp(.95rem,1.2vw,1.1rem);
+  font-weight:400;color:rgba(255,255,255,.88);
+  line-height:1.75;letter-spacing:.04em;
+}
+.ch-text strong{
+  display:block;font-weight:500;color:#fff;
+}
+.ch-resolve{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:64px;
+}
+.ch-resolve-h{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,3vw,2.4rem);
+  font-weight:500;color:#fff;
+  line-height:1.4;letter-spacing:.04em;
+  margin-bottom:16px;
+}
+.ch-resolve-h span{color:var(--gilt)}
+.ch-resolve-body{
+  font-family:var(--sans);
+  font-size:clamp(.88rem,1.05vw,1rem);
+  color:rgba(255,255,255,.52);
+  line-height:2;
+}
+@media(max-width:900px){.ch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.ch-grid{grid-template-columns:1fr}.challenges{padding:72px 0}.ch-card{padding:40px 28px}}
+
+/* ════════════════════════
+   §04  BUSINESS SOLUTIONS
 ════════════════════════ */
 .projects{
   background:var(--cream);
@@ -231,39 +309,63 @@ a{color:inherit;text-decoration:none}
   transition:transform .9s cubic-bezier(.16,1,.3,1);
 }
 .proj-card:hover .proj-img img{transform:scale(1.06)}
+/* Dark logo card variant (KANADE AI) */
+.proj-img--dark{
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  aspect-ratio:3/4;
+}
+.proj-img--dark img{
+  width:88%;height:auto;
+  object-fit:contain;
+  transition:transform .9s cubic-bezier(.16,1,.3,1),opacity .3s;
+  opacity:.95;
+}
+.proj-card:hover .proj-img--dark img{transform:scale(1.04);opacity:1}
 .proj-body{
-  padding:24px 22px 28px;
+  padding:24px 22px 26px;
   flex:1;display:flex;flex-direction:column;
 }
-.proj-num{
-  font-family:var(--en);font-size:.62rem;letter-spacing:.38em;
-  color:var(--gold);margin-bottom:8px;
+.proj-cat{
+  font-family:var(--en);font-size:.58rem;letter-spacing:.38em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:6px;
 }
 .proj-name{
   font-family:var(--en);
-  font-size:1.65rem;font-weight:400;
+  font-size:1.5rem;font-weight:400;
   color:var(--ink);line-height:1;
   letter-spacing:.06em;
-  margin-bottom:6px;
+  margin-bottom:8px;
 }
 .proj-ja{
   font-family:var(--serif);
   font-size:.78rem;font-weight:400;
   color:var(--gold);letter-spacing:.12em;
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 .proj-desc{
   font-family:var(--sans);
-  font-size:.85rem;font-weight:400;
-  color:#555;line-height:1.9;
-  flex:1;margin-bottom:22px;
+  font-size:.84rem;font-weight:400;
+  color:#555;line-height:1.95;
+  flex:1;margin-bottom:18px;
 }
+.proj-tags{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-bottom:18px;
+}
+.proj-tag{
+  font-family:var(--en);font-size:.6rem;letter-spacing:.18em;
+  color:var(--mid);border:1px solid rgba(10,18,34,.12);
+  padding:4px 11px;border-radius:999px;
+  transition:color .2s,border-color .2s;
+}
+.proj-card:hover .proj-tag{color:var(--gold);border-color:rgba(184,135,58,.3)}
 .proj-link{
   font-family:var(--en);
   font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
   color:var(--gold);
   display:inline-flex;align-items:center;gap:6px;
-  transition:gap .25s;
+  transition:gap .25s;margin-top:auto;
 }
 .proj-link::after{content:'→';display:inline-block}
 .proj-card:hover .proj-link{gap:11px}
@@ -285,6 +387,11 @@ a{color:inherit;text-decoration:none}
   font-size:clamp(2rem,3vw,2.6rem);
   font-weight:400;color:#fff;
   letter-spacing:.08em;line-height:1;
+}
+.offer-sub{
+  font-family:var(--serif);
+  font-size:.9rem;color:rgba(255,255,255,.4);
+  letter-spacing:.08em;margin-top:12px;
 }
 .offer-grid{
   display:grid;
@@ -314,41 +421,49 @@ a{color:inherit;text-decoration:none}
   font-family:var(--serif);
   font-size:1rem;font-weight:400;
   color:#fff;letter-spacing:.06em;
-  line-height:1.5;
+  line-height:1.6;
 }
 
 /* ════════════════════════
-   §05  GLOBAL TRUST
+   §05  TRUSTED FOR GROWTH
 ════════════════════════ */
-.global-trust{
+.trust{
   background:var(--warm);
-  padding:112px 0;
+  padding:0;
+  overflow:hidden;
 }
-.global-inner{
+.trust-inner{
   display:grid;
-  grid-template-columns:1fr 1.1fr;
-  gap:80px;
-  align-items:center;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  align-items:stretch;
+  min-height:640px;
 }
-.global-text .lbl{display:block;margin-bottom:20px}
-.global-title{
+.trust-text-wrap{
+  display:flex;
+  align-items:center;
+  padding:100px 72px 100px max(56px, calc((100vw - 1240px) / 2 + 56px));
+}
+.trust-text .lbl{display:block;margin-bottom:20px}
+.trust-title{
   font-family:var(--en);
   font-size:clamp(2rem,3.5vw,3.2rem);
   font-weight:400;
   color:var(--ink);
   line-height:1.15;
   letter-spacing:.04em;
-  margin-bottom:24px;
+  margin-bottom:8px;
 }
-.global-title-ja{
+.trust-title-ja{
   font-family:var(--serif);
   font-size:clamp(1rem,1.6vw,1.3rem);
   font-weight:400;
   color:var(--gold);
   letter-spacing:.12em;
-  font-style:normal;
+  display:block;
+  margin-bottom:28px;
 }
-.global-body{
+.trust-body{
   font-family:var(--sans);
   font-size:clamp(.9rem,1.05vw,1rem);
   font-weight:400;
@@ -356,36 +471,55 @@ a{color:inherit;text-decoration:none}
   line-height:2.1;
   margin-bottom:36px;
 }
-.global-badge{
+.trust-badges{
+  display:flex;flex-wrap:wrap;gap:12px;
+  margin-bottom:40px;
+}
+.trust-badge{
   display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--en);font-size:.72rem;letter-spacing:.2em;
+  font-family:var(--en);font-size:.7rem;letter-spacing:.18em;
   color:var(--gold);
   border:1px solid rgba(184,135,58,.36);
   padding:9px 18px;border-radius:2px;
 }
-.global-badge::before{
+.trust-badge.pulse::before{
   content:'';width:7px;height:7px;
-  border-radius:50%;background:var(--gold);
+  border-radius:50%;background:var(--gold);flex-shrink:0;
   animation:gp 2.4s infinite;
 }
 @keyframes gp{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(184,135,58,.4)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(184,135,58,0)}}
-.global-img{
+.trust-stats{
+  display:flex;gap:36px;align-items:flex-start;
+}
+.ts-item{}
+.ts-num{
+  font-family:var(--en);
+  font-size:2.8rem;font-weight:300;
+  color:var(--ink);letter-spacing:.02em;
+  line-height:1;
+}
+.ts-label{
+  font-family:var(--sans);
+  font-size:.75rem;color:var(--mid);
+  letter-spacing:.08em;margin-top:4px;
+}
+.ts-sep{
+  width:1px;height:52px;
+  background:rgba(10,18,34,.15);
+  align-self:center;
+  flex-shrink:0;
+}
+.trust-img{
   position:relative;
-  border-radius:4px;
   overflow:hidden;
-  aspect-ratio:4/3;
-  box-shadow:0 32px 80px rgba(0,0,0,.14);
 }
-.global-img img{
+.trust-img img{
   width:100%;height:100%;object-fit:cover;
+  object-position:center;
   transition:transform .9s cubic-bezier(.16,1,.3,1);
+  display:block;
 }
-.global-img:hover img{transform:scale(1.04)}
-.global-img::after{
-  content:'';position:absolute;inset:0;
-  border:1px solid rgba(184,135,58,.2);
-  pointer-events:none;border-radius:4px;
-}
+.trust-img:hover img{transform:scale(1.04)}
 
 /* ════════════════════════
    §06  CTA
@@ -398,10 +532,10 @@ a{color:inherit;text-decoration:none}
   overflow:hidden;
 }
 .cta-sec::before{
-  content:'CRAFT';
+  content:'BUSINESS';
   position:absolute;left:50%;top:50%;
   transform:translate(-50%,-50%);
-  font-family:var(--en);font-size:clamp(8rem,22vw,20rem);
+  font-family:var(--en);font-size:clamp(6rem,16vw,15rem);
   font-weight:300;letter-spacing:.08em;
   color:rgba(255,255,255,.018);
   white-space:nowrap;pointer-events:none;
@@ -477,7 +611,9 @@ a{color:inherit;text-decoration:none}
   .phi-title{font-size:3rem}
   .proj-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .offer-grid{grid-template-columns:repeat(2,1fr)}
-  .global-inner{grid-template-columns:1fr;gap:48px}
+  .trust-inner{grid-template-columns:1fr;min-height:auto}
+  .trust-text-wrap{padding:72px 32px}
+  .trust-img{aspect-ratio:4/3}
   .ft-inner{padding:0 32px}
 }
 @media(max-width:600px){
@@ -494,11 +630,13 @@ a{color:inherit;text-decoration:none}
   .phi-lead{font-size:1.05rem}
   .projects{padding:72px 0}
   .proj-grid{grid-template-columns:1fr;gap:14px}
-  .proj-img{aspect-ratio:16/9}
+  .proj-img,.proj-img--dark{aspect-ratio:16/9}
   .offer{padding:64px 0}
   .offer-grid{grid-template-columns:repeat(2,1fr)}
   .offer-item{padding:36px 20px}
-  .global-trust{padding:72px 0}
+  .trust-text-wrap{padding:56px 20px}
+  .trust-img{aspect-ratio:4/3}
+  .trust-stats{flex-wrap:wrap;gap:20px}
   .cta-sec{padding:80px 0}
   .cta-h{font-size:1.7rem}
   .cta-btn{padding:16px 36px}
@@ -508,39 +646,41 @@ a{color:inherit;text-decoration:none}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.fomus.jp/craft.html","url":"https://www.fomus.jp/craft.html","name":"FOMUS CRAFT | 日本文化を、手に取れる価値へ。","description":"FOMUSのクラフト事業。枡を起点に、プロダクト・ギフト・空間・アートへ。","inLanguage":"ja","isPartOf":{"@type":"WebSite","url":"https://www.fomus.jp/","name":"FOMUS"},"publisher":{"@type":"Organization","name":"合同会社FOMUS","url":"https://www.fomus.jp/"}}
+{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.fomus.jp/business-en.html","url":"https://www.fomus.jp/business-en.html","name":"FOMUS BUSINESS | Accelerating Business with AI and Creativity.","description":"FOMUS Business. Multilingual web, AI integration, workflow automation, and regional DX. A hands-on partner for companies and local businesses ready to grow.","inLanguage":"en","isPartOf":{"@type":"WebSite","url":"https://www.fomus.jp/","name":"FOMUS"},"publisher":{"@type":"Organization","name":"FOMUS LLC","url":"https://www.fomus.jp/"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.fomus.jp/"},{"@type":"ListItem","position":2,"name":"CRAFT","item":"https://www.fomus.jp/craft.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.fomus.jp/"},{"@type":"ListItem","position":2,"name":"BUSINESS","item":"https://www.fomus.jp/business-en.html"}]}
 </script>
 </head>
 <body>
 
 <!-- ════ HEADER ════ -->
 <header id="H">
-  <a href="index.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
+  <a href="index-en.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
   <nav>
     <ul class="hn">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="craft.html" class="act">Craft</a></li>
-      <li><a href="business.html">Business</a></li>
-      <li><a href="entertainment.html">Entertainment</a></li>
-      <li><a href="community.html">Community</a></li>
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="craft-en.html">Craft</a></li>
+      <li><a href="business-en.html" class="act">Business</a></li>
+      <li><a href="entertainment-en.html">Entertainment</a></li>
+      <li><a href="community-en.html">Community</a></li>
+      <li><a href="business.html">JP</a></li>
     </ul>
   </nav>
-  <a href="index.html#contact" class="hcta">相談する</a>
+  <a href="index-en.html#contact" class="hcta">Free Consultation</a>
   <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
 </header>
 
 <!-- Mobile nav -->
 <nav id="MN">
   <button class="mnx" id="mnx">CLOSE ✕</button>
-  <a href="index.html"         onclick="cNav()">Home</a>
-  <a href="craft.html"         onclick="cNav()">Craft</a>
-  <a href="business.html"      onclick="cNav()">Business</a>
-  <a href="entertainment.html" onclick="cNav()">Entertainment</a>
-  <a href="community.html"     onclick="cNav()">Community</a>
-  <a href="index.html#contact" onclick="cNav()">Contact</a>
+  <a href="index-en.html"         onclick="cNav()">Home</a>
+  <a href="craft-en.html"         onclick="cNav()">Craft</a>
+  <a href="business-en.html"      onclick="cNav()">Business</a>
+  <a href="entertainment-en.html" onclick="cNav()">Entertainment</a>
+  <a href="community-en.html"     onclick="cNav()">Community</a>
+  <a href="index-en.html#contact" onclick="cNav()">Contact</a>
+  <a href="business.html"         onclick="cNav()">JP</a>
 </nav>
 
 
@@ -548,14 +688,15 @@ a{color:inherit;text-decoration:none}
 <section class="hero">
   <div class="hero-left">
     <div class="hero-inner">
-      <div class="hero-eyebrow">Craft</div>
-      <h1 class="hero-h1">日本文化を、<br>手に取れる価値へ。</h1>
-      <p class="hero-desc">枡を起点に、プロダクト、ギフト、空間、アートへ。<br>FOMUSは、日本文化を現代のライフスタイルへ再設計するクラフト事業です。</p>
-      <div class="hero-tags">MASU &nbsp;/&nbsp; KUMIKI &nbsp;/&nbsp; MASUKAME &nbsp;/&nbsp; SPACE</div>
+      <div class="hero-eyebrow">Business</div>
+      <h1 class="hero-h1">AI and Creativity,<br>Turning Challenges into Growth.</h1>
+      <p class="hero-desc">Multilingual web, AI integration, workflow automation, and regional DX. FOMUS is the hands-on partner helping companies and local businesses solve real problems.</p>
+      <div class="hero-tags">KANADE AI &nbsp;/&nbsp; TerroirHub &nbsp;/&nbsp; AI Retreat &nbsp;/&nbsp; Creative Studio</div>
+      <a href="index-en.html#contact" class="hero-cta">Free Consultation</a>
     </div>
   </div>
   <div class="hero-right">
-    <img src="FOMUS枡.webp" alt="FOMUS Masu" loading="eager">
+    <img src="business-hero.webp" alt="FOMUS Business Consulting" loading="eager">
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -569,84 +710,147 @@ a{color:inherit;text-decoration:none}
   <div class="W">
     <div class="phi-inner">
       <div class="phi-left rv-l">
-        <span class="lbl">Philosophy</span>
+        <span class="lbl">Why Business?</span>
         <div class="bar"></div>
-        <div class="phi-title">Craft<br>Philosophy</div>
+        <div class="phi-title">Why<br>Business?</div>
       </div>
       <div class="phi-right rv-r">
-        <p class="phi-lead">伝統を守るのではなく、未来へつなぐ。</p>
-        <p class="phi-body">FOMUSは、1300年以上の歴史を持つ枡文化を起点に、工芸・デザイン・空間体験を再構築しています。日本文化を、世界で愛される体験価値へ。</p>
+        <p class="phi-lead">We don't just deliver and walk away.</p>
+        <p class="phi-body">FOMUS Business leverages AI, web, and creative expertise to support the growth of companies and local enterprises. From planning through production to ongoing operations, we stay by your side every step of the way — focused on building systems that drive real results.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ════ §03 FEATURED PROJECTS ════ -->
+<!-- ════ §03 CHALLENGES ════ -->
+<section class="challenges">
+  <div class="W">
+    <div class="ch-head rv">
+      <span class="lbl">Challenges We Solve</span>
+      <h2 class="ch-title">Do Any of These<br>Sound Familiar?</h2>
+    </div>
+
+    <div class="ch-grid">
+      <div class="ch-card rv d1">
+        <div class="ch-num">01</div>
+        <p class="ch-text"><strong>You want to adopt AI,</strong>but don't know where to start</p>
+      </div>
+      <div class="ch-card rv d2">
+        <div class="ch-num">02</div>
+        <p class="ch-text"><strong>Understaffed,</strong>and need to streamline operations</p>
+      </div>
+      <div class="ch-card rv d3">
+        <div class="ch-num">03</div>
+        <p class="ch-text"><strong>Your website and social media feel outdated</strong>and aren't delivering results</p>
+      </div>
+      <div class="ch-card rv d1">
+        <div class="ch-num">04</div>
+        <p class="ch-text"><strong>You need multilingual support</strong>to reach international customers</p>
+      </div>
+      <div class="ch-card rv d2">
+        <div class="ch-num">05</div>
+        <p class="ch-text"><strong>You want to develop people in-house</strong>who can actually use AI</p>
+      </div>
+      <div class="ch-card rv d3">
+        <div class="ch-num">06</div>
+        <p class="ch-text"><strong>You want to share what makes your region or brand special</strong>with a wider audience</p>
+      </div>
+    </div>
+
+    <div class="ch-resolve rv">
+      <h3 class="ch-resolve-h"><span>With FOMUS,</span><br>we see it through to implementation.</h3>
+      <p class="ch-resolve-body">AI integration, multilingual web, workflow automation, and creative production.<br>We propose the right approach for your specific challenges.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ §04 BUSINESS SOLUTIONS ════ -->
 <section class="projects">
   <div class="W">
     <div class="proj-head rv">
       <div class="proj-head-left">
         <span class="lbl">Featured Projects</span>
-        <div class="proj-head-title">Craft Collection</div>
+        <div class="proj-head-title">Business Solutions</div>
       </div>
-      <div class="proj-head-sub">4 collections</div>
+      <div class="proj-head-sub">FOMUS Business Support</div>
     </div>
 
     <div class="proj-grid">
 
-      <!-- FOMUS MASU -->
-      <a href="masu.html" class="proj-card rv d1">
-        <div class="proj-img">
-          <img src="FOMUS枡.webp" alt="FOMUS MASU" loading="lazy">
+      <!-- 01 KANADE AI -->
+      <a href="#" class="proj-card rv d1">
+        <div class="proj-img--dark">
+          <img src="KANADE アイコン.png" alt="KANADE AI" loading="eager">
         </div>
         <div class="proj-body">
-          <div class="proj-num">01</div>
-          <div class="proj-name">FOMUS MASU</div>
-          <div class="proj-ja">FOMUSの原点</div>
-          <p class="proj-desc">特殊コーティング・名入れ対応の国産ヒノキ枡。ギフト・企業贈答・ホテル導入まで幅広く展開。</p>
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">KANADE AI</div>
+          <div class="proj-ja">AI, Made Practical.</div>
+          <p class="proj-desc">A creative AI studio supporting multilingual web development, AI adoption, and workflow automation. As a registered IT implementation support provider, we help small and medium businesses embrace AI and digital transformation.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">AI Adoption</span>
+            <span class="proj-tag">Multilingual Web</span>
+            <span class="proj-tag">Automation</span>
+          </div>
           <span class="proj-link">View Details</span>
         </div>
       </a>
 
-      <!-- KUMIKI -->
-      <a href="craft.html" class="proj-card rv d2">
+      <!-- 02 TerroirHub -->
+      <a href="#" class="proj-card rv d2">
         <div class="proj-img">
-          <img src="589ABBB5-915D-46DB-9283-FD9F4EC68260_1_201_a.webp" alt="KUMIKI" loading="lazy">
+          <img src="22E8DEB1-4913-4ECD-9553-A64A7BA2CCF3_1_201_a.webp" alt="TerroirHub" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-num">02</div>
-          <div class="proj-name">KUMIKI</div>
-          <div class="proj-ja">日本文化を身につける</div>
-          <p class="proj-desc">日本の枡文化を、世界最小級のジュエリーへ。</p>
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">TerroirHub</div>
+          <div class="proj-ja">Local Charm, Global Stage.</div>
+          <p class="proj-desc">A multilingual AI platform for sake, wine, tourism, and craft industries. Supporting regional brands in overseas expansion and inbound tourism.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Regional DX</span>
+            <span class="proj-tag">Multilingual</span>
+            <span class="proj-tag">Tourism</span>
+          </div>
           <span class="proj-link">View Details</span>
         </div>
       </a>
 
-      <!-- MASUKAME -->
-      <a href="craft.html" class="proj-card rv d3">
+      <!-- 03 Fuefuki AI Base -->
+      <a href="#" class="proj-card rv d3">
         <div class="proj-img">
-          <img src="MASUKAME.webp" alt="MASUKAME" loading="lazy">
+          <img src="slideshow/6.webp" alt="Fuefuki AI Base" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-num">03</div>
-          <div class="proj-name">MASUKAME</div>
-          <div class="proj-ja">祝いを、アートへ</div>
-          <p class="proj-desc">枡と亀が融合した、現代の縁起物アート。</p>
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">Fuefuki AI Base</div>
+          <div class="proj-ja">On-Site, All the Way to Launch.</div>
+          <p class="proj-desc">Small-group AI consulting based at Fuefuki BASE in Yamanashi. We visit you on-site and guide AI adoption and workflow improvements through to full implementation.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">On-Site Visits</span>
+            <span class="proj-tag">AI Adoption</span>
+            <span class="proj-tag">Automation</span>
+          </div>
           <span class="proj-link">View Details</span>
         </div>
       </a>
 
-      <!-- SPACE -->
-      <a href="craft.html" class="proj-card rv d4">
+      <!-- 04 Creative Studio -->
+      <a href="#" class="proj-card rv d4">
         <div class="proj-img">
-          <img src="プロジェクト画像/枡ウォール.png" alt="FOMUS SPACE" loading="lazy">
+          <img src="8AE2240A-69B4-45F2-B4AC-DC520ECE060D_1_201_a.webp" alt="FOMUS Creative Studio" loading="lazy">
         </div>
         <div class="proj-body">
-          <div class="proj-num">04</div>
-          <div class="proj-name">Space</div>
-          <div class="proj-ja">空間に、日本文化を。</div>
-          <p class="proj-desc">枡ウォールやインスタレーションによる空間演出。</p>
+          <div class="proj-cat">Business</div>
+          <div class="proj-name">Creative Studio</div>
+          <div class="proj-ja">From Idea to Business.</div>
+          <p class="proj-desc">Web development, video production, design, social media, and content creation. We handle everything from brand identity to full implementation.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Web Development</span>
+            <span class="proj-tag">Video Production</span>
+            <span class="proj-tag">Branding</span>
+          </div>
           <span class="proj-link">View Details</span>
         </div>
       </a>
@@ -656,58 +860,64 @@ a{color:inherit;text-decoration:none}
 </section>
 
 
-<!-- ════ §04 WHAT WE OFFER ════ -->
+<!-- ════ §05 WHAT WE OFFER ════ -->
 <section class="offer">
   <div class="W">
     <div class="offer-head rv">
       <span class="lbl">Services</span>
       <div class="offer-title">What We Offer</div>
+      <div class="offer-sub">Our Core Services</div>
     </div>
     <div class="offer-grid">
 
       <div class="offer-item rv d1">
         <div class="offer-icon">
+          <!-- AI導入支援: brain + circuit -->
           <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="22" width="32" height="22" rx="1" stroke="#E2C068" stroke-width="1.4"/>
-            <path d="M18 22v-4a8 8 0 0116 0v4" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M22 34a4 4 0 008 0" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <ellipse cx="26" cy="24" rx="12" ry="11" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M26 13v-4M14 24H10M38 24h4M18.1 15.1l-2.8-2.8M33.9 15.1l2.8-2.8" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M21 28h10M23 32h6M26 35v4" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="26" cy="24" r="3" fill="#E2C068" opacity=".3"/>
           </svg>
         </div>
-        <div class="offer-name">法人ギフト</div>
+        <div class="offer-name">AI Integration</div>
       </div>
 
       <div class="offer-item rv d2">
         <div class="offer-icon">
+          <!-- 多言語Web制作: globe -->
           <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 38L26 14l12 24" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18 30h16" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="26" cy="12" r="3" stroke="#E2C068" stroke-width="1.4"/>
+            <circle cx="26" cy="26" r="14" stroke="#E2C068" stroke-width="1.4"/>
+            <ellipse cx="26" cy="26" rx="6" ry="14" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M12 26h28M13 19h26M13 33h26" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="offer-name">カスタム制作</div>
+        <div class="offer-name">Multilingual Web</div>
       </div>
 
       <div class="offer-item rv d3">
         <div class="offer-icon">
+          <!-- 業務効率化: gear + arrow -->
           <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="28" width="32" height="14" rx="1" stroke="#E2C068" stroke-width="1.4"/>
-            <path d="M16 28v-8a10 10 0 0120 0v8" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M26 10v4M20 12l2 3M32 12l-2 3" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M26 14a12 12 0 100 24 12 12 0 000-24z" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M26 14v-4M26 42v-4M14 26h-4M42 26h-4M17.2 17.2l-2.8-2.8M37.6 37.6l-2.8-2.8M17.2 34.8l-2.8 2.8M37.6 14.4l-2.8 2.8" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="26" cy="26" r="4" stroke="#E2C068" stroke-width="1.4"/>
           </svg>
         </div>
-        <div class="offer-name">ホテル・空間演出</div>
+        <div class="offer-name">Workflow Automation</div>
       </div>
 
       <div class="offer-item rv d4">
         <div class="offer-icon">
+          <!-- AI研修・リトリート: person + mountain -->
           <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="18" cy="20" r="7" stroke="#E2C068" stroke-width="1.4"/>
-            <circle cx="34" cy="20" r="7" stroke="#E2C068" stroke-width="1.4"/>
-            <path d="M11 42c0-6.627 3.134-12 7-12s7 5.373 7 12" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M27 42c0-6.627 3.134-12 7-12s7 5.373 7 12" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="26" cy="16" r="5" stroke="#E2C068" stroke-width="1.4"/>
+            <path d="M14 42l12-18 12 18" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 42h32" stroke="#E2C068" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M20 34l6-4 6 4" stroke="#E2C068" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
           </svg>
         </div>
-        <div class="offer-name">ブランドコラボ</div>
+        <div class="offer-name">AI Training &amp; Retreats</div>
       </div>
 
     </div>
@@ -715,20 +925,34 @@ a{color:inherit;text-decoration:none}
 </section>
 
 
-<!-- ════ §05 GLOBAL TRUST ════ -->
-<section class="global-trust">
-  <div class="W">
-    <div class="global-inner">
-      <div class="global-text rv-l">
-        <span class="lbl">Global</span>
+<!-- ════ §05 TRUSTED FOR GROWTH ════ -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-text-wrap">
+      <div class="trust-text rv-l">
+        <span class="lbl">Trust</span>
         <div class="bar"></div>
-        <h2 class="global-title">Global Trust<br><span class="global-title-ja">海外展開</span></h2>
-        <p class="global-body">海外日本国大使館での展示をはじめ、世界各地で日本文化の価値発信を実践。アイルランド、バーレーン、サウジアラビア、ドバイなど、40カ国以上で活動しています。</p>
-        <span class="global-badge">世界40カ国以上 · 大使館展示実績</span>
+        <h2 class="trust-title">Trusted for Growth</h2>
+        <span class="trust-title-ja">Built on real experience, for real results.</span>
+        <p class="trust-body">In addition to our work as a registered IT implementation support provider, we draw on extensive experience in business both in Japan and internationally to support small and medium enterprises in their digital transformation and AI adoption journeys.</p>
+        <div class="trust-badges">
+          <span class="trust-badge pulse">Registered IT Implementation Support Provider</span>
+        </div>
+        <div class="trust-stats">
+          <div class="ts-item">
+            <div class="ts-num">40+</div>
+            <div class="ts-label">Countries</div>
+          </div>
+          <div class="ts-sep"></div>
+          <div class="ts-item">
+            <div class="ts-num">AI</div>
+            <div class="ts-label">× Creative × Global</div>
+          </div>
+        </div>
       </div>
-      <div class="global-img rv-r">
-        <img src="slideshow/1.0.webp" alt="Embassy Exhibition" loading="lazy">
-      </div>
+    </div>
+    <div class="trust-img rv-r">
+      <img src="8AE2240A-69B4-45F2-B4AC-DC520ECE060D_1_201_a.webp" alt="FOMUS Business" loading="lazy">
     </div>
   </div>
 </section>
@@ -738,45 +962,42 @@ a{color:inherit;text-decoration:none}
 <section class="cta-sec">
   <div class="cta-inner rv">
     <span class="lbl">Contact</span>
-    <h2 class="cta-h">日本文化を活かした、<br>プロダクト・空間づくりを。</h2>
-    <p class="cta-body">ギフト、ホテル空間、コラボレーションなど、<br>お気軽にご相談ください。</p>
-    <a href="index.html#contact" class="cta-btn">相談する</a>
+    <h2 class="cta-h">Take Your Business<br>to the Next Level with AI.</h2>
+    <p class="cta-body">Whether it's AI adoption, workflow automation, or multilingual web development,<br>we'll find the right solution for your needs.</p>
+    <a href="index-en.html#contact" class="cta-btn">Free Consultation</a>
   </div>
 </section>
 
 
 <!-- ════ FOOTER ════ -->
-<style>
-#footer{background:var(--ink2);color:#fff;padding:64px 0 40px}
-</style>
 <footer id="footer">
   <div class="ft-inner">
     <div class="ft-top">
       <div class="ft-brand">FOMUS</div>
       <div class="ft-tabs">
-        <button class="ft-tab" data-ft="company">会社概要</button>
-        <button class="ft-tab" data-ft="tokusho">特商法表記</button>
-        <button class="ft-tab" data-ft="privacy">プライバシーポリシー</button>
+        <button class="ft-tab" data-ft="company">Company Info</button>
+        <button class="ft-tab" data-ft="tokusho">Legal Notice</button>
+        <button class="ft-tab" data-ft="privacy">Privacy Policy</button>
       </div>
     </div>
     <div class="ft-panels">
       <div class="ft-panel" id="ft-company">
-        <h3>会社概要</h3>
-        <ul><li>会社名：合同会社FOMUS</li><li>所在地：日本</li><li>代表者：増尾圭亮</li></ul>
+        <h3>Company Information</h3>
+        <ul><li>Company: FOMUS LLC</li><li>Location: Japan</li><li>Representative: Keisuke Masuo</li></ul>
       </div>
       <div class="ft-panel" id="ft-tokusho">
-        <h3>特定商取引法に基づく表記</h3>
+        <h3>Specified Commercial Transaction Act</h3>
         <ul>
-          <li>販売事業者：合同会社FOMUS</li><li>代表者：増尾圭亮</li><li>所在地：日本</li>
-          <li>連絡先：fomus.official@gmail.com</li>
-          <li>販売価格：各商品・サービスのページに記載</li>
-          <li>お支払い方法：クレジットカード / 銀行振込 ほか</li>
-          <li>返品・キャンセル：商品特性に応じ各ページに記載</li>
+          <li>Seller: FOMUS LLC</li><li>Representative: Keisuke Masuo</li><li>Location: Japan</li>
+          <li>Contact: fomus.official@gmail.com</li>
+          <li>Pricing: Listed on each product/service page</li>
+          <li>Payment: Credit card / Bank transfer and others</li>
+          <li>Returns &amp; Cancellations: Listed on each product page per item policy</li>
         </ul>
       </div>
       <div class="ft-panel" id="ft-privacy">
-        <h3>プライバシーポリシー</h3>
-        <p>合同会社FOMUSは、取得した個人情報をお問い合わせ対応・サービス提供の目的で利用します。法令に基づく場合を除き、本人の同意なく第三者へ提供しません。</p>
+        <h3>Privacy Policy</h3>
+        <p>FOMUS LLC uses collected personal information solely for responding to inquiries and providing services. We do not share your information with third parties without your consent, except as required by law.</p>
       </div>
     </div>
     <div class="ft-bot">
