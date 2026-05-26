@@ -6,6 +6,7 @@
     <loc>https://www.fomus.jp/</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/index-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,6 +15,7 @@
     <loc>https://www.fomus.jp/craft.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/craft.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/craft-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -22,6 +24,7 @@
     <loc>https://www.fomus.jp/craft-en.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/craft.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/craft-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -30,6 +33,7 @@
     <loc>https://www.fomus.jp/business.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/business.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/business-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,6 +42,7 @@
     <loc>https://www.fomus.jp/business-en.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/business.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/business-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -46,6 +51,7 @@
     <loc>https://www.fomus.jp/entertainment.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/entertainment.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/entertainment-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -54,6 +60,7 @@
     <loc>https://www.fomus.jp/entertainment-en.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/entertainment.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/entertainment-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,6 +69,7 @@
     <loc>https://www.fomus.jp/community.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/community.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/community-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -70,6 +78,7 @@
     <loc>https://www.fomus.jp/community-en.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/community.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/community-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -78,6 +87,7 @@
     <loc>https://www.fomus.jp/masu.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/masu.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/masu-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -86,6 +96,7 @@
     <loc>https://www.fomus.jp/masu-en.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/masu.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/masu-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -94,14 +105,9 @@
     <loc>https://www.fomus.jp/index-en.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/index-en.html"/>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://www.fomus.jp/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
 </urlset>
