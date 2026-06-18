@@ -299,7 +299,17 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
   line-height:2.0;margin-bottom:0;
 }
 .mi-body + .mi-body{margin-top:28px}
-@media(max-width:600px){#masu-intro{height:auto;padding:80px 0}.mi-inner{padding:0 24px;margin:0 auto;text-align:center}.mi-bar{margin:0 auto 44px}.mi-body{font-size:1rem}.mi-body br{display:none}}
+@media(max-width:600px){
+  #masu-intro{height:auto;display:block;background:#0a1019}
+  .mi-bg{position:static;inset:auto}
+  .mi-bg img{height:auto;aspect-ratio:4/3;object-position:center 50%}
+  .mi-ov{display:none}
+  .mi-inner{max-width:none;margin:0;padding:48px 28px 64px;text-align:center}
+  .mi-ttl{margin-bottom:28px}
+  .mi-bar{margin:0 auto 32px}
+  .mi-body{font-size:1rem}
+  .mi-body br{display:none}
+}
 
 /* ══════════════════════════════════════
    §03  FOMUS DOMAINS
