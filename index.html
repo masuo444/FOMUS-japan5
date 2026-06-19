@@ -1266,7 +1266,11 @@ footer{}
         <p>FOMUSへのご依頼・ご相談は、カテゴリをお選びください。すべてのメッセージに目を通し、必ずお返事します。</p>
       </div>
       <div class="rv-r">
-        <form class="co-form" action="mailto:fomus.official@gmail.com" method="POST" enctype="text/plain">
+        <form class="co-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="c72fa767-1677-4c8c-b48c-407ec1f79896">
+          <input type="hidden" name="subject" value="FOMUS公式サイトからのお問い合わせ">
+          <input type="hidden" name="from_name" value="FOMUS Website">
+          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
           <div class="fr">
             <div class="fg"><label>お名前 <span class="req">*</span></label><input type="text" name="name" class="fc" placeholder="山田 太郎" required></div>
             <div class="fg"><label>会社名 / 団体名</label><input type="text" name="company" class="fc" placeholder="任意"></div>
@@ -1287,7 +1291,34 @@ footer{}
           <div class="fg"><label>メッセージ <span class="req">*</span></label><textarea name="message" class="fc" placeholder="ご相談内容・ご質問をお書きください" required></textarea></div>
           <label class="cck"><input type="checkbox" name="consent" required><span><a href="/privacy.html" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline">プライバシーポリシー</a>に同意のうえ送信します。</span></label>
           <button type="submit" class="fsub">メッセージを送る</button>
+        <p class="form-status" style="display:none;margin-top:16px;font-size:.92rem;line-height:1.7"></p>
         </form>
+<script>
+(function(){
+  const form = document.querySelector('.co-form');
+  if(!form) return;
+  const status = form.querySelector('.form-status');
+  const btn = form.querySelector('.fsub');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const orig = btn ? btn.textContent : "";
+    if(btn){ btn.disabled = true; btn.textContent = "送信中…"; }
+    if(status){ status.style.display = "none"; }
+    try{
+      const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+      const data = await res.json();
+      if(res.ok && data.success){
+        form.reset();
+        if(status){ status.style.color = "#2e7d32"; status.textContent = "送信しました。ありがとうございます。担当より折り返しご連絡いたします。"; status.style.display = "block"; }
+      } else { throw new Error(data.message || "failed"); }
+    }catch(err){
+      if(status){ status.style.color = "#c0392b"; status.textContent = "送信に失敗しました。お手数ですが contact@fomus.jp まで直接ご連絡ください。"; status.style.display = "block"; }
+    }finally{
+      if(btn){ btn.disabled = false; btn.textContent = orig; }
+    }
+  });
+})();
+</script>
       </div>
     </div>
   </div>

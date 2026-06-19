@@ -1249,7 +1249,11 @@ footer{}
         <p>Select a category and we'll be in touch. Every message is read personally and we always reply.</p>
       </div>
       <div class="rv-r">
-        <form class="co-form" action="mailto:fomus.official@gmail.com" method="POST" enctype="text/plain">
+        <form class="co-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="c72fa767-1677-4c8c-b48c-407ec1f79896">
+          <input type="hidden" name="subject" value="New inquiry from FOMUS website">
+          <input type="hidden" name="from_name" value="FOMUS Website">
+          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
           <div class="fr">
             <div class="fg"><label>Name <span class="req">*</span></label><input type="text" name="name" class="fc" placeholder="Jane Smith" required></div>
             <div class="fg"><label>Company / Organization</label><input type="text" name="company" class="fc" placeholder="Optional"></div>
@@ -1270,7 +1274,34 @@ footer{}
           <div class="fg"><label>Message <span class="req">*</span></label><textarea name="message" class="fc" placeholder="Tell us about your inquiry or question" required></textarea></div>
           <label class="cck"><input type="checkbox" name="consent" required><span>I agree to the <a href="/privacy.html" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline">Privacy Policy</a> and consent to submit this form.</span></label>
           <button type="submit" class="fsub">Send Message</button>
+        <p class="form-status" style="display:none;margin-top:16px;font-size:.92rem;line-height:1.7"></p>
         </form>
+<script>
+(function(){
+  const form = document.querySelector('.co-form');
+  if(!form) return;
+  const status = form.querySelector('.form-status');
+  const btn = form.querySelector('.fsub');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const orig = btn ? btn.textContent : "";
+    if(btn){ btn.disabled = true; btn.textContent = "Sending…"; }
+    if(status){ status.style.display = "none"; }
+    try{
+      const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+      const data = await res.json();
+      if(res.ok && data.success){
+        form.reset();
+        if(status){ status.style.color = "#2e7d32"; status.textContent = "Thank you. Your message has been sent — we'll get back to you shortly."; status.style.display = "block"; }
+      } else { throw new Error(data.message || "failed"); }
+    }catch(err){
+      if(status){ status.style.color = "#c0392b"; status.textContent = "Sending failed. Please contact us directly at contact@fomus.jp."; status.style.display = "block"; }
+    }finally{
+      if(btn){ btn.disabled = false; btn.textContent = orig; }
+    }
+  });
+})();
+</script>
       </div>
     </div>
   </div>

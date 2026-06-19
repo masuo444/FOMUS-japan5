@@ -559,7 +559,11 @@ textarea.fc{resize:vertical;min-height:110px}
         </ul>
       </div>
       <div class="rv" style="transform:translateX(44px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
-        <form class="co-form" action="mailto:fomus.official@gmail.com" method="POST" enctype="text/plain">
+        <form class="co-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="c72fa767-1677-4c8c-b48c-407ec1f79896">
+          <input type="hidden" name="subject" value="New inquiry from FOMUS website">
+          <input type="hidden" name="from_name" value="FOMUS Website">
+          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
           <div class="fg-2col">
             <div class="fg"><label>Name <span class="req">*</span></label><input type="text" name="name" class="fc" placeholder="Jane Smith" required></div>
             <div class="fg"><label>Company / Organization</label><input type="text" name="company" class="fc" placeholder="Optional"></div>
@@ -580,7 +584,34 @@ textarea.fc{resize:vertical;min-height:110px}
           <div class="fg"><label>Message <span class="req">*</span></label><textarea name="message" class="fc" placeholder="Tell us about your order — quantity, customization ideas, timeline, etc." required></textarea></div>
           <label class="cck"><input type="checkbox" name="consent" required><span>I agree to the <a href="/privacy.html" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline">Privacy Policy</a>.</span></label>
           <button type="submit" class="btn-submit">Send Inquiry</button>
+        <p class="form-status" style="display:none;margin-top:16px;font-size:.92rem;line-height:1.7"></p>
         </form>
+<script>
+(function(){
+  const form = document.querySelector('.co-form');
+  if(!form) return;
+  const status = form.querySelector('.form-status');
+  const btn = form.querySelector('.fsub');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const orig = btn ? btn.textContent : "";
+    if(btn){ btn.disabled = true; btn.textContent = "Sending…"; }
+    if(status){ status.style.display = "none"; }
+    try{
+      const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+      const data = await res.json();
+      if(res.ok && data.success){
+        form.reset();
+        if(status){ status.style.color = "#2e7d32"; status.textContent = "Thank you. Your message has been sent — we'll get back to you shortly."; status.style.display = "block"; }
+      } else { throw new Error(data.message || "failed"); }
+    }catch(err){
+      if(status){ status.style.color = "#c0392b"; status.textContent = "Sending failed. Please contact us directly at contact@fomus.jp."; status.style.display = "block"; }
+    }finally{
+      if(btn){ btn.disabled = false; btn.textContent = orig; }
+    }
+  });
+})();
+</script>
       </div>
     </div>
   </div>
