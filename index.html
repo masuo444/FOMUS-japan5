@@ -1453,29 +1453,62 @@ document.querySelectorAll('.clbl input').forEach(inp => {
 /* ── Global slideshow ── */
 (function(){
   const track = document.getElementById('glTrack');
-  const slides = track ? track.querySelectorAll('.gl-slide') : [];
+  if(!track) return;
+  const real = Array.from(track.querySelectorAll('.gl-slide'));
+  const N = real.length;
   const dotWrap = document.getElementById('glDots');
   const caps = document.querySelectorAll('#glCapArea .gl-cap');
-  if(!slides.length) return;
-  let idx = 0;
-  slides.forEach((_,i) => {
+  if(!N) return;
+  const GAP = 16;
+  const EASE = 'transform .65s cubic-bezier(.4,0,.2,1)';
+
+  /* 先頭スライドを末尾に複製 → 最後から先頭へ前方向のまま継続（巻き戻し演出なし） */
+  const clone = real[0].cloneNode(true);
+  clone.setAttribute('aria-hidden','true');
+  track.appendChild(clone);
+
+  let idx = 0;            /* 0..N（N=クローン。見た目はスライド0と同じ） */
+  let busy = false;
+
+  real.forEach((_,i) => {
     const d = document.createElement('button');
     d.className = 'gl-ss-dot' + (i===0?' act':'');
     d.setAttribute('aria-label','slide '+(i+1));
-    d.onclick = () => go(i);
+    d.onclick = (e) => { e.stopPropagation(); jump(i); restart(); };
     dotWrap.appendChild(d);
   });
   const dots = dotWrap.querySelectorAll('.gl-ss-dot');
-  function go(n){
-    dots[idx].classList.remove('act');
-    if(caps[idx]) caps[idx].classList.remove('act');
-    idx = n;
-    const slideW = slides[0].offsetWidth + 16;
-    track.style.transform = `translateX(-${idx * slideW}px)`;
-    dots[idx].classList.add('act');
-    if(caps[idx]) caps[idx].classList.add('act');
+
+  const slideW = () => track.querySelector('.gl-slide').offsetWidth + GAP;
+  function paint(r){
+    dots.forEach((d,i)=>d.classList.toggle('act', i===r));
+    caps.forEach((c,i)=>c.classList.toggle('act', i===r));
   }
-  setInterval(() => go((idx+1) % slides.length), 4000);
+  function move(){ track.style.transition = EASE; track.style.transform = 'translateX(-'+(idx*slideW())+'px)'; paint(idx % N); }
+  function jump(n){ idx = n; move(); }
+  function next(){ if(busy) return; busy = true; idx++; move(); }
+
+  track.addEventListener('transitionend', (e) => {
+    if(e.target !== track || e.propertyName !== 'transform') return;
+    busy = false;
+    if(idx === N){                       /* クローン到達 → アニメ無しで先頭へ瞬間リセット */
+      track.style.transition = 'none';
+      idx = 0;
+      track.style.transform = 'translateX(0px)';
+      void track.offsetWidth;            /* reflow を強制 */
+      track.style.transition = EASE;
+    }
+  });
+
+  /* スライドをクリックで次へ */
+  track.style.cursor = 'pointer';
+  track.addEventListener('click', () => { next(); restart(); });
+
+  /* 自動送り（こちらも前方向シームレス） */
+  let timer = setInterval(next, 4000);
+  function restart(){ clearInterval(timer); timer = setInterval(next, 4000); }
+
+  window.addEventListener('resize', () => { track.style.transition = 'none'; track.style.transform = 'translateX(-'+(idx*slideW())+'px)'; });
 })();
 
 /* ── Hero video controls ── */
