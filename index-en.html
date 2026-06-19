@@ -94,6 +94,8 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 }
 #H.s .hcta{border-color:var(--ink);color:var(--ink)}
 .hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.cta-m{display:none}
+@media(max-width:900px){.cta-m{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#fff;font-size:.74rem;letter-spacing:.06em;font-weight:500;padding:0 15px;height:38px;border-radius:3px;margin-left:auto;margin-right:12px;white-space:nowrap;text-decoration:none}}
 .hbg{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;width:44px;height:44px;box-sizing:border-box}
 .hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .4s}
 #H.s .hbg span{background:var(--ink)}
@@ -730,6 +732,7 @@ footer{}
       <a href="index.html" style="font-size:.7rem;letter-spacing:.12em;color:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:2px;">JP</a>
     </nav>
     <a href="#contact" class="hcta">Get in Touch</a>
+    <a class="cta-m" href="#contact">Contact</a>
     <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
   </div>
 </header>

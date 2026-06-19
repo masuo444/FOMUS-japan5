@@ -71,6 +71,8 @@ a{color:inherit;text-decoration:none}
 .hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
 #H.s .hcta{border-color:var(--ink);color:var(--ink)}
 .hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.cta-m{display:none}
+@media(max-width:860px){.cta-m{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#fff;font-size:.74rem;letter-spacing:.06em;font-weight:500;padding:0 15px;height:38px;border-radius:3px;margin-left:auto;margin-right:12px;white-space:nowrap;text-decoration:none}}
 /* mobile hamburger */
 .hbg{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;width:44px;height:44px;box-sizing:border-box;cursor:pointer;background:none;border:none}
 .hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
@@ -239,6 +241,10 @@ a{color:inherit;text-decoration:none}
   transition:transform .9s cubic-bezier(.16,1,.3,1);
 }
 .proj-card:hover .proj-img img{transform:scale(1.06)}
+a.proj-card{cursor:pointer}
+div.proj-card{cursor:default}
+div.proj-card:hover{transform:none;box-shadow:none}
+div.proj-card:hover .proj-img img{transform:none}
 .proj-body{
   padding:24px 22px 28px;
   flex:1;display:flex;flex-direction:column;
@@ -545,6 +551,7 @@ a{color:inherit;text-decoration:none}
     </ul>
   </nav>
   <a href="index-en.html#contact" class="hcta">Contact Us</a>
+  <a class="cta-m" href="index-en.html#contact">Contact</a>
   <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
 </header>
 
@@ -641,7 +648,7 @@ a{color:inherit;text-decoration:none}
       </a>
 
       <!-- MASUKAME -->
-      <a href="craft-en.html" class="proj-card rv d3">
+      <div class="proj-card rv d3">
         <div class="proj-img">
           <img src="MASUKAME.webp" alt="MASUKAME" loading="lazy">
         </div>
@@ -650,12 +657,11 @@ a{color:inherit;text-decoration:none}
           <div class="proj-name">MASUKAME</div>
           <div class="proj-ja">Celebration as Art</div>
           <p class="proj-desc">A fusion of masu and tortoise — a contemporary good-luck art object.</p>
-          <span class="proj-link">View Details</span>
         </div>
-      </a>
+      </div>
 
       <!-- SPACE -->
-      <a href="craft-en.html" class="proj-card rv d4">
+      <div class="proj-card rv d4">
         <div class="proj-img">
           <img src="images/masu-wall.png" alt="FOMUS SPACE" loading="lazy">
         </div>
@@ -664,9 +670,8 @@ a{color:inherit;text-decoration:none}
           <div class="proj-name">Space</div>
           <div class="proj-ja">Japanese Culture in Every Space</div>
           <p class="proj-desc">Spatial design through masu walls and large-scale installations.</p>
-          <span class="proj-link">View Details</span>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>

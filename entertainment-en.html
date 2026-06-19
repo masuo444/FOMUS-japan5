@@ -69,6 +69,8 @@ a{color:inherit;text-decoration:none}
 .hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
 #H.s .hcta{border-color:var(--ink);color:var(--ink)}
 .hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.cta-m{display:none}
+@media(max-width:860px){.cta-m{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#fff;font-size:.74rem;letter-spacing:.06em;font-weight:500;padding:0 15px;height:38px;border-radius:3px;margin-left:auto;margin-right:12px;white-space:nowrap;text-decoration:none}}
 .hbg{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;width:44px;height:44px;box-sizing:border-box;cursor:pointer;background:none;border:none}
 .hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
 #H.s .hbg span{background:var(--ink)}
@@ -445,6 +447,7 @@ a{color:inherit;text-decoration:none}
     </ul>
   </nav>
   <a href="index-en.html#contact" class="hcta">Contact</a>
+  <a class="cta-m" href="index-en.html#contact">Contact</a>
   <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
 </header>
 
