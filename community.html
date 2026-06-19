@@ -69,7 +69,7 @@ a{color:inherit;text-decoration:none}
 .hcta{font-family:var(--en);font-size:.74rem;letter-spacing:.1em;border:1px solid rgba(255,255,255,.4);border-radius:2px;padding:8px 22px;color:#fff;transition:all .25s}
 #H.s .hcta{border-color:var(--ink);color:var(--ink)}
 .hcta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
-.hbg{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer;background:none;border:none}
+.hbg{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;width:44px;height:44px;box-sizing:border-box;cursor:pointer;background:none;border:none}
 .hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:background .35s}
 #H.s .hbg span{background:var(--ink)}
 @media(max-width:860px){.hn,.hcta{display:none}.hbg{display:flex}}
@@ -239,6 +239,9 @@ a{color:inherit;text-decoration:none}
   transition:transform .8s ease;display:block;
 }
 .proj-card:hover .proj-img img{transform:scale(1.05)}
+div.proj-card{cursor:default}
+div.proj-card:hover{transform:none;box-shadow:none}
+div.proj-card:hover .proj-img img{transform:none}
 .proj-body{padding:32px 36px 40px;flex:1;display:flex;flex-direction:column}
 .proj-cat{
   font-family:var(--en);font-size:.66rem;letter-spacing:.32em;
@@ -255,7 +258,7 @@ a{color:inherit;text-decoration:none}
 }
 .proj-desc{
   font-family:var(--sans);font-size:.88rem;
-  color:#555;line-height:2;flex:1;
+  color:#555;line-height:1.85;flex:1;
 }
 .proj-tags{
   display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;
