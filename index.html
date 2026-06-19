@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400;500;700&family=Noto+Sans+JP:wght@200;300;400;500&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com" defer></script>
 <style>
+html,body{overflow-x:clip;width:100%;max-width:100%;overscroll-behavior-x:none;}
 /* ══════════════════════════════════════
    BASE
 ══════════════════════════════════════ */
@@ -100,13 +101,13 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 
 #MN{
   display:none;position:fixed;inset:0;
-  background:#fff;z-index:899;
+  background:#fff;z-index:950;
   flex-direction:column;align-items:center;justify-content:center;gap:26px;
 }
 #MN.open{display:flex}
 #MN a{font-family:var(--en);font-weight:500;font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
 #MN a:hover{color:var(--gold)}
-.mnx{position:absolute;top:28px;right:36px;font-family:var(--en);font-size:.7rem;letter-spacing:.2em;color:var(--ink)}
+.mnx{position:absolute;top:14px;right:18px;font-family:var(--en);font-size:1rem;letter-spacing:.2em;color:var(--ink);padding:12px 16px;font-weight:600;line-height:1}
 
 /* ══════════════════════════════════════
    §01  HERO  — CINEMATIC

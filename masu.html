@@ -48,6 +48,7 @@
   ]}
   </script>
   <style>
+html,body{overflow-x:clip;width:100%;max-width:100%;overscroll-behavior-x:none;}
 /* ─── リセット ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -116,11 +117,11 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 }
 
 /* モバイルメニュー */
-#mnav{display:none;position:fixed;inset:0;background:#fff;z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+#mnav{display:none;position:fixed;inset:0;background:#fff;z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:36px}
 #mnav.open{display:flex}
 #mnav a{font-family:var(--en);font-weight:500;font-size:1.1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 #mnav a:hover{color:var(--gold)}
-.mn-close{position:absolute;top:26px;right:32px;font-family:var(--en);font-size:.68rem;letter-spacing:.2em;color:rgba(255,255,255,.75)}
+.mn-close{position:absolute;top:14px;right:18px;font-family:var(--en);font-size:1rem;letter-spacing:.2em;color:var(--ink);padding:12px 16px;font-weight:600;line-height:1}
 
 /* ════════════════════════════
    ヒーロー（分割レイアウト）
