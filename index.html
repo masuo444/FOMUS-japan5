@@ -414,7 +414,7 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
   display:flex;flex-direction:column;position:relative;
 }
 .fp-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(0,0,0,.1)}
-.fp-thumb{aspect-ratio:1/1;overflow:hidden}
+.fp-thumb{aspect-ratio:1/1;overflow:hidden;position:relative}
 .fp-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
 .fp-card:hover .fp-thumb img{transform:scale(1.06)}
 .fp-body{padding:22px 24px 28px;flex:1;display:flex;flex-direction:column}
@@ -438,6 +438,12 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 }
 .live-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:#34D399;animation:pl 2s infinite}
 @keyframes pl{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(52,211,153,.4)}50%{opacity:.5;box-shadow:0 0 0 4px rgba(52,211,153,0)}}
+.fp-card.fp-wide{grid-column:1/-1;flex-direction:row}
+.fp-card.fp-wide .fp-thumb{aspect-ratio:auto;width:42%;min-height:260px;flex-shrink:0}
+.fp-card.fp-wide .fp-body{padding:34px 40px;justify-content:center}
+.fp-card.fp-wide .fp-name{font-size:1.45rem}
+.fp-card.fp-wide .fp-desc{flex:0 0 auto;max-width:560px}
+@media(max-width:520px){.fp-card.fp-wide{flex-direction:column}.fp-card.fp-wide .fp-thumb{width:100%;aspect-ratio:16/9;min-height:0}.fp-card.fp-wide .fp-body{padding:22px 24px 28px}}
 @media(max-width:920px){.fp-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.fp-grid{grid-template-columns:1fr}}
 
@@ -883,6 +889,17 @@ footer{}
           <div class="fp-name">KANADE AI<span style="font-size:.72em;font-weight:400;color:var(--mid);display:block;margin-top:3px;letter-spacing:.02em;">(FOMUS CREATIVE STUDIO)</span></div>
           <p class="fp-desc">中小企業のAI導入を、実装まで支援。多言語ウェブ制作、AI活用、業務自動化を伴走支援。IT導入支援事業者として、補助金を活用したデジタル化・AI導入にも対応。</p>
           <span class="fp-link">相談する</span>
+        </div>
+      </a>
+
+      <!-- 7 FOMUS GUILD -->
+      <a href="https://guild.fomusglobal.com/" target="_blank" rel="noopener" class="fp-card fp-wide rv d1">
+        <div class="fp-thumb"><img src="community.webp" alt="FOMUS GUILD" loading="lazy"><span class="live-badge">Open · Free</span></div>
+        <div class="fp-body">
+          <div class="fp-cat">COMMUNITY</div>
+          <div class="fp-name">FOMUS GUILD</div>
+          <p class="fp-desc">枡から始まる、世界のつながり。世界中の枡コミュニティが集まるFOMUSのオンラインコミュニティ。代表まっすーの活動記と学びをほぼ毎日更新し、ギルドマップで各地の仲間とつながれます。無料で参加できます。</p>
+          <span class="fp-link">無料で参加する</span>
         </div>
       </a>
 
