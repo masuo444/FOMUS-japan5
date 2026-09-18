@@ -333,7 +333,19 @@ textarea.fc{resize:vertical;min-height:110px}
   .ft-top{margin-bottom:20px}
   .ft-bot{flex-direction:column;align-items:flex-start}
 }
-  </style>
+  
+/* ── KACHIU 事例 ── */
+.uc-case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);margin-top:14px;border:1px solid rgba(0,0,0,.07);border-radius:4px;overflow:hidden;background:#fff}
+.uc-case-img{aspect-ratio:4/3;overflow:hidden}
+.uc-case-img img{width:100%;height:100%;object-fit:cover;display:block}
+.uc-case-body{padding:34px 38px;display:flex;flex-direction:column;justify-content:center}
+.uc-case-body .uc-name{font-size:1.2rem;margin-bottom:12px}
+.uc-case-body .uc-desc{max-width:60ch}
+.uc-case-links{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px}
+.uc-case-links a{font-size:.86rem;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:4px;transition:color .2s}
+.uc-case-links a:hover{color:var(--gold)}
+@media(max-width:760px){.uc-case{grid-template-columns:1fr}.uc-case-body{padding:22px 18px 26px}}
+</style>
 </head>
 <body>
 
@@ -549,6 +561,16 @@ textarea.fc{resize:vertical;min-height:110px}
         </div>
       </div>
     </div>
+    <div class="uc-case rv">
+      <div class="uc-case-img"><img src="images/kachiu-masu.webp" alt="鵜の焼印をしるしたKACHIUの一合枡 二種" loading="lazy" width="960" height="960"></div>
+      <div class="uc-case-body">
+        <p class="uc-label">Case — KACHIU</p>
+        <h3 class="uc-name">鵜の焼印をしるした、山梨・笛吹の枡</h3>
+        <p class="uc-desc">FOMUS代表・まっすーが山梨県笛吹市で手がけるブランド「KACHIU（かちう）」。石和に伝わる、川を歩いて行う鵜飼「徒歩鵜（かちう）」から名前をもらい、ひのきの一合枡に鵜の焼印をしるしました。笛吹市産の桃のコンフィチュールとともに、土地の贈りものとして届けています。</p>
+        <div class="uc-case-links"><a href="https://kachiu.jp/" rel="noopener">KACHIU 公式サイト</a><a href="https://kachiu.jp/journal/masu-care/" rel="noopener">枡の使い方とお手入れ</a></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -672,6 +694,7 @@ textarea.fc{resize:vertical;min-height:110px}
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
       <div class="ft-sns">
         <a href="https://masu.fomus.jp/" rel="noopener">枡の専門店 MASU-STORE</a>
+      <a href="https://kachiu.jp/" rel="noopener">KACHIU（山梨・笛吹）</a>
         <a href="https://www.instagram.com/fomus_official/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
