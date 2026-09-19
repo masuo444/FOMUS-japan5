@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="Helvetica, Arial, sans-serif">
+  <rect width="400" height="300" fill="#F3EDE0"/>
+  <g stroke="#0A1222" fill="none" stroke-width="1.6">
+    <!-- front view -->
+    <rect x="48" y="86" width="128" height="128" fill="#FAF8F3"/>
+    <rect x="60" y="98" width="104" height="104" stroke-width="1"/>
+    <!-- side view -->
+    <rect x="232" y="130" width="128" height="84" fill="#FAF8F3"/>
+    <line x1="232" y1="142" x2="360" y2="142" stroke-width="1" stroke-dasharray="4 3"/>
+  </g>
+  <g stroke="#B8873A" stroke-width="1" fill="#B8873A">
+    <!-- front: width -->
+    <line x1="48" y1="66" x2="176" y2="66"/><line x1="48" y1="60" x2="48" y2="72"/><line x1="176" y1="60" x2="176" y2="72"/>
+    <!-- front: height -->
+    <line x1="28" y1="86" x2="28" y2="214"/><line x1="22" y1="86" x2="34" y2="86"/><line x1="22" y1="214" x2="34" y2="214"/>
+    <!-- side: width -->
+    <line x1="232" y1="110" x2="360" y2="110"/><line x1="232" y1="104" x2="232" y2="116"/><line x1="360" y1="104" x2="360" y2="116"/>
+    <!-- side: depth -->
+    <line x1="378" y1="130" x2="378" y2="214"/><line x1="372" y1="130" x2="384" y2="130"/><line x1="372" y1="214" x2="384" y2="214"/>
+  </g>
+  <g fill="#0A1222" font-size="13" text-anchor="middle" letter-spacing="1">
+    <text x="112" y="58">85</text>
+    <text x="16" y="154" transform="rotate(-90 16 154)">85</text>
+    <text x="296" y="102">85</text>
+    <text x="392" y="177">56</text>
+  </g>
+  <g fill="#777" font-size="10" text-anchor="middle" letter-spacing="2">
+    <text x="112" y="244">FRONT</text>
+    <text x="296" y="244">SIDE</text>
+    <text x="200" y="278" fill="#B8873A">1-GO MASU · mm</text>
+  </g>
+</svg>
