@@ -1,4 +1,15 @@
 {
+  "redirects": [
+    { "source": "/kuku", "destination": "/kuku/", "permanent": true },
+    { "source": "/kuku/index.html", "destination": "/kuku/", "permanent": true },
+    { "source": "/masukame", "destination": "/masukame/", "permanent": true },
+    { "source": "/masukame/index.html", "destination": "/masukame/", "permanent": true },
+    { "source": "/kumiki", "destination": "/kumiki/", "permanent": true },
+    { "source": "/kumiki/en", "destination": "/kumiki/en/", "permanent": true },
+    { "source": "/kumiki/fr", "destination": "/kumiki/fr/", "permanent": true },
+    { "source": "/kumiki/journal", "destination": "/kumiki/journal/", "permanent": true },
+    { "source": "/kumiki/en/journal", "destination": "/kumiki/en/journal/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

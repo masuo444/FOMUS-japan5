@@ -1,0 +1,20 @@
+{
+    "name": "MASUKAME",
+    "short_name": "MASUKAME",
+    "description": "Japanese good luck charm - Traditional craft art object",
+    "icons": [
+        {
+            "src": "/masukame/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/masukame/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1a1a1a",
+    "background_color": "#1a1a1a",
+    "display": "standalone"
+}

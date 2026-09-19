@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Tour — The Tree Village &amp; Suikon Street | KUKU OFFICIAL SITE</title>
+<meta name="description" content="From the village under the World Tree to the town beneath its roots. Scroll through the world of KUKU.">
+<meta property="og:title" content="KUKU World Tour — The Tree Village &amp; Suikon Street">
+<meta property="og:description" content="From the village under the World Tree to the town beneath its roots. Scroll through the world of KUKU.">
+<meta property="og:image" content="https://www.fomus.jp/kuku/assets/tour/08-central-plaza.jpg">
+<meta property="og:url" content="https://www.fomus.jp/kuku/world-tour-en.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:auto}
+  body{background:#070b0c;color:#f3ede3;
+    font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased}
+
+  /* ===== 固定ステージ ===== */
+  #stage{position:fixed;inset:0;overflow:hidden;background:#070b0c}
+  .layer{position:absolute;inset:0;opacity:0;will-change:opacity}
+  .layer .img{position:absolute;inset:-6%;background-size:cover;background-position:center;
+    will-change:transform}
+  #fx{position:absolute;inset:0;pointer-events:none}
+  .vig{position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse at 50% 46%, transparent 52%, rgba(2,5,6,.62) 100%)}
+  .bars{position:absolute;left:0;right:0;height:9vh;pointer-events:none;
+    background:linear-gradient(180deg,rgba(2,5,6,.82),transparent)}
+  .bars.btm{bottom:0;top:auto;transform:scaleY(-1)}
+
+  /* ===== キャプション ===== */
+  #cap{position:fixed;left:6vw;bottom:13vh;z-index:10;max-width:520px;pointer-events:none;
+    opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+  #cap.on{opacity:1;transform:translateY(0)}
+  #cap .eye{font-size:12px;letter-spacing:.42em;margin-bottom:12px;color:var(--ac,#e8c98a)}
+  #cap h2{font-size:clamp(26px,4.2vw,40px);font-weight:600;letter-spacing:.14em;margin-bottom:12px;
+    text-shadow:0 2px 24px rgba(0,0,0,.7)}
+  #cap p{font-size:clamp(13px,1.5vw,15.5px);line-height:2.1;color:rgba(243,237,227,.88);
+    text-shadow:0 1px 14px rgba(0,0,0,.8)}
+
+  /* ===== ヘッダー / 進行ドット ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;
+    justify-content:space-between;padding:16px 20px}
+  header a{color:rgba(243,237,227,.85);text-decoration:none;font-size:13px;letter-spacing:.12em;
+    padding:8px 16px;border:1px solid rgba(243,237,227,.25);border-radius:999px;
+    background:rgba(6,12,13,.4);backdrop-filter:blur(6px)}
+  header a:hover{border-color:rgba(232,201,138,.7)}
+  header .brand{font-size:12px;letter-spacing:.34em;color:rgba(243,237,227,.65)}
+  #dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:20;
+    display:flex;flex-direction:column;gap:10px}
+  #dots span{width:7px;height:7px;border-radius:50%;background:rgba(243,237,227,.22);
+    transition:background .4s,transform .4s}
+  #dots span.on{background:var(--ac,#e8c98a);transform:scale(1.5)}
+
+  /* ===== イントロ / アウトロ（通常フロー） ===== */
+  section.sp{position:relative;height:130vh}
+  #intro{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;z-index:5;text-align:center;padding:0 24px}
+  #intro .eye{font-size:12px;letter-spacing:.5em;color:#e8c98a;margin-bottom:18px}
+  #intro h1{font-size:clamp(34px,6vw,58px);font-weight:600;letter-spacing:.2em;margin-bottom:18px;
+    text-shadow:0 0 36px rgba(232,201,138,.3)}
+  #intro p{font-size:clamp(13px,1.6vw,16px);line-height:2.2;color:rgba(243,237,227,.82)}
+  #intro .hint{position:absolute;bottom:6vh;left:50%;transform:translateX(-50%);
+    font-size:11px;letter-spacing:.4em;color:rgba(243,237,227,.55);animation:bob 2.4s infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,9px)}}
+
+  #outro{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;z-index:5;text-align:center;padding:0 24px}
+  #outro h2{font-size:clamp(24px,4vw,38px);font-weight:600;letter-spacing:.16em;line-height:1.9;
+    margin-bottom:30px;text-shadow:0 2px 28px rgba(0,0,0,.8)}
+  #outro .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  #outro a{color:#dffbff;text-decoration:none;font-size:13.5px;letter-spacing:.18em;
+    padding:12px 30px;border:1px solid rgba(127,217,224,.55);border-radius:999px;
+    background:rgba(40,90,95,.25);transition:background .2s}
+  #outro a:hover{background:rgba(60,140,150,.4)}
+  #outro a.gold{border-color:rgba(232,201,138,.55);background:rgba(95,75,40,.25);color:#ffe9c4}
+  #outro a.gold:hover{background:rgba(150,115,60,.4)}
+
+  /* ===== 次へボタン ===== */
+  #next{position:fixed;right:16px;bottom:20px;z-index:21;width:48px;height:48px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:18px;color:#f3ede3;
+    border:1px solid rgba(243,237,227,.35);background:rgba(6,12,13,.5);backdrop-filter:blur(6px);
+    cursor:pointer;transition:opacity .4s,background .2s;user-select:none;-webkit-tap-highlight-color:transparent}
+  #next:active{background:rgba(60,140,150,.45)}
+  #next.off{opacity:0;pointer-events:none}
+
+  @media(max-width:600px){
+    header{padding:12px 14px}
+    header a{font-size:12px;padding:7px 13px}
+    header .brand{font-size:10px;letter-spacing:.26em}
+    #cap{left:6vw;right:17vw;bottom:13vh}
+    #cap .eye{font-size:11px;letter-spacing:.3em;margin-bottom:9px}
+    #cap h2{letter-spacing:.1em;margin-bottom:9px}
+    #cap p.txt{line-height:1.95;font-size:13.5px}
+    #dots{right:8px;gap:8px}
+    #dots span{width:5px;height:5px}
+    .bars.btm{height:26vh}
+    #intro p{font-size:13.5px;line-height:2}
+    #outro a{padding:11px 22px;font-size:12.5px}
+    #outro .btns{gap:10px}
+  }
+</style>
+</head>
+<body>
+
+<div id="stage">
+  <!-- 画像レイヤーはJSで生成 -->
+  <canvas id="fx"></canvas>
+  <div class="vig"></div>
+  <div class="bars"></div>
+  <div class="bars btm"></div>
+</div>
+
+<header>
+  <a href="world-en.html">← Back to World</a>
+  <div class="brand">KUKU — WORLD TOUR　<a href="world-tour.html" style="border:none;background:none;padding:0;font-size:11px;letter-spacing:.2em">JP</a></div>
+</header>
+
+<div id="cap"><p class="eye"></p><h2></h2><p class="txt"></p></div>
+<div id="dots"></div>
+<div id="next" role="button" aria-label="次のシーンへ">▾</div>
+
+<section id="intro">
+  <p class="eye">KUKU WORLD TOUR</p>
+  <h1>The Tree Village<br>&amp; Suikon Street</h1>
+  <p>From the village protected by the World Tree,<br>down to the town sleeping beneath its roots.<br>Scroll to travel through the world.</p>
+  <div class="hint">SCROLL ▾</div>
+</section>
+
+<!-- シーン分のスクロール余白（JS生成） -->
+<div id="track"></div>
+
+<section id="outro">
+  <h2>A forgotten world<br>begins to bud again.</h2>
+  <div class="btns">
+    <a class="gold" href="characters-en.html">Meet the Characters</a>
+    <a href="world-en.html">About the World</a>
+    <a href="en.html">Top</a>
+  </div>
+</section>
+
+<script>
+/* ================= シーン定義 ================= */
+const SCENES = [
+  {img:'assets/tour/01-world-tree.jpg', ch:'CHAPTER I — THE TREE VILLAGE', t:'The World Tree',
+   x:'A tree so vast it can be seen from anywhere on the island. The people live in its shelter, side by side with the tree.',
+   kb:[1.06,1.16, -2,2], ac:'#e8c98a'},
+  {img:'assets/tour/02-village-market.jpg', ch:'CHAPTER I — THE TREE VILLAGE', t:'Morning Market',
+   x:'Fresh harvests and laughter line the sun-dappled street. Another morning, just like every other.',
+   kb:[1.14,1.05, 2,-1], ac:'#e8c98a'},
+  {img:'assets/tour/03-family-home.jpg', ch:'CHAPTER I — THE TREE VILLAGE', t:'Homes in the Branches',
+   x:'Houses built upon the roots. Baskets and fruit rest on the porch as the wind rustles the leaves.',
+   kb:[1.06,1.15, -2,-2], ac:'#e8c98a'},
+  {img:'assets/tour/04-root-spring.jpg', ch:'CHAPTER I — THE TREE VILLAGE', t:'The Root Springs',
+   x:'Water held by the World Tree spills down in countless falls, nourishing the village. All water returns to the roots.',
+   kb:[1.12,1.04, 0,2], ac:'#e8c98a'},
+  {img:'assets/tour/05-root-gate.jpg', ch:'INTERLUDE — DESCENDING', t:'The Hollow',
+   x:'Between the roots, a dark mouth opens. A single lantern glows, leading the way down.',
+   kb:[1.05,1.18, 0,-2], ac:'#d9b97e'},
+  {img:'assets/tour/06-root-stairs.jpg', ch:'INTERLUDE — DESCENDING', t:'The Root Stairs',
+   x:'The daylight fades behind you. In its place, a blue shimmer draws near.',
+   kb:[1.06,1.16, 2,1], ac:'#a8c8b8'},
+  {img:'assets/tour/07-first-view.jpg', ch:'CHAPTER II — SUIKON STREET', t:'First Sight of Suikon',
+   x:'Beyond the opening, another town. Blue spirit-crystal light and the whisper of water welcome you in.',
+   kb:[1.16,1.05, 0,0], ac:'#7fd9e0'},
+  {img:'assets/tour/08-central-plaza.jpg', ch:'CHAPTER II — SUIKON STREET', t:'Central Plaza',
+   x:'The heart of Suikon. Around the spirit-water plaza, life beneath the roots quietly goes on.',
+   kb:[1.05,1.15, -2,2], ac:'#7fd9e0'},
+  {img:'assets/tour/09-canal-lane.jpg', ch:'CHAPTER II — SUIKON STREET', t:'Canal Lanes',
+   x:'Canals thread through the whole town. Small boats drift slowly beneath the lanterns.',
+   kb:[1.13,1.05, 1,-2], ac:'#7fd9e0'},
+  {img:'assets/tour/10-market-stall.jpg', ch:'CHAPTER II — SUIKON STREET', t:'Market Stalls',
+   x:'Masu cups and the handiwork of the root town fill every stall, lit by the warm glow of lanterns.',
+   kb:[1.06,1.14, 2,2], ac:'#7fd9e0'},
+  {img:'assets/tour/11-boat-dock.jpg', ch:'CHAPTER II — SUIKON STREET', t:'The Boat Dock',
+   x:'Boats lie moored, ropes creaking. Masu lanterns blur and sway on the rippling water.',
+   kb:[1.14,1.06, -2,0], ac:'#7fd9e0'},
+  {img:'assets/tour/12-lantern-court.jpg', ch:'CHAPTER II — SUIKON STREET', t:'Court of Mirrored Lights',
+   x:'In a place with neither day nor night, only lanterns and crystals keep the time. — And in this town, memories yet untold still sleep.',
+   kb:[1.05,1.17, 0,-1], ac:'#7fd9e0'},
+];
+
+/* ================= 環境判定 ================= */
+const isTouch = matchMedia('(pointer:coarse)').matches;
+const SMALL = Math.min(screen.width||9999, innerWidth) < 700; /* スマホは軽量画像 */
+
+/* ================= レイヤー生成 ================= */
+const stage = document.getElementById('stage');
+const layers = SCENES.map((s,i)=>{
+  const L = document.createElement('div'); L.className='layer';
+  const im = document.createElement('div'); im.className='img';
+  L.appendChild(im);
+  stage.insertBefore(L, stage.firstChild);
+  return {el:L, im, loaded:false};
+});
+function load(i){
+  if(i<0||i>=layers.length||layers[i].loaded) return;
+  layers[i].loaded = true;
+  const src = SMALL ? SCENES[i].img.replace('assets/tour/','assets/tour/m/') : SCENES[i].img;
+  const pre = new Image();
+  pre.onload = ()=>{ layers[i].im.style.backgroundImage = `url(${src})`; };
+  pre.src = src;
+}
+load(0); load(1);
+
+/* スクロール余白（iOSのアドレスバー伸縮でガタつかないよう、高さはJSで固定） */
+const track = document.getElementById('track');
+let VH = innerHeight, INTRO_H = 0, lastW = innerWidth;
+function setVH(){
+  VH = innerHeight;
+  INTRO_H = document.getElementById('intro').offsetHeight;
+  track.style.height = Math.round(SCENES.length*1.3*VH) + 'px';
+  onScroll();
+}
+
+/* 進行ドット */
+const dots = document.getElementById('dots');
+const dotEls = SCENES.map(()=>{ const d=document.createElement('span'); dots.appendChild(d); return d; });
+
+/* キャプション */
+const cap = document.getElementById('cap');
+const capEye = cap.querySelector('.eye'), capT = cap.querySelector('h2'), capX = cap.querySelector('.txt');
+let capScene = -1, capTimer = null;
+
+/* ================= スクロール制御 ================= */
+let cur = -1;
+function onScroll(){
+  const segH = VH*1.3;
+  const y = scrollY - INTRO_H;
+  const total = SCENES.length*segH;
+  const p = Math.max(0, Math.min(y/segH, SCENES.length-0.0001)); /* シーン進行（小数） */
+  const i = Math.min(SCENES.length-1, Math.floor(p));
+  const f = p - i; /* シーン内 0..1 */
+
+  /* 不透明度：シーン端でクロスフェード */
+  layers.forEach((L,k)=>{
+    let o = 0;
+    if(k===i) o = (y<0)? Math.max(0, 1+y/(VH*.5)) : Math.min(1, (1-f)*6); /* 終盤で次へ */
+    if(k===i+1) o = Math.max(0, (f-5/6)*6);
+    if(y<0 && k===0) o = Math.max(0, 1+y/(VH*.6));
+    if(y>=total && k===SCENES.length-1) o = Math.max(0, 1-(y-total)/(VH*.6));
+    L.el.style.opacity = o.toFixed(3);
+  });
+  /* Ken Burns */
+  const kb = SCENES[i].kb;
+  const sc = kb[0]+(kb[1]-kb[0])*f;
+  layers[i].im.style.transform =
+    `scale(${sc}) translate(${kb[2]*f - mx*1.2}%, ${kb[3]*f - my*1.2}%)`;
+  if(layers[i+1]){
+    const kb2 = SCENES[i+1]? SCENES[i+1].kb : kb;
+    layers[i+1].im.style.transform = `scale(${kb2[0]})`;
+  }
+
+  load(i); load(i+1); load(i+2);
+
+  /* キャプション：シーン中盤で表示 */
+  const showCap = y>=0 && y<total && f>.08 && f<.8;
+  if(showCap && capScene!==i){
+    capScene = i;
+    capEye.textContent = SCENES[i].ch;
+    capT.textContent = SCENES[i].t;
+    capX.textContent = SCENES[i].x;
+    document.documentElement.style.setProperty('--ac', SCENES[i].ac);
+    cap.classList.add('on');
+  } else if(!showCap && capScene!==-1){
+    capScene = -1; cap.classList.remove('on');
+  }
+  dotEls.forEach((d,k)=>d.classList.toggle('on', k===i && y>=0 && y<total));
+  nextBtn.classList.toggle('off', scrollY > document.body.scrollHeight - VH*1.4);
+
+  if(y>=0 && y<total) curChapter = (i<4)? 0 : (i<6? .5 : 1);
+  cur = i;
+}
+/* マウス視差（タッチ端末では無効） */
+let mx=0, my=0;
+if(!isTouch) addEventListener('mousemove', e=>{
+  mx = (e.clientX/innerWidth - .5)*2;
+  my = (e.clientY/innerHeight - .5)*2;
+});
+addEventListener('scroll', onScroll, {passive:true});
+addEventListener('resize', ()=>{ /* iOSのツールバー伸縮では再計算しない */
+  if(innerWidth!==lastW || Math.abs(innerHeight-VH)>150){ lastW=innerWidth; setVH(); }
+});
+
+/* 次へボタン：1タップで次のシーンの中心へ */
+const nextBtn = document.getElementById('next');
+nextBtn.addEventListener('click', ()=>{
+  const segH = VH*1.3;
+  const y = scrollY - INTRO_H;
+  let target;
+  if(y < 0) target = INTRO_H + segH*.45;
+  else {
+    const i = Math.floor(y/segH);
+    target = (i >= SCENES.length-1)
+      ? document.body.scrollHeight
+      : INTRO_H + segH*(i+1.45);
+  }
+  scrollTo({top:target, behavior:'smooth'});
+});
+
+/* ================= 蛍・塵の粒子 ================= */
+const fx = document.getElementById('fx');
+const ctx = fx.getContext('2d');
+let curChapter = 0; /* 0=地上(暖色) 1=地下(青) */
+let chShown = 0;
+const P = [];
+function resizeFx(){ fx.width=innerWidth; fx.height=innerHeight; }
+resizeFx(); addEventListener('resize', resizeFx);
+for(let i=0;i<55;i++){
+  P.push({x:Math.random(), y:Math.random(), r:.6+Math.random()*1.8,
+    vx:(Math.random()-.5)*.00022, vy:-.00012-Math.random()*.00028,
+    ph:Math.random()*7, sp:.5+Math.random()*1.5});
+}
+function tick(t){
+  requestAnimationFrame(tick);
+  chShown += (curChapter-chShown)*.02;
+  ctx.clearRect(0,0,fx.width,fx.height);
+  const warm=[255,196,120], cool=[127,222,235];
+  const c=[0,1,2].map(k=>Math.round(warm[k]+(cool[k]-warm[k])*chShown));
+  for(const p of P){
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.y<-.05){p.y=1.05; p.x=Math.random();}
+    if(p.x<-.05)p.x=1.05; if(p.x>1.05)p.x=-.05;
+    const a=(.18+.5*Math.abs(Math.sin(t*.001*p.sp+p.ph)))* .8;
+    const g=ctx.createRadialGradient(p.x*fx.width,p.y*fx.height,0,p.x*fx.width,p.y*fx.height,p.r*4);
+    g.addColorStop(0,`rgba(${c[0]},${c[1]},${c[2]},${a})`);
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=g;
+    ctx.beginPath(); ctx.arc(p.x*fx.width,p.y*fx.height,p.r*4,0,7); ctx.fill();
+  }
+}
+requestAnimationFrame(tick);
+setVH();
+</script>
+</body>
+</html>

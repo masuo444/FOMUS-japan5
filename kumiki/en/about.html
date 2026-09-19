@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Atelier | KUMIKI</title>
+  <meta name="description" content="Inside the KUMIKI atelier: 1.6mm walls, nail-free arare-gumi joinery, and why we craft only 10 pieces a month.">
+  <link rel="canonical" href="https://www.fomus.jp/kumiki/en/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --gold: #C9A86C; --charcoal: #1A1A1A; --ivory: #FAF9F7; --muted: #777; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      background: var(--ivory); color: var(--charcoal); line-height: 2;
+    }
+    a { color: inherit; text-decoration: none; }
+    .top { padding: 28px clamp(20px, 5vw, 60px); display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: .5em; font-size: 15px; }
+    .back { font-size: 11px; letter-spacing: .2em; color: var(--muted); transition: color .3s; }
+    .back:hover { color: var(--gold); }
+    main { max-width: 860px; margin: 0 auto; padding: clamp(40px, 8vw, 90px) 24px 120px; }
+    .kicker { font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: .4em; color: var(--gold); text-transform: uppercase; }
+    h1 { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: .12em; margin: 18px 0 40px; line-height: 1.8; }
+    .lead { font-size: clamp(.95rem, 1.5vw, 1.05rem); line-height: 2.4; letter-spacing: .05em; max-width: 640px; }
+    .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 70px 0; }
+    .photos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .photos figcaption { font-size: .72rem; color: var(--muted); letter-spacing: .1em; margin-top: 10px; }
+    section { margin-top: 80px; }
+    h2 { font-weight: 500; font-size: 1.15rem; letter-spacing: .14em; margin-bottom: 24px; }
+    h2::before { content: "〼"; color: var(--gold); margin-right: 14px; font-size: 1rem; }
+    p { color: #333; font-size: .92rem; line-height: 2.3; letter-spacing: .04em; max-width: 620px; }
+    p + p { margin-top: 1.2em; }
+    .cta { margin-top: 90px; display: flex; gap: 24px; flex-wrap: wrap; }
+    .cta a {
+      display: inline-block; padding: 15px 44px; border: 1px solid var(--gold);
+      color: var(--gold); font-size: 11px; letter-spacing: .25em; transition: background .3s, color .3s;
+    }
+    .cta a:hover { background: var(--gold); color: #fff; }
+    @media (max-width: 640px) { .photos { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <a class="brand" href="./">KUMIKI</a>
+    <a class="back" href="./">Return Home</a>
+  </div>
+  <main>
+    <p class="kicker">The Atelier</p>
+    <h1>Each piece, handcrafted by a single artisan.</h1>
+    <p class="lead">Every KUMIKI piece is made entirely by hand. At 1.6mm, the walls sit on a boundary — one shaving too many and the wood cracks; one too few and the joints will not close. Only an artisan’s hands can find that line. Every photograph on this page was taken in our actual workshop.</p>
+
+    <div class="photos">
+      <figure><img src="../images/products/craft-1.jpg" alt="Artisan joining arare-gumi corners of a hinoki masu by hand" loading="lazy"><figcaption>Fitting the arare-gumi joints</figcaption></figure>
+      <figure><img src="../images/products/craft-2.jpg" alt="The world’s smallest hinoki masu with 1.6mm walls" loading="lazy"><figcaption>1.6mm walls — the world’s smallest masu</figcaption></figure>
+      <figure><img src="../images/products/craft-3.jpg" alt="Precision handwork on hinoki masu jewelry" loading="lazy"><figcaption>The corners decide everything</figcaption></figure>
+      <figure><img src="../images/products/craft-4.jpg" alt="Final finishing of a hinoki masu jewel" loading="lazy"><figcaption>The last touch, also by hand</figcaption></figure>
+    </div>
+
+    <section>
+      <h2>Arare-gumi — a structure without nails</h2>
+      <p>The small interlocking teeth at each corner of the masu are called <em>arare-gumi</em>. No nails, no glue — wood holds wood. It is the same structural idea that has kept Japanese temples standing for 1,300 years.</p><p>KUMIKI performs this technique on a masu just 2cm wide. A single joint measures less than a millimeter.</p>
+    </section>
+
+    <section>
+      <h2>Why only ten a month</h2>
+      <p>Our atelier completes no more than ten pieces a month. There are faster ways to make things. We have not chosen them — the time spent with each masu is what becomes its precision.</p><p>Every piece is made to order. We begin joining yours only after you place it, which is why delivery takes 2–4 weeks.</p>
+    </section>
+
+    <div class="cta">
+      <a href="collection.html">View the Collection</a>
+      <a href="./#contact">Inquire</a>
+    </div>
+  </main>
+</body>
+</html>

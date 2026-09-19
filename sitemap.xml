@@ -181,4 +181,484 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- KUKU (formerly kuku.fomusglobal.com) -->
+  <url>
+    <loc>https://www.fomus.jp/kuku/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/characters.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/characters.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/characters-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/characters-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/characters.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/characters-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/world.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/world.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/world-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/world-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/world.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/world-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/works.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/works-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/works-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/works.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/works-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/goods.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/goods.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/goods-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/goods-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/goods.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/goods-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/world-tour.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/world-tour.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/world-tour-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/world-tour-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kuku/world-tour.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kuku/world-tour-en.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kuku/faq.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- MASUKAME (formerly masukame.fomusglobal.com) -->
+  <url>
+    <loc>https://www.fomus.jp/masukame/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/masukame/standard.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/masukame/special.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/masukame/collaboration.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/masukame/faq.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- KUMIKI (formerly kumiki.fomusglobal.com) -->
+  <url>
+    <loc>https://www.fomus.jp/kumiki/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/collection.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/collection.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/collection.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/collection.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/collection.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/collection.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/collection.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/necklace.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/necklace.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/necklace.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/necklace.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/necklace.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/necklace.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/necklace.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/earrings.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/earrings.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/earrings.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/earrings.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/earrings.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/earrings.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/earrings.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/kanzashi.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/kanzashi.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/kanzashi.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/kanzashi.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/kanzashi.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/kanzashi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/kanzashi.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/bespoke.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/bespoke.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/bespoke.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/bespoke.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/bespoke.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/bespoke.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/bespoke.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/badge.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/badge.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/badge.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/badge.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/badge.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/badge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/badge.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/faq.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/faq.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/faq.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/gift.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/gift.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/gift.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/gift.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/gift.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.fomus.jp/kumiki/fr/gift.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/gift.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/journal/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/journal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/journal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/journal/"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/journal/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/journal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/journal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/journal/"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/journal/what-is-masu.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/journal/what-is-masu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/journal/what-is-masu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/journal/what-is-masu.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/journal/what-is-masu.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/journal/what-is-masu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/journal/what-is-masu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/journal/what-is-masu.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/journal/hinoki-jewelry.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/journal/hinoki-jewelry.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/journal/japanese-wood-jewelry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/journal/japanese-wood-jewelry.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/journal/japanese-wood-jewelry.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/journal/hinoki-jewelry.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/journal/japanese-wood-jewelry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/kumiki/en/journal/japanese-wood-jewelry.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/journal/traditional-craft-jewelry.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/about.html</loc>
+    <lastmod>2026-09-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/en/about.html</loc>
+    <lastmod>2026-09-19</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/fr/about.html</loc>
+    <lastmod>2026-09-19</lastmod>
+  </url>
+
 </urlset>
