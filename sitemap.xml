@@ -122,6 +122,26 @@
   </url>
 
   <url>
+    <loc>https://www.fomus.jp/global-support.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/global-support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/global-support-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/global-support.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fomus.jp/global-support-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/global-support.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/global-support-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/global-support.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.fomus.jp/index-en.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/index-en.html"/>

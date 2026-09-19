@@ -458,6 +458,9 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 }
 .gl-tag{font-family:var(--serif);font-size:clamp(1rem,1.3vw,1.2rem);color:rgba(255,255,255,.9);font-weight:400;line-height:1.6;margin-bottom:16px;letter-spacing:.04em}
 .gl-sub{font-family:var(--sans);font-size:clamp(.85rem,1vw,1rem);color:rgba(255,255,255,.92);line-height:1.9;font-weight:400;margin-bottom:40px}
+.gl-more{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.86rem;letter-spacing:.08em;color:var(--gilt);border-bottom:1px solid rgba(226,192,104,.45);padding-bottom:4px;margin-top:-16px;transition:gap .25s,border-color .25s}
+.gl-more::after{content:'→'}
+.gl-more:hover{gap:14px;border-color:var(--gilt)}
 .gl-stats{display:flex;gap:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
 .gl-stat-num{font-family:var(--en);font-size:3rem;font-weight:400;color:var(--gilt);line-height:1}
 .gl-stat-lbl{font-size:.7rem;color:rgba(255,255,255,.75);letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
@@ -1279,6 +1282,7 @@ footer{}
         <h2 class="gl-h2">Going Global</h2>
         <p class="gl-tag">Advancing the international reach of Japanese culture — from the field.</p>
         <p class="gl-sub">Through international cultural activities including exhibitions at Japanese embassies abroad, FOMUS is creating new value for Japanese culture and driving its global expansion.</p>
+        <a href="global-support-en.html" class="gl-more">Overseas promotion support</a>
       </div>
 
       <!-- Right: slideshow + captions -->
@@ -1418,7 +1422,7 @@ footer{}
               <option value="">Please select</option>
               <option value="gift">Products &amp; Gifts</option>
               <option value="ai">AI &amp; Web Development</option>
-              <option value="global">Global Expansion</option>
+              <option value="global">Overseas promotion support</option>
               <option value="lecture">Speaking &amp; Workshops</option>
               <option value="kuku">KUKU / IP</option>
               <option value="other">Other</option>
@@ -1560,6 +1564,7 @@ footer{}
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
       <div class="ft-sns">
         <a href="about-en.html">About FOMUS</a>
+        <a href="global-support-en.html">Overseas Promotion Support</a>
         <a href="https://masu.fomus.jp/" rel="noopener">MASU-STORE</a>
       <a href="https://kachiu.jp/" rel="noopener">KACHIU (Yamanashi)</a>
         <a href="https://www.instagram.com/fomus_official/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
@@ -1586,6 +1591,13 @@ function cNav(){ document.getElementById('MN').classList.remove('open'); }
     if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
   }), {threshold: .06, rootMargin: '0px 0px -28px 0px'});
   document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el => io.observe(el));
+})();
+
+/* ── Preselect category from ?category= ── */
+(function(){
+  const c = new URLSearchParams(location.search).get('category');
+  const sel = document.querySelector('select[name="category"]');
+  if(c && sel && sel.querySelector('option[value="'+c.replace(/[^a-z]/g,'')+'"]')) sel.value = c;
 })();
 
 /* ── Sync radio → hidden select ── */

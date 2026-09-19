@@ -435,6 +435,15 @@ a{color:inherit;text-decoration:none}
   line-height:1.6;
 }
 
+.offer-gs{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:2px;padding:36px 40px;border:1px solid rgba(226,192,104,.28);color:#fff;transition:background .3s,border-color .3s}
+.offer-gs:hover{background:rgba(255,255,255,.04);border-color:rgba(226,192,104,.6)}
+.offer-gs-en{display:block;font-family:var(--en);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gilt);margin-bottom:10px}
+.offer-gs-name{display:block;font-family:var(--serif);font-size:1.15rem;font-weight:400;letter-spacing:.06em;margin-bottom:8px}
+.offer-gs-desc{display:block;font-size:.88rem;color:rgba(255,255,255,.82);line-height:1.8}
+.offer-gs-more{flex-shrink:0;font-family:var(--en);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gilt);white-space:nowrap}
+.offer-gs-more::after{content:' →'}
+@media(max-width:600px){.offer-gs{flex-direction:column;align-items:flex-start;gap:16px;padding:28px 22px}}
+
 /* ════════════════════════
    §05  TRUSTED FOR GROWTH
 ════════════════════════ */
@@ -944,6 +953,14 @@ a{color:inherit;text-decoration:none}
       </div>
 
     </div>
+    <a href="global-support.html" class="offer-gs rv">
+      <span>
+        <span class="offer-gs-en">Overseas Promotion Support</span>
+        <span class="offer-gs-name">海外展開サポート</span>
+        <span class="offer-gs-desc">日本酒・工芸・地域の特産品を、海外の日本国大使館や日本文化イベント、現地のコミュニティへ持って行き、現地の反応を持ち帰ります。</span>
+      </span>
+      <span class="offer-gs-more">詳しく見る</span>
+    </a>
   </div>
 </section>
 
@@ -1027,6 +1044,7 @@ a{color:inherit;text-decoration:none}
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
       <div class="ft-sns">
         <a href="about.html">会社概要</a>
+        <a href="global-support.html">海外展開サポート</a>
       </div>
     </div>
   </div>
