@@ -374,6 +374,9 @@ div.proj-card:hover .proj-img img{transform:none}
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
 }
 .ft-copy{font-family:var(--en);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.ft-sns{display:flex;flex-wrap:wrap;gap:8px 20px}
+.ft-sns a{color:rgba(255,255,255,.75);transition:color .2s;font-size:.82rem}
+.ft-sns a:hover{color:var(--gilt)}
 
 /* ════ RESPONSIVE ════ */
 @media(max-width:960px){
@@ -430,6 +433,7 @@ div.proj-card:hover .proj-img img{transform:none}
       <li><a href="business.html">Business</a></li>
       <li><a href="entertainment.html">Entertainment</a></li>
       <li><a href="community.html" class="act">Community</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="community-en.html">EN</a></li>
     </ul>
   </nav>
@@ -446,6 +450,7 @@ div.proj-card:hover .proj-img img{transform:none}
   <a href="business.html"      onclick="cNav()">Business</a>
   <a href="entertainment.html" onclick="cNav()">Entertainment</a>
   <a href="community.html"     onclick="cNav()">Community</a>
+  <a href="about.html"     onclick="cNav()">About</a>
   <a href="community-en.html" onclick="cNav()">EN</a>
 </nav>
 
@@ -674,7 +679,7 @@ div.proj-card:hover .proj-img img{transform:none}
     <div class="ft-panels">
       <div class="ft-panel" id="ft-company">
         <h3>会社概要</h3>
-        <ul><li>会社名：合同会社FOMUS</li><li>所在地：日本</li><li>代表者：増尾圭亮</li></ul>
+        <ul><li>会社名：合同会社FOMUS</li><li>所在地：日本</li><li>代表者：増尾圭亮</li><li><a href="about.html" style="color:var(--gilt)">会社概要ページを見る →</a></li></ul>
       </div>
       <div class="ft-panel" id="ft-tokusho">
         <h3>特定商取引法に基づく表記</h3>
@@ -693,6 +698,9 @@ div.proj-card:hover .proj-img img{transform:none}
     </div>
     <div class="ft-bot">
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
+      <div class="ft-sns">
+        <a href="about.html">会社概要</a>
+      </div>
     </div>
   </div>
 </footer>

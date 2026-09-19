@@ -374,6 +374,9 @@ div.proj-card:hover .proj-img img{transform:none}
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
 }
 .ft-copy{font-family:var(--en);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.ft-sns{display:flex;flex-wrap:wrap;gap:8px 20px}
+.ft-sns a{color:rgba(255,255,255,.75);transition:color .2s;font-size:.82rem}
+.ft-sns a:hover{color:var(--gilt)}
 
 /* ════ RESPONSIVE ════ */
 @media(max-width:960px){
@@ -430,6 +433,7 @@ div.proj-card:hover .proj-img img{transform:none}
       <li><a href="business-en.html">Business</a></li>
       <li><a href="entertainment-en.html">Entertainment</a></li>
       <li><a href="community-en.html" class="act">Community</a></li>
+      <li><a href="about-en.html">About</a></li>
     </ul>
   </nav>
   <a href="index-en.html#contact" class="hcta">Join Community</a>
@@ -445,6 +449,7 @@ div.proj-card:hover .proj-img img{transform:none}
   <a href="business-en.html"      onclick="cNav()">Business</a>
   <a href="entertainment-en.html" onclick="cNav()">Entertainment</a>
   <a href="community-en.html"     onclick="cNav()">Community</a>
+  <a href="about-en.html"     onclick="cNav()">About</a>
 </nav>
 
 <!-- ════ §01 HERO ════ -->
@@ -672,7 +677,7 @@ div.proj-card:hover .proj-img img{transform:none}
     <div class="ft-panels">
       <div class="ft-panel" id="ft-company">
         <h3>About Us</h3>
-        <ul><li>Company: FOMUS LLC</li><li>Location: Japan</li><li>Representative: Keisuke Masuo</li></ul>
+        <ul><li>Company: FOMUS LLC</li><li>Location: Japan</li><li>Representative: Keisuke Masuo</li><li><a href="about-en.html" style="color:var(--gilt)">View company profile →</a></li></ul>
       </div>
       <div class="ft-panel" id="ft-tokusho">
         <h3>Legal Notice (Specified Commercial Transactions Act)</h3>
@@ -691,6 +696,9 @@ div.proj-card:hover .proj-img img{transform:none}
     </div>
     <div class="ft-bot">
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
+      <div class="ft-sns">
+        <a href="about-en.html">About FOMUS</a>
+      </div>
     </div>
   </div>
 </footer>
