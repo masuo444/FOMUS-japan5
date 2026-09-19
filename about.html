@@ -155,6 +155,15 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 .gl-lead{font-family:var(--sans);font-size:clamp(.92rem,1.05vw,1rem);color:#444;line-height:2.1}
 
 .gb{padding-bottom:88px}
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid rgba(10,18,34,.12)}
+.tl li{display:grid;grid-template-columns:7.5em 11em 1fr;gap:6px 24px;padding:18px 0;border-bottom:1px solid rgba(10,18,34,.12);align-items:baseline}
+.tl-year{font-family:var(--en);font-size:.85rem;letter-spacing:.14em;color:var(--gold)}
+.tl-place{font-family:var(--en);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#888}
+.tl-what{font-size:.95rem;line-height:1.9;color:var(--ink)}
+.tl-what strong{font-weight:500}
+.countries{margin-top:8px;font-size:.95rem;line-height:2.1;color:var(--ink)}
+.countries-note{margin-top:10px;font-size:.8rem;color:#888;line-height:1.8}
+@media(max-width:760px){.tl li{grid-template-columns:1fr;gap:2px}}
 .gb-head{display:flex;align-items:baseline;gap:18px;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid rgba(10,18,34,.12)}
 .gb-num{font-family:var(--en);font-size:.72rem;letter-spacing:.34em;color:var(--gold)}
 .gb-title{font-family:var(--serif);font-size:clamp(1.15rem,1.6vw,1.4rem);font-weight:500;color:var(--ink);letter-spacing:.06em}
@@ -516,9 +525,9 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
         <article class="act-card rv d1">
           <div class="act-img"><img src="slideshow/1.0.webp" alt="在アイルランド日本国大使館 レセプションパーティー 2024 — FOMUS枡で日本酒をサービス" loading="lazy"></div>
           <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024</span></div>
-            <h4 class="act-name">在アイルランド日本国大使館 レセプションパーティー</h4>
-            <p class="act-desc">日本酒とFOMUS枡のサービスを担当。</p>
+            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024–2025</span></div>
+            <h4 class="act-name">在アイルランド日本国大使館</h4>
+            <p class="act-desc">大使公邸でのイベントや大使館主催のレセプションで、日本酒とFOMUS枡のサービスを担当。</p>
           </div>
         </article>
         <article class="act-card rv d2">
@@ -616,90 +625,32 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
   </div>
 
   <div class="W">
-    <!-- c. コミュニティ・イベント -->
+    <!-- c. 海外の日本文化イベント・コミュニティ -->
     <div class="gb">
       <div class="gb-head rv">
         <span class="gb-num">03</span>
-        <h3 class="gb-title">コミュニティ・イベント</h3>
-        <span class="gb-title-en">Community &amp; Events</span>
+        <h3 class="gb-title">海外の日本文化イベント・コミュニティ</h3>
+        <span class="gb-title-en">Events &amp; Community</span>
       </div>
-      <div class="act-grid four">
-        <article class="act-card rv d1">
-          <div class="act-img"><img src="slideshow/6.webp" alt="アイルランド ダブリン 国際交流コミュニティ 2024〜 — 年間約50回のイベント主催" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024–</span></div>
-            <h4 class="act-name">ダブリン 国際交流コミュニティ</h4>
-            <p class="act-desc">ダブリンで国際交流コミュニティを運営。年間約50回のイベントを主催。</p>
-          </div>
-        </article>
-        <article class="act-card rv d2">
-          <div class="act-img"><img src="slideshow/5.webp" alt="ドバイ グローバルコミュニティイベント 2026 — 世界各国の仲間とイベントを主催" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Dubai</span><span class="act-year">2026</span></div>
-            <h4 class="act-name">ドバイ グローバルコミュニティイベント</h4>
-            <p class="act-desc">ドバイで世界各国の仲間とイベントを主催。</p>
-          </div>
-        </article>
-        <article class="act-card rv d3">
-          <div class="act-img"><img src="slideshow/9.webp" alt="アイルランド Experience Japan Festival 2024 — フォトグラファーとして参加" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024</span></div>
-            <h4 class="act-name">Experience Japan Festival</h4>
-            <p class="act-desc">アイルランドで開催された日本文化フェスティバルに、フォトグラファーとして参加。</p>
-          </div>
-        </article>
-        <article class="act-card rv d4">
-          <div class="act-img"><img src="slideshow/11.webp" alt="ドバイ日本フェア 2025 — フォトグラファーとして参加" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Dubai</span><span class="act-year">2025</span></div>
-            <h4 class="act-name">ドバイ日本フェア</h4>
-            <p class="act-desc">フォトグラファーとして参加。</p>
-          </div>
-        </article>
-      </div>
+      <ul class="tl rv">
+        <li><span class="tl-year">2024–</span><span class="tl-place">Ireland · Dublin</span><span class="tl-what">ダブリンで<strong>国際交流コミュニティ</strong>を運営。年間約50回のイベントを主催</span></li>
+        <li><span class="tl-year">2024</span><span class="tl-place">Ireland</span><span class="tl-what">日本文化フェスティバル「<strong>Experience Japan</strong>」にフォトグラファーとして参加</span></li>
+        <li><span class="tl-year">2025</span><span class="tl-place">France · Paris</span><span class="tl-what">日本酒コンクール「<strong>Kura Master</strong>」にスタッフ・フォトグラファーとして参加</span></li>
+        <li><span class="tl-year">2025</span><span class="tl-place">France · Paris</span><span class="tl-what">日本文化イベント「<strong>Japan Fête</strong>」に出展（着物と枡を展示）</span></li>
+        <li><span class="tl-year">2025</span><span class="tl-place">UAE · Dubai</span><span class="tl-what">「<strong>ドバイ日本フェア</strong>」にフォトグラファーとして参加</span></li>
+        <li><span class="tl-year">2026</span><span class="tl-place">UAE · Dubai</span><span class="tl-what">世界各国の参加者と歩く<strong>国際交流イベント</strong>を主催</span></li>
+      </ul>
     </div>
 
-    <!-- d. プロジェクト -->
+    <!-- d. 主な活動国 -->
     <div class="gb">
       <div class="gb-head rv">
         <span class="gb-num">04</span>
-        <h3 class="gb-title">プロジェクト</h3>
-        <span class="gb-title-en">Projects</span>
+        <h3 class="gb-title">主な活動国</h3>
+        <span class="gb-title-en">Countries</span>
       </div>
-      <div class="act-grid four">
-        <article class="act-card rv d1">
-          <div class="act-img"><img src="slideshow/12.webp" alt="台湾一周ランニングプロジェクト 2023 — GPSランナー志水直樹氏とともに" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Taiwan</span><span class="act-year">2023</span></div>
-            <h4 class="act-name">台湾一周ランニングプロジェクト</h4>
-            <p class="act-desc">GPSランナー志水直樹氏とともに台湾を一周。出会った人々へコラボ枡をギフトとして届けた。</p>
-          </div>
-        </article>
-        <article class="act-card rv d2">
-          <div class="act-img"><img src="slideshow/7.webp" alt="フランス ボルドー Marathon du Médoc 2024・2025 — FOMUSユニフォームで出場" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">France</span><span class="act-year">2024 · 2025</span></div>
-            <h4 class="act-name">Marathon du Médoc</h4>
-            <p class="act-desc">FOMUSユニフォームで出場。</p>
-          </div>
-        </article>
-        <article class="act-card rv d3">
-          <div class="act-img"><img src="slideshow/8.webp" alt="カードゲーム SILVA — アイルランドの仲間とプレイ" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024–</span></div>
-            <h4 class="act-name">カードゲーム「SILVA」</h4>
-            <p class="act-desc">FOMUS制作のカードゲーム「SILVA」を、アイルランドの仲間とプレイ。</p>
-          </div>
-        </article>
-        <article class="act-card rv d4">
-          <div class="act-img"><img src="slideshow/10.webp" alt="アイルランド シャールビル城 — FOMUSの欧州拠点 2024" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024</span></div>
-            <h4 class="act-name">欧州拠点・シャールビル城</h4>
-            <p class="act-desc">FOMUSの欧州拠点。</p>
-          </div>
-        </article>
-      </div>
+      <p class="countries rv">日本、台湾、マレーシア、フィリピン、シンガポール、中国、アメリカ、アイルランド、イギリス、フランス、スペイン、ポルトガル、ベルギー、デンマーク、スウェーデン、ノルウェー、ポーランド、エストニア、ラトビア、リトアニア、ルーマニア、マルタ、ギリシャ、キプロス、トルコ、アラブ首長国連邦、カタール、バーレーン、サウジアラビア</p>
+      <p class="countries-note rv">2023年から、FOMUSの活動と MASU PHOTO の撮影で訪れた国と地域です。</p>
     </div>
   </div>
 </section>

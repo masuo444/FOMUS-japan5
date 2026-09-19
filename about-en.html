@@ -155,6 +155,15 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 .gl-lead{font-family:var(--sans);font-size:clamp(.92rem,1.05vw,1rem);color:#444;line-height:2.1}
 
 .gb{padding-bottom:88px}
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid rgba(10,18,34,.12)}
+.tl li{display:grid;grid-template-columns:7.5em 11em 1fr;gap:6px 24px;padding:18px 0;border-bottom:1px solid rgba(10,18,34,.12);align-items:baseline}
+.tl-year{font-family:var(--en);font-size:.85rem;letter-spacing:.14em;color:var(--gold)}
+.tl-place{font-family:var(--en);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#888}
+.tl-what{font-size:.95rem;line-height:1.9;color:var(--ink)}
+.tl-what strong{font-weight:500}
+.countries{margin-top:8px;font-size:.95rem;line-height:2.1;color:var(--ink)}
+.countries-note{margin-top:10px;font-size:.8rem;color:#888;line-height:1.8}
+@media(max-width:760px){.tl li{grid-template-columns:1fr;gap:2px}}
 .gb-head{display:flex;align-items:baseline;gap:18px;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid rgba(10,18,34,.12)}
 .gb-num{font-family:var(--en);font-size:.72rem;letter-spacing:.34em;color:var(--gold)}
 .gb-title{font-family:var(--serif);font-size:clamp(1.15rem,1.6vw,1.4rem);font-weight:500;color:var(--ink);letter-spacing:.06em}
@@ -516,9 +525,9 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
         <article class="act-card rv d1">
           <div class="act-img"><img src="slideshow/1.0.webp" alt="Reception party at the Embassy of Japan in Ireland, 2024 — sake served in FOMUS masu" loading="lazy"></div>
           <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024</span></div>
-            <h4 class="act-name">Reception Party, Embassy of Japan in Ireland</h4>
-            <p class="act-desc">FOMUS served Japanese sake in FOMUS masu.</p>
+            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024–2025</span></div>
+            <h4 class="act-name">Embassy of Japan in Ireland</h4>
+            <p class="act-desc">Served Japanese sake in FOMUS masu at events at the Ambassador’s residence and embassy receptions.</p>
           </div>
         </article>
         <article class="act-card rv d2">
@@ -616,90 +625,32 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
   </div>
 
   <div class="W">
-    <!-- c. コミュニティ・イベント -->
+    <!-- c. 海外の日本文化イベント・コミュニティ -->
     <div class="gb">
       <div class="gb-head rv">
         <span class="gb-num">03</span>
-        <h3 class="gb-title">Community &amp; Events</h3>
-        <span class="gb-title-en">Community &amp; Events</span>
+        <h3 class="gb-title">Japanese Culture Events &amp; Community</h3>
+        <span class="gb-title-en">Events &amp; Community</span>
       </div>
-      <div class="act-grid four">
-        <article class="act-card rv d1">
-          <div class="act-img"><img src="slideshow/6.webp" alt="International exchange community in Dublin, Ireland, 2024– — around 50 events a year" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024–</span></div>
-            <h4 class="act-name">Dublin International Community</h4>
-            <p class="act-desc">Running an international exchange community in Dublin, hosting around 50 events a year.</p>
-          </div>
-        </article>
-        <article class="act-card rv d2">
-          <div class="act-img"><img src="slideshow/5.webp" alt="Global community event in Dubai, 2026 — hosted with friends from around the world" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Dubai</span><span class="act-year">2026</span></div>
-            <h4 class="act-name">Global Community Event in Dubai</h4>
-            <p class="act-desc">Hosted an event in Dubai with friends from around the world.</p>
-          </div>
-        </article>
-        <article class="act-card rv d3">
-          <div class="act-img"><img src="slideshow/9.webp" alt="Experience Japan Festival, Ireland, 2024 — FOMUS as photographer" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024</span></div>
-            <h4 class="act-name">Experience Japan Festival</h4>
-            <p class="act-desc">Took part as photographer at the Japanese culture festival held in Ireland.</p>
-          </div>
-        </article>
-        <article class="act-card rv d4">
-          <div class="act-img"><img src="slideshow/11.webp" alt="Dubai Japan Fair 2025 — FOMUS as photographer" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Dubai</span><span class="act-year">2025</span></div>
-            <h4 class="act-name">Dubai Japan Fair</h4>
-            <p class="act-desc">Took part as photographer.</p>
-          </div>
-        </article>
-      </div>
+      <ul class="tl rv">
+        <li><span class="tl-year">2024–</span><span class="tl-place">Ireland · Dublin</span><span class="tl-what">Runs an <strong>international community</strong> in Dublin, hosting around 50 events a year</span></li>
+        <li><span class="tl-year">2024</span><span class="tl-place">Ireland</span><span class="tl-what">Photographer at the Japanese culture festival <strong>Experience Japan</strong></span></li>
+        <li><span class="tl-year">2025</span><span class="tl-place">France · Paris</span><span class="tl-what">Staff and photographer at the sake competition <strong>Kura Master</strong></span></li>
+        <li><span class="tl-year">2025</span><span class="tl-place">France · Paris</span><span class="tl-what">Exhibited kimono and masu at <strong>Japan Fête</strong></span></li>
+        <li><span class="tl-year">2025</span><span class="tl-place">UAE · Dubai</span><span class="tl-what">Photographer at the <strong>Dubai Japan Fair</strong></span></li>
+        <li><span class="tl-year">2026</span><span class="tl-place">UAE · Dubai</span><span class="tl-what">Hosted a walking <strong>international exchange event</strong> with participants from around the world</span></li>
+      </ul>
     </div>
 
-    <!-- d. プロジェクト -->
+    <!-- d. 主な活動国 -->
     <div class="gb">
       <div class="gb-head rv">
         <span class="gb-num">04</span>
-        <h3 class="gb-title">Projects</h3>
-        <span class="gb-title-en">Projects</span>
+        <h3 class="gb-title">Countries</h3>
+        <span class="gb-title-en">Where we work</span>
       </div>
-      <div class="act-grid four">
-        <article class="act-card rv d1">
-          <div class="act-img"><img src="slideshow/12.webp" alt="Taiwan Circumnavigation Running Project, 2023 — with GPS runner Naoki Shimizu" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Taiwan</span><span class="act-year">2023</span></div>
-            <h4 class="act-name">Taiwan Circumnavigation Running Project</h4>
-            <p class="act-desc">Circumnavigating Taiwan with GPS runner Naoki Shimizu, gifting collaboration masu to the people met along the way.</p>
-          </div>
-        </article>
-        <article class="act-card rv d2">
-          <div class="act-img"><img src="slideshow/7.webp" alt="Marathon du Médoc, Bordeaux, France, 2024 and 2025 — running in FOMUS uniform" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">France</span><span class="act-year">2024 · 2025</span></div>
-            <h4 class="act-name">Marathon du Médoc</h4>
-            <p class="act-desc">Ran the race in FOMUS uniform.</p>
-          </div>
-        </article>
-        <article class="act-card rv d3">
-          <div class="act-img"><img src="slideshow/8.webp" alt="SILVA card game — played with friends in Ireland" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024–</span></div>
-            <h4 class="act-name">SILVA Card Game</h4>
-            <p class="act-desc">Playing SILVA, a card game created by FOMUS, with friends in Ireland.</p>
-          </div>
-        </article>
-        <article class="act-card rv d4">
-          <div class="act-img"><img src="slideshow/10.webp" alt="Charleville Castle, Ireland — the European base of FOMUS, 2024" loading="lazy"></div>
-          <div class="act-body">
-            <div class="act-meta"><span class="act-country">Ireland</span><span class="act-year">2024</span></div>
-            <h4 class="act-name">European Base — Charleville Castle</h4>
-            <p class="act-desc">The European base of FOMUS.</p>
-          </div>
-        </article>
-      </div>
+      <p class="countries rv">Japan, Taiwan, Malaysia, the Philippines, Singapore, China, the United States, Ireland, the United Kingdom, France, Spain, Portugal, Belgium, Denmark, Sweden, Norway, Poland, Estonia, Latvia, Lithuania, Romania, Malta, Greece, Cyprus, Turkey, the United Arab Emirates, Qatar, Bahrain and Saudi Arabia</p>
+      <p class="countries-note rv">Countries and regions visited since 2023 for FOMUS projects and MASU PHOTO shoots.</p>
     </div>
   </div>
 </section>
