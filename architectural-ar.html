@@ -294,6 +294,23 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
 .ft-sns a{color:rgba(255,255,255,.75);transition:color .2s;font-size:.82rem}
 .ft-sns a:hover{color:var(--gilt)}
 
+/* PHILOSOPHY */
+.phil{background:#fff;padding:96px 0 88px;border-bottom:1px solid rgba(10,18,34,.07)}
+.ph-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:start}
+.ph-lead{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:400;line-height:1.6;color:var(--ink);letter-spacing:.03em;margin:14px 0 22px}
+html[lang="ar"] .ph-lead{font-weight:600;line-height:1.7}
+.ph-body{font-size:.96rem;line-height:2.05;color:#333}
+.ph-mat{border-inline-start:1px solid rgba(184,135,58,.45);padding-inline-start:36px;padding-top:2px}
+.ph-mat p{font-size:.92rem;line-height:2;color:#444;margin-top:14px}
+
+/* APPLICATIONS */
+.ap-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-bottom:60px}
+.ap-item{border-top:1px solid var(--gold);padding-top:20px}
+.ap-en{font-family:var(--en);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+.ap-name{font-family:var(--serif);font-size:1.12rem;font-weight:500;color:var(--ink);line-height:1.5;margin-bottom:8px}
+.ap-desc{font-size:.88rem;color:#4a4a4a;line-height:1.9}
+.u-sub{display:block;margin-bottom:18px}
+
 /* RESPONSIVE */
 @media(max-width:1100px){
   .fl-list{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
@@ -304,6 +321,7 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
   #H{padding:0 32px}
   .hero-left{padding:120px 40px 64px;flex-basis:54%}
   .in-grid{grid-template-columns:1fr;gap:40px}
+  .ph-grid{grid-template-columns:1fr;gap:40px}
   .in-mark{max-width:300px}
   .op-list{grid-template-columns:1fr}
   .sp-wrap,.faq-wrap{grid-template-columns:1fr;gap:28px}
@@ -332,6 +350,9 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
   .sec-head{margin-bottom:36px}
   .facts{grid-template-columns:1fr;gap:18px}
   .u-grid{grid-template-columns:1fr}
+  .phil{padding:64px 0 60px}
+  .ph-mat{padding-inline-start:20px}
+  .ap-row{grid-template-columns:1fr;gap:24px;margin-bottom:44px}
   .u-card{padding:26px 22px}
   .fl-list{grid-template-columns:1fr;row-gap:0}
   .fl-list li,html[dir="rtl"] .fl-list li{border-top:none;border-inline-start:1px solid rgba(10,18,34,.16);padding-block:0 28px;padding-inline:24px 0}
@@ -378,7 +399,7 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
       "name": "Masu Wall",
       "alternateName": "جدار الماسو",
       "serviceType": "وحدات جدارية من صناديق الماسو المصنوعة من خشب الهينوكي الياباني",
-      "description": "توريد وحدات جدارية مصنوعة من ماسو «إيتشي-غو» القياسي (خشب هينوكي ياباني، المقاس الخارجي 85 × 85 × 56 مم) للفنادق والمطاعم والمتاجر والمكاتب والمساكن والمجالس والمساحات الثقافية. يتولى العميل أو المعماري أو مصمم الديكور تصميم الجدار، ويتوفر عرض تصميم اختياري من FOMUS برسوم منفصلة. تُورَّد الوحدات منفردة أو على هيئة ألواح مجمّعة مسبقًا، مع توفر الطلاء الزجاجي والمعالجة المثبطة للهب والنقش بالليزر وورق الذهب عند الطلب. تشحن FOMUS من اليابان وتقدّم تعليمات التركيب للمقاول المحلي. السعر ومدة التنفيذ والحد الأدنى للكمية عند الطلب.",
+      "description": "توريد وحدات جدارية مصنوعة من ماسو «إيتشي-غو» القياسي (خشب هينوكي ياباني، المقاس الخارجي 85 × 85 × 56 مم) للفنادق والمطاعم والمتاجر والمكاتب والمساكن والمجالس والمساحات الثقافية. ويمكن استخدام الوحدات في الجدران والفواصل والأعمدة وقطع الأثاث الثابتة وفق تصميم العميل. يتولى العميل أو المعماري أو مصمم الديكور تصميم الجدار، ويتوفر عرض تصميم اختياري من FOMUS برسوم منفصلة. تُورَّد الوحدات منفردة أو على هيئة ألواح مجمّعة مسبقًا، مع توفر الطلاء الزجاجي والمعالجة المثبطة للهب والنقش بالليزر وورق الذهب عند الطلب. تشحن FOMUS من اليابان وتقدّم تعليمات التركيب للمقاول المحلي. السعر ومدة التنفيذ والحد الأدنى للكمية عند الطلب.",
       "provider": {
         "@id": "https://www.fomus.jp/#organization"
       },
@@ -533,6 +554,23 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
   </div>
 </section>
 
+<!-- ════ PHILOSOPHY ════ -->
+<section class="phil" id="philosophy">
+  <div class="W">
+    <div class="ph-grid">
+      <div class="rv">
+        <span class="lbl">الفلسفة</span>
+        <p class="ph-lead">لا نفرض تصميمًا مكتملًا، بل نقدّم الخامة الجوهرية.</p>
+        <p class="ph-body">FOMUS ARCHITECTURAL خطّ منتجات يعيد صياغة ثقافة الخامات اليابانية فكرًا في خدمة العمارة. ما نقدّمه هو الخامة الجوهرية لصنع المكان، أما طريقة استخدامها فيقرّرها المصمّم والمكان نفسه.</p>
+      </div>
+      <div class="ph-mat rv d1">
+        <span class="lbl">الخامة</span>
+        <p>خشب هينوكي مزروع في اليابان، يُنتقى بعناية لجودته ورائحته وكثافته. حضورٌ هادئ، ودفءٌ يُحَسّ عند اللمس، وملامح تزداد عمقًا مع مرور الزمن.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════ WHAT IS MASU ════ -->
 <section class="sec intro" id="masu">
   <div class="W">
@@ -554,8 +592,14 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
     <div class="sec-head rv">
       <span class="lbl">أين يُستخدم</span>
       <h2 class="sec-title">جدار من الهينوكي للمساحات اليابانية وأسلوب جابندي</h2>
-      <p class="sec-sub">جدار الماسو خامةٌ لكل مساحة تبحث عن دفء الخشب الياباني وإيقاع منتظم من الوحدات المتكررة.</p>
+      <p class="sec-sub">جدار الماسو خامةٌ لكل مساحة تبحث عن دفء الخشب الياباني وإيقاع منتظم من الوحدات المتكررة. ويمكن استخدام الوحدات في الجدران والفواصل والأعمدة وقطع الأثاث الثابتة، وفق تصميمكم.</p>
     </div>
+    <div class="ap-row">
+      <div class="ap-item rv d1"><span class="ap-en" lang="en">Wall</span><h3 class="ap-name">الجدران</h3><p class="ap-desc">سطحٌ يليّن الضوء والظل ويستوقف النظر.</p></div>
+      <div class="ap-item rv d2"><span class="ap-en" lang="en">Partition</span><h3 class="ap-name">الفواصل</h3><p class="ap-desc">يحجب النظر ويسمح بمرور الهواء، فيقسّم المكان دون أن يغلقه.</p></div>
+      <div class="ap-item rv d3"><span class="ap-en" lang="en">Column &amp; Fixtures</span><h3 class="ap-name">الأعمدة وقطع الأثاث الثابتة</h3><p class="ap-desc">تتحوّل الأعمدة وقطع الأثاث إلى مركز هادئ للمكان.</p></div>
+    </div>
+    <span class="lbl u-sub rv">المساحات</span>
     <div class="u-grid">
       <div class="u-card rv d1"><span class="u-num">01</span><h3 class="u-name">ردهات الفنادق</h3><p class="u-desc">جدارٌ مميز من الهينوكي عند المدخل أو خلف مكتب الاستقبال، يتذكره الضيوف ويصوّرونه.</p></div>
       <div class="u-card rv d2"><span class="u-num">02</span><h3 class="u-name">المطاعم اليابانية</h3><p class="u-desc">لمسة في تصميم المطعم الياباني: خلف الكاونتر، أو عند المدخل، أو بين الطاولات.</p></div>
@@ -580,7 +624,7 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
     <ol class="fl-list">
       <li class="rv d1"><span class="fl-num">STEP 01</span><h3 class="fl-name">صمّموا جداركم</h3><p class="fl-desc">تتولون أنتم أو المعماري أو مصمم الديكور تصميم النمط والتوزيع واللوح الخلفي بما يناسب المكان. وإن رغبتم، يمكن لـ FOMUS إعداد مقترح تصميم <em>(اختياري، برسوم منفصلة)</em>.</p></li>
       <li class="rv d2"><span class="fl-num">STEP 02</span><h3 class="fl-name">حدّدوا الكمية والمواصفات</h3><p class="fl-desc">حدّدوا عدد وحدات الماسو ومواصفاتها: وحدات منفردة أو ألواح، طلاء زجاجي، معالجة مثبطة للهب، نقش.</p></li>
-      <li class="rv d3"><span class="fl-num">STEP 03</span><h3 class="fl-name">صُنع في اليابان</h3><p class="fl-desc">تُصنع وحدات الماسو في اليابان من خشب الهينوكي الياباني، منفردة أو مجمّعة مسبقًا على هيئة ألواح.</p></li>
+      <li class="rv d3"><span class="fl-num">STEP 03</span><h3 class="fl-name">صُنع في اليابان</h3><p class="fl-desc">تُصنع وحدات الماسو في ورشة في اليابان من خشب الهينوكي الياباني، منفردة أو مجمّعة مسبقًا على هيئة ألواح.</p></li>
       <li class="rv d4"><span class="fl-num">STEP 04</span><h3 class="fl-name">الشحن عبر FOMUS</h3><p class="fl-desc">تتولى FOMUS ترتيب الشحن من اليابان إلى بلدكم.</p></li>
       <li class="rv d4"><span class="fl-num">STEP 05</span><h3 class="fl-name">التركيب بواسطة مقاولكم</h3><p class="fl-desc">يتولى مقاولكم المحلي تركيب الجدار. تقدّم FOMUS تعليمات التركيب، ويمكنها أيضًا التنسيق مع مقاولكم المحلي.</p></li>
     </ol>

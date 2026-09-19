@@ -194,6 +194,23 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 /* ════════════════════════════
    FINISHING TECHNIQUES
 ════════════════════════════ */
+/* ════════════════════════════
+   素材 / Material
+════════════════════════════ */
+#material{background:var(--cream);padding:100px 0;border-top:1px solid rgba(0,0,0,.05)}
+.mat-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px;align-items:start}
+.mat-h{font-family:var(--en);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:400;color:var(--ink);line-height:1.45;margin-bottom:20px}
+.mat-lead{font-size:.98rem;color:#444;line-height:2}
+.mat-list{list-style:none;border-top:1px solid rgba(0,0,0,.1)}
+.mat-list li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:0 18px;padding:24px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+.mat-num{font-family:var(--en);font-size:.8rem;letter-spacing:.2em;color:var(--gold);padding-top:4px}
+.mat-name{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.6}
+.mat-desc{font-size:.92rem;color:#555;line-height:1.9}
+@media(max-width:860px){
+  #material{padding:64px 0}
+  .mat-grid{grid-template-columns:1fr;gap:28px}
+}
+
 #tech{background:var(--warm);padding:100px 0}
 .tech-head{text-align:center;margin-bottom:56px}
 .tech-head h2{font-family:var(--en);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:400;color:var(--ink);margin-bottom:12px}
@@ -414,6 +431,26 @@ textarea.fc{resize:vertical;min-height:110px}
 </section>
 
 
+<!-- ══════════════ MATERIAL ══════════════ -->
+<section id="material">
+  <div class="W">
+    <div class="mat-grid">
+      <div class="rv">
+        <span class="sec-label">Material</span>
+        <div class="sec-bar"></div>
+        <h2 class="mat-h">Made from reclaimed hinoki</h2>
+        <p class="mat-lead">FOMUS masu are made from offcuts of Japanese hinoki cypress once used in architecture and joinery. Rather than cutting new trees, we give material that has served its purpose a second life.</p>
+      </div>
+      <ol class="mat-list rv d1">
+        <li><span class="mat-num">01</span><div><h3 class="mat-name">Hinoki offcuts from Japan</h3><p class="mat-desc">Offcuts of Japanese hinoki from building and joinery work are crafted into masu.</p></div></li>
+        <li><span class="mat-num">02</span><div><h3 class="mat-name">Kiso hinoki and other Japanese wood</h3><p class="mat-desc">Japanese timber with a natural fragrance, a soft texture and a calm presence.</p></div></li>
+        <li><span class="mat-num">03</span><div><h3 class="mat-name">Shavings as packaging</h3><p class="mat-desc">Wood shavings from production are reused as packing material, so a gentle scent of hinoki rises when you open the box.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
 <!-- ══════════════ FINISHING TECHNIQUES ══════════════ -->
 <section id="tech">
   <div class="W">
@@ -479,6 +516,7 @@ textarea.fc{resize:vertical;min-height:110px}
       <p style="font-size:.92rem;color:#555;line-height:1.9;">
         Options can be combined: <strong style="color:var(--ink);">Coating + Gold Foil</strong>, <strong style="color:var(--ink);">Coating + Laser Engraving</strong>, <strong style="color:var(--ink);">Branding + Gold Foil</strong> — we'll recommend the best combination for your use case and quantity.
       </p>
+      <p style="font-size:.92rem;color:#555;line-height:1.9;margin-top:10px;">Dedicated <strong style="color:var(--ink);">masu lids</strong> are also available as an option.</p>
     </div>
   </div>
 </section>

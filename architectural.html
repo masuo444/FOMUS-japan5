@@ -294,6 +294,23 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
 .ft-sns a{color:rgba(255,255,255,.75);transition:color .2s;font-size:.82rem}
 .ft-sns a:hover{color:var(--gilt)}
 
+/* PHILOSOPHY */
+.phil{background:#fff;padding:96px 0 88px;border-bottom:1px solid rgba(10,18,34,.07)}
+.ph-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:start}
+.ph-lead{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:400;line-height:1.6;color:var(--ink);letter-spacing:.03em;margin:14px 0 22px}
+html[lang="ar"] .ph-lead{font-weight:600;line-height:1.7}
+.ph-body{font-size:.96rem;line-height:2.05;color:#333}
+.ph-mat{border-inline-start:1px solid rgba(184,135,58,.45);padding-inline-start:36px;padding-top:2px}
+.ph-mat p{font-size:.92rem;line-height:2;color:#444;margin-top:14px}
+
+/* APPLICATIONS */
+.ap-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-bottom:60px}
+.ap-item{border-top:1px solid var(--gold);padding-top:20px}
+.ap-en{font-family:var(--en);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+.ap-name{font-family:var(--serif);font-size:1.12rem;font-weight:500;color:var(--ink);line-height:1.5;margin-bottom:8px}
+.ap-desc{font-size:.88rem;color:#4a4a4a;line-height:1.9}
+.u-sub{display:block;margin-bottom:18px}
+
 /* RESPONSIVE */
 @media(max-width:1100px){
   .fl-list{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
@@ -304,6 +321,7 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
   #H{padding:0 32px}
   .hero-left{padding:120px 40px 64px;flex-basis:54%}
   .in-grid{grid-template-columns:1fr;gap:40px}
+  .ph-grid{grid-template-columns:1fr;gap:40px}
   .in-mark{max-width:300px}
   .op-list{grid-template-columns:1fr}
   .sp-wrap,.faq-wrap{grid-template-columns:1fr;gap:28px}
@@ -332,6 +350,9 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
   .sec-head{margin-bottom:36px}
   .facts{grid-template-columns:1fr;gap:18px}
   .u-grid{grid-template-columns:1fr}
+  .phil{padding:64px 0 60px}
+  .ph-mat{padding-inline-start:20px}
+  .ap-row{grid-template-columns:1fr;gap:24px;margin-bottom:44px}
   .u-card{padding:26px 22px}
   .fl-list{grid-template-columns:1fr;row-gap:0}
   .fl-list li,html[dir="rtl"] .fl-list li{border-top:none;border-inline-start:1px solid rgba(10,18,34,.16);padding-block:0 28px;padding-inline:24px 0}
@@ -378,7 +399,7 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
       "name": "Masu Wall",
       "alternateName": "FOMUS ARCHITECTURAL Masu Wall",
       "serviceType": "Japanese hinoki masu wall modules for interior architecture",
-      "description": "Supply of wall modules made from the standard 1-go masu (Japanese hinoki, outer size 85 × 85 × 56 mm) for hotels, restaurants, retail, offices, residences, majlis and cultural spaces. The wall is designed by the client or their architect / interior designer; an optional design proposal by FOMUS is available and charged separately. Modules are supplied individually or as pre-assembled panels, with glass coating, fire-retardant treatment, laser engraving and gold leaf available on request. FOMUS ships from Japan and provides installation instructions for the local contractor. Price, lead time and minimum quantity on request.",
+      "description": "Supply of wall modules made from the standard 1-go masu (Japanese hinoki, outer size 85 × 85 × 56 mm) for hotels, restaurants, retail, offices, residences, majlis and cultural spaces. The modules can be used for walls, partitions, columns and fixtures, as designed by the client. The wall is designed by the client or their architect / interior designer; an optional design proposal by FOMUS is available and charged separately. Modules are supplied individually or as pre-assembled panels, with glass coating, fire-retardant treatment, laser engraving and gold leaf available on request. FOMUS ships from Japan and provides installation instructions for the local contractor. Price, lead time and minimum quantity on request.",
       "provider": {
         "@id": "https://www.fomus.jp/#organization"
       },
@@ -533,6 +554,23 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
   </div>
 </section>
 
+<!-- ════ PHILOSOPHY ════ -->
+<section class="phil" id="philosophy">
+  <div class="W">
+    <div class="ph-grid">
+      <div class="rv">
+        <span class="lbl">Philosophy</span>
+        <p class="ph-lead">We do not impose a finished design. We provide the essential material.</p>
+        <p class="ph-body">FOMUS ARCHITECTURAL is a product line that reimagines Japan’s culture of materials as a way of thinking for architecture. What we offer is the essential material for making a space. How it is used is decided by the designer — and by the space itself.</p>
+      </div>
+      <div class="ph-mat rv d1">
+        <span class="lbl">Material</span>
+        <p>Hinoki grown in Japan, carefully selected for quality, fragrance and density. Its quiet presence, the warmth you feel at a touch, and a character that deepens with time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════ WHAT IS MASU ════ -->
 <section class="sec intro" id="masu">
   <div class="W">
@@ -554,8 +592,14 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
     <div class="sec-head rv">
       <span class="lbl">Where It Works</span>
       <h2 class="sec-title">A hinoki wall for Japanese and Japandi interiors</h2>
-      <p class="sec-sub">Masu Wall is a material for any space that wants the warmth of Japanese wood and a clear, modular rhythm.</p>
+      <p class="sec-sub">Masu Wall is a material for any space that wants the warmth of Japanese wood and a clear, modular rhythm. The modules can be used for walls, partitions, columns and fixtures — as you design them.</p>
     </div>
+    <div class="ap-row">
+      <div class="ap-item rv d1"><h3 class="ap-name">Wall</h3><p class="ap-desc">A surface that softens light and shadow and holds the eye.</p></div>
+      <div class="ap-item rv d2"><h3 class="ap-name">Partition</h3><p class="ap-desc">Screens the view while letting air pass through — dividing a space without closing it.</p></div>
+      <div class="ap-item rv d3"><h3 class="ap-name">Column &amp; Fixtures</h3><p class="ap-desc">Columns and fixtures become a quiet focal point of the space.</p></div>
+    </div>
+    <span class="lbl u-sub rv">Spaces</span>
     <div class="u-grid">
       <div class="u-card rv d1"><span class="u-num">01</span><h3 class="u-name">Hotel lobbies</h3><p class="u-desc">A signature hinoki wall at arrival or behind reception — the one guests remember and photograph.</p></div>
       <div class="u-card rv d2"><span class="u-num">02</span><h3 class="u-name">Japanese restaurants</h3><p class="u-desc">A Japanese restaurant interior detail: behind the counter, at the entrance or between tables.</p></div>
@@ -580,7 +624,7 @@ html[lang="ar"] .ft-tab{font-family:var(--sans);font-size:.8rem}
     <ol class="fl-list">
       <li class="rv d1"><span class="fl-num">STEP 01</span><h3 class="fl-name">Design your wall</h3><p class="fl-desc">You or your architect / interior designer design the pattern, layout and backing to suit the space. If you would like, FOMUS can prepare a design proposal <em>(optional, charged separately)</em>.</p></li>
       <li class="rv d2"><span class="fl-num">STEP 02</span><h3 class="fl-name">Choose quantity &amp; specs</h3><p class="fl-desc">Decide the number of masu and the specification: individual modules or panel type, glass coating, fire-retardant treatment, engraving.</p></li>
-      <li class="rv d3"><span class="fl-num">STEP 03</span><h3 class="fl-name">Made in Japan</h3><p class="fl-desc">The masu modules are produced in Japan in Japanese hinoki, individually or pre-assembled as panels.</p></li>
+      <li class="rv d3"><span class="fl-num">STEP 03</span><h3 class="fl-name">Made in Japan</h3><p class="fl-desc">The masu modules are made at a workshop in Japan in Japanese hinoki, individually or pre-assembled as panels.</p></li>
       <li class="rv d4"><span class="fl-num">STEP 04</span><h3 class="fl-name">Shipped by FOMUS</h3><p class="fl-desc">FOMUS arranges shipping from Japan to your country.</p></li>
       <li class="rv d4"><span class="fl-num">STEP 05</span><h3 class="fl-name">Installed by your contractor</h3><p class="fl-desc">Your local contractor installs the wall. FOMUS provides installation instructions, and can also work with your local contractor.</p></li>
     </ol>

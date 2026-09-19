@@ -203,6 +203,23 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 /* ════════════════════════════
    加工技術
 ════════════════════════════ */
+/* ════════════════════════════
+   素材 / Material
+════════════════════════════ */
+#material{background:var(--cream);padding:100px 0;border-top:1px solid rgba(0,0,0,.05)}
+.mat-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:72px;align-items:start}
+.mat-h{font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:400;color:var(--ink);line-height:1.45;margin-bottom:20px}
+.mat-lead{font-size:.98rem;color:#444;line-height:2}
+.mat-list{list-style:none;border-top:1px solid rgba(0,0,0,.1)}
+.mat-list li{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:0 18px;padding:24px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+.mat-num{font-family:var(--en);font-size:.8rem;letter-spacing:.2em;color:var(--gold);padding-top:4px}
+.mat-name{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--ink);margin-bottom:6px;line-height:1.6}
+.mat-desc{font-size:.92rem;color:#555;line-height:1.9}
+@media(max-width:860px){
+  #material{padding:64px 0}
+  .mat-grid{grid-template-columns:1fr;gap:28px}
+}
+
 #tech{background:var(--warm);padding:100px 0}
 .tech-head{text-align:center;margin-bottom:56px}
 .tech-head h2{font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:400;color:var(--ink);margin-bottom:12px}
@@ -426,6 +443,26 @@ textarea.fc{resize:vertical;min-height:110px}
 </section>
 
 
+<!-- ══════════════ 素材 ══════════════ -->
+<section id="material">
+  <div class="W">
+    <div class="mat-grid">
+      <div class="rv">
+        <span class="sec-label">Material</span>
+        <div class="sec-bar"></div>
+        <h2 class="mat-h">素材と向き合うものづくり</h2>
+        <p class="mat-lead">FOMUSの枡は、建築や建具に使われた国産檜の端材から生まれます。新たに木を伐るのではなく、役目を終えた素材に、もう一度価値を与える。それが私たちのものづくりです。</p>
+      </div>
+      <ol class="mat-list rv d1">
+        <li><span class="mat-num">01</span><div><h3 class="mat-name">国産檜の端材から</h3><p class="mat-desc">建築や建具に使われた国産檜の端材を、枡に仕立てています。</p></div></li>
+        <li><span class="mat-num">02</span><div><h3 class="mat-name">木曽檜をはじめとする国産材</h3><p class="mat-desc">自然の香り、やわらかな質感、穏やかな存在感を備えた国産材を使っています。</p></div></li>
+        <li><span class="mat-num">03</span><div><h3 class="mat-name">鉋屑も梱包材に</h3><p class="mat-desc">製作の過程で出る鉋屑は、梱包材として再利用。箱を開けると、ほのかな木の香りが広がります。</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
 <!-- ══════════════ 加工技術 ══════════════ -->
 <section id="tech">
   <div class="W">
@@ -491,6 +528,7 @@ textarea.fc{resize:vertical;min-height:110px}
       <p style="font-size:.92rem;color:#555;line-height:1.9;">
         加工は組み合わせも可能です。<strong style="color:var(--ink);">コーティング × 金箔</strong>、<strong style="color:var(--ink);">コーティング × レーザー</strong>、<strong style="color:var(--ink);">焼印 × 金箔</strong>など、用途・シーン・数量に合わせた最適な仕様をご提案します。
       </p>
+      <p style="font-size:.92rem;color:#555;line-height:1.9;margin-top:10px;">また、枡の<strong style="color:var(--ink);">専用蓋</strong>もオプションでご用意しています。</p>
     </div>
   </div>
 </section>
