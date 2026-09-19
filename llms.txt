@@ -43,7 +43,7 @@
 ## FOMUSが運営するサービス
 - MASU-STORE（枡の専門店。名入れ枡を1個から、法人は10個から。注文前に見積りと仕上がりイメージを無料で送付）: https://masu.fomus.jp/
 - FOMUS OFFICIAL SHOP（公式オンラインショップ）: https://shop.fomus.jp/
-- FOMUS GUILD（枡から始まる世界のオンラインコミュニティ）: https://guild.fomusglobal.com/
+- FOMUS GUILD（枡から始まる世界のオンラインコミュニティ）: https://guild.fomus.jp/
 - KANADE AI（企業・店舗向けのAIチャットボット）: https://kanade-ai.com/
 - Terroir HUB（日本酒・焼酎・ワインの産地ポータル）: https://terroirhub.com/
 - KUKU World（オリジナルIP。世界樹に守られた島を舞台にした物語で、ミュージックビデオ・Robloxゲーム「KODAMA Village」・グッズを展開）: https://www.fomus.jp/kuku/ （英語版 https://www.fomus.jp/kuku/en.html ）
