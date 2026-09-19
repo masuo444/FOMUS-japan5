@@ -213,6 +213,9 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
 .mp-loc{font-family:var(--sans);font-size:.8rem;color:rgba(255,255,255,.7);line-height:1.9;max-width:720px}
 .mp-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--en);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gilt);border:1px solid rgba(226,192,104,.4);padding:12px 22px;border-radius:2px;transition:all .25s;white-space:nowrap}
 .mp-link::after{content:'→'}
+.mp-next .mp-slot{aspect-ratio:440/605;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px dashed rgba(226,192,104,.6);background:rgba(226,192,104,.05);color:var(--gilt);font-family:var(--en);font-size:.72rem;letter-spacing:.18em;text-align:center;line-height:1.7;transition:background .3s}
+.mp-next:hover .mp-slot{background:rgba(226,192,104,.12)}
+.mp-next .mp-slot strong{font-family:var(--sans);font-weight:400;letter-spacing:.08em;font-size:.82rem}
 .mp-link:hover{background:var(--gold);border-color:var(--gold);color:#fff}
 
 /* ════════════════════════
@@ -565,10 +568,10 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
           <h3 class="mp-title">MASU PHOTO<span class="mp-title-ja">Photographing the world, masu in hand</span></h3>
         </div>
         <div>
-          <p class="mp-lead">A photo book series shot around the world, masu in hand. Photography by MaSU. 20 countries, 12 photo books (2022–). Every book is free to read online.</p>
+          <p class="mp-lead">A photo book series shot around the world, masu in hand. Photography by MaSU. 20 countries, 13 photo books (2022–). Every book is free to read online, and we take commissions for a photo book of your country or city.</p>
           <div class="mp-stats">
             <div><div class="mp-stat-num">20</div><div class="mp-stat-lbl">Countries</div></div>
-            <div><div class="mp-stat-num">12</div><div class="mp-stat-lbl">Photo Books</div></div>
+            <div><div class="mp-stat-num">13</div><div class="mp-stat-lbl">Photo Books</div></div>
             <div><div class="mp-stat-num">2022–</div><div class="mp-stat-lbl">Ongoing</div></div>
           </div>
         </div>
@@ -622,10 +625,18 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
           <div class="mp-cover"><img src="images/masuphoto/world.webp" alt="MASU PHOTO — World 2024 cover" loading="lazy" width="440" height="605"></div>
           <div class="mp-cap"><div class="mp-country">World</div><div class="mp-year">2024</div></div>
         </a>
+        <a href="https://masuphoto.fomusglobal.com/books/bahrain/" target="_blank" rel="noopener" class="mp-book rv d1">
+          <div class="mp-cover"><img src="images/masuphoto/bahrain.webp" alt="MASU PHOTO — Bahrain 2026 cover" loading="lazy" width="440" height="605"></div>
+          <div class="mp-cap"><div class="mp-country">Bahrain</div><div class="mp-year">2026</div></div>
+        </a>
+        <a href="https://masuphoto.fomusglobal.com/commission/" target="_blank" rel="noopener" class="mp-book mp-next rv d1">
+          <div class="mp-slot">BOOK 14<strong>Your country<br>or city</strong></div>
+          <div class="mp-cap"><div class="mp-country">Next</div><div class="mp-year">Photo book projects</div></div>
+        </a>
       </div>
       <div class="mp-foot rv">
-        <p class="mp-loc">Shot in Japan, Taiwan, Malaysia, the Philippines, the USA, Spain, Estonia, Ireland, Lithuania, Latvia, Qatar, Malta, Greece, Cyprus, Belgium, Turkey and more.</p>
-        <a href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener" class="mp-link">Read the books</a>
+        <p class="mp-loc">Shot in Japan, Taiwan, Malaysia, the Philippines, the USA, Spain, Estonia, Ireland, Lithuania, Latvia, Qatar, Bahrain, Malta, Greece, Cyprus, Belgium, Turkey and more.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><a href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener" class="mp-link">Read the books</a><a href="https://masuphoto.fomusglobal.com/commission/" target="_blank" rel="noopener" class="mp-link">Photo book projects</a></div>
       </div>
     </div>
   </div>
@@ -717,7 +728,7 @@ button{cursor:pointer;font-family:inherit;background:none;border:none}
       <a href="https://masuphoto.fomusglobal.com/" target="_blank" rel="noopener" class="sv-card rv d2">
         <div class="sv-cat">Craft</div>
         <div class="sv-name">MASU PHOTO</div>
-        <p class="sv-desc">The Masu Photo art site. 12 photo books from 20 countries, free to read.</p>
+        <p class="sv-desc">The Masu Photo art site. 13 photo books from 20 countries, free to read — and photo book projects for countries and cities.</p>
         <span class="sv-url">masuphoto.fomusglobal.com</span>
       </a>
       <a href="https://kachiu.jp/" target="_blank" rel="noopener" class="sv-card rv d3">
