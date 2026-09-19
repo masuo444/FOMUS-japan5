@@ -150,4 +150,35 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://www.fomus.jp/architectural.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/architectural.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.fomus.jp/architectural-ar.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/architectural-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/architectural.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/architectural-ar.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/architectural.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.fomus.jp/architectural-ar.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/architectural-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/architectural.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/architectural-ja.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/architectural.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.fomus.jp/architectural-ar.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/architectural-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fomus.jp/architectural.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
