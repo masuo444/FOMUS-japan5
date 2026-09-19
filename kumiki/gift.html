@@ -856,7 +856,11 @@
             シーンやご予算に合わせてご提案いたします。
           </p>
         </div>
-        <form id="contactForm" action="https://formspree.io/f/xwpkjpqr" method="POST">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="c72fa767-1677-4c8c-b48c-407ec1f79896">
+          <input type="hidden" name="subject" value="KUMIKI お問い合わせ（JA）">
+          <input type="hidden" name="from_name" value="KUMIKI">
+          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
           <input type="hidden" name="page" value="gift">
           <input type="hidden" name="lang" value="ja">
           <div class="form-group reveal">
@@ -890,6 +894,7 @@
               <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="14 7 19 12 14 17"/></svg>
             </button>
           </div>
+          <p class="form-status" role="alert" style="display:none;margin-top:20px;font-size:.9rem;line-height:1.7;color:#c0392b;text-align:center"></p>
         </form>
       </div>
     </div>
@@ -1025,33 +1030,7 @@
     })();
 
     /* Form */
-    (function() {
-      var form = document.getElementById('contactForm');
-      if (!form) return;
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.textContent = '送信中...';
-        fetch(form.action, {
-          method: 'POST', body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        }).then(function(response) {
-          if (response.ok) {
-            var inner = form.closest('.contact-inner');
-            form.remove();
-            var successDiv = document.createElement('div');
-            successDiv.className = 'form-success';
-            successDiv.innerHTML = '<p>ありがとうございます。</p><span>ギフトに関するご相談を承りました。担当者より改めてご連絡いたします。</span>';
-            inner.appendChild(successDiv);
-          } else { throw new Error('送信に失敗しました'); }
-        }).catch(function() {
-          submitBtn.disabled = false;
-          submitBtn.textContent = '送信する';
-          alert('送信に失敗しました。お手数ですが、再度お試しください。');
-        });
-      });
-    })();
+    (function(){var form=document.getElementById('contactForm');if(!form)return;var status=form.querySelector('.form-status');var btn=form.querySelector('button[type="submit"]');form.addEventListener('submit',function(e){e.preventDefault();var orig=btn?btn.innerHTML:'';if(btn){btn.disabled=true;btn.textContent='送信中...';}if(status){status.style.display='none';}fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){return r.json().then(function(data){if(r.ok&&data.success){window.location.href='/kumiki/thanks.html';}else{throw new Error(data.message||'failed');}});}).catch(function(){if(btn){btn.disabled=false;btn.innerHTML=orig;}if(status){status.textContent='送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、contact@fomus.jp まで直接ご連絡ください。';status.style.display='block';}});});})();
   </script>
 
 </body>
