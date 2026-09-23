@@ -390,6 +390,28 @@ textarea.fc{resize:vertical;min-height:110px}
 .uc-case-links a{font-size:.86rem;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:4px;transition:color .2s}
 .uc-case-links a:hover{color:var(--gold)}
 @media(max-width:760px){.uc-case{grid-template-columns:1fr}.uc-case-body{padding:22px 18px 26px}}
+
+/* ── Header dropdown (PC) ── */
+.nd{position:relative;display:inline-flex;align-items:center}
+.nd>a::after{content:'▾';font-size:.7em;margin-left:6px;opacity:.7}
+@media(min-width:861px){.nd-menu{max-height:none}}
+.nd-menu{
+  position:absolute;top:100%;left:-16px;transform:translateY(6px);
+  min-width:268px;background:#fff;border:1px solid rgba(10,18,34,.08);
+  box-shadow:0 20px 50px rgba(10,18,34,.14);border-radius:3px;
+  padding:10px 0;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease;z-index:1000;
+}
+.nd:hover .nd-menu,.nd:focus-within .nd-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nd-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.nd-menu a{
+  display:block;padding:11px 26px;font-family:var(--sans,'Noto Sans JP',sans-serif);
+  font-size:.96rem;font-weight:400;line-height:1.65;letter-spacing:.02em;text-transform:none;color:#3a3a3a!important;white-space:nowrap;transition:background .18s,color .18s;
+}
+.nd-menu a:hover{background:var(--cream,#FAF8F3);color:var(--gold,#B8873A)!important}
+.nd-menu .nd-sep{height:1px;background:rgba(10,18,34,.08);margin:8px 0}
+.nd-menu .nd-cap{display:block;padding:10px 24px 6px;font-family:var(--en,serif);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold,#B8873A)}
+@media(max-width:860px){.nd-menu{display:none}}
 </style>
 </head>
 <body>
@@ -402,6 +424,17 @@ textarea.fc{resize:vertical;min-height:110px}
     </a>
     <nav class="hd-nav">
       <a href="#about">What is Masu</a>
+      <span class="nd"><a href="services-en.html">Services</a>
+        <div class="nd-menu">
+          <span class="nd-cap">What we do</span>
+          <a href="services-en.html">All services</a>
+          <a href="https://masu.fomus.jp/en" target="_blank" rel="noopener">Masu gifts &amp; novelties ↗</a>
+          <a href="architectural.html">Masu wall &amp; interiors</a>
+          <a href="global-support-en.html">Overseas promotion</a>
+          <a href="photo.html">Photography</a>
+          <a href="business-en.html">Web &amp; AI</a>
+        </div>
+      </span>
       <a href="#role">Our Role</a>
       <a href="#works">Born from Masu</a>
       <a href="#tech">Finishing</a>
@@ -421,6 +454,7 @@ textarea.fc{resize:vertical;min-height:110px}
 <nav id="mnav">
   <button class="mn-close" id="mnClose">CLOSE ✕</button>
   <a href="#about"   onclick="closeNav()">What is Masu</a>
+  <a href="services-en.html" onclick="closeNav()">Services</a>
   <a href="#role"    onclick="closeNav()">Our Role</a>
   <a href="#works"   onclick="closeNav()">Born from Masu</a>
   <a href="#tech"    onclick="closeNav()">Finishing</a>

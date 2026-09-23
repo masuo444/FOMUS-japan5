@@ -406,6 +406,54 @@ div.proj-card:hover .proj-img img{transform:none}
   .ft-inner{padding:0 20px}
   .ft-top{flex-direction:column;gap:18px}
 }
+
+/* ── Header dropdown (PC) ── */
+.nd{position:relative;display:inline-flex;align-items:center}
+.nd>a::after{content:'▾';font-size:.7em;margin-left:6px;opacity:.7}
+@media(min-width:861px){.nd-menu{max-height:none}}
+.nd-menu{
+  position:absolute;top:100%;left:-16px;transform:translateY(6px);
+  min-width:268px;background:#fff;border:1px solid rgba(10,18,34,.08);
+  box-shadow:0 20px 50px rgba(10,18,34,.14);border-radius:3px;
+  padding:10px 0;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease;z-index:1000;
+}
+.nd:hover .nd-menu,.nd:focus-within .nd-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nd-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.nd-menu a{
+  display:block;padding:11px 26px;font-family:var(--sans,'Noto Sans JP',sans-serif);
+  font-size:.96rem;font-weight:400;line-height:1.65;letter-spacing:.02em;text-transform:none;color:#3a3a3a!important;white-space:nowrap;transition:background .18s,color .18s;
+}
+.nd-menu a:hover{background:var(--cream,#FAF8F3);color:var(--gold,#B8873A)!important}
+.nd-menu .nd-sep{height:1px;background:rgba(10,18,34,.08);margin:8px 0}
+.nd-menu .nd-cap{display:block;padding:10px 24px 6px;font-family:var(--en,serif);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold,#B8873A)}
+@media(max-width:860px){.nd-menu{display:none}}
+
+/* ── Header right cluster ── */
+.hr{display:flex;align-items:center;gap:14px}
+.hlang{font-family:var(--en,serif);font-size:.76rem;letter-spacing:.18em;padding:5px 11px;border-radius:2px;border:1px solid rgba(255,255,255,.34);color:rgba(255,255,255,.92)!important;transition:all .2s}
+#H.s .hlang{border-color:rgba(10,18,34,.22);color:#555!important}
+.hlang:hover{background:var(--gold,#B8873A)!important;border-color:var(--gold,#B8873A)!important;color:#fff!important}
+.hshop{font-family:var(--en,serif);font-size:.8rem;letter-spacing:.18em;background:var(--gold,#B8873A);color:#fff!important;padding:8px 20px;border-radius:2px;transition:background .2s}
+.hshop:hover{background:#9A6E2A}
+@media(max-width:860px){.hr{display:none}}
+
+/* ── Header layout fix ── */
+#H{position:fixed}
+#H:not(.s){background:linear-gradient(to bottom,rgba(8,14,26,.82),rgba(8,14,26,.34) 70%,rgba(8,14,26,0))}
+#H:not(.s) .hn > a,#H:not(.s) .hn > li > a,#H:not(.s) .nd > a,#H:not(.s) .hlang,#H:not(.s) .hcta{text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.nd-menu a,.nd-menu .nd-cap{text-shadow:none!important}
+#H > nav{margin-right:auto;margin-left:46px}
+.hi{position:relative}
+.hi > nav{margin-right:auto;margin-left:46px}
+@media(max-width:1100px){#H > nav,.hi > nav{margin-left:24px}}
+
+/* ── Header: 6 categories ── */
+.hn{gap:30px}
+.hn a{font-size:.88rem;letter-spacing:.14em}
+#H > nav,.hi > nav{margin-left:34px}
+.hr{gap:10px}
+@media(max-width:1400px){.hn{gap:20px}.hn a{font-size:.8rem;letter-spacing:.08em}#H > nav,.hi > nav{margin-left:22px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://www.fomus.jp/community.html","url":"https://www.fomus.jp/community.html","name":"FOMUS COMMUNITY | 日本文化を、世界中の仲間と。","description":"FOMUSのコミュニティ。イベント、国際交流、Masu Photo、FOMUS Guildを通じ、世界中の人々と日本文化を共創しています。","inLanguage":"ja","isPartOf":{"@type":"WebSite","url":"https://www.fomus.jp/","name":"FOMUS"},"publisher":{"@type":"Organization","name":"合同会社FOMUS","url":"https://www.fomus.jp/"}}
@@ -424,20 +472,72 @@ div.proj-card:hover .proj-img img{transform:none}
 <body>
 
 <!-- ════ HEADER ════ -->
+<!-- ════ HEADER ════ -->
 <header id="H">
   <a href="index.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
   <nav>
     <ul class="hn">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="craft.html">Craft</a></li>
-      <li><a href="business.html">Business</a></li>
-      <li><a href="entertainment.html">Entertainment</a></li>
-      <li><a href="community.html" class="act">Community</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="community-en.html">EN</a></li>
+      <li class="nd"><a href="services.html">SERVICES</a>
+        <div class="nd-menu">
+          <a href="services.html">サービス一覧</a>
+          <a href="https://masu.fomus.jp/business" target="_blank" rel="noopener">枡の記念品・ノベルティ ↗</a>
+          <a href="photo.html">撮影（イベント・商品）</a>
+          <a href="business.html">Web制作・AI導入</a>
+        </div>
+      </li>
+      <li class="nd"><a href="masu.html">MASU</a>
+        <div class="nd-menu">
+          <a href="masu.html">枡のブランド FOMUS</a>
+          <a href="masu.html#about">枡とは</a>
+          <a href="masu.html#tech">加工技術（名入れ・金箔）</a>
+          <a href="craft.html">CRAFT — 工芸事業</a>
+          <div class="nd-sep"></div>
+          <a href="https://masu.fomus.jp/" target="_blank" rel="noopener">枡を買う｜MASU-STORE ↗</a>
+        </div>
+      </li>
+      <li class="nd"><a href="architectural-ja.html">ARCHITECTURAL</a>
+        <div class="nd-menu">
+          <a href="architectural-ja.html">枡の壁とは</a>
+          <a href="architectural-ja.html#proj">施工例（佐木島ギャラリー）</a>
+          <a href="architectural-ja.html#specs">仕様・オプション</a>
+          <a href="index.html?category=architectural#contact">内装のご相談</a>
+        </div>
+      </li>
+      <li class="nd"><a href="global-support.html">GLOBAL</a>
+        <div class="nd-menu">
+          <a href="global-support.html">海外展開サポート</a>
+          <a href="about.html#global">海外での活動</a>
+          <a href="https://masuphoto.fomus.jp/" target="_blank" rel="noopener">MASU PHOTO 写真集 ↗</a>
+          <a href="community.html">COMMUNITY — 国際交流</a>
+        </div>
+      </li>
+      <li class="nd"><a href="entertainment.html">PROJECTS</a>
+        <div class="nd-menu">
+          <span class="nd-cap">ブランド</span>
+          <a href="kumiki/">KUMIKI — 枡ジュエリー</a>
+          <a href="masukame/">MASUKAME — 縁起物</a>
+          <a href="kuku/">KUKU World — IP・漫画</a>
+          <div class="nd-sep"></div>
+          <span class="nd-cap">事業</span>
+          <a href="entertainment.html">ENTERTAINMENT</a>
+          <a href="business.html">BUSINESS — Web・AI</a>
+        </div>
+      </li>
+      <li class="nd"><a href="about.html">ABOUT</a>
+        <div class="nd-menu">
+          <a href="about.html">会社概要</a>
+          <a href="about.html#founder">代表プロフィール</a>
+          <a href="index.html#projects">事業の一覧</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+      </li>
     </ul>
   </nav>
-  <a href="index.html#contact" class="hcta">Join Community</a>
+  <div class="hr">
+    <a href="community-en.html" class="hlang">EN</a>
+    <a href="https://shop.fomus.jp/" target="_blank" rel="noopener" class="hshop">SHOP</a>
+    <a href="index.html#contact" class="hcta">相談する</a>
+  </div>
   <a class="cta-m" href="https://shop.fomus.jp/" target="_blank" rel="noopener">SHOP</a>
   <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
 </header>
@@ -445,15 +545,18 @@ div.proj-card:hover .proj-img img{transform:none}
 <!-- Mobile nav -->
 <nav id="MN">
   <button class="mnx" id="mnx">CLOSE ✕</button>
-  <a href="index.html"         onclick="cNav()">Home</a>
-  <a href="craft.html"         onclick="cNav()">Craft</a>
-  <a href="business.html"      onclick="cNav()">Business</a>
-  <a href="entertainment.html" onclick="cNav()">Entertainment</a>
-  <a href="community.html"     onclick="cNav()">Community</a>
-  <a href="about.html"     onclick="cNav()">About</a>
+  <a href="services.html"  onclick="cNav()">SERVICES</a>
+  <a href="masu.html"      onclick="cNav()">MASU</a>
+  <a href="architectural-ja.html" onclick="cNav()">ARCHITECTURAL</a>
+  <a href="global-support.html"   onclick="cNav()">GLOBAL</a>
+  <a href="photo.html"     onclick="cNav()">PHOTO</a>
+  <a href="business.html"  onclick="cNav()">WEB &amp; AI</a>
+  <a href="entertainment.html" onclick="cNav()">PROJECTS</a>
+  <a href="about.html"     onclick="cNav()">ABOUT</a>
+  <a href="index.html#contact" onclick="cNav()">CONTACT</a>
   <a href="community-en.html" onclick="cNav()">EN</a>
+  <a href="https://shop.fomus.jp/" target="_blank" rel="noopener" onclick="cNav()">SHOP</a>
 </nav>
-
 <!-- ════ §01 HERO ════ -->
 <section class="hero">
   <div class="hero-left">
@@ -699,9 +802,15 @@ div.proj-card:hover .proj-img img{transform:none}
     <div class="ft-bot">
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
       <div class="ft-sns">
-        <a href="about.html">会社概要</a>
+        <a href="services.html">できること</a>
+        <a href="masu.html">枡のブランド</a>
+        <a href="architectural-ja.html">枡の壁・内装</a>
         <a href="global-support.html">海外展開サポート</a>
-        <a href="architectural-ja.html">Masu Wall</a>
+        <a href="photo.html">撮影</a>
+        <a href="business.html">Web・AI</a>
+        <a href="about.html">会社概要</a>
+        <a href="https://masu.fomus.jp/" rel="noopener">枡の専門店 MASU-STORE</a>
+        <a href="https://www.instagram.com/fomus_official/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
       </div>
     </div>
   </div>

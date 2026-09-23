@@ -402,6 +402,28 @@ textarea.fc{resize:vertical;min-height:110px}
 .uc-case-links a{font-size:.86rem;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:4px;transition:color .2s}
 .uc-case-links a:hover{color:var(--gold)}
 @media(max-width:760px){.uc-case{grid-template-columns:1fr}.uc-case-body{padding:22px 18px 26px}}
+
+/* ── Header dropdown (PC) ── */
+.nd{position:relative;display:inline-flex;align-items:center}
+.nd>a::after{content:'▾';font-size:.7em;margin-left:6px;opacity:.7}
+@media(min-width:861px){.nd-menu{max-height:none}}
+.nd-menu{
+  position:absolute;top:100%;left:-16px;transform:translateY(6px);
+  min-width:268px;background:#fff;border:1px solid rgba(10,18,34,.08);
+  box-shadow:0 20px 50px rgba(10,18,34,.14);border-radius:3px;
+  padding:10px 0;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease;z-index:1000;
+}
+.nd:hover .nd-menu,.nd:focus-within .nd-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nd-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.nd-menu a{
+  display:block;padding:11px 26px;font-family:var(--sans,'Noto Sans JP',sans-serif);
+  font-size:.96rem;font-weight:400;line-height:1.65;letter-spacing:.02em;text-transform:none;color:#3a3a3a!important;white-space:nowrap;transition:background .18s,color .18s;
+}
+.nd-menu a:hover{background:var(--cream,#FAF8F3);color:var(--gold,#B8873A)!important}
+.nd-menu .nd-sep{height:1px;background:rgba(10,18,34,.08);margin:8px 0}
+.nd-menu .nd-cap{display:block;padding:10px 24px 6px;font-family:var(--en,serif);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold,#B8873A)}
+@media(max-width:860px){.nd-menu{display:none}}
 </style>
 </head>
 <body>
@@ -414,11 +436,20 @@ textarea.fc{resize:vertical;min-height:110px}
     </a>
     <nav class="hd-nav">
       <a href="#about">枡とは</a>
-      <a href="#role">FOMUSの役割</a>
       <a href="#works">枡から生まれたもの</a>
       <a href="#tech">加工技術</a>
+      <span class="nd"><a href="services.html">できること</a>
+        <div class="nd-menu">
+          <span class="nd-cap">できること</span>
+          <a href="services.html">サービス一覧</a>
+          <a href="https://masu.fomus.jp/business" target="_blank" rel="noopener">枡の記念品・ノベルティ ↗</a>
+          <a href="architectural-ja.html">枡の壁・店舗内装</a>
+          <a href="global-support.html">海外展開サポート</a>
+          <a href="photo.html">撮影（イベント・商品）</a>
+          <a href="business.html">Web制作・AI導入</a>
+        </div>
+      </span>
       <a href="about.html">会社概要</a>
-      <a href="#contact">相談する</a>
       <a href="masu-en.html" class="hd-lang">EN</a>
     </nav>
     <a href="#contact" class="hd-cta">お見積り・相談</a>
@@ -433,10 +464,9 @@ textarea.fc{resize:vertical;min-height:110px}
 <nav id="mnav">
   <button class="mn-close" id="mnClose">CLOSE ✕</button>
   <a href="#about"   onclick="closeNav()">枡とは</a>
-  <a href="#role"    onclick="closeNav()">FOMUSの役割</a>
   <a href="#works"   onclick="closeNav()">枡から生まれたもの</a>
   <a href="#tech"    onclick="closeNav()">加工技術</a>
-  <a href="#usecase" onclick="closeNav()">用途</a>
+  <a href="services.html" onclick="closeNav()">できること</a>
   <a href="about.html" onclick="closeNav()">会社概要</a>
   <a href="#contact" onclick="closeNav()">相談する</a>
   <a href="masu-en.html" onclick="closeNav()">EN</a>
@@ -902,12 +932,25 @@ textarea.fc{resize:vertical;min-height:110px}
     <div class="ft-bot">
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
       <div class="ft-sns">
-        <a href="about.html">会社概要</a>
+        <span class="nd"><a href="services.html">できること</a>
+        <div class="nd-menu">
+          <span class="nd-cap">できること</span>
+          <a href="services.html">サービス一覧</a>
+          <a href="https://masu.fomus.jp/business" target="_blank" rel="noopener">枡の記念品・ノベルティ ↗</a>
+          <a href="architectural-ja.html">枡の壁・店舗内装</a>
+          <a href="global-support.html">海外展開サポート</a>
+          <a href="photo.html">撮影（イベント・商品）</a>
+          <a href="business.html">Web制作・AI導入</a>
+        </div>
+      </span>
+        <a href="masu.html">枡のブランド</a>
+        <a href="architectural-ja.html">枡の壁・内装</a>
         <a href="global-support.html">海外展開サポート</a>
-        <a href="architectural-ja.html">Masu Wall</a>
+        <a href="photo.html">撮影</a>
+        <a href="business.html">Web・AI</a>
+        <a href="about.html">会社概要</a>
         <a href="https://masu.fomus.jp/" rel="noopener">枡の専門店 MASU-STORE</a>
-      <a href="https://kachiu.jp/" rel="noopener">KACHIU（山梨・笛吹）</a>
-        <a href="https://www.instagram.com/fomus_official/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.instagram.com/fomus_official/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
       </div>
     </div>
   </div>

@@ -17,8 +17,8 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
-  <title>FOMUS BUSINESS | AIとクリエイティブで、事業を加速する。</title>
-  <meta name="description" content="FOMUSのBusiness領域。多言語サイト制作、AI導入、業務効率化、地域DXまで。企業や地域事業者の成長を支える実践型パートナーです。">
+  <title>多言語サイト制作・AIチャットボット導入・業務効率化｜FOMUS</title>
+  <meta name="description" content="多言語サイトの制作、店舗・企業向けAIチャットボットの導入、手作業の自動化による業務効率化を承ります。自社で20以上のサイトとサービスを作って運用している会社が、動くものをつくります。費用はご相談のうえお見積り。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -667,6 +667,71 @@ a{color:inherit;text-decoration:none}
   .ft-top{flex-direction:column;gap:18px}
   .ft-bot{flex-direction:column;align-items:flex-start;gap:8px}
 }
+
+/* FAQ (共通) */
+/* ════════════════════════
+   §06  FAQ
+════════════════════════ */
+.faq{background:var(--warm);padding:112px 0 104px}
+.faq-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:64px;align-items:start}
+.faq-list{border-top:1px solid rgba(10,18,34,.14)}
+.faq-item{border-bottom:1px solid rgba(10,18,34,.14)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:16px;padding:22px 36px 22px 0;position:relative;font-family:var(--serif);font-size:1.02rem;font-weight:500;color:var(--ink);line-height:1.7;letter-spacing:.03em}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';position:absolute;right:4px;top:18px;font-family:var(--en);font-size:1.5rem;color:var(--gold);transition:transform .25s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-q{font-family:var(--en);font-size:1.1rem;color:var(--gold);flex-shrink:0}
+.faq-a{padding:0 36px 24px 30px;font-size:.93rem;color:#3f3f3f;line-height:2}
+
+
+
+/* ── Header dropdown (PC) ── */
+.nd{position:relative;display:inline-flex;align-items:center}
+.nd>a::after{content:'▾';font-size:.7em;margin-left:6px;opacity:.7}
+@media(min-width:861px){.nd-menu{max-height:none}}
+.nd-menu{
+  position:absolute;top:100%;left:-16px;transform:translateY(6px);
+  min-width:268px;background:#fff;border:1px solid rgba(10,18,34,.08);
+  box-shadow:0 20px 50px rgba(10,18,34,.14);border-radius:3px;
+  padding:10px 0;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease;z-index:1000;
+}
+.nd:hover .nd-menu,.nd:focus-within .nd-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nd-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.nd-menu a{
+  display:block;padding:11px 26px;font-family:var(--sans,'Noto Sans JP',sans-serif);
+  font-size:.96rem;font-weight:400;line-height:1.65;letter-spacing:.02em;text-transform:none;color:#3a3a3a!important;white-space:nowrap;transition:background .18s,color .18s;
+}
+.nd-menu a:hover{background:var(--cream,#FAF8F3);color:var(--gold,#B8873A)!important}
+.nd-menu .nd-sep{height:1px;background:rgba(10,18,34,.08);margin:8px 0}
+.nd-menu .nd-cap{display:block;padding:10px 24px 6px;font-family:var(--en,serif);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold,#B8873A)}
+@media(max-width:860px){.nd-menu{display:none}}
+
+/* ── Header right cluster ── */
+.hr{display:flex;align-items:center;gap:14px}
+.hlang{font-family:var(--en,serif);font-size:.76rem;letter-spacing:.18em;padding:5px 11px;border-radius:2px;border:1px solid rgba(255,255,255,.34);color:rgba(255,255,255,.92)!important;transition:all .2s}
+#H.s .hlang{border-color:rgba(10,18,34,.22);color:#555!important}
+.hlang:hover{background:var(--gold,#B8873A)!important;border-color:var(--gold,#B8873A)!important;color:#fff!important}
+.hshop{font-family:var(--en,serif);font-size:.8rem;letter-spacing:.18em;background:var(--gold,#B8873A);color:#fff!important;padding:8px 20px;border-radius:2px;transition:background .2s}
+.hshop:hover{background:#9A6E2A}
+@media(max-width:860px){.hr{display:none}}
+
+/* ── Header layout fix ── */
+#H{position:fixed}
+#H:not(.s){background:linear-gradient(to bottom,rgba(8,14,26,.82),rgba(8,14,26,.34) 70%,rgba(8,14,26,0))}
+#H:not(.s) .hn > a,#H:not(.s) .hn > li > a,#H:not(.s) .nd > a,#H:not(.s) .hlang,#H:not(.s) .hcta{text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.nd-menu a,.nd-menu .nd-cap{text-shadow:none!important}
+#H > nav{margin-right:auto;margin-left:46px}
+.hi{position:relative}
+.hi > nav{margin-right:auto;margin-left:46px}
+@media(max-width:1100px){#H > nav,.hi > nav{margin-left:24px}}
+
+/* ── Header: 6 categories ── */
+.hn{gap:30px}
+.hn a{font-size:.88rem;letter-spacing:.14em}
+#H > nav,.hi > nav{margin-left:34px}
+.hr{gap:10px}
+@media(max-width:1400px){.hn{gap:20px}.hn a{font-size:.8rem;letter-spacing:.08em}#H > nav,.hi > nav{margin-left:22px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","@id":"https://www.fomus.jp/business.html","url":"https://www.fomus.jp/business.html","name":"FOMUS BUSINESS | AIとクリエイティブで、事業を加速する。","description":"FOMUSのBusiness領域。多言語サイト制作、AI導入、業務効率化、地域DXまで。企業や地域事業者の成長を支える実践型パートナーです。","inLanguage":"ja","isPartOf":{"@type":"WebSite","url":"https://www.fomus.jp/","name":"FOMUS"},"publisher":{"@type":"Organization","name":"合同会社FOMUS","url":"https://www.fomus.jp/"}}
@@ -681,24 +746,86 @@ a{color:inherit;text-decoration:none}
   {"@type":"Question","name":"AI導入支援の具体的な内容は？","acceptedAnswer":{"@type":"Answer","text":"業務プロセスへのAI組み込み、チャットボット導入、コンテンツ自動生成、データ分析の効率化など、企業規模・業種に合わせた実践的なAI活用を提案・実装します。"}}
   ]}
   </script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"多言語サイト制作・AI導入・業務効率化","serviceType":"Web制作・AI導入・業務自動化","provider":{"@id":"https://www.fomus.jp/#organization"},"areaServed":"JP","url":"https://www.fomus.jp/business.html","description":"多言語Webサイトの制作、店舗・企業向けAIチャットボットの導入、手作業の自動化による業務効率化。費用は内容に応じてお見積りします。"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"小さな会社や店舗でも依頼できますか？","acceptedAnswer":{"@type":"Answer","text":"はい。1ページのサイトからお受けしています。"}},
+{"@type":"Question","name":"制作の費用はいくらですか？","acceptedAnswer":{"@type":"Answer","text":"内容によって変わるため、ご相談のうえお見積りします。見積りまでは費用はかかりません。予算の範囲でできることをご提案することも可能です。"}},
+{"@type":"Question","name":"制作期間はどのくらいですか？","acceptedAnswer":{"@type":"Answer","text":"1ページなら1〜2週間、会社サイトなら1〜2か月が目安です。"}}]}
+</script>
 </head>
 <body>
 
+<!-- ════ HEADER ════ -->
 <!-- ════ HEADER ════ -->
 <header id="H">
   <a href="index.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
   <nav>
     <ul class="hn">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="craft.html">Craft</a></li>
-      <li><a href="business.html" class="act">Business</a></li>
-      <li><a href="entertainment.html">Entertainment</a></li>
-      <li><a href="community.html">Community</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="business-en.html">EN</a></li>
+      <li class="nd"><a href="services.html">SERVICES</a>
+        <div class="nd-menu">
+          <a href="services.html">サービス一覧</a>
+          <a href="https://masu.fomus.jp/business" target="_blank" rel="noopener">枡の記念品・ノベルティ ↗</a>
+          <a href="photo.html">撮影（イベント・商品）</a>
+          <a href="business.html">Web制作・AI導入</a>
+        </div>
+      </li>
+      <li class="nd"><a href="masu.html">MASU</a>
+        <div class="nd-menu">
+          <a href="masu.html">枡のブランド FOMUS</a>
+          <a href="masu.html#about">枡とは</a>
+          <a href="masu.html#tech">加工技術（名入れ・金箔）</a>
+          <a href="craft.html">CRAFT — 工芸事業</a>
+          <div class="nd-sep"></div>
+          <a href="https://masu.fomus.jp/" target="_blank" rel="noopener">枡を買う｜MASU-STORE ↗</a>
+        </div>
+      </li>
+      <li class="nd"><a href="architectural-ja.html">ARCHITECTURAL</a>
+        <div class="nd-menu">
+          <a href="architectural-ja.html">枡の壁とは</a>
+          <a href="architectural-ja.html#proj">施工例（佐木島ギャラリー）</a>
+          <a href="architectural-ja.html#specs">仕様・オプション</a>
+          <a href="index.html?category=architectural#contact">内装のご相談</a>
+        </div>
+      </li>
+      <li class="nd"><a href="global-support.html">GLOBAL</a>
+        <div class="nd-menu">
+          <a href="global-support.html">海外展開サポート</a>
+          <a href="about.html#global">海外での活動</a>
+          <a href="https://masuphoto.fomus.jp/" target="_blank" rel="noopener">MASU PHOTO 写真集 ↗</a>
+          <a href="community.html">COMMUNITY — 国際交流</a>
+        </div>
+      </li>
+      <li class="nd"><a href="entertainment.html">PROJECTS</a>
+        <div class="nd-menu">
+          <span class="nd-cap">ブランド</span>
+          <a href="kumiki/">KUMIKI — 枡ジュエリー</a>
+          <a href="masukame/">MASUKAME — 縁起物</a>
+          <a href="kuku/">KUKU World — IP・漫画</a>
+          <div class="nd-sep"></div>
+          <span class="nd-cap">事業</span>
+          <a href="entertainment.html">ENTERTAINMENT</a>
+          <a href="business.html">BUSINESS — Web・AI</a>
+        </div>
+      </li>
+      <li class="nd"><a href="about.html">ABOUT</a>
+        <div class="nd-menu">
+          <a href="about.html">会社概要</a>
+          <a href="about.html#founder">代表プロフィール</a>
+          <a href="index.html#projects">事業の一覧</a>
+          <a href="index.html#contact">お問い合わせ</a>
+        </div>
+      </li>
     </ul>
   </nav>
-  <a href="index.html#contact" class="hcta">無料相談する</a>
+  <div class="hr">
+    <a href="business-en.html" class="hlang">EN</a>
+    <a href="https://shop.fomus.jp/" target="_blank" rel="noopener" class="hshop">SHOP</a>
+    <a href="index.html?category=business#contact" class="hcta">相談する</a>
+  </div>
   <a class="cta-m" href="https://shop.fomus.jp/" target="_blank" rel="noopener">SHOP</a>
   <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
 </header>
@@ -706,16 +833,18 @@ a{color:inherit;text-decoration:none}
 <!-- Mobile nav -->
 <nav id="MN">
   <button class="mnx" id="mnx">CLOSE ✕</button>
-  <a href="index.html"         onclick="cNav()">Home</a>
-  <a href="craft.html"         onclick="cNav()">Craft</a>
-  <a href="business.html"      onclick="cNav()">Business</a>
-  <a href="entertainment.html" onclick="cNav()">Entertainment</a>
-  <a href="community.html"     onclick="cNav()">Community</a>
-  <a href="about.html"     onclick="cNav()">About</a>
-  <a href="index.html#contact" onclick="cNav()">Contact</a>
+  <a href="services.html"  onclick="cNav()">SERVICES</a>
+  <a href="masu.html"      onclick="cNav()">MASU</a>
+  <a href="architectural-ja.html" onclick="cNav()">ARCHITECTURAL</a>
+  <a href="global-support.html"   onclick="cNav()">GLOBAL</a>
+  <a href="photo.html"     onclick="cNav()">PHOTO</a>
+  <a href="business.html"  onclick="cNav()">WEB &amp; AI</a>
+  <a href="entertainment.html" onclick="cNav()">PROJECTS</a>
+  <a href="about.html"     onclick="cNav()">ABOUT</a>
+  <a href="index.html?category=business#contact" onclick="cNav()">CONTACT</a>
+  <a href="business-en.html" onclick="cNav()">EN</a>
+  <a href="https://shop.fomus.jp/" target="_blank" rel="noopener" onclick="cNav()">SHOP</a>
 </nav>
-
-
 <!-- ════ §01 HERO ════ -->
 <section class="hero">
   <div class="hero-left">
@@ -966,6 +1095,68 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- ════ §05 TRUSTED FOR GROWTH ════ -->
+
+<!-- ════ できること詳細 ════ -->
+<section class="offer" id="detail" style="background:#fff">
+  <div class="W">
+    <div class="offer-head rv">
+      <span class="lbl">Details</span>
+      <div class="offer-title">What You Can Ask Us</div>
+      <div class="offer-sub">具体的に頼めること</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:rgba(10,18,34,.08);border:1px solid rgba(10,18,34,.08);margin-top:44px">
+
+      <div style="background:#fff;padding:36px 30px 34px">
+        <p style="font-family:var(--en);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">01 — Website</p>
+        <h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:14px;line-height:1.5">多言語サイトの制作</h3>
+        <p style="font-size:.92rem;color:#4a4a4a;line-height:2">会社サイト、商品サイト、ECサイト、採用ページ。日本語・英語はもちろん、フランス語やアラビア語まで、翻訳だけでなく現地の読み手に合わせた言い回しで作ります。既存サイトの作り直しにも対応します。</p>
+        <ul style="list-style:none;margin-top:16px;display:flex;flex-wrap:wrap;gap:7px">
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">英語サイト</li>
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">ECサイト</li>
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">リニューアル</li>
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">予約・決済</li>
+        </ul>
+      </div>
+
+      <div style="background:#fff;padding:36px 30px 34px">
+        <p style="font-family:var(--en);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">02 — AI</p>
+        <h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:14px;line-height:1.5">AIチャットボットの導入</h3>
+        <p style="font-size:.92rem;color:#4a4a4a;line-height:2">店舗・宿・企業のサイトに、質問に答えるAIを置きます。営業時間外の問い合わせ、外国語の問い合わせ、よくある質問への返答を任せられます。自社サービス「KANADE AI」で実際に動かしている仕組みです。</p>
+        <ul style="list-style:none;margin-top:16px;display:flex;flex-wrap:wrap;gap:7px">
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">24時間の問い合わせ対応</li>
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">多言語対応</li>
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">FAQの自動応答</li>
+        </ul>
+      </div>
+
+      <div style="background:#fff;padding:36px 30px 34px">
+        <p style="font-family:var(--en);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">03 — Automation</p>
+        <h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:14px;line-height:1.5">業務の自動化・効率化</h3>
+        <p style="font-size:.92rem;color:#4a4a4a;line-height:2">毎回手で打ち込んでいる集計、コピー＆ペーストの繰り返し、紙からの転記。人がやらなくていい作業を見つけて、自動で回る形にします。会計・在庫・予約・報告書づくりなど、実際に自社で作って使っている仕組みが元になっています。</p>
+        <ul style="list-style:none;margin-top:16px;display:flex;flex-wrap:wrap;gap:7px">
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">集計の自動化</li>
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">データの取り込み</li>
+          <li style="font-size:.8rem;color:#555;border:1px solid rgba(10,18,34,.14);border-radius:999px;padding:5px 12px">社内ツール開発</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="background:var(--warm);border-left:2px solid var(--gold);padding:22px 26px;font-size:.92rem;line-height:2;color:#444;margin-top:28px" class="rv">
+      <strong>費用について。</strong>内容によって変わるため、ご相談のうえお見積りします。見積りまでは費用はかかりません。「予算がこのくらいなので、その中でできることを知りたい」というご相談でも構いません。
+    </div>
+
+    <div class="faq-list rv" style="margin-top:44px;max-width:860px">
+      <details class="faq-item"><summary><span class="faq-q">Q</span>小さな会社・お店でも頼めますか？</summary><p class="faq-a">はい。1ページのサイトからお受けしています。</p></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span>作った後の更新はどうなりますか？</summary><p class="faq-a">ご自身で更新できる形にするか、こちらで更新を続けるか、どちらも選べます。ご相談の段階で決めます。</p></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span>今あるサイトを活かせますか？</summary><p class="faq-a">はい。全部作り直すのではなく、必要な部分だけ直すこともできます。まず今のサイトを見せてください。</p></details>
+      <details class="faq-item"><summary><span class="faq-q">Q</span>どのくらいの期間がかかりますか？</summary><p class="faq-a">1ページなら1〜2週間、会社サイトなら1〜2か月が目安です。急ぎの場合はご相談ください。</p></details>
+    </div>
+  </div>
+</section>
+
+
 <section class="trust">
   <div class="trust-inner">
     <div class="trust-text-wrap">
@@ -1043,9 +1234,15 @@ a{color:inherit;text-decoration:none}
     <div class="ft-bot">
       <span class="ft-copy">&copy; 2021–2026 FOMUS. All rights reserved.</span>
       <div class="ft-sns">
-        <a href="about.html">会社概要</a>
+        <a href="services.html">できること</a>
+        <a href="masu.html">枡のブランド</a>
+        <a href="architectural-ja.html">枡の壁・内装</a>
         <a href="global-support.html">海外展開サポート</a>
-        <a href="architectural-ja.html">Masu Wall</a>
+        <a href="photo.html">撮影</a>
+        <a href="business.html">Web・AI</a>
+        <a href="about.html">会社概要</a>
+        <a href="https://masu.fomus.jp/" rel="noopener">枡の専門店 MASU-STORE</a>
+        <a href="https://www.instagram.com/fomus_official/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
       </div>
     </div>
   </div>

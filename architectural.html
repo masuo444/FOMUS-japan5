@@ -373,6 +373,54 @@ html[lang="ar"] .ph-lead{font-weight:600;line-height:1.7}
   .ft-top{flex-direction:column;gap:18px}
   .ft-bot{flex-direction:column;align-items:flex-start;gap:8px}
 }
+
+/* ── Header dropdown (PC) ── */
+.nd{position:relative;display:inline-flex;align-items:center}
+.nd>a::after{content:'▾';font-size:.7em;margin-left:6px;opacity:.7}
+@media(min-width:861px){.nd-menu{max-height:none}}
+.nd-menu{
+  position:absolute;top:100%;left:-16px;transform:translateY(6px);
+  min-width:268px;background:#fff;border:1px solid rgba(10,18,34,.08);
+  box-shadow:0 20px 50px rgba(10,18,34,.14);border-radius:3px;
+  padding:10px 0;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease;z-index:1000;
+}
+.nd:hover .nd-menu,.nd:focus-within .nd-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.nd-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+.nd-menu a{
+  display:block;padding:11px 26px;font-family:var(--sans,'Noto Sans JP',sans-serif);
+  font-size:.96rem;font-weight:400;line-height:1.65;letter-spacing:.02em;text-transform:none;color:#3a3a3a!important;white-space:nowrap;transition:background .18s,color .18s;
+}
+.nd-menu a:hover{background:var(--cream,#FAF8F3);color:var(--gold,#B8873A)!important}
+.nd-menu .nd-sep{height:1px;background:rgba(10,18,34,.08);margin:8px 0}
+.nd-menu .nd-cap{display:block;padding:10px 24px 6px;font-family:var(--en,serif);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold,#B8873A)}
+@media(max-width:860px){.nd-menu{display:none}}
+
+/* ── Header right cluster ── */
+.hr{display:flex;align-items:center;gap:14px}
+.hlang{font-family:var(--en,serif);font-size:.76rem;letter-spacing:.18em;padding:5px 11px;border-radius:2px;border:1px solid rgba(255,255,255,.34);color:rgba(255,255,255,.92)!important;transition:all .2s}
+#H.s .hlang{border-color:rgba(10,18,34,.22);color:#555!important}
+.hlang:hover{background:var(--gold,#B8873A)!important;border-color:var(--gold,#B8873A)!important;color:#fff!important}
+.hshop{font-family:var(--en,serif);font-size:.8rem;letter-spacing:.18em;background:var(--gold,#B8873A);color:#fff!important;padding:8px 20px;border-radius:2px;transition:background .2s}
+.hshop:hover{background:#9A6E2A}
+@media(max-width:860px){.hr{display:none}}
+
+/* ── Header layout fix ── */
+#H{position:fixed}
+#H:not(.s){background:linear-gradient(to bottom,rgba(8,14,26,.82),rgba(8,14,26,.34) 70%,rgba(8,14,26,0))}
+#H:not(.s) .hn > a,#H:not(.s) .hn > li > a,#H:not(.s) .nd > a,#H:not(.s) .hlang,#H:not(.s) .hcta{text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.nd-menu a,.nd-menu .nd-cap{text-shadow:none!important}
+#H > nav{margin-right:auto;margin-left:46px}
+.hi{position:relative}
+.hi > nav{margin-right:auto;margin-left:46px}
+@media(max-width:1100px){#H > nav,.hi > nav{margin-left:24px}}
+
+/* ── Header: 6 categories ── */
+.hn{gap:30px}
+.hn a{font-size:.88rem;letter-spacing:.14em}
+#H > nav,.hi > nav{margin-left:34px}
+.hr{gap:10px}
+@media(max-width:1400px){.hn{gap:20px}.hn a{font-size:.8rem;letter-spacing:.08em}#H > nav,.hi > nav{margin-left:22px}}
 </style>
 <script type="application/ld+json">
 {
@@ -502,37 +550,91 @@ html[lang="ar"] .ph-lead{font-weight:600;line-height:1.7}
 </head>
 <body>
 <!-- ════ HEADER ════ -->
+<!-- ════ HEADER ════ -->
 <header id="H">
   <a href="index-en.html" class="hl"><img src="FOMUSlogo_edited.png" alt="FOMUS"></a>
   <nav>
     <ul class="hn">
-      <li><a href="index-en.html">Home</a></li>
-      <li><a href="craft-en.html">Craft</a></li>
-      <li><a href="business-en.html">Business</a></li>
-      <li><a href="entertainment-en.html">Entertainment</a></li>
-      <li><a href="community-en.html">Community</a></li>
-      <li><a href="about-en.html">About</a></li>
-      <li><a href="architectural-ja.html" hreflang="ja">JP</a></li>
+      <li class="nd"><a href="services-en.html">SERVICES</a>
+        <div class="nd-menu">
+          <a href="services-en.html">All services</a>
+          <a href="https://masu.fomus.jp/en" target="_blank" rel="noopener">Masu gifts & novelties ↗</a>
+          <a href="photo.html">Photography</a>
+          <a href="business-en.html">Web & AI</a>
+        </div>
+      </li>
+      <li class="nd"><a href="masu-en.html">MASU</a>
+        <div class="nd-menu">
+          <a href="masu-en.html">The masu brand</a>
+          <a href="masu-en.html#about">What is a masu</a>
+          <a href="masu-en.html#tech">Finishing options</a>
+          <a href="craft-en.html">CRAFT</a>
+          <div class="nd-sep"></div>
+          <a href="https://masu.fomus.jp/en" target="_blank" rel="noopener">Buy a masu ↗</a>
+        </div>
+      </li>
+      <li class="nd"><a href="architectural.html">ARCHITECTURAL</a>
+        <div class="nd-menu">
+          <a href="architectural.html">Masu wall</a>
+          <a href="architectural.html#proj">Project: Sagishima gallery</a>
+          <a href="architectural.html#specs">Specifications</a>
+          <a href="index-en.html#contact">Talk to us</a>
+        </div>
+      </li>
+      <li class="nd"><a href="global-support-en.html">GLOBAL</a>
+        <div class="nd-menu">
+          <a href="global-support-en.html">Overseas promotion</a>
+          <a href="about-en.html#global">Work abroad</a>
+          <a href="https://masuphoto.fomus.jp/" target="_blank" rel="noopener">MASU PHOTO books ↗</a>
+          <a href="community-en.html">COMMUNITY</a>
+        </div>
+      </li>
+      <li class="nd"><a href="entertainment-en.html">PROJECTS</a>
+        <div class="nd-menu">
+          <span class="nd-cap">Brands</span>
+          <a href="kumiki/en/">KUMIKI</a>
+          <a href="masukame/">MASUKAME</a>
+          <a href="kuku/en.html">KUKU World</a>
+          <div class="nd-sep"></div>
+          <span class="nd-cap">Business</span>
+          <a href="entertainment-en.html">ENTERTAINMENT</a>
+          <a href="business-en.html">BUSINESS</a>
+        </div>
+      </li>
+      <li class="nd"><a href="about-en.html">ABOUT</a>
+        <div class="nd-menu">
+          <a href="about-en.html">About FOMUS</a>
+          <a href="about-en.html#founder">Founder</a>
+          <a href="index-en.html#projects">Our work</a>
+          <a href="index-en.html#contact">Contact</a>
+        </div>
+      </li>
     </ul>
   </nav>
-  <a href="#inquiry" class="hcta">Request a quote</a>
+  <div class="hr">
+    <a href="architectural-ja.html" class="hlang">JA</a>
+    <a href="https://shop.fomus.jp/" target="_blank" rel="noopener" class="hshop">SHOP</a>
+    <a href="index-en.html#contact" class="hcta">Contact</a>
+  </div>
   <a class="cta-m" href="https://shop.fomus.jp/" target="_blank" rel="noopener">SHOP</a>
   <button class="hbg" id="hbg" aria-label="menu"><span></span><span></span><span></span></button>
 </header>
 
+<!-- Mobile nav -->
 <nav id="MN">
   <button class="mnx" id="mnx">CLOSE ✕</button>
-  <a href="index-en.html" onclick="cNav()">Home</a>
-  <a href="craft-en.html" onclick="cNav()">Craft</a>
-  <a href="business-en.html" onclick="cNav()">Business</a>
-  <a href="entertainment-en.html" onclick="cNav()">Entertainment</a>
-  <a href="community-en.html" onclick="cNav()">Community</a>
-  <a href="about-en.html" onclick="cNav()">About</a>
-  <a href="#inquiry" onclick="cNav()">Contact</a>
-  <a href="https://shop.fomus.jp/" target="_blank" rel="noopener">SHOP</a>
-  <div class="mn-lang"><a href="architectural.html" hreflang="en" lang="en" aria-current="page">EN</a><a href="architectural-ar.html" hreflang="ar" lang="ar">العربية</a><a href="architectural-ja.html" hreflang="ja" lang="ja">日本語</a></div>
+  <a href="services-en.html"  onclick="cNav()">SERVICES</a>
+  <a href="masu-en.html"      onclick="cNav()">MASU</a>
+  <a href="architectural.html" onclick="cNav()">ARCHITECTURAL</a>
+  <a href="global-support-en.html" onclick="cNav()">GLOBAL</a>
+  <a href="photo.html"        onclick="cNav()">PHOTO</a>
+  <a href="business-en.html"  onclick="cNav()">WEB &amp; AI</a>
+  <a href="entertainment-en.html" onclick="cNav()">PROJECTS</a>
+  <a href="about-en.html"     onclick="cNav()">ABOUT</a>
+  <a href="index-en.html#contact" onclick="cNav()">CONTACT</a>
+  <a href="architectural-ja.html" onclick="cNav()">JA</a>
+  <a href="https://shop.fomus.jp/" target="_blank" rel="noopener" onclick="cNav()">SHOP</a>
 </nav>
-
 <!-- ════ HERO ════ -->
 <section class="hero">
   <div class="hero-left">
