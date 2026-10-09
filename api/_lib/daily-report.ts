@@ -8,7 +8,8 @@ import { getGoogleAccessToken, hasGoogleCredentials } from './google-auth'
  * どれか1つが取れなくても、取れた分だけで送る。
  */
 
-const GA4_PROPERTY = process.env.GA4_PROPERTY_ID || ''
+// GA4「FOMUS公式」プロパティ（masuo official アカウント）
+const GA4_PROPERTY = process.env.GA4_PROPERTY_ID || '318506928'
 export const GSC_SITE = 'sc-domain:fomus.jp'
 const DAY_MS = 24 * 60 * 60 * 1000
 const JST_OFFSET_MS = 9 * 60 * 60 * 1000

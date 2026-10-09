@@ -6,7 +6,7 @@
  * - 問い合わせ手前の行動（相談ボタン・メール/電話・フォーム入力開始・送信）を GA4 に送る
  */
 (function () {
-  var GA_ID = 'G-XXXXXXXXXX'
+  var GA_ID = 'G-QW63HL69GE'
   var STORAGE_KEY = 'fomus-attribution'
   var SESSION_KEY = 'fomus-attribution-session'
   var RETENTION_MS = 90 * 24 * 60 * 60 * 1000
