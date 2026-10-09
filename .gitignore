@@ -1,3 +1,4 @@
 .DS_Store
 .bak_text/
 .vercel
+node_modules/

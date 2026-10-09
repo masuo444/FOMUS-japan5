@@ -560,5 +560,15 @@
         }
       ]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/daily-report",
+      "schedule": "0 23 * * *"
+    },
+    {
+      "path": "/api/cron/monthly-advice",
+      "schedule": "0 0 1 * *"
+    }
   ]
 }

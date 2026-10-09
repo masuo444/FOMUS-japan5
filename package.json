@@ -1,0 +1,12 @@
+{
+  "name": "fomus-jp",
+  "private": true,
+  "description": "www.fomus.jp（静的HTML）。package.json は日報・月次アドバイスの関数（api/）の依存のためだけにある",
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.126.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}
