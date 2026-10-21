@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ページが見つかりません｜Page not found — FOMUS</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A1222;--gold:#B8873A;--gilt:#E2C068;--cream:#FAF8F3;--dust:#E8E0D0;
+  --en:'Cormorant Garamond',serif;--serif:'Noto Serif JP',serif;--sans:'Noto Sans JP',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip}
+body{font-family:var(--sans);background:var(--ink);color:#fff;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+header{padding:24px 32px}
+header img{height:34px;width:auto}
+main{flex:1;display:flex;align-items:center;padding:40px 32px 64px}
+.W{max-width:880px;margin:0 auto;width:100%}
+.lbl{font-family:var(--en);font-size:.72rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gilt);display:flex;align-items:center;gap:14px}
+.lbl::before{content:'';width:28px;height:1px;background:var(--gilt)}
+.kanji{font-family:var(--serif);font-size:clamp(4rem,12vw,7.5rem);font-weight:500;line-height:1;margin:28px 0 8px;color:rgba(255,255,255,.08);letter-spacing:.1em}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.5;margin-top:-.4em}
+h1 .en{display:block;font-family:var(--en);font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--gilt);margin-top:6px;letter-spacing:.02em}
+.desc{font-size:.92rem;line-height:2;color:rgba(255,255,255,.78);margin:22px 0 40px;max-width:36em}
+.desc span{display:block;font-size:.86rem;color:rgba(255,255,255,.6)}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+.links a{background:var(--ink);padding:22px 24px;transition:background .25s}
+.links a:hover{background:#0F1E36}
+.links .t{font-family:var(--en);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gilt);display:block;margin-bottom:6px}
+.links .d{font-size:.86rem;color:rgba(255,255,255,.82);line-height:1.7}
+.links .d small{display:block;color:rgba(255,255,255,.55);font-size:.78rem}
+footer{padding:24px 32px;font-family:var(--en);font-size:.72rem;letter-spacing:.2em;color:rgba(255,255,255,.4)}
+@media(max-width:640px){
+  header,main,footer{padding-left:16px;padding-right:16px}
+  .links{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header><a href="/"><img src="/FOMUSlogo_edited.png" alt="FOMUS" width="120" height="34"></a></header>
+<main>
+  <div class="W">
+    <span class="lbl">404 — Page not found</span>
+    <div class="kanji" aria-hidden="true">枡</div>
+    <h1>お探しのページは見つかりませんでした。<span class="en">The page you were looking for could not be found.</span></h1>
+    <p class="desc">移動したか、アドレスが変わった可能性があります。以下からお進みください。<span>It may have moved or the address may have changed. Please continue from one of the pages below.</span></p>
+    <nav class="links" aria-label="Main pages">
+      <a href="/"><span class="t">Home</span><span class="d">トップページ<small>Top page (Japanese)</small></span></a>
+      <a href="/index-en.html"><span class="t">English</span><span class="d">English top page<small>FOMUS in English</small></span></a>
+      <a href="/masu.html"><span class="t">Masu</span><span class="d">枡のブランド<small>The masu brand</small></span></a>
+      <a href="/architectural.html"><span class="t">Masu Interior</span><span class="d">枡の壁・天井・カウンター<small>Masu modules for interiors</small></span></a>
+      <a href="https://masu.fomus.jp/"><span class="t">Masu Store</span><span class="d">枡を買う・名入れ<small>Buy masu (Japan)</small></span></a>
+      <a href="/contact.html"><span class="t">Contact</span><span class="d">お問い合わせ<small>Contact us</small></span></a>
+    </nav>
+  </div>
+</main>
+<footer>© FOMUS</footer>
+<script src="/fomus-analytics.js" defer></script>
+</body>
+</html>

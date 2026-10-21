@@ -111,7 +111,7 @@ async function fetchGa(date: string) {
         metrics: ['screenPageViews', 'userEngagementDuration'],
       }),
       runGaReport(token, date, { dimensions: ['deviceCategory'], metrics: ['sessions'] }),
-      runGaReport(token, date, { dimensions: ['country'], metrics: ['sessions'], limit: 6 }),
+      runGaReport(token, date, { dimensions: ['country'], metrics: ['sessions', 'engagedSessions'], limit: 20 }),
       runGaReport(token, date, {
         dimensions: ['eventName'],
         metrics: ['eventCount'],
@@ -400,6 +400,16 @@ export async function buildDailyReport(date: string) {
         ),
       ),
     )
+    // しっかり見た訪問が1件もないのに5訪問以上ある国は、自動アクセス（ロボット）とみなして別に示す
+    const botCountries = ga.countries.filter((r) => r.values[0] >= 5 && r.values[1] === 0)
+    const botSessions = botCountries.reduce((sum, r) => sum + r.values[0], 0)
+    if (botSessions) {
+      parts.push(
+        `<p style="font-size:12px;color:#795548;background:#fff8e1;padding:8px 10px;margin:8px 0 0;">うち約${num(botSessions)}訪問は自動アクセス（ロボット）とみられます（${botCountries
+          .map((r) => `${esc(r.dims[0])} ${num(r.values[0])}訪問・しっかり見た0`)
+          .join('、')}）。人の動きは「しっかり見た訪問」で見てください。</p>`,
+      )
+    }
     const sessions = ga.today[2] || 1
     parts.push(
       section(
@@ -470,7 +480,10 @@ export async function buildDailyReport(date: string) {
         '見た人の端末と国',
         table(['端末', '訪問'], ga.devices.map((r) => [esc(DEVICE_JA[r.dims[0]] ?? r.dims[0]), num(r.values[0])])) +
           '<div style="height:8px;"></div>' +
-          table(['国', '訪問'], ga.countries.map((r) => [esc(r.dims[0]), num(r.values[0])])),
+          table(
+            ['国', '訪問', 'しっかり見た'],
+            ga.countries.slice(0, 8).map((r) => [esc(r.dims[0]), num(r.values[0]), num(r.values[1])]),
+          ),
       ),
     )
     parts.push(section('どこまで読まれたか', renderScrollSection(ga.scroll)))
@@ -534,9 +547,9 @@ export async function buildDailyReport(date: string) {
   }
 
   const leads = ga?.actions.find((r) => r.dims[0] === 'generate_lead')?.values[0]
-  const visitors = ga?.today[0]
+  const engaged = ga?.today[4]
   const subject = `【FOMUS 日報】${date.slice(5).replace('-', '/')} ${
-    visitors != null ? `訪問者${num(visitors)}人` : ''
+    engaged != null ? `しっかり見た訪問${num(engaged)}件` : ''
   }${leads != null ? ` / 問い合わせ${leads}件` : ''}`.trim()
 
   const html = `<div style="font-family:-apple-system,'Hiragino Sans',sans-serif;max-width:680px;margin:0 auto;padding:20px;color:#222;">
