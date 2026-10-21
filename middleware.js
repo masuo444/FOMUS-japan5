@@ -17,10 +17,23 @@ export const config = {
   matcher: ['/((?!api/|.*\\.(?:png|jpe?g|webp|gif|svg|ico|mp4|mov|MP4|JPG|css|js|woff2?|pdf)$).*)'],
 }
 
+// 同意の案内が必要な地域（EEA・英国・スイス）。fomus-analytics.js がこの Cookie を見てバナーを出す
+const CONSENT_COUNTRIES = new Set([
+  'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU',
+  'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH',
+])
+
 export default async function middleware(request) {
   const ua = request.headers.get('user-agent') || ''
   const bot = AI_BOTS.find(([, pattern]) => pattern.test(ua))
-  if (!bot) return
+  if (!bot) {
+    const country = request.headers.get('x-vercel-ip-country') || ''
+    if (!CONSENT_COUNTRIES.has(country) || /(?:^|;\s*)fomus_region=/.test(request.headers.get('cookie') || '')) return
+    // 次の処理へ渡しつつ、レスポンスに Cookie を付ける（Vercel Routing Middleware の next）
+    return new Response(null, {
+      headers: { 'x-middleware-next': '1', 'set-cookie': 'fomus_region=eu; Path=/; Max-Age=2592000; SameSite=Lax; Secure' },
+    })
+  }
   const path = new URL(request.url).pathname
   const url = process.env.KV_REST_API_URL
   const token = process.env.KV_REST_API_TOKEN

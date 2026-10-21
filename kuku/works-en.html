@@ -6,6 +6,8 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // EEA・英国・スイスの訪問者は同意するまで Cookie を使わない（fomus-analytics.js と同じ判定）
+  try{if((/(?:^|;\s*)fomus_region=eu/.test(document.cookie)||/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone||''))&&localStorage.getItem('fomus-consent')!=='granted')gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'})}catch(e){}
   gtag('js', new Date());
   gtag('config', 'G-SJ5DT6WE54');
 </script>

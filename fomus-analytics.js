@@ -4,6 +4,7 @@
  * - どこから来て何を見たか（初回・今回の入口と参照元、訪問回数、見たページの流れ）を
  *   訪問者のブラウザに90日だけ保持し、問い合わせフォーム（Web3Forms）の送信内容に添える
  * - 問い合わせ手前の行動（相談ボタン・メール/電話・フォーム入力開始・送信）を GA4 に送る
+ * - EEA・英国・スイスの訪問者には同意の案内を出し、同意するまで Cookie を使わない（middleware.js が fomus_region=eu を付ける）
  */
 (function () {
   var GA_ID = 'G-QW63HL69GE'
@@ -12,12 +13,26 @@
   var RETENTION_MS = 90 * 24 * 60 * 60 * 1000
   var MAX_PAGES = 30
 
+  // ---------- 同意（EEA・英国・スイスの訪問者だけ） ----------
+  var CONSENT_KEY = 'fomus-consent'
+  function readConsent() { try { return localStorage.getItem(CONSENT_KEY) || '' } catch (e) { return '' } }
+  function writeConsent(v) { try { localStorage.setItem(CONSENT_KEY, v) } catch (e) {} }
+  var tz = ''
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '' } catch (e) {}
+  // middleware の Cookie が無いとき（ローカル確認など）は、ヨーロッパのタイムゾーンで判定する
+  var needsConsent = /(?:^|;\s*)fomus_region=eu/.test(document.cookie) || /^Europe\//.test(tz)
+  var allowed = !needsConsent || readConsent() === 'granted'
+
   // ---------- GA4 ----------
   window.dataLayer = window.dataLayer || []
   if (typeof window.gtag !== 'function') {
     window.gtag = function () { window.dataLayer.push(arguments) }
     window.gtag('js', new Date())
   }
+  window.gtag('consent', 'default', {
+    analytics_storage: allowed ? 'granted' : 'denied',
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  })
   if (/^G-[A-Z0-9]+$/.test(GA_ID) && GA_ID !== 'G-XXXXXXXXXX') {
     if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
       var tag = document.createElement('script')
@@ -33,12 +48,51 @@
 
   // ---------- Microsoft Clarity（ヒートマップ・操作の録画。フォームの入力内容は記録しない） ----------
   var CLARITY_ID = 'z121yv253w'
-  if (!window.clarity) {
+  function loadClarity() {
+    if (window.clarity) return
     (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }
       t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y)
     })(window, document, 'clarity', 'script', CLARITY_ID)
+  }
+  if (allowed) loadClarity()
+
+  // ---------- 同意の案内（画面下の小さなバナー。英語のみ） ----------
+  function showConsentBanner() {
+    if (document.getElementById('fomus-consent')) return
+    var box = document.createElement('div')
+    box.id = 'fomus-consent'
+    box.setAttribute('role', 'dialog')
+    box.setAttribute('aria-label', 'Cookie notice')
+    box.setAttribute('lang', 'en')
+    box.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;z-index:2000;max-width:560px;margin:0 auto;background:#0A1222;color:#fff;padding:18px 20px;box-shadow:0 8px 30px rgba(0,0,0,.25);font:400 14px/1.7 "Noto Sans JP",sans-serif'
+    box.innerHTML = '<p style="margin:0 0 14px;color:rgba(255,255,255,.88)">We use cookies to understand how visitors use this site (Google Analytics, Microsoft Clarity). <a href="/privacy-en.html" style="color:#E2C068;text-decoration:underline">Privacy Policy</a></p>' +
+      '<div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap">' +
+      '<button type="button" data-consent="denied" style="font:inherit;letter-spacing:.06em;padding:9px 20px;min-height:40px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);cursor:pointer">Decline</button>' +
+      '<button type="button" data-consent="granted" style="font:inherit;letter-spacing:.06em;padding:9px 20px;min-height:40px;background:#B8873A;color:#fff;border:1px solid #B8873A;cursor:pointer">Accept</button></div>'
+    box.addEventListener('click', function (e) {
+      var choice = e.target && e.target.getAttribute && e.target.getAttribute('data-consent')
+      if (!choice) return
+      writeConsent(choice)
+      allowed = choice === 'granted'
+      window.gtag('consent', 'update', { analytics_storage: choice })
+      if (allowed) loadClarity()
+      else try { localStorage.removeItem(STORAGE_KEY) } catch (err) {}
+      box.remove()
+    })
+    document.body.appendChild(box)
+  }
+  // 「Cookieの設定」リンク（href="#cookie-settings"）から、いつでも選び直せる
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href="#cookie-settings"]') : null
+    if (!a) return
+    e.preventDefault()
+    showConsentBanner()
+  })
+  if (needsConsent && !readConsent()) {
+    if (document.body) showConsentBanner()
+    else document.addEventListener('DOMContentLoaded', showConsentBanner)
   }
 
   // ---------- どこまで読んだか（25/50/75/100%で1回ずつ） ----------
@@ -96,7 +150,7 @@
     }
     return stored
   }
-  try {
+  if (allowed) try {
     var stored = load()
     if (!sessionStorage.getItem(SESSION_KEY)) {
       sessionStorage.setItem(SESSION_KEY, '1')
