@@ -31,6 +31,32 @@
     try { window.gtag('event', name, Object.assign({ send_to: GA_ID }, params)) } catch (e) {}
   }
 
+  // ---------- Microsoft Clarity（ヒートマップ・操作の録画。フォームの入力内容は記録しない） ----------
+  var CLARITY_ID = 'z121yv253w'
+  if (!window.clarity) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) }
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y)
+    })(window, document, 'clarity', 'script', CLARITY_ID)
+  }
+
+  // ---------- どこまで読んだか（25/50/75/100%で1回ずつ） ----------
+  var scrollSent = {}
+  function onScroll() {
+    var doc = document.documentElement
+    var max = doc.scrollHeight - window.innerHeight
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 100
+    ;[25, 50, 75, 100].forEach(function (mark) {
+      if (pct >= mark - 1 && !scrollSent[mark]) {
+        scrollSent[mark] = true
+        send('scroll_' + mark, { page_path: location.pathname })
+      }
+    })
+    if (scrollSent[100]) window.removeEventListener('scroll', onScroll)
+  }
+  window.addEventListener('scroll', onScroll, { passive: true })
+
   // ---------- 流入経路 ----------
   var AI_SOURCES = [
     ['ChatGPT', /chatgpt\.com|chat\.openai\.com|openai/],

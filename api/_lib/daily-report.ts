@@ -1,5 +1,6 @@
 import { AI_SOURCE_GA_REGEX, detectAiSource } from './ai-sources'
 import { BOT_KIND_JA, hasBotStore, readAiBotVisits, type BotKind, type BotVisit } from './ai-bots'
+import { CLARITY_PROJECT_ID, fetchClarity, hasClarityToken, type ClarityPage } from './clarity'
 import { getGoogleAccessToken, hasGoogleCredentials } from './google-auth'
 
 /**
@@ -122,6 +123,12 @@ async function fetchGa(date: string) {
         eventNames: ['cta_click', 'contact_click'],
       }),
     ])
+  const scroll = await runGaReport(token, date, {
+    dimensions: ['pagePath', 'eventName'],
+    metrics: ['eventCount'],
+    eventNames: ['page_view', 'scroll_25', 'scroll_50', 'scroll_75', 'scroll_100'],
+    limit: 200,
+  })
   const [aiSources, aiLandings, aiMonth, aiLeads] = await Promise.all([
     runGaReport(token, date, { dimensions: ['sessionSource'], metrics: ['sessions', 'engagedSessions'], aiOnly: true }),
     runGaReport(token, date, { dimensions: ['sessionSource', 'landingPagePlusQueryString'], metrics: ['sessions'], aiOnly: true }),
@@ -135,7 +142,7 @@ async function fetchGa(date: string) {
     }),
   ])
   const ai = { aiSources, aiLandings, aiMonth, aiLeads }
-  return { today, prevDay, lastWeek, channels, sources, landings, pages, devices, countries, actions, ctas, ai }
+  return { today, prevDay, lastWeek, channels, sources, landings, pages, devices, countries, actions, ctas, ai, scroll }
 }
 
 // ---------- Search Console ----------
@@ -279,6 +286,62 @@ function renderBotSection(day: BotVisit[], month: BotVisit[]) {
   )
 }
 
+type ScrollRow = { dims: string[]; values: number[] }
+
+/** ページごとに「表示のうち何%が25/50/75/100%まで読んだか」 */
+function renderScrollSection(rows: ScrollRow[]) {
+  const byPage = new Map<string, Record<string, number>>()
+  for (const r of rows) {
+    const counts = byPage.get(r.dims[0]) ?? {}
+    counts[r.dims[1]] = (counts[r.dims[1]] ?? 0) + r.values[0]
+    byPage.set(r.dims[0], counts)
+  }
+  const pct = (part: number, whole: number) => `${Math.min(100, Math.round((part / whole) * 100))}%`
+  const list = [...byPage.entries()]
+    .filter(([, c]) => (c.page_view ?? 0) > 0)
+    .sort((a, b) => (b[1].page_view ?? 0) - (a[1].page_view ?? 0))
+    .slice(0, 12)
+  return (
+    '<p style="font-size:12px;color:#888;margin:0 0 8px;">表示されたうち、その位置まで下に読み進めた割合。50%で大きく減るページは、前半で離れられている（伝えたいことを上に寄せる候補）。</p>' +
+    table(
+      ['ページ', '表示', '25%', '50%', '75%', '最後まで'],
+      list.map(([path, c]) => {
+        const pv = c.page_view ?? 0
+        return [
+          esc(pageLabel(path)),
+          num(pv),
+          pct(c.scroll_25 ?? 0, pv),
+          pct(c.scroll_50 ?? 0, pv),
+          pct(c.scroll_75 ?? 0, pv),
+          pct(c.scroll_100 ?? 0, pv),
+        ]
+      }),
+    )
+  )
+}
+
+function renderClaritySection(pages: ClarityPage[]) {
+  const link = `https://clarity.microsoft.com/projects/view/${CLARITY_PROJECT_ID}/heatmaps`
+  const troubled = pages.filter((p) => p.deadClicks + p.rageClicks + p.quickBacks > 0)
+  return (
+    `<p style="font-size:12px;color:#888;margin:0 0 8px;">Clarityで見た直近24時間。「反応のないクリック」はリンクだと思って押されたが何も起きなかった所、「連打」は苛立って何度も押された所、「すぐ戻った」は開いてすぐ前のページに戻った回数。多いページは<a href="${link}" style="color:#7a5c2e;">ヒートマップと録画</a>で原因の場所を確認する。</p>` +
+    table(
+      ['ページ', '訪問', '平均スクロール', '反応のないクリック', '連打', 'すぐ戻った'],
+      pages.slice(0, 12).map((p) => [
+        esc(pageLabel(p.url)),
+        num(p.sessions),
+        p.scrollDepth != null ? `${Math.round(p.scrollDepth)}%` : '-',
+        num(p.deadClicks),
+        num(p.rageClicks),
+        num(p.quickBacks),
+      ]),
+    ) +
+    (troubled.length
+      ? ''
+      : '<p style="font-size:12px;color:#2e7d32;margin:8px 0 0;">迷ったり苛立ったりしたクリックはありませんでした。</p>')
+  )
+}
+
 const DEVICE_JA: Record<string, string> = { mobile: 'スマホ', desktop: 'PC', tablet: 'タブレット' }
 const EVENT_JA: Record<string, string> = {
   generate_lead: '見積り・問い合わせの送信',
@@ -292,7 +355,7 @@ export async function buildDailyReport(date: string) {
   const gscDate = shiftDate(date, -2) // Search Console は2〜3日遅れて確定する
 
   const botDates = Array.from({ length: 28 }, (_, i) => shiftDate(date, -i))
-  const [ga, gsc, botDays] = await Promise.all([
+  const [ga, gsc, botDays, clarity] = await Promise.all([
     hasGoogleCredentials()
       ? fetchGa(date).catch((error) => {
           notes.push(`アクセス解析（GA4）を取得できませんでした: ${String(error).slice(0, 200)}`)
@@ -311,6 +374,12 @@ export async function buildDailyReport(date: string) {
           return null
         })
       : null,
+    hasClarityToken()
+      ? fetchClarity().catch((error) => {
+          notes.push(`Clarity（クリック・スクロール）を取得できませんでした: ${String(error).slice(0, 200)}`)
+          return null
+        })
+      : (notes.push('CLARITY_API_TOKEN が未設定のため、Clarityの欄は載せていません。'), null),
   ])
 
   const parts: string[] = []
@@ -404,6 +473,7 @@ export async function buildDailyReport(date: string) {
           table(['国', '訪問'], ga.countries.map((r) => [esc(r.dims[0]), num(r.values[0])])),
       ),
     )
+    parts.push(section('どこまで読まれたか', renderScrollSection(ga.scroll)))
     const actionCount = (name: string) => ga.actions.find((r) => r.dims[0] === name)?.values[0] ?? 0
     parts.push(
       section(
@@ -424,6 +494,10 @@ export async function buildDailyReport(date: string) {
             : ''),
       ),
     )
+  }
+
+  if (clarity) {
+    parts.push(section('迷った・苛立ったクリック', renderClaritySection(clarity)))
   }
 
   if (botDays) {
