@@ -241,8 +241,12 @@
     .mobile-lang a.active { color: var(--gold); font-weight: 500; }
   </style>
 <script src="/fomus-analytics.js" defer></script>
+  <link rel="stylesheet" href="/kumiki/kumiki-extras.css">
+  <script>/* クリスマス締切の帯：日本時間 12/6 0:00 で自動終了 */if(Date.now()<Date.UTC(2026,11,5,15))document.documentElement.classList.add('kmk-band')</script>
+  <script src="/kumiki/kumiki-extras.js" defer></script>
 </head>
 <body>
+  <div class="kmk-xmas" role="note">Pour une livraison à Noël, commandez avant le 25 nov. (international) / 5 déc. (Japon)</div>
 
   <a href="#main" class="skip-link">Aller au contenu principal</a>
 
@@ -469,6 +473,7 @@
             N'hesitez pas a nous faire part de l'occasion et de votre budget.
           </p>
         </div>
+        <p class="kmk-deadline-note">Pour une livraison à Noël, merci de commander avant le 25 novembre (international) ou le 5 décembre (Japon).</p>
         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="c72fa767-1677-4c8c-b48c-407ec1f79896">
           <input type="hidden" name="subject" value="KUMIKI Demande de contact (FR)">
@@ -506,6 +511,7 @@
           </div>
           <p class="form-status" role="alert" style="display:none;margin-top:20px;font-size:.9rem;line-height:1.7;color:#c0392b;text-align:center"></p>
         </form>
+        <p class="kmk-ig">Une question ? Écrivez-nous aussi sur Instagram — <a href="https://ig.me/m/kumiki.jp" target="_blank" rel="noopener">message à @kumiki.jp →</a></p>
       </div>
     </div>
   </section>

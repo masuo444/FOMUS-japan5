@@ -595,8 +595,12 @@
     .mobile-lang a.active { color: var(--gold); font-weight: 500; }
   </style>
 <script src="/fomus-analytics.js" defer></script>
+  <link rel="stylesheet" href="/kumiki/kumiki-extras.css">
+  <script>/* クリスマス締切の帯：日本時間 12/6 0:00 で自動終了 */if(Date.now()<Date.UTC(2026,11,5,15))document.documentElement.classList.add('kmk-band')</script>
+  <script src="/kumiki/kumiki-extras.js" defer></script>
 </head>
 <body>
+  <div class="kmk-xmas" role="note">クリスマスのお届けは、海外 11月25日・国内 12月5日までのご注文で</div>
 
   <a href="#main" class="skip-link">メインコンテンツへ</a>
 
@@ -811,6 +815,7 @@
             コレクションに関するご相談を承ります。
           </p>
         </div>
+        <p class="kmk-deadline-note">クリスマスのお届けは、海外 11月25日・国内 12月5日までのご注文で承ります。</p>
         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="c72fa767-1677-4c8c-b48c-407ec1f79896">
           <input type="hidden" name="subject" value="KUMIKI お問い合わせ（JA）">
@@ -852,6 +857,7 @@
           </div>
           <p class="form-status" role="alert" style="display:none;margin-top:20px;font-size:.9rem;line-height:1.7;color:#c0392b;text-align:center"></p>
         </form>
+        <p class="kmk-ig">Instagramのメッセージでも、お気軽にご相談いただけます　<a href="https://ig.me/m/kumiki.jp" target="_blank" rel="noopener">@kumiki.jp に相談する →</a></p>
       </div>
     </div>
   </section>
