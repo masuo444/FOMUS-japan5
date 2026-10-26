@@ -635,6 +635,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.fomus.jp/kumiki/journal/mokkonshiki.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fomus.jp/kumiki/journal/gift-for-overseas.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.fomus.jp/kumiki/journal/what-is-masu.html</loc>
     <xhtml:link rel="alternate" hreflang="ja" href="https://www.fomus.jp/kumiki/journal/what-is-masu.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fomus.jp/kumiki/en/journal/what-is-masu.html"/>
