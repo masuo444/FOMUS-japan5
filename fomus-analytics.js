@@ -4,7 +4,7 @@
  * - どこから来て何を見たか（初回・今回の入口と参照元、訪問回数、見たページの流れ）を
  *   訪問者のブラウザに90日だけ保持し、問い合わせフォーム（Web3Forms）の送信内容に添える
  * - 問い合わせ手前の行動（相談ボタン・メール/電話・フォーム入力開始・送信）を GA4 に送る
- * - EEA・英国・スイスの訪問者には同意の案内を出し、同意するまで Cookie を使わない（middleware.js が fomus_region=eu を付ける）
+ * - EEA・英国・スイスの訪問者には同意の案内を出し、同意するまで Cookie を使わない（端末のタイムゾーンで判定。ヨーロッパ全域を広めに対象にする）
  */
 (function () {
   var GA_ID = 'G-QW63HL69GE'
@@ -19,8 +19,10 @@
   function writeConsent(v) { try { localStorage.setItem(CONSENT_KEY, v) } catch (e) {} }
   var tz = ''
   try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '' } catch (e) {}
-  // middleware の Cookie が無いとき（ローカル確認など）は、ヨーロッパのタイムゾーンで判定する
-  var needsConsent = /(?:^|;\s*)fomus_region=eu/.test(document.cookie) || /^Europe\//.test(tz)
+  // 2026-11-04 middleware.js を撤去（全ページ表示ごとにVercelのCPUを消費するため）。地域はタイムゾーンだけで判定する。
+  // Europe/* に加え、アイスランド・カナリア・マデイラ・アゾレス・フェロー・スヴァールバル・キプロス・EUの海外領も対象（迷ったら案内を出す側に倒す）
+  var needsConsent = /(?:^|;\s*)fomus_region=eu/.test(document.cookie) ||
+    /^(?:Europe\/|Atlantic\/(?:Reykjavik|Canary|Madeira|Azores|Faroe|Faeroe)|Arctic\/Longyearbyen|Asia\/(?:Nicosia|Famagusta)|America\/(?:Cayenne|Guadeloupe|Martinique|Marigot|St_Barthelemy)|Indian\/(?:Reunion|Mayotte))/.test(tz)
   var allowed = !needsConsent || readConsent() === 'granted'
 
   // ---------- GA4 ----------
